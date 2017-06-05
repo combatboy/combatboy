@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/grate.css">
+    <style>.oneLine {
+        white-space: nowrap;
+    }
+
+    .LineHeight {
+        height: 3.55em !important
+    }</style>
+</head>
+<body class="um-vp bc-bg2" ontouchstart>
+<div class="ub up ub-ver">
+    <!-- 头部 -->
+    <div class="ub-img1 m-h n_container_uexAppCenterMgrEx"></div>
+    <!-- 中部 -->
+    <div class="bor-tb p-r">
+        <div class="m-h1 ub umar-l2 ub-ac">
+            <div class="ub ub-pc ub-ac">
+                <div class="ub-img shenjw-2 w-h"></div>
+            </div>
+            <div class="ub-f1 umar-l3">
+                神经网络
+            </div>
+        </div>
+        <!--<div class="ub-img sanj w-h2 p-a p-a-br"></div>-->
+    </div>
+    <!--感恩列表-->
+    <div id="gratefulList"></div>
+    <div class="bc-bg5 n_NNList" ng-controller="NNListController">
+        <div class="uinn tx-c ng-hide nothingShow" ng-show="list.length==0">
+            暂无数据
+        </div>
+        <ul class="ng-hide" ng-show="list.length>0">
+            <li class="ub ubb line bg-white LineHeight " ng-repeat="item in list"
+                ng-click="openNNDetail(item.ID, item.MSGCODE);">
+                <label class="ub ub-ac umar-l umar-r checkbox u-no-padding" ng-click="toggleCheck($event);"
+                       ng-class="{uhide:!pageFlagObj.isBranchMode}">
+                    <input type="checkbox" ng-model="item.isChecked" ng-disabled="true">
+                </label>
+
+                <div class="ub ub-ac">
+                    <!--新建-->
+                    <div class="iconsize umar-l ub-img s-addtubiao1"
+                         ng-show="item.STATUSID=='0'&&item.SEENUM=='0'&&item.REPNUM=='0'"></div>
+                    <!--已查看-->
+                    <div class="iconsize umar-l ub-img s-addtubiao2"
+                         ng-show="item.STATUSID=='1'&&item.SEENUM!='0'&&item.REPNUM=='0'"></div>
+                    <!--已回复-->
+                    <!--如果是自己查看并回复了，查看量为0，回复量不为0-->
+                    <div class="iconsize umar-l ub-img s-addtubiao4"
+                         ng-show="item.STATUSID=='2'&&item.REPNUM!='0'"></div>
+                    <!--已关闭-->
+                    <div class="iconsize umar-l ub-img s-addtubiao3" ng-show="item.STATUSID=='3'"></div>
+                </div>
+                <div class="ub ub-ver ub-f1 umar-l umar-r">
+                    <div class="ub font-uin">
+                        <div class="zhuanfa" ng-show="item.FORNUM!='0'">
+                            转发：
+                        </div>
+                        <!--重复标志-->
+                        <div ng-show="item.MSGASFLAG=='1'">
+                            [重复]&nbsp;
+                        </div>
+                        <div class="ub-f1 ut-s" ng-bind="item.MSGTITLE"></div>
+                        <!--紧急标志-->
+                        <div class="s-icon-star s-starsize ub-img" ng-show="item.FLAGID=='1'"
+                             style="display: inline-block"></div>
+                    </div>
+                    <div class="ub ub-ac font-uin">
+                        <div class="ub ub-f1">
+                            <div class="wangyue">{{item.CREATER}}</div>
+                            <div class="wangyue">&nbsp;-&nbsp;</div>
+                            <div class="wangyue">{{item.DEPTNAME}}</div>
+                            <!--<div class="ub ulev-1"> 查看 <div ng-bind="item.SEENUM"></div> </div>-->
+                            <!--&nbsp;-->
+                            <!--<div class="ub ulev-1"> 回复 <div ng-bind="item.REPNUM"></div> </div>-->
+                        </div>
+                        <div class="wangyue oneLine"
+                             ng-bind="item.MODIFYTIME|toUnixTimestamp|date:'yy-MM-dd HH:mm'"></div>
+                    </div>
+                </div>
+                <div class="u-label-today" ng-class="{'z-today':isToday(item.MODIFYTIME, 'nn')}">最新</div>
+            </li>
+        </ul>
+    </div>
+
+    <!--BBS-->
+    <div class="ng-hide" ng-controller="bbsListController" ng-show="posts.length">
+        <div class="p-r">
+            <div class="m-h1 ub ub-ac bor-tb2">
+                <div class="ub ub-pc ub-ac umar-l2">
+                    <div class="ub-img tongxl w-h"></div>
+                </div>
+                <div class="ub-f1 umar-l3">BBS</div>
+            </div>
+            <!--<div class="ub-img sanj w-h2 p-a p-a-br"></div>-->
+        </div>
+        <div class="bc-bg5">
+            <div class="ub ub-ac ubb line LineHeight" ng-repeat="item in posts" ng-click="openBBS(item.tid, item.fid)"
+                 style="height: 3.25em;">
+                <div class="ub ub-ver ub-pc ub-ac umar-l umar-r">
+                    <div class="ub-img toux w-h3" style="{{item.avatarbg}}"></div>
+                    <!-- 差一个uc-a圆角类型 -->
+                    <div class="ulev-1 t-c1" ng-bind="item.realname"></div>
+                </div>
+                <div class="umar-l ub-f1">
+                    <div class="ut-s zhuanfa font-uin" ng-bind="item.subject"></div>
+                    <div class="ub font-uin">
+                        <div class="ub wangyue">
+                            <div class="u-bbs-count"><img src="../images/bbs_icon_view.png" alt="查看"/></div>
+                            <div ng-bind="item.views"></div>
+                        </div>
+                        <div class="ub wangyue ub-f1 umar-l5">
+                            <div class="u-bbs-count"><img src="../images/bbs_icon_cmt.png" alt="回复"/></div>
+                            <div ng-bind="item.replies"></div>
+                        </div>
+                        <div class="ub wangyue uc-a2 umar-r">
+                            <div ng-bind="item.lastpost|formatTimeFromBBS"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="u-label-today" ng-class="{'z-today':isToday(item.lastpost, 'bbs')}">最新</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../vendor/appcan/js/appcan.js"></script>
+<script src="../../vendor/appcan/js/appcan.control.js"></script>
+<script src="../../vendor/Zeptojs/detect.js"></script>
+<script src="../../vendor/simcere/js/config.js"></script>
+<script src="../../vendor/simcere/js/base.js"></script>
+<script src="../../vendor/ionic/js/ionic.bundle.min.js"></script>
+<script src="../../vendor/simcere/js/ng.util.js"></script>
+<script src="../../vendor/ow/km.js"></script>
+<script src="../js/preInstallApps.do.js"></script>
+<script src="../js/app.index.content.js"></script>
+<script src="../../vendor/simcere/js/check1st.tmp.js"></script>
+<script id="tpl_gratefulList" type="text/html">
+    <%if (dataList.data&&dataList.data.length) {%>
+    <%var length = 1;%>
+    <%for(var i = 0; i < length; i++) {%>
+    <%$(".nothingShow").addClass("uhide");%>
+    <div class="LineHeight itGrate ub ub-ac u-titleBg ubb g-border" data-id="<%=dataList.data[i].ID%>"
+         data-code="<%=dataList.data[i].GRATITUDECODE%>">
+        <div class="grateIconSize ub-img icon-grate"></div>
+        <div class="ub ub-ver ub-f1 umar-l umar-r">
+            <div class="ub ub-f1 font-uin ut-s fontSize1">[感恩]&nbsp;<%=dataList.data[i].GRATITUDETITLE%></div>
+            <div class="ub ub-f1 font-uin fontColor2 fontSize2">
+                <div class="ub-f1 ut-s">To&nbsp;<%=dataList.data[i].LASTNAME%>-<%=dataList.data[i].DEPARTMENTNAME%>：<%=dataList.data[i].GRATITUDETEXT%></div>
+                <div class="umar-l oneLine">
+                    <%=(dataList.data[i].CREATETIME).substr(2,2)%>-<%=(dataList.data[i].CREATETIME).substr(4,2)%>-<%=(dataList.data[i].CREATETIME).substr(6,2)%>&nbsp;<%=(dataList.data[i].CREATETIME).substr(8,2)%>:<%=(dataList.data[i].CREATETIME).substr(10,2)%>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%}%>
+    <%}%>
+</script>
+<script>
+        $("#gratefulList").on("tap",".itGrate",function(){
+//            alert(0)
+            localStorage.setItem('simcere.runtime.openNNGrateFromMain', 'y');
+            uexAppCenterMgrEx.isAppInstalled(SimcereConfig.widgets.NN);
+        });
+</script>
+</body>
+</html>

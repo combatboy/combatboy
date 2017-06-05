@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+       <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+
+        <link rel="stylesheet" href="../css/daiban.css">
+        <link rel="stylesheet" href="../css/lib.css"/>
+    </head>
+    <body class="um-vp bc-bg" ontouchstart ng-controller="GlbController">
+        <div class="ub ub-ver">
+
+            <!--spinner-->
+            <div class="g-spinner" ng-hide="Data.chengduiList.length||Data.piaozheList.length||Data.chaoziList.length||Data.salesmanList.length||((Data.chengduiListEmpty||Data.chengduiListErr)&&(Data.piaozheListEmpty||Data.piaozheListErr)&&(Data.chaoziListEmpty||Data.chaoziListErr)&&(Data.salesmanListEmpty||Data.salesmanListErr))"><i class="fa fa-spinner fa-spin"></i></div>
+            <div class="g-req-empty text-muted ng-hide" ng-show="(Data.chengduiListEmpty||Data.chengduiListErr)&&(Data.piaozheListEmpty||Data.piaozheListErr)&&(Data.chaoziListEmpty||Data.chaoziListErr)&&(Data.salesmanListEmpty||Data.salesmanListErr)">暂无数据</div>
+            <!--<div class="g-req-error text-muted ng-hide" ng-show="Data.salesmanListErr">查询失败</div>-->
+            
+            <!-- 承兑汇票 -->
+            <div class="a-bg2 a-mar uc-a1 ub ub-ac u-card ng-hide" ng-show="Data.chengduiList.length" ng-repeat="item in Data.chengduiList|limitTo:1" ng-click="openDetail('chengdui')">
+                <div class="ub-img huip"></div>
+                <div class="a-marl ub-f1">
+                    <div class="ub">
+                        <p class="a-min">承兑汇票</p>
+                        <p class="ub ub-f1 ulev-1 a-bg ub-pc" ng-bind="item.CUSNAME"><!--张三--></p>
+                        <p class="ulev-1 a-bg" ng-bind="item.CREATEDATE|substr:0:19|timestamp|date:'MM/dd'"><!--12/24--></p>
+                    </div>
+                    <div class="ulev-1 a-bg a-mar2" ng-bind="item.CREATER"><!--江苏汉和制药有限公司--></div>
+                </div>
+            </div>
+
+            <!-- 票折 -->
+            <div class="a-bg2 a-mar uc-a1 ub ub-ac u-card ng-hide" ng-show="Data.piaozheList.length" ng-repeat="item in Data.piaozheList|limitTo:1" ng-click="openDetail('piaozhe')">
+                <div class="ub-img piaoz"></div>
+                <div class="a-marl ub-f1">
+                    <div class="ub">
+                        <p class="a-min">票折</p>
+                        <p class="ub ub-f1 ulev-1 a-bg ub-pc" ng-bind="item.CUSNAME"><!--张三--></p>
+                        <p class="ulev-1 a-bg" ng-bind="item.CREATEDATE|substr:0:19|timestamp|date:'MM/dd'"><!--12/24--></p>
+                    </div>
+                    <div class="ulev-1 a-bg a-mar2" ng-bind="item.CREATER"><!--江苏汉和制药有限公司--></div>
+                </div>
+            </div>
+
+            <!-- 超资信 -->
+            <div class="a-bg2 a-mar uc-a1 ub ub-ac u-card ng-hide" ng-show="Data.chaoziList.length" ng-repeat="item in Data.chaoziList|limitTo:1" ng-click="openDetail('chaozi')">
+                <div class="ub-img chaozx"></div>
+                <div class="a-marl ub-f1">
+                    <div class="ub">
+                        <p class="a-min">超资信</p>
+                        <p class="ub ub-f1 ulev-1 a-bg ub-pc" ng-bind="item.CUSNAME"><!--张三--></p>
+                        <p class="ulev-1 a-bg" ng-bind="item.CREATEDATE|substr:0:19|timestamp|date:'MM/dd'"><!--12/24--></p>
+                    </div>
+                    <div class="ulev-1 a-bg a-mar2" ng-bind="item.CREATER"><!--江苏汉和制药有限公司--></div>
+                </div>
+            </div>
+
+            <!-- 更换业务员 -->
+            <div class="a-bg2 a-mar uc-a1 ub ub-ac u-card ng-hide" ng-show="Data.salesmanList.length" ng-repeat="item in Data.salesmanList|limitTo:1" ng-click="openDetail('sales')">
+                <div class="ub-img gengh"></div>
+                <div class="a-marl ub-f1">
+                    <div class="ub">
+                        <p class="a-min">更换业务员</p>
+                        <p class="ub ub-f1 ulev-1 a-bg ub-pc" ng-bind="item.SALESMANNAME"><!--张三--></p>
+                        <p class="ulev-1 a-bg" ng-bind="item.CREATEDATE|substr:0:19|timestamp|date:'MM/dd'"><!--12/24--></p>
+                    </div>
+                    <div class="ulev-1 a-bg a-mar2" ng-bind="item.CUSTOMERNAME"><!--江苏汉和制药有限公司--></div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+    <script src="../../vendor/appcan/js/appcan.js"></script>
+    <script src="../../vendor/appcan/js/appcan.control.js"></script>
+    <script src="../../vendor/simcere/js/config.js"></script>
+    <script src="../../vendor/ionic/js/angular/angular.min.js"></script>
+    <script src="../../vendor/ow/ngq.js"></script>
+
+    <script>
+
+        appcan.ready(function() {
+            angular.bootstrap(document.documentElement, ['myApp','ngq']);
+
+            appcan.frame.setBounce({
+                bounceType: '0',
+                color: '#fff',
+                upEndCall: function (type) {
+                    //$(window).trigger('zy-bounce');
+                    //appcan.window.publish('module/page.bounce');
+                    if(type=='0'){
+                        $(window).trigger('zy-bounce1');
+                    }
+                }
+            });
+        });
+
+        angular.module('myApp', [])
+                .service('Data', function () {
+                    return {
+                        chengduiList: [],
+                        piaozheList: [],
+                        chaoziList: [],
+                        salesmanList: []
+                    };
+                })
+                .service('getChengduiList', function ($timeout, Data) {
+                    return function () {
+                        var params = {
+                            loginId: localStorage.getItem('simcere.runtime.loginId'),
+                            pageNumber: 1,
+                            pageSize: 2
+                        };
+
+                        console.log(params);
+                        //appcan.window.openToast('请稍候');
+                        appcan.request.ajax({
+                            type: 'POST',
+                            url: SimcereConfig.server.mas + '/ship/ScrQueryAcceptDetail',
+                            data: params,
+                            contentType: 'application/json',
+                            dataType: 'json',
+                            success: function (data, status, xhr) {
+                                appcan.frame.resetBounce(0);
+                                console.log(data);
+
+                                if(data.status!='0'){
+                                    //console.error('res error');
+                                    $timeout(function () {
+                                        Data.chengduiListErr = true;
+                                    });
+                                }else{
+                                    $timeout(function () {
+                                        Data.chengduiList = data.data;
+                                        Data.chengduiListEmpty = !data.data.length;
+                                    });
+                                }
+                            },
+                            error: function (xhr, errorType, error) {
+                                appcan.frame.resetBounce(0);
+                                //appcan.window.openToast('网络连接不可用',2000);
+                                $timeout(function () {
+                                    Data.chengduiListErr = true;
+                                });
+                            }
+                        });
+                    };
+                })
+                .service('getPiaozheList', function ($timeout, Data) {
+                    return function () {
+                        var params = {
+                            "loginId":localStorage.getItem('simcere.runtime.loginId'),
+                            "pageNumber":1,
+                            "pageSize":2
+                        };
+
+                        console.log(params);
+                        //appcan.window.openToast('请稍候');
+                        appcan.request.ajax({
+                            type: 'POST',
+                            url: SimcereConfig.server.mas + '/ship/ScrQueryDiscountList',
+                            data: params,
+                            contentType: 'application/json',
+                            dataType: 'json',
+                            success: function (data, status, xhr) {
+                                appcan.frame.resetBounce(0);
+                                console.log(data);
+
+                                if(data.status!='0'){
+                                    //console.error('res error');
+                                    $timeout(function () {
+                                        Data.piaozheListErr = true;
+                                    });
+                                }else{
+                                    $timeout(function () {
+                                        Data.piaozheList = data.data;
+                                        Data.piaozheListEmpty = !data.data.length;
+                                    });
+                                }
+                            },
+                            error: function (xhr, errorType, error) {
+                                appcan.frame.resetBounce(0);
+                                //appcan.window.openToast('网络连接不可用',2000);
+                                $timeout(function () {
+                                    Data.piaozheListErr = true;
+                                });
+                            }
+                        });
+                    };
+                })
+                .service('getChaoziList', function ($timeout, Data) {
+                    return function () {
+                        var params = {
+                            "loginId":localStorage.getItem('simcere.runtime.loginId'),
+                            "pageNumber":1,
+                            "pageSize":2
+                        };
+
+                        console.log(params);
+                        //appcan.window.openToast('请稍候');
+                        appcan.request.ajax({
+                            type: 'POST',
+                            url: SimcereConfig.server.mas + '/ship/ScrQueryAuditOrders',
+                            data: params,
+                            contentType: 'application/json',
+                            dataType: 'json',
+                            success: function (data, status, xhr) {
+                                appcan.frame.resetBounce(0);
+                                console.log(data);
+
+                                if(data.status!='0'){
+                                    //console.error('res error');
+                                    $timeout(function () {
+                                        Data.chaoziListErr = true;
+                                    });
+                                }else{
+                                    $timeout(function () {
+                                        Data.chaoziList = data.data;
+                                        Data.chaoziListEmpty = !data.data.length;
+                                    });
+                                }
+                            },
+                            error: function (xhr, errorType, error) {
+                                appcan.frame.resetBounce(0);
+                                //appcan.window.openToast('网络连接不可用',2000);
+                                $timeout(function () {
+                                    Data.chaoziListErr = true;
+                                });
+                            }
+                        });
+                    };
+                })
+                .service('getSalesmanList', function ($timeout, Data) {
+                    return function () {
+                        var params = {
+                            "loginId": localStorage.getItem('simcere.runtime.loginId'),
+                            "pageNumber": 1,
+                            "pageSize": 2
+                        };
+
+                        console.log(params);
+                        //appcan.window.openToast('请稍候');
+                        appcan.request.ajax({
+                            type: 'POST',
+                            url: SimcereConfig.server.mas + '/ship/ScrQuerySalesmanReq',
+                            data: params,
+                            contentType: 'application/json',
+                            dataType: 'json',
+                            success: function (data, status, xhr) {
+                                appcan.frame.resetBounce(0);
+                                console.log(data);
+
+                                if(data.status!='0'){
+                                    $timeout(function () {
+                                        Data.salesmanListErr = true;
+                                    });
+                                }else{
+                                    $timeout(function () {
+                                        Data.salesmanList = data.data;
+                                        Data.salesmanListEmpty = !data.data.length;
+                                    });
+                                }
+                            },
+                            error: function (xhr, errorType, error) {
+                                appcan.frame.resetBounce(0);
+                                //appcan.window.openToast('网络连接不可用',2000);
+                                $timeout(function () {
+                                    Data.salesmanListErr = true;
+                                });
+                            }
+                        });
+                    };
+                })
+                .service('initPage', function (getChengduiList, getPiaozheList, getChaoziList, getSalesmanList) {
+                    return function (){
+                        getChengduiList();
+                        getPiaozheList();
+                        getChaoziList();
+                        getSalesmanList();
+                    };
+                })
+                .service('initBounceWatcher', function (initPage) {
+                    return function (){
+                        $(window).on('zy-bounce1', window.initPage = initPage);
+                    };
+                })
+                .service('openDetail', function () {
+                    return function (name) {
+                        if(name=='chengdui'){
+                            appcan.window.open("daiban_chengduilist", "chengduilist.html", 10);
+                        }else if(name=='piaozhe'){
+                            appcan.window.open("daiban_piaozhe", "piaozhe.html", 10);
+                        }else if(name=='chaozi'){
+                            appcan.window.open("daiban_chaozi", "chaozi.html", 10);
+                        }else if(name=='sales'){
+                            appcan.window.open("daiban_salesMan", "salesMan.html", 10);
+                        }
+                    };
+                })
+                .controller('GlbController', function ($scope, Data, initPage, initBounceWatcher, openDetail) {
+                    $scope.Data = Data;
+                    $scope.openDetail = openDetail;
+
+                    initPage();
+                    initBounceWatcher();
+                });
+    </script>
+</html>

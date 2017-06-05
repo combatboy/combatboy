@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+    <link rel="stylesheet" href="../../Auth/css/signIn.css">
+    <link rel="stylesheet" href="../css/sundries.css">
+    <link rel="stylesheet" href="../css/index_org.css">
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<style type="text/css">
+	.groupHide {display: none} .groupShow {display: block}
+</style>
+<body class="um-vp sc-bg " ontouchstart>
+   <div id="isGroupShow" class="groupHide">
+   <div class="ub ubt ubb ub-ac b-c ulev0 bc-g bc-border  gpad " id="selGroup" style="padding-right:0em;margin-bottom:.7em;">         
+        <div class="ub ub-img wid1" style="background-image: url('../images/group.png')"></div>
+        <div class="ub t-ba ub-f1 umar-l1 ">群组</div>
+   </div>
+   </div>
+<!--TreeView-->
+<div class="g-org bc-g"></div>
+
+<script src="../../vendor/appcan/js/appcan.js"></script>
+<script src="../../vendor/appcan/js/appcan.control.js"></script>
+<script src="../../vendor/simcere/js/base.js"></script>
+<script src="../js/qns/QNS.js"></script>
+<script src="../js/qns/QNS.Cache.js"></script>
+<script src="../js/qns/QNS.Request.js"></script>
+<script src="../../vendor/simcere/js/config.js"></script>
+<script src="../js/pageutil.js"></script>
+<script src="../js/md5.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/cttq_modal/messageFrame.js"></script>
+<!--头像缓存-->
+<script src="../js/ClsDb.js"></script>
+<script src="../js/ClsDownloader.js"></script>
+<script src="../js/ClsTableAdapter.js"></script>
+<script src="../js/ClsAvatarCacheMgr.js"></script>
+<script>
+    var currLoginId = localStorage.getItem('simcere.runtime.userId') || '1';
+    if (!currLoginId) {
+        throw new ReferenceError('simcere.runtime.userId is required');
+    }
+
+    //模板编译器挂载点
+    var htmlTemplate = (function () {
+        var tplPsn = ''
+                        +'<a class="m-psn" data-psnid="<%-imUserId%>_'+'<%-LASTNAME%>'+'" data-psnloginid="<%-LOGINID%>">'                 
+                        +'    <div class="txt u-psn-r ub ub-ac">'
+                        +'     <%if(obj.flag){ %>'
+                        +'       <div class="circle2  ps_bg ub-ac ub-pc  umar-r "  data-disabled = "true" id="<%-ID%>"> '
+                        +'         <div class="ub-img  w-h1 if-check ml-xuanz"></div>' 
+                        +'        </div>'
+                        +'      <%}else{%>'
+                        +'        <div class="circle2  ub-ac ub-pc  umar-r " data-disabled = "false" id="<%-ID%>"> '
+                        +'           <div class="ub-img  w-h1 if-check "></div>' 
+                        +'         </div>'
+                        +'     <%}%>' 
+                        +'        <div class="u-psn-ri">'
+                        +'            <div>'
+                        +'                <b class="txtb"><%-LASTNAME%></b>'
+                        +'            </div>'
+                        +'        </div>'
+                        +'    </div>'
+                        +'</a>',
+                tplGrp = ''
+                        +'<div class="m-grp">'
+                        +'    <div class="u-ghd">'
+                        +'        <a class="u-gnm" data-orgid="<%-DEP_ID%>"><%-DEPTNAME%></a>'
+                        +'    </div>'
+                        +'    <div class="u-gbd"></div>'
+                        +'</div>',
+                tpl_loading = '<div class="ub ub-ac ub-pc uinn u-tree-loading">loading...</div>';
+
+        return {
+            psn: _.template(tplPsn),
+            grp: _.template(tplGrp),
+            loading: _.template(tpl_loading)
+        };
+    })();
+    var personObj=[];  //保存添加的人员
+    var ownerObj={};
+    var cname="";  //邀请人员名称
+    var nameArr = appcan.getLocVal("personObj"); //已经存在的成员
+    var userId_name =localStorage.getItem("simcere.im.userId_name");
+    var id_name = {} ;  //默认为空对象    
+    var imUserId= localStorage.getItem('simcere.runtime.imUserId');
+    var owerName = localStorage.getItem('simcere.runtime.userName');
+    appcan.ready(function () {
+        appcan.initBounce();
+        //加载：顶级组织架构
+        loadOrgStructure();
+        ownerObj={
+             username:owerName, 
+             fid: imUserId
+          } 
+         
+        //监听刷新备注通知
+        appcan.window.subscribe('Contacts/index.syncRemark', function (o) {
+            o = JSON.parse(o);
+            $('[data-psnid="'+ o.id+'"]').find('.n-remark').text(unescape(o.remark));
+        });
+
+        //监听主窗口标题点击事件
+        appcan.window.subscribe('Contacts/index.resetScroll', function () {
+            pageutil.scrollToTop();
+        });
+
+        //监听头像加载失败事件
+        appcan.window.subscribe('Contacts/contactDetail.avatarCacheMiss', function(data){
+            var o = JSON.parse(data),
+                    $elm = $('[hecate="' + o.hecate + '"]');
+            if($elm && $elm[0]){
+                AvatarCacheMgr.renderAvatar($elm[0], o.hecateUrl);
+            }
+        });
+        
+        //判断是否显示群卡片
+         isGroupShow();   
+    });
+    
+    //判断是否显示群卡片
+    function isGroupShow(){
+        if(localStorage.getItem('communicateIsGroupShow')){
+                $("#isGroupShow").removeClass("groupHide").addClass("groupShow");
+                localStorage.removeItem('communicateIsGroupShow')
+            } else {
+                $("#isGroupShow").removeClass("groupShow").addClass("groupHide");
+            }
+    }
+    //UI事件Handler：组织架构
+    $(function () {
+        $('.g-org').on('tap', '.u-gnm', function (evt) {
+            var $gnm = $(this),
+                    $grp = $gnm.closest('.m-grp'),
+                    $gbd = $grp.children('.u-gbd'),
+                    orgId = $gnm.data('orgid');
+            var isOpen = $grp.toggleClass('z-open').hasClass('z-open');
+            if(!isOpen){
+                //closed
+                $grp.find('.m-grp').removeClass('z-open');
+            }else if(!$gbd.children().length){
+                //content is empty, load...
+                loadOrgStructure(orgId, $gbd);
+            }
+        }).on('tap', '.m-psn', function (evt) {
+            var disabledFlag = $(this).find(".circle2").attr("data-disabled");
+            if(disabledFlag == "true"){
+                return ;
+            }
+            $(this).find(".circle2").toggleClass("ps_bg").find(".if-check").toggleClass("ml-xuanz");
+            var id_name = $(this).attr("data-psnid");
+            var uid = id_name.split("_")[0]; 
+            var name = id_name.split("_")[1];
+            if($(this).find(".circle2").hasClass("ps_bg")){
+                obj={
+                    username:name,
+                    fid: uid
+                    }
+                personObj.push(obj);   
+            }else{
+              delUser(personObj,uid);  
+            }
+        });
+
+    });
+
+    /**
+     * 加载当部门下属的人员、部门
+     * @param gid 部门id
+     * @param $context 引用上下文
+     */
+    var loadOrgStructure = (function () {
+        var objStrRepresentation = ({}).toString();
+        var fosr = function(str){
+            return (str == objStrRepresentation || str === undefined) ? '' : str;
+        };
+        return function (gid,$context) {
+            $context = $context || $('.g-org');
+            //子列表为空的情况下会显示Toast
+            if($context.children().size()==0){
+                appcan.window.openToast('加载中');
+            }
+            //准备请求参数
+            var requestUrl = SimcereConfig.server.mas, params, html = [];
+            var domainId = localStorage.getItem('simcere.runtime.domainId');
+            if(gid!=undefined){
+                //org && psn
+                requestUrl += '/contact/ScrQueryUsersAndDeptsByDeptId';
+                params = {
+                    userId: currLoginId,
+                    deptId: gid,
+                 domainId : domainId
+                };
+            }else{
+                //top org
+                requestUrl += '/contact/ScrQueryTopDepts';
+                params = {
+                    userId: currLoginId
+                };
+            }
+            //请求
+            var req = QNS.request(requestUrl)
+                    .setOption('data',params)
+                    .on('success', function (data,statusCode,xhr,opt) {
+                        //clear array
+                        html.length = 0;
+                        appcan.window.closeToast();
+                        if(data.status!='0'){return;}
+
+
+                        //构建组织列表和人员列表
+                        var orgList = [], personList = [],userEmmList = [];
+                        if(data && data.depts instanceof Array){
+                            //from api: ScrQueryUsersAndDeptsByDeptId
+                            orgList = data.depts;
+                        }else if(data && data.data instanceof Array){
+                            //from api: ScrQueryTopDepts
+                            orgList = data.data;
+                        }
+                        if(data && data.users instanceof Array){
+                            //form api: ScrQueryUsersAndDeptsByDeptId
+                            personList = data.users;
+                            userEmmList = data.usersInEmm ;
+                            logs("_----"+JSON.stringify(userEmmList));
+                        }
+
+                        //iterator  
+                       if(userId_name == "" || userId_name == null ){
+                             id_name = {} ;             
+                         }else{
+                            id_name = JSON.parse(localStorage.getItem("simcere.im.userId_name")); 
+                         }                     
+                        personList.forEach(function(o,i,a){
+                            var obj = _.omap(userEmmList, 'uniqueField',o.ID);
+                            o.imUserId = obj.mobileUserId ;
+                            o.photoUrl = (o.photoStatus == 1 && o.photoURL) ? 'background-image:url(' + o.photoURL + '?t=' + o.photoUpdateTime + ');' : '';
+                            o.photoTimeStamp = o.photoTimeStamp||'';
+                            var ownerStr = JSON.stringify(ownerObj);
+                            if(appcan.getLocVal("personObj")!=null){
+                                var nameArr=appcan.getLocVal("personObj");
+                                if(nameArr.indexOf(obj.mobileUserId)>-1){
+                                    o.flag = true;
+                                }else{
+                                    o.flag = false;
+                                }  
+                            }else{
+                                o.flag = false;
+                            }
+                            if(ownerStr.indexOf(obj.mobileUserId)>-1){
+                                o.flag = true; 
+                            }
+                            if(userId_name == null){
+                                id_name[obj.mobileUserId]={
+                                    userName : o.LASTNAME
+                                }  
+                            }else if(userId_name.indexOf(obj.mobileUserId)<=-1　&& userId_name != null){
+                                id_name[obj.mobileUserId]={
+                                    userName : o.LASTNAME
+                                } 
+                            }
+                            logs("保存的用户名---"+JSON.stringify(id_name));
+                            localStorage.setItem("simcere.im.userId_name",JSON.stringify(id_name));
+                            html.push(htmlTemplate.psn(o));
+                        });                        
+                        orgList.forEach(function(o,i,a){
+                            html.push(htmlTemplate.grp(o));
+                        });
+
+console.log('orgCount: %s, personCount: %s', orgList.length, personList.length);
+                        //渲染
+                        $context.html('').append($(html.join('')));
+                        //同步图片
+                        AvatarCacheMgr.sync();
+                    })
+                    .on('error', function (data) {
+                        //如果已从缓存取到有效数据，则静默处理请求失败
+console.error('请求失败');
+                        if($context.children().size()==0){
+                            appcan.window.openToast('加载失败',SimcereConfig.ui.toastDuration);
+                        }
+                    });
+            req.send();
+        };
+    })();
+  function delUser(personObj,uid){
+     if(personObj.length == 0){
+         return;         
+     } 
+     for(var i=0;i<personObj.length;i++){
+         if(personObj[i].fid==uid){
+             var ele= $("#"+uid);
+            // ele.removeClass("ps_bg").find(".if-check").removeClass("ml-xuanz2");
+             personObj.splice(i,1);
+             break;  
+         }
+     }
+  }
+//跳转到不同的页面功能
+  function goChat(){
+    if(personObj.length==0){
+        alert("请至少选择一位联系人");
+        localStorage.setItem("simcere.im.clickFlag","0");
+        return;
+    }
+    appcan.window.openToast("正在加载中...");
+    localStorage.setItem("simcere.im.clickFlag","1");
+    if(localStorage.getItem("ifGroup")=="true"){  //群聊时添加人
+         var cname="";
+         for(var k=0;k<personObj.length;k++){
+             cname+=personObj[k].username+",";
+         } //将邀请的人员单独保存   
+         invitePeople(personObj);  //将人员邀请加入群组
+         appcan.window.publish("append",cname);
+         appcan.window.evaluateScript("communicate","appcan.window.close(-1)"); 
+    }else if(localStorage.getItem("flag")=="single"){//单聊时添加人转化成群聊
+        var hasUser = JSON.parse(appcan.getLocVal("hasUser"));
+            personObj.push(hasUser); 
+            personObj.push(ownerObj);//将自己也放入到对象中 
+        var groupDesc = "";
+            for(var i=0;i<personObj.length;i++){//默认群名称
+                groupDesc+=personObj[i].username+",";
+             }
+        groupDesc=groupDesc.substring(0,groupDesc.length-1);
+         var param={//创建群聊   
+               description :groupDesc   //群名称
+           }
+        addUserGroup(param,personObj);       
+    }else{
+        if(personObj.length>1){//若选择多人  则跳转到群聊界面 
+            var groupDesc = "";
+            personObj.push(ownerObj);
+            for(var i=0;i<personObj.length;i++){//默认群名称
+                groupDesc+=personObj[i].username+",";
+             }
+             groupDesc=groupDesc.substring(0,groupDesc.length-1);
+              var param={//创建群聊   
+                 description :groupDesc  //群名称
+              }
+              addUserGroup(param,personObj);
+         
+        }else{
+           localStorage.setItem("personObj",JSON.stringify(personObj));  //单聊对象id-name
+           appcan.window.open("singleChat","singleChat.html","10");
+           appcan.window.evaluateScript("communicate","appcan.window.close(-1)");
+        }  
+     } 
+  }     
+//创建群，并添加人员
+function addUserGroup(param,obj){
+    var fidArr=[];
+    for(var i=0;i<obj.length;i++){
+        if(obj[i].fid==appcan.getLocVal("simcere.runtime.imUserId")){
+            continue;
+        }
+        fidArr.push(obj[i].fid);
+    }
+    //创建群并返回群节点和名称
+  //  uexIM.creatChatGroupWithReturnID(JSON.stringify(param));
+    appcan.window.publish("E_GROUP_CREATE",param);
+    appcan.window.subscribe("E_CB_GROUP_CREATE",function(msg){
+      var json=JSON.parse(msg);
+     if(json.errorCode=='0'){
+        localStorage.setItem("groupDesc",json.groupdes);   //群名称
+        localStorage.setItem("groupNode",json.groupName);  //群聊节点   
+        var groupName = json.groupdes;  //创建群后会返回群聊节点groupName  供以后调接口使用
+        var groupNode = json.groupName;
+        var inviteMsg={
+            groupName:groupNode,  //群聊名称
+            dataList:fidArr,       //被邀请人
+            reason:""           //邀请原因
+        }   
+       var msg = {
+           page:'1',    //  群列表索引
+           count:'100',    //  群列表每页查询的个数
+       }
+       //创建群后需将相关的成员加入群中 
+       uexIM.inviteToChatGroup(JSON.stringify(inviteMsg));    
+       setTimeout(function(){
+           uexIM.getGroupList(JSON.stringify(msg));
+       },300);   
+       }else{
+          obj={}; 
+          localStorage.setItem("simcere.im.clickFlag","0");     
+          appcan.window.close();
+       }
+               
+      });
+       
+}
+//邀请人加入群
+function invitePeople(obj){
+   var  groupNode = localStorage.getItem("groupNode");  
+   var  nameArr1 = JSON.parse(nameArr); 
+   var  userId_name = JSON.parse(localStorage.getItem("simcere.im.userId_name"));
+    var fidArr=[];
+    for(var i=0;i<obj.length;i++){
+      fidArr.push(obj[i].fid);  
+      var uid=obj[i].fid;
+      var nameobj={  
+         username:userId_name[uid].userName,
+         fid:uid   
+      }
+     nameArr1.push(nameobj);    
+    }
+    localStorage.setItem("personObj",JSON.stringify(nameArr1));
+    var inviteMsg={
+          groupName:groupNode,  //群聊名称
+          dataList:fidArr,       //被邀请人
+          reason:""           //邀请原因
+      }      
+   appcan.window.publish("E_GROUP_INVITE",JSON.stringify(inviteMsg));  //邀请加入群 后并将人员也加入      
+   getGroupId(groupNode); 
+   appcan.window.evaluatePopoverScript('createChatGroup','content','fillContent()');     
+}
+//进入群列表
+appcan.button("#selGroup", "act-bg", function() { 
+    var msg = {
+        page:'1',    //  群列表索引
+        count:'100',    //  群列表每页查询的个数
+      }    
+  appcan.setLocVal("enterGL","true"); 
+  appcan.window.open("groupList","groupList.html","10");
+  appcan.window.publish("E_GROUP_LIST",msg);
+  
+})
+
+function doGroupList(list){ 
+   localStorage.setItem("groupList",list);
+   var ss=localStorage.getItem("enterGL");
+   if(ss=="true"){//进入群列表需初始化 
+      localStorage.setItem("enterGL","finish");  //群列表接口完成后的标志           
+      return;               
+   }
+   var listObj = (JSON.parse(list)).msg.grouplist;
+   var groupNode = localStorage.getItem("groupNode");   
+   for(var i=0;i<listObj.length;i++){  
+       var m=(listObj[i].groupname).toLowerCase();           
+       if((listObj[i].groupname).toLowerCase() ==groupNode.toLowerCase()){  
+           var ss=(listObj[i].groupname).toLowerCase();
+           var ss1 = groupNode.toLowerCase();             
+         localStorage.setItem("groupId",listObj[i].groupid);  //群id
+         getGroupId(groupNode);
+         appcan.window.closeToast();
+         appcan.window.open("groupChat","groupChat.html","10");                                             
+        if(localStorage.setItem("flag")=="single"){
+           localStorage.setItem("flag","");  
+         }                
+         break;
+                
+       }else{
+       }
+   }   
+       
+}
+_.omap = function (a,k,v) {
+  var res = {};
+  _.reject(a, function(o){
+    return o[k]===undefined;
+  }).forEach(function(o){
+     if(o.uniqueField == v){
+         res = o ;
+     }
+  });
+  return res;
+};
+</script>
+</body>
+</html>

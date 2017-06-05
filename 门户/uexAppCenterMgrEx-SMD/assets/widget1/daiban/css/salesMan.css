@@ -1,0 +1,64 @@
+.s-toux{
+    background-image: url('../images/s-toux.png');
+    height:0.75em;
+    width:0.6em;
+}
+.s-xuanz{
+    background-image: url('../images/ml-xuanz.png');
+    height:1em;
+    width:1em;  
+}
+.s-wh{
+    margin-top:.2em;
+    margin-left:.2em;
+}
+.s-bg{
+     background-color:#00A1EA;  
+}
+.s-xuanz2{
+    border:1px solid #d6d5d3;
+    min-height:1.4em;
+    min-width:1.4em;
+}
+.hide{
+    display: none;
+}
+.s-border{
+    border-left:0.2em solid #00A1EA;
+    box-shadow:1px 1px 3px #d6d5d3; 
+}
+.bc-bgw{
+    background-color: white;
+}
+.s-mar{
+    /*margin:0.45em 0.6em 0.4em 0.5em;*/
+    margin-bottom: .4rem;
+    padding:0.45em 0.7em 0.5em 0.5em;
+}
+.s-mar2{
+    margin-top:0.15em;
+}
+.s-mar3{
+    margin-left:0.6em;
+    color:#959595;
+}
+
+.s-al{
+    vertical-align: bottom;
+}
+.s-border2{
+    border:1px solid #00A1EA;
+    width:7.5rem;
+    height:2.1875rem;    
+    background-color:#00A1EA;
+    color:white;
+    border-radius: 0.25rem;
+}
+.s-border3{
+    border-top:1px solid #d6d5d3;
+    padding:0.5em 1em;
+}
+
+.g-list{
+    padding: 0.45rem 0.6rem 0.0625rem 0.5rem;
+}

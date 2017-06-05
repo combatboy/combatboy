@@ -1,0 +1,16 @@
+body {
+    font-family: Helvetica, sans-serif;
+}
+/*个人中心仿自带头部宽度大小位置*/
+.zk-title-font {
+    min-height: 3em;
+    display: block;    
+    -webkit-margin-before: 0.2em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+/*各个导航的top颜色值*/
+.f-z7 {
+    font-size: 1.13em;
+}

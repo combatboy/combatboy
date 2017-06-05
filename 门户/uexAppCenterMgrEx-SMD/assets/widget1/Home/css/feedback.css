@@ -1,0 +1,21 @@
+.feedbackArea {
+    padding: 0.6em;
+    height: 8em;
+    border: none;
+    border-radius: 0.4em;
+    background-color: #FFFFFF;
+    color: #999999;
+}
+.submintBtn {
+    padding: 0em 0.2em;
+    border-radius: 0.3em;
+    height: 2.26em;
+    max-height: 2.26em;
+    font-size: 1.125em;
+}
+.pc-marT {
+    margin-top: 3em;
+}
+.bc-bgFeedback {
+    background-color: #F8F8F8;
+}

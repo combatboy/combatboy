@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <corners android:radius="@dimen/plugin_appmarket_ex_app_icon_radius" />
+    <!-- 圆角，你也可以对不同的角设置不同的数值 -->
+
+    <solid android:color="#00000000" />
+    <!-- 形状的填充色 -->
+   <!--  <size
+        android:height="60dp"
+        android:width="60dp" /> -->
+
+    <stroke
+        android:width="@dimen/plugin_appmarket_ex_app_icon_stroke_width"
+        android:color="#B6BABD" />
+    <!-- 边框宽度和颜色 -->
+
+      <padding
+        android:bottom="@dimen/plugin_appmarket_ex_app_icon_paddings"
+        android:left="@dimen/plugin_appmarket_ex_app_icon_paddings"
+        android:right="@dimen/plugin_appmarket_ex_app_icon_paddings"
+        android:top="@dimen/plugin_appmarket_ex_app_icon_paddings" />  
+
+</shape>

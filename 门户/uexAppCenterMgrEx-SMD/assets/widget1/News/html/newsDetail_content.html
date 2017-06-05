@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+
+    <link rel="stylesheet" href="../css/newsDetail.css"/>
+</head>
+<body class="um-vp bc-bg2" ontouchstart ng-controller="GlbController">
+
+<div class="g-layout">
+    <div class="tx-c n-spinner c-spinner">
+        <i class="fa fa-spinner fa-spin"></i>
+    </div>
+    <!--title-->
+    <div class="g-title">
+        <div class="u-title"></div>
+    </div>
+    <!--info-->
+    <div class="g-info ub">
+        <div class="u-info-time"></div>
+        <div class="u-info-user"></div>
+    </div>
+    <!--content-->
+    <div class="g-content">
+        <div class="m-content">
+            <!--render:content-->
+        </div>
+    </div>
+</div>
+
+<script src="../../vendor/appcan/js/appcan.js"></script>
+<script src="../../vendor/appcan/js/appcan.control.js"></script>
+<script src="../../vendor/simcere/js/config.js"></script>
+<script src="../../vendor/simcere/js/base.js"></script>
+
+<script>
+    appcan.ready(function () {
+        appcan.initBounce();
+        getNewsDetail();
+    });
+
+    function getNewsDetail(){
+        var slideStr = localStorage.getItem('News/index.slide');
+        var slideObj = JSON.parse(slideStr);
+        var params = {
+            "newsId": slideObj.msgId
+        };
+        var $spinner = $('.n-spinner');
+        appcan.request.ajax({
+            type: 'POST',
+            url: SimcereConfig.server.mas + '/news/getNewsInfo',
+            data: params,
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function (data, status, xhr) {
+                $spinner.remove();
+                //console.log(data);
+                if(data.status!='0'){
+                    console.error('res error');
+                }else{
+                    var res = data.data instanceof Array ? data.data[0] : data.data;
+
+                    //render
+                    getNewsDetail.render(res);
+                }
+            },
+            error: function (xhr, errorType, error) {
+                $spinner.remove();
+                console.error('network error');
+                //appcan.window.openToast('网络连接不可用', 2000);
+            }
+        });
+    }
+    getNewsDetail.render = function(data){
+        $('.u-title')
+                .text(data.title)
+                .data('id', data.id)
+                .data('type', data.type)
+                .data('summary', data.summary);
+
+        $('.u-info-time').text(data.createdAt.substr(0,16));
+        $('.u-info-user').text(data.author);
+        $('.m-content').html(data.content);
+
+        appcan.window.subscribe('News/newsDetail.goDiz', function () {
+            localStorage.setItem('News/newsDetail.detail', JSON.stringify(data));
+            appcan.window.open('News_createMsg','createMsg.html',10);
+        });
+    }
+</script>
+</body>
+</html>

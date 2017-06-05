@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="vendor/appcan/css/appcan.icon.css">
+    <link rel="stylesheet" href="vendor/appcan/css/appcan.control.css">
+    <link rel="stylesheet" href="vendor/ow/welcome/css/welcome.css"/>
+    <style> body {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #fff;
+    } </style>
+</head>
+<body>
+
+<div class="slider" id="yinSlide"></div>
+<div class="ub ub-ver up uof c-wh f-ps">
+    <!-- 立即体验 -->
+    <div class="ub t-wh ub-ver enter-btn">
+        <div class="ub ub-ac ub-pc">
+            <div class="ub-img uc-a1 uhide" id="enterBtn"></div>
+        </div>
+    </div>
+    <!-- 跳过 -->
+    <div class="ub t-wh ub-ver skip-btn">
+        <div class="ub ub-ac ub-pc">
+            <div class="ub-img uc-a1 uhide" id="skipBtn"></div>
+        </div>
+    </div>
+</div>
+<!--本页为 ROOT 页面，负责整个应用的初始化跳转-->
+<script src="vendor/appcan/js/appcan.js"></script>
+<script src="vendor/appcan/js/appcan.control.js"></script>
+<script src="vendor/Zeptojs/detect.js"></script>
+<script src="vendor/simcere/js/config.js"></script>
+<script src="IM/js/common.js"></script>
+<script src="Auth/js/app.index.js"></script>
+<script src="vendor/appcan/js/zy_icache.js"></script>
+<script src="vendor/ow/welcome/js/welcome.js"></script>
+<script src="vendor/ow/welcome/js/com.js"></script>
+<script>
+    // 获取手势密码标记
+    var hasGesturePassword = localStorage.getItem('simcere.runtime.hasGesturePassword');
+    // 当前页面是否是起始页，作为重定向的条件
+    var isInStartPage = true;
+
+    appcan.ready(function () {
+        if (1) {
+            openWelcomeSlides();
+        } else {
+            appcanReadyContinue();
+        }
+    });
+
+    function openWelcomeSlides() {
+        //欢迎页
+        zy_initcache(function () {
+        });
+
+        //因为每组slider只先声一次，所以不需要检查网络，直接请求在线即可
+        //遇到错误时也可以正确处理
+        //checkNetwork();
+        onlineWelcomePage();
+
+        appcan.button("#enterBtn", "", function () {
+            toLogin(0);
+        });
+        appcan.button("#skipBtn", "", function () {
+            toLogin(0);
+        });
+    }
+
+    function appcanReadyContinue() {
+        getUser(); //获取所有的用户信息，ID与userName对应
+
+        //接收推送的指令
+        appcan.window.subscribe("getPushInfoToDO", getPushInfoToDo);
+        //收到推送消息
+        uexWidget.setPushNotifyCallback('pushCallback');
+        //获取推送消息的回调
+        uexWidget.cbGetPushInfo = function (opId, dataType, data) {
+
+            //存储推送体
+            localStorage.setItem("toGetPushInfo.data", data);
+            //处理推送体
+            getPushInfoToDo();
+//                    alert('opid:' + opId + ',dataType:' + dataType + ',data:' + data);
+//            if (data.substr(0, 2) == "您有") {
+//                //todo
+////                    alert("打开即时通讯");
+//                appcan.window.publish("IM/isOpen");
+//            } else {
+//                var dataJson = JSON.parse(data);
+//                //module：子应用标识
+//                var module = dataJson.module;
+//                switch (module) {
+//                    //'message'表示神经网络
+//                    case 'message':
+//                        if (dataJson.subModule == 'ScrMessagePushTask' && dataJson.cycleType == '周') {
+//                            var newCount = dataJson.userMsgCount.newCount;
+//                            if (newCount == 0) {
+//                                appcan.window.alert({
+//                                    title: '神经网络温馨提示',
+//                                    content: '亲，公司需要您的建议，但你啥都没提....,赶紧提2个吧。',
+//                                    buttons: '我知道了'
+//                                });
+//                            } else if (newCount == 1) {
+//                                appcan.window.alert({
+//                                    title: '神经网络温馨提示',
+//                                    content: '亲，本周还有新的建议或想法吧，再来一个吧。',
+//                                    buttons: '我知道了'
+//                                });
+//                            } else {
+//                                //todo
+//                            }
+//                        } else {
+//                            var msgId = dataJson.unique.msgId;
+//                            var msgCode = dataJson.unique.msgCode;
+//                            localStorage.setItem('NN/detail.msgParam', msgId + ':' + msgCode);
+//                            localStorage.setItem('Index/index.openNNDetailFromMainApp', '1');
+//                            appcan.window.publish("root.openNNByPush", "");
+//                        }
+//                        break;
+//                    //感恩系统
+//                    case 'ganen':
+//                        if (dataJson.subModule == 'ScrCreateGanen') {
+//                            localStorage.setItem("grateful/grateDetail.id", dataJson.ganenId);
+//                            localStorage.setItem("grateful/grateDetail.code", dataJson.ganenCode);
+//                            localStorage.setItem('openNNGrateDetailFromMsg', 'y');
+//                            appcan.window.publish("root.openNNByPush", "");
+//                        }
+//                        break;
+//                    //更换业务员
+//                    case 'updateSaleman':
+//
+//                        if (dataJson.subModule == 'ScrCreateSalesmanReq') {//更换业务员
+////                            alert('更换业务员');
+//                            appcan.window.publish("daiBan/isOpen","");
+//                        } else if (dataJson.subModule == 'ScrUpdateSalesman') {//业务员更换结束
+////                            alert('更换业务员结束');
+//                            appcan.window.publish("root.openKHGLByPush","");
+//                        }
+//                        break;
+//                }
+//            }
+        };
+        //bind 取消应用退到后台时的手势锁屏
+        /*uexWidget.onSuspend = onSuspendHandler;
+         uexWidget.onResume = onResumeHandler;
+         appcan.window.subscribe('uexWidget.onSuspend.childApp', onSuspendHandler);
+         appcan.window.subscribe('uexWidget.onResume.childApp', onResumeHandler);*/
+
+        uexWidget.onSuspend = onSuspendHandlerPush;
+        uexWidget.onResume = onResumeHandlerPush;
+        appcan.window.subscribe('uexWidget.onSuspend.childApp', onSuspendHandlerPush);
+        appcan.window.subscribe('uexWidget.onResume.childApp', onResumeHandlerPush);
+
+        uexLockPattern.cbLoginSuccess = function (opId, dataType, data) {
+            localStorage.setItem('simcere.runtime.loginLock', '0');
+            IMLogin.call();
+            if (data == '0') {
+                // unlock ok
+//                alert('start: unlock ok');
+                // HACK: 此处安卓需要手动关闭手势，测试环境：华为C8813Q Android 4.1
+                localStorage.removeItem('simcere.runtime.isScreenLocked');
+                uexLockPattern.close();
+                if (isInStartPage) {
+                    isInStartPage = false;
+                    openIndexWinHandler.call(null);
+                }
+            } else if (data == '1') {
+                // modify ok
+//                alert('start: modify ok');
+            } else if (data == '2') {
+                // init ok
+//                alert('start: init ok');
+//                alert('start: init ok');
+            }
+        };
+        uexLockPattern.cbLoginFail = function (opId, dataType, data) {
+            if (parseInt(data, 10) >= 5) {
+//                alert('start: 错误限制');
+                // 手势错误达到限制次数
+                // 需要手动关闭手势，否则会出现可尝试次数为负数的情况
+                localStorage.removeItem('simcere.runtime.isScreenLocked');
+                uexLockPattern.close();
+                // 移除手势密码标记
+                localStorage.removeItem('simcere.runtime.hasGesturePassword');
+                // 打开登录页
+                openLoginWinHandler.call(null);
+            }
+        };
+        uexLockPattern.cbForgetPassword = function () {
+            setTimeout(function () {
+                closeWidgets();
+            }, 100);
+            // 需要手动关闭手势，否则会出现可尝试次数为负数的情况
+            localStorage.removeItem('simcere.runtime.isScreenLocked');
+            uexLockPattern.close();
+            // 移除手势密码标记
+            localStorage.removeItem('simcere.runtime.hasGesturePassword');
+            // 打开登录页
+            openLoginWinHandler.call(null);
+        };
+        uexLockPattern.cbUseOther = function () {
+            setTimeout(function () {
+                closeWidgets();
+            }, 100);
+            // 需要手动关闭手势，否则会出现可尝试次数为负数的情况
+            localStorage.removeItem('simcere.runtime.isScreenLocked');
+            uexLockPattern.close();
+            // 移除手势密码标记
+            localStorage.removeItem('simcere.runtime.hasGesturePassword');
+            // 打开登录页
+            openLoginWinHandler.call(null);
+        };
+        uexLockPattern.cbKeyBack = function (opId, dataType, data) {
+            if (!uexLockPattern.isKeyBackLocked) {
+                uexLockPattern.isKeyBackLocked = true;
+                setTimeout(function () {
+                    uexLockPattern.isKeyBackLocked = false;
+                }, 1000);
+                uexWidget.finishWidget('', '', 0);
+            }
+        };
+
+
+        // 入口
+        if (!hasGesturePassword) {
+            // 打开登录窗口
+            openLoginWinHandler.call(null);
+        } else {
+            // 显示手势解锁
+            localStorage.setItem('simcere.runtime.isScreenLocked', '1');
+            uexLockPattern.lock();
+        }
+        /**
+         * 即时通讯im
+         */
+            //配置IM服务和web服务
+        uexWidgetOne.cbGetMainWidgetId = function (opId, dataType, data) {
+            appid = data;
+            // var ip = "modev.isimcere.com" ;  //"223.112.7.226"测试
+            var ip = "mo.isimcere.com";    //"mo.isimcere.com" 58.240.92.222;
+            var port = "5222";
+            var serName = appid;
+            var param = {
+                ip: ip,
+                port: port,
+                serName: serName
+            };
+            var imparam = {
+                imURL: "http://mo.isimcere.com:8080/im"//URL=http://223.112.7.226:8888/im/  测试
+            };
+            param = JSON.stringify(param);
+            imparam = JSON.stringify(imparam);
+            uexIM.setServerConfig(param); //配置ＩＭ服务
+            uexIM.initimParam(imparam); //配置web服务
+            //设置消息提醒方式
+            var msgStu = {
+                type: "3"
+            };
+            msgStu = JSON.stringify(msgStu);
+            uexIM.setMsgNotifyType(msgStu);
+        };
+        //获取主应用相关信息
+        uexWidgetOne.getMainWidgetId();
+        //获取所有未读数回调
+        uexIM.cbgetUserAndGroupAllMsgUnreadCount = function (msg) {
+            var data = JSON.parse(msg);
+            localStorage.setItem("unreadAll", data.unreadCount);
+            appcan.window.publish("change", "");
+        };
+        // im登陆回调  0 成功  1失败
+        uexIM.cbLogin = function (result) {
+            logs("先声登陆结果----" + result);
+            appcan.window.closeToast();
+            if (result == '0') {
+                uexIM.getUserAndGroupAllMsgUnreadCount();
+                var msg = {
+                    page: '1',    //  群列表索引
+                    count: '100'    //  群列表每页查询的个数
+                };
+                localStorage.setItem("initGroup", "true");
+                uexIM.getGroupList(JSON.stringify(msg)); //获取群列表
+            } else {
+            }
+        };
+        uexIM.cbLogout = function (msg) {
+            logs("im退出result--" + msg);
+        };
+        appcan.window.subscribe("login", function (msg) {
+            uexIM.login(msg);
+        });
+        //发送信息的状态
+        uexIM.onSendStatus = function (param) {
+            logs("发送状态---" + param);
+            if (isAndroid) {
+                var data = JSON.parse(param);
+                if (data.percent != "100" && data.status != '3') {
+                    return;
+                }
+            }
+            if (localStorage.getItem("simcere.im.sendState") == "group") {
+                appcan.window.publish("E_GROUP_GETSENDSTATUS", param);
+            } else {
+                appcan.window.publish("E_XMPP_GETSENDSTATUS", param);
+            }
+        };
+        //接收信息
+        uexIM.onReceiveMsg = function (param) {
+            uexIM.getUserAndGroupAllMsgUnreadCount();
+            appcan.window.publish("E_XMPP_NEWMSGCOMING", param);
+        };
+        //获取单聊消息记录
+        uexIM.cbGetChatList = function (dataList) {
+            appcan.window.publish("E_CB_GetChatList", dataList);
+        };
+        //获取最近聊天记录列表回调
+        uexIM.cbGetChatListWithLastMsg = function (list) {
+            logs("获取最近联系人记录--" + list);
+            appcan.window.publish("E_XMPP_GETCHAT_RES", list);
+        };
+        uexIM.cbdeleteRecord = function (msg) {
+            var msg = JSON.parse(msg);
+            if (msg == '1') {
+                uexIM.getUserAndGroupAllMsgUnreadCount();
+                uexIM.getChatListWithLastMsg();
+            } else {
+                alert("删除失败");
+            }
+        };
+        //发送文字
+        appcan.window.subscribe("E_XMPP_SENDMSGTEXT", function (text) {
+            logs("将消息发送出去" + text);
+            localStorage.setItem("simcere.im.sendState", "");
+            uexIM.sendMsgText(text);//将信息发送出去
+        });
+        //发送语音
+        appcan.window.subscribe("E_XMPP_SENDMSGVOICE", function (v) {
+            localStorage.setItem("simcere.im.sendState", "");
+            uexIM.sendMsgVoice(v);
+        });
+        //发送图片
+        appcan.window.subscribe("E_XMPP_SENDMSGPICTURE", function (p) {
+            localStorage.setItem("simcere.im.sendState", "");
+            uexIM.sendMsgImage(p);
+        });
+        //图片下载
+        uexIM.cbdownloader = function (msg) {
+            appcan.window.publish("E_DOWNLOAD", msg);
+            // appcan.window.evaluatePopoverScript("singleChat","content",'downloadPic(\''+msg+'\')');
+            appcan.window.evaluatePopoverScript("groupChat", "content", 'downloadPic(\'' + msg + '\')');
+        };
+        //
+        appcan.window.subscribe("simcere.im.unread", function () {
+            uexIM.getUserAndGroupAllMsgUnreadCount();
+        });
+        /**
+         * 群处理相关操作
+         */
+        uexIM.cbCreateChatGroup = function (msg) {
+            logs("创建群回调---" + msg);
+            appcan.window.publish("E_CB_GROUP_CREATE", msg);
+        };
+        //接收群消息
+        uexIM.onReceiveGroupMsg = function (msg) {
+            uexIM.getUserAndGroupAllMsgUnreadCount();
+            appcan.window.publish("E_GROUP_NEWMSGCOMING", msg);
+        };
+        //接收群邀请
+        uexIM.onReceiveInvited = function (msg) {
+            localStorage.setItem("inviter", "inviter");
+            var param = {
+                page: 1,  //  群列表索引
+                count: 100    //  群列表每页查询的个数
+            };
+            uexIM.getGroupList(JSON.stringify(param));
+            var userId_name = JSON.parse(localStorage.getItem("simcere.im.userId_name"));
+            var data = JSON.parse(msg);
+            var inviter = data.inviter;
+            var groupNode = data.groupName;
+            var name = userId_name[inviter].userName;
+            setTimeout(function () {
+                var joinMsg = {
+                    groupName: groupNode
+                }
+                uexIM.joinChatGroup(JSON.stringify(joinMsg));
+                var gList1 = JSON.parse(localStorage.getItem("gList1"));
+                alert("您被" + name + "邀请进入群'" + gList1[groupNode].groupDes + "'");
+            }, 1500);
+        };
+        //获取群列表回调
+        uexIM.cbgetGroupList = function (msg) {
+            var infoList = JSON.parse(msg);
+            if (infoList.status == "success") {
+                initGroup(JSON.stringify(infoList));
+            } else {
+                // alert("获取当前成员相关的群列表回调失败---" + msg);
+            }
+        };
+        //获取群聊会话记录
+        uexIM.cbGetGroupChatList = function (msg) {
+            appcan.window.evaluatePopoverScript('groupChat', 'content', 'getGroupChatList(' + msg + ')');
+        };
+        //初始化群
+        uexIM.cbJoinChatGroup = function (msg) {
+            logs("初始化群回调---" + msg);
+            var msg = JSON.parse(msg);
+            if (msg.errorCode == '0') {
+            } else {
+                logs("初始化失败");
+            }
+        };
+        //获取群成员回调
+        uexIM.cbgetGroupMembers = function (msg) {
+            appcan.window.evaluatePopoverScript("createChatGroup", "content", 'getMemData(\'' + msg + '\')');
+        };
+        //修改群名称
+        uexIM.cbchangeGroupName = function (msg) {
+            localStorage.setItem("initFinish", "start");  //设置变量监测接口数据是否已处理完毕
+            var param = {
+                page: 1,  //  群列表索引
+                count: 100    //  群列表每页查询的个数
+            };
+            uexIM.getGroupList(JSON.stringify(param));
+            var timeId = setInterval(function () {  //添加定时任务，群列表初始化完成后 修改群名称
+                var f = localStorage.getItem("initFinish");
+                if (f == "finish") {
+                    localStorage.setItem("initFinish", "");
+                    appcan.window.publish("E_CB_GROUP_changeName", msg);
+                    clearTimeout(timeId);
+                }
+            })
+        };
+        //广播修改群名称
+        uexIM.cbonchangeGroupName = function (msg) {
+            localStorage.setItem("bon", true); //广播修改群名称标识
+            var param = {
+                page: 1,  //  群列表索引
+                count: 100    //  群列表每页查询的个数
+            };
+            uexIM.getGroupList(JSON.stringify(param));
+        };
+        uexIM.cbLeaveChatGroup = function (msg) {
+            logs("退群成员插件回调--=" + msg);
+            var msg = JSON.parse(msg);
+            if (isAndroid) {
+                uexIM.getChatListWithLastMsg();
+            }
+            appcan.window.publish("E_CB_GROUP_LEAVECHAT", msg.errorCode);
+        };
+        uexIM.cbDeleteChatGroup = function (msg) {
+            logs("退群插件回调--=" + msg);
+            var msg = JSON.parse(msg);
+            if (isAndroid) {
+                uexIM.getChatListWithLastMsg();
+            }
+            appcan.window.publish("E_CB_GROUP_DELETECHAT", msg.errorCode);
+        };
+        uexIM.onDeleteChatGroup = function (msg) {
+            var gList = localStorage.getItem("gList1");
+            var data = JSON.parse(gList);
+            var groupName = data[msg].groupDes;
+            uexIM.getChatListWithLastMsg();
+            uexIM.getUserAndGroupAllMsgUnreadCount();
+            var mes = groupName + "已被群主解散";
+            alert(mes);
+            appcan.window.publish("closeG", msg);
+        };
+        uexIM.onKicked = function (msg) {
+            uexIM.getChatListWithLastMsg();
+            uexIM.getUserAndGroupAllMsgUnreadCount();
+            var msg = JSON.parse(msg);
+            var gList = localStorage.getItem("gList1");
+            var data = JSON.parse(gList);
+            var groupName = data[msg.groupName].groupDes;
+            if (localStorage.getItem("simcere.runtime.imUserId") == msg.kickName) {
+                alert("您已被管理员移出'" + groupName + "'群");
+                appcan.window.publish("closeG", msg.groupName);
+            }
+        };
+        uexIM.cbKickFromChatGroup = function (msg) {
+            logs("踢人回调---" + msg);
+            var data = JSON.parse(msg);
+            if (data.result == '1') {
+                appcan.window.publish("E_CB_GROUP_KICKED", "");
+            } else {
+                alert("剔除人失败");
+            }
+        };
+        uexIM.cbError = function (msg) {
+        };
+        uexIM.cbgetGroupMemberRose = function (msg) {
+            logs("获取角色--" + msg);
+            var data = JSON.parse(msg);
+            if (data.status == "success") {
+                var roster = data.msg.useridlist[0].roster;
+                localStorage.setItem("roster", roster);
+            } else {
+                logs("取成员角色失败");
+            }
+        };
+        uexIM.cbgetGroupIdByName = function (msg) {
+            appcan.window.publish("E_CB_Name", msg);
+        };
+        uexIM.cbloginConflictOfflineNotify = function (msg) {
+            alert("您的账号已在另一处被登录,请退出后重新登录");
+        };
+        appcan.window.subscribe("E_GROUP_CREATE", function (msg) {
+            uexIM.creatChatGroupWithReturnID(msg);
+        });
+        appcan.window.subscribe("E_GROUP_GETMEM", function (msg) {
+            uexIM.getGroupMembers(msg);
+        });
+        appcan.window.subscribe("E_GROUP_KICK", function (msg) {
+            uexIM.kickFromChatGroup(msg);
+        });
+        appcan.window.subscribe("E_GROUP_MEM_ROLE", function (msg) {
+            uexIM.getGroupMemberRose(msg);
+        });
+        appcan.window.subscribe("E_GROUP_changeName", function (msg) {
+            uexIM.changeGroupName(msg);
+        });
+        appcan.window.subscribe("E_GROUP_LEAVECHAT", function (msg) {
+            logs("群成员退群啦啦阿拉");
+            uexIM.leaveChatGroup(msg);
+        });
+        appcan.window.subscribe("E_GROUP_DELETECHAT", function (msg) {
+            logs("群主退群啦啦阿拉");
+            uexIM.deleteChatGroup(msg);
+        });
+        appcan.window.subscribe("E_GROUP_LIST", function (msg) {
+            uexIM.getGroupList(msg);
+        });
+        appcan.window.subscribe("E_GROUP_INVITE", function (msg) {
+            logs("邀请加入群参数===" + msg);
+            uexIM.inviteToChatGroup(msg);
+        });
+    }
+
+
+    //群列表获取到后需初始化
+    function initGroup(grouplist1) {
+        logs("卡卡卡卡卡卡卡");
+        var gList = {};
+        var gList1 = {};
+        var groups = [];
+        var inviter = localStorage.getItem("inviter");   //监听邀请提醒不需初始化
+        var initFinish = localStorage.getItem("initFinish");
+        var grouplist = (JSON.parse(grouplist1)).msg.grouplist;
+        for (var i = 0; i < grouplist.length; i++) {
+            var groupId = grouplist[i].groupid;
+            var groupNode = grouplist[i].groupname;
+            var name = grouplist[i].name;
+            groups.push(groupNode);
+            gList[groupId] = {
+                groupNode: groupNode,
+                groupDes: name
+            }
+            gList1[groupNode] = {
+                groupId: groupId,
+                groupDes: name
+            }
+        }
+        logs("initFinish----" + initFinish);
+        if (inviter != "inviter" && initFinish != "start") {//修改群名称不需初始化群列表
+            var joinMsg = {//批量加群
+                groupList: groups
+            }
+            uexIM.joinChatGroups(JSON.stringify(joinMsg));
+        }
+        localStorage.setItem("inviter", "")
+        localStorage.setItem("gList", JSON.stringify(gList));   //群列表对象
+        localStorage.setItem("gList1", JSON.stringify(gList1));   //群列表对象
+        localStorage.setItem("initFinish", "finish");   //初始化完成的标志
+        localStorage.setItem("groupList", grouplist1);
+        var bon = localStorage.getItem("bon");
+        if (bon != "true") {
+            appcan.window.evaluatePopoverScript("communicate", "content", 'doGroupList(\'' + grouplist1 + '\')');
+        } else {
+            localStorage.setItem("bon", "");
+            uexIM.getChatListWithLastMsg();
+        }
+    }
+    /**
+     * 打开登录窗口
+     */
+    function openLoginWinHandler() {
+        appcan.window.open("Auth_index", "Auth/html/index.html", 0);
+    }
+    /**
+     * 打开应用首页
+     */
+    function openIndexWinHandler() {
+        appcan.window.open("Index_index", "Index/html/index.html", 0);
+    }
+
+    //程序退到后台
+    function onSuspendHandler() {
+        if (localStorage.getItem('simcere.runtime.doNotCallGesture')) {
+            //临时屏蔽锁屏
+            localStorage.removeItem('simcere.runtime.doNotCallGesture');
+        } else if (localStorage.getItem('simcere.runtime.hasGesturePassword')) {
+            if (localStorage.getItem('simcere.runtime.isScreenLocked')) {
+                //锁屏运行中，do nothing
+            } else {
+                localStorage.setItem('simcere.runtime.isScreenLocked', '1');
+                uexLockPattern.lock();
+            }
+        } else {
+            openLoginWinHandler.call();
+        }
+    }
+    //程序从后台恢复
+    function onResumeHandler() {
+    }
+
+    function onSuspendHandlerPush() {
+        //移除程序在前台运行的标志
+        localStorage.removeItem('root/onResumeHandler');
+    }
+    function onResumeHandlerPush() {
+        //标志程序在前台运行
+        localStorage.setItem('root/onResumeHandler', 'y');
+
+        //活跃度分析
+        setTimeout(function () {
+            uexWidgetOne.cbGetCurrentWidgetInfo = function (opId, dataType, data) {
+                var wgtObj = JSON.parse(data);
+                analyAddLog(wgtObj.version);
+            };
+            uexWidgetOne.getCurrentWidgetInfo();
+        }, 0);
+    }
+
+    //关闭所有子应用，因为点击忘记密码时会无法显示主窗口中的相关页面
+    function closeWidgets() {
+        var wgts = SimcereConfig.widgets;
+        for (var key in wgts) {
+            if (wgts.hasOwnProperty(key)) {
+                uexWidget.finishWidget("yes", wgts[key], "0");
+            }
+        }
+    }
+    //获取推送消息
+    function pushCallback() {
+        if (localStorage.getItem('root/onResumeHandler')) {
+            //todo :程序在前台时，如何处理推送消息（逻辑）
+//        appcan.window.alert({
+//            title: '收到推送消息',
+//            content: '是否查看？',
+//            buttons: ['否', '是'],
+//            callback: function (err, data, dataType, optId) {
+//                if (data == '1') {
+//                    uexWidget.getPushInfo();
+//                }
+//            }
+//        });
+        } else {
+            uexWidget.getPushInfo();
+        }
+    }
+
+    /**
+     * 活跃度统计
+     * @param zyAppVersionNo {string} 主应用版本号
+     */
+    function analyAddLog(zyAppVersionNo) {
+        //平台信息，用于服务器端快速分组
+        var platform = (function () {
+            if ($.os.ios) {
+                return 'ios';
+            } else if ($.os.android) {
+                return 'android';
+            } else {
+                return 'other';
+            }
+        })();
+        //终端类型
+        var terminal = (function () {
+            var tmp = {
+                os: $.os,
+                browser: $.browser,
+                //navigator
+                appCodeName: navigator.appCodeName,
+                appName: navigator.appName,
+                appVersion: navigator.appVersion,
+                cookieEnabled: navigator.cookieEnabled,
+                language: navigator.language,
+                platform: navigator.platform,
+                product: navigator.product,
+                productSub: navigator.productSub,
+                userAgent: navigator.userAgent,
+                vendor: navigator.vendor,
+                vendorSub: navigator.vendorSub
+            };
+            return (tmp);
+        })();
+        //构建参数
+        var params = {
+            "loginId": localStorage.getItem('simcere.runtime.loginId'),
+            "loginType": "uexWidget.onResume",
+            "platform": platform,
+            "version": zyAppVersionNo,
+            "terminal": terminal
+        };
+
+        console.log(JSON.stringify(params));
+
+        appcan.request.ajax({
+            type: 'POST',
+            url: SimcereConfig.server.mas + '/analy/addLoginLog',
+            data: params,
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function (data, status, xhr) {
+                if (data.status != '0') {
+                    console.error('res error');
+                } else {
+                    console.log('活跃度统计成功');
+                }
+            },
+            error: function (xhr, errorType, error) {
+                console.error('network error 活跃度统计失败');
+            }
+        });
+    }
+
+    //对推送消息体的处理
+    function getPushInfoToDo() {
+        var data = localStorage.getItem("toGetPushInfo.data");
+        //存储值用完即清除
+        localStorage.removeItem("toGetPushInfo.data");
+//        alert(data)
+        if (data.substr(0, 2) == "您有") {
+            //todo
+//                    alert("打开即时通讯");
+            appcan.window.publish("IM/isOpen");
+        } else {
+            var dataJson = JSON.parse(data);
+            //module：子应用标识
+            var module = dataJson.module;
+            switch (module) {
+                //'message'表示神经网络
+                case 'message':
+                    if (dataJson.subModule == 'ScrMessagePushTask' && dataJson.cycleType == '周') {
+                        var newCount = dataJson.userMsgCount.newCount;
+                        if (newCount == 0) {
+                            appcan.window.alert({
+                                title: '神经网络温馨提示',
+                                content: '亲，公司需要您的建议，但你啥都没提....,赶紧提2个吧。',
+                                buttons: '我知道了'
+                            });
+                        } else if (newCount == 1) {
+                            appcan.window.alert({
+                                title: '神经网络温馨提示',
+                                content: '亲，本周还有新的建议或想法吧，再来一个吧。',
+                                buttons: '我知道了'
+                            });
+                        } else {
+                            //todo
+                        }
+                    } else {
+                        var msgId = dataJson.unique.msgId;
+                        var msgCode = dataJson.unique.msgCode;
+                        localStorage.setItem('NN/detail.msgParam', msgId + ':' + msgCode);
+                        localStorage.setItem('Index/index.openNNDetailFromMainApp', '1');
+                        appcan.window.publish("root.openNNByPush", "");
+                    }
+                    break;
+                //感恩系统
+                case 'ganen':
+                    if (dataJson.subModule == 'ScrCreateGanen') {
+                        localStorage.setItem("grateful/grateDetail.id", dataJson.ganenId);
+                        localStorage.setItem("grateful/grateDetail.code", dataJson.ganenCode);
+                        localStorage.setItem('openNNGrateDetailFromMsg', 'y');
+                        appcan.window.publish("root.openNNByPush", "");
+                    }
+                    break;
+                //更换业务员
+                case 'updateSaleman':
+
+                    if (dataJson.subModule == 'ScrCreateSalesmanReq') {//更换业务员
+//                            alert('更换业务员');
+                        appcan.window.publish("daiBan/isOpen", "");
+                    } else if (dataJson.subModule == 'ScrUpdateSalesman') {//业务员更换结束
+//                            alert('更换业务员结束');
+                        appcan.window.publish("root.openKHGLByPush", "");
+                    }
+                    break;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+
+    <link rel="stylesheet" href="../css/lib.css"/>
+    <link rel="stylesheet" href="../css/orderPreview.css"/>
+</head>
+<body class="um-vp bc-g ub ub-ver" ontouchstart ng-controller="GlbController">
+
+<div class="g-customer ubb u-bc u-gap-b u-bc-w">
+    <div class="u-company" ng-bind="Data.order.CUSNAME"></div>
+</div>
+
+<!--items-->
+<div class="g-items u-gap-b u-bc-w ubt ubb u-bc">
+    <!--spinner-->
+    <div class="tx-c uinn" ng-hide="Data.itemListEmpty||Data.itemListErr||Data.orderDetail.length"><i
+            class="fa fa-spinner fa-spin text-primary"></i></div>
+    <div class="tx-c ng-hide" ng-show="Data.itemListEmpty">暂无存货信息</div>
+    <div class="tx-c ng-hide" ng-show="Data.itemListErr">加载失败</div>
+
+    <ul class="m-items f-fs28">
+        <li class="ub u-item" ng-repeat="item in Data.orderDetail">
+            <div class="ub-f1" ng-bind="item.INVNAME"></div>
+            <div class="u-gray-1" ng-bind="item.NUM + item.CUNITID"></div>
+        </li>
+    </ul>
+</div>
+
+<!--欠款总额-->
+<div class="u-gap-b">
+    <!--dropper-->
+    <div class="g-droper ubt ubb u-c-bobg" ng-click="Data.dropDebtOpen = !Data.dropDebtOpen">
+        <div class="m-droper f-fs28 ub ub-ac">
+            <div class="text-muted ub-f1">欠款总额：</div>
+            <div class="text-error u-dropper-r"><i class="fa fa-spinner fa-spin text-muted" ng-hide="Data.DebtSum!==undefined"></i><span ng-bind="Data.DebtSum|currency:'':2"></span><span class="ng-hide" ng-show="Data.DebtSum!==undefined">元</span></div>
+            <div class="u-dropper-caret" ng-class="{'z-active':Data.dropDebtOpen}"></div>
+        </div>
+    </div>
+
+    <div class="g-cust-debt ng-hide" ng-show="Data.dropDebtOpen">
+        <!--spinner-->
+        <div class="tx-c" ng-hide="Data.DebtMoneyEmpty||Data.DebtMoneyErr||Data.DebtMoney.length"><i
+                class="fa fa-spinner fa-spin text-primary"></i></div>
+        <div class="tx-c ng-hide" ng-show="Data.DebtMoneyEmpty">暂无欠款金额信息</div>
+        <div class="tx-c ng-hide" ng-show="Data.DebtMoneyErr">加载失败</div>
+
+        <div class="u-debt-order ng-hide" ng-show="Data.DebtMoney.length" ng-repeat="oneDebt in Data.DebtMoney">
+            <div class="u-debt-order-no f-fs28">订单号：<span class="text-muted" ng-bind="oneDebt[0].VRECEIPTCODE"></span>
+            </div>
+            <div class="u-debt-order-tit ub">
+                <div class="ub-f1 ub-con tx-c f-fs24 text-muted">品种</div>
+                <div class="ub-f1 ub-con tx-c f-fs24 text-muted">欠款金额</div>
+            </div>
+            <div class="u-debt-order-cnt">
+                <div class="u-debt-order-item ub f-fs28" ng-repeat="row in oneDebt">
+                    <div class="ub-f1 ub-con tx-c" data-invcode="{{row.INVCODE}}"
+                         ng-bind="row.INVNAME|substr:0:6:'...'"></div>
+                    <div class="u-debt-order-sp"></div>
+                    <div class="ub-f1 ub-con tx-c text-danger" ng-bind="row.MONEY|currency:'':2"></div>
+                </div>
+            </div>
+        </div>
+        <!--u-cust-debt-sum-->
+        <!--<div class="ng-hide" ng-show="Data.DebtMoney.length">
+            <div class="u-cust-debt-sum ub">
+                <div class="f-fs28 text-muted">欠款总额：</div>
+                <div class="ub-f1"></div>
+                <div class="f-fs28 text-danger"><span ng-bind="Data.DebtSum|currency:'':2"></span>元</div>
+            </div>
+        </div>-->
+    </div>
+</div>
+
+
+<!--欠款天数-->
+<div class="u-gap-b">
+    <!--dropper-->
+    <div class="g-droper ubt ubb u-c-bobg" ng-click="Data.dropDebtDaysOpen = !Data.dropDebtDaysOpen">
+        <div class="m-droper f-fs28 ub ub-ac">
+            <div class="text-muted ub-f1">欠款天数：</div>
+            <div class="u-dropper-r"><i class="fa fa-spinner fa-spin text-muted" ng-hide="Data.maxDebtDays!==undefined"></i><span ng-bind="Data.maxDebtDays"></span><span class="ng-hide" ng-show="Data.maxDebtDays!==undefined">天</span></div>
+            <div class="u-dropper-caret" ng-class="{'z-active':Data.dropDebtDaysOpen}"></div>
+        </div>
+    </div>
+
+    <div class="g-cust-days ng-hide" ng-show="Data.dropDebtDaysOpen">
+        <!--spinner-->
+        <div class="tx-c" ng-hide="Data.DebtDaysEmpty||Data.DebtDaysErr||Data.DebtDays.length"><i
+                class="fa fa-spinner fa-spin text-primary"></i></div>
+        <div class="tx-c ng-hide" ng-show="Data.DebtDaysEmpty">暂无欠款天数信息</div>
+        <div class="tx-c ng-hide" ng-show="Data.DebtDaysErr">加载失败</div>
+
+        <div class="u-debt-order ng-hide" ng-show="Data.DebtDays.length" ng-repeat="oneDebt in Data.DebtDays">
+            <div class="u-debt-order-no f-fs28">发票号：<span class="text-muted" ng-bind="oneDebt[0].JSFPH">8892J83F09</span>
+            </div>
+            <div class="u-debt-order-tit ub">
+                <div class="ub-f1 ub-con tx-c f-fs24 text-muted">品种</div>
+                <div class="ub-f1 ub-con tx-c f-fs24 text-muted">起效时间</div>
+                <div class="ub-f1 ub-con tx-c f-fs24 text-muted">欠款天数</div>
+                <div class="ub-f1 ub-con tx-c f-fs24 text-muted">欠款金额</div>
+            </div>
+            <div class="u-debt-order-cnt">
+                <div class="u-debt-order-item ub f-fs28" ng-repeat="row in oneDebt">
+                    <div class="ub-f1 ub-con tx-c" ng-bind="row.INVNAME|substr:0:6:'...'">SDFSDF</div>
+                    <div class="u-debt-order-sp"></div>
+                    <div class="ub-f1 ub-con tx-c" ng-bind="row.VALDATE|date:'yy-MM-dd'">16-01-23</div>
+                    <div class="u-debt-order-sp"></div>
+                    <div class="ub-f1 ub-con tx-c" ng-bind="row.DAYS">56</div>
+                    <div class="u-debt-order-sp"></div>
+                    <div class="ub-f1 ub-con tx-c text-danger" ng-bind="row.MONEY|currency:'':2">1000.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--pay-->
+<div class="g-sum u-gap-b u-bc-w ubt ubb u-bc">
+    <div class="ub f-fs28">
+        <div class="ub-f1 u-gray-1">未下账金额总额：</div>
+        <div><span ng-bind="Data.NoPayment|currency:'':2"></span>元</div>
+    </div>
+    <!--价格项为“资信价1”时显示-->
+    <div class="u-sum ub ng-hide" ng-show="Data.order.PRICETYPENAME=='资信价1'">
+        <div class="ub-f1 u-gray-1 text-muted">资质额度：</div>
+        <div><span ng-bind="Data.customer.NCREDIT|currency:'':2"></span>元</div>
+    </div>
+    <!--价格项为“资信价1”时显示-->
+    <div class="u-sum ub ng-hide" ng-show="Data.order.PRICETYPENAME=='资信价1'">
+        <div class="ub-f1 u-gray-1 text-muted">回款天数：</div>
+        <div><span ng-bind="Data.customer.H_DAY"></span>天</div>
+    </div>
+</div>
+
+<!--pay-->
+<div class="g-sum u-gap-b u-bc-w ubt ubb u-bc">
+    <div class="ub f-fs28">
+        <div class="ub-f1 u-gray-1">本单金额：</div>
+        <div><span ng-bind="Data.order.MONEY|currency:'':2"></span>元</div>
+    </div>
+</div>
+
+<!--profile-->
+<div class="g-profile u-gap-b u-bc-w ubt ubb u-bc">
+    <ul class="m-profile f-fs28">
+        <li class="ub u-profile-item">
+            <div class="ub-f1 u-gray-1">业务线</div>
+            <div ng-bind="Data.customer.LINENAME"></div>
+        </li>
+        <li class="ub u-profile-item">
+            <div class="ub-f1 u-gray-1">价格项</div>
+            <div ng-bind="Data.order.PRICETYPENAME"></div>
+        </li>
+        <li class="ub u-profile-item">
+            <div class="ub-f1 u-gray-1">回款方式</div>
+            <div ng-bind="Data.customer.RETURNNAME">铺底货</div>
+        </li>
+        <li class="ub u-profile-item">
+            <div class="ub-f1 u-gray-1">是否有当期票折</div>
+            <div ng-bind="Data.order.BDISCOUNT=='N'?'否':'是'"></div>
+        </li>
+
+    </ul>
+</div>
+
+<!--payment-->
+<div class="g-payment u-gap-b u-bc-w ubt ubb u-bc ng-hide" ng-show="Data.accept.length">
+    <div class="m-payment">
+        <div class="u-payment-tit"><b>承兑汇票</b></div>
+        <ul ng-repeat="payment in Data.accept">
+            <li class="ub u-payment-row f-fs28">
+                <div class="ub-f1 u-gray-1">票据号</div>
+                <div ng-bind="payment.ORDERNUM"></div>
+            </li>
+            <li class="ub u-payment-row f-fs28">
+                <div class="ub-f1 u-gray-1">票据金额</div>
+                <div ng-bind="payment.NUM|currency:'':2"></div>
+            </li>
+            <li class="u-payment-row">
+                <div class="ub-f1 u-gray-1 u-payment-gap f-fs28">拍照上传</div>
+                <div class="u-payment-fix f-cb" ng-init="urls = payment.URL.split(',')">
+                    <div class="u-imgc" ng-repeat="url in urls"><img ng-src="{{url}}" ng-click="ngqViewImages({urls:urls,url:url})"/></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--e-payment-->
+<div class="g-payment u-gap-b u-bc-w ubt ubb u-bc ng-hide" ng-show="Data.onlinePayment.length">
+    <div class="m-payment">
+        <div class="u-payment-tit"><b>网上付款</b></div>
+        <ul ng-repeat="payment in Data.onlinePayment">
+            <li class="ub u-payment-row f-fs28">
+                <div class="ub-f1 u-gray-1">交易流水号</div>
+                <div ng-bind="payment.ORDERNUM"></div>
+            </li>
+            <li class="ub u-payment-row f-fs28">
+                <div class="ub-f1 u-gray-1">网上付款金额</div>
+                <div ng-bind="payment.NUM|currency:'':2"></div>
+            </li>
+            <li class="u-payment-row">
+                <div class="ub-f1 u-gray-1 u-payment-gap f-fs28">拍照上传</div>
+                <div class="u-payment-fix f-cb" ng-init="urls = payment.URL.split(',')">
+                    <div class="u-imgc" ng-repeat="url in urls"><img ng-src="{{url}}" ng-click="ngqViewImages({urls:urls,url:url})"/></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--comment-->
+<div class="g-comment ubt ubb u-gap-b u-bc-w">
+    <ul class="m-comment">
+        <li class="ub"><b>备注</b></li>
+        <li class="ub"><span ng-bind="Data.order.MEMO"></span></li>
+    </ul>
+</div>
+
+<!--review-->
+<!--<div class="g-review ubt ubb u-gap-b u-bc-w">
+    <ul class="m-review">
+        <li class="ub"><b>审批人</b><span>赵海燕</span></li>
+        <li class="ub"><b>审批意见</b></li>
+        <li class="ub"><span>请填写票折备注或特殊发货需求</span></li>
+    </ul>
+</div>-->
+
+<script src="../../vendor/appcan/js/appcan.js"></script>
+<script src="../../vendor/appcan/js/appcan.control.js"></script>
+<script src="../../vendor/simcere/js/config.js"></script>
+<script src="../../vendor/ionic/js/angular/angular.min.js"></script>
+<script src="../../vendor/ow/qlib.js"></script>
+<script src="../../vendor/ow/ngq.js"></script>
+
+<script src="../js/zyModal.js"></script>
+
+<script id="data-source" data-source="piaozhe" src="../js/app.orderPreview.js"></script>
+
+<script>
+    appcan.ready(function () {
+        angular.bootstrap(document.documentElement, ['myApp']);
+    });
+
+</script>
+</body>
+</html>

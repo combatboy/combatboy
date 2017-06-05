@@ -1,0 +1,21 @@
+/*解决css文件冲突问题*/
+.f-z7 {
+    font-size: 1.13em;
+}
+#nav-left > .fa-2x {
+    margin-left: 0;
+}
+#nav-left {
+    -webkit-box-pack: center;
+}
+
+/*个人详情类型特有样式解决冲突icon.main.css*/
+.zk-title-font {
+    min-height: 3em;
+    display: block;
+    -webkit-margin-before: 0.1em;
+    -webkit-margin-after: 0.3em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+} 

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+
+    <link rel="stylesheet" href="../css/news.css"/>
+</head>
+<body class="um-vp bc-bg2" ontouchstart ng-controller="GlbController">
+
+<!--新闻news-->
+<div class="g-news ng-hide" ng-controller="NewsListController" ng-show="Data.currentFrame=='新闻'">
+    <div class="m-news">
+        <div class="u-news ub" ng-repeat="item in Data.newsList" ng-click="openNewsDetail()">
+            <div class="u-news-img" style="background-image: url({{item.icon}})"></div>
+            <div class="u-news-bd ub-f1 ub ub-ver">
+                <div class="u-news-tit" ng-bind="item.title"></div>
+                <div class="ub-f1"></div>
+                <div class="u-news-info">
+                    <span class="u-news-time" ng-bind="item.createdAt|subTimeStr"></span>
+                    <span class="u-news-user" ng-bind="item.author"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--专题act-->
+<div class="g-news ng-hide" ng-controller="ActListController" ng-show="Data.currentFrame=='专题'">
+    <div class="m-news">
+        <div class="u-news ub" ng-repeat="item in Data.actList" ng-click="openActDetail()">
+            <div class="u-news-img" style="background-image: url({{item.icon}})"></div>
+            <div class="u-news-bd ub-f1 ub ub-ver">
+                <div class="u-news-tit" ng-bind="item.title"></div>
+                <div class="ub-f1"></div>
+                <div class="u-news-info">
+                    <span class="u-news-time" ng-bind="item.createdAt|subTimeStr"></span>
+                    <span class="u-news-user" ng-bind="item.author"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../vendor/appcan/js/appcan.js"></script>
+<script src="../../vendor/appcan/js/appcan.control.js"></script>
+<script src="../../vendor/simcere/js/config.js"></script>
+<script src="../../vendor/simcere/js/base.js"></script>
+
+<script src="../../vendor/ionic/js/angular/angular.min.js"></script>
+<script>
+    appcan.ready(function () {
+        angular.bootstrap(document.documentElement, ['myApp']);
+
+        appcan.frame.setBounce({
+            bounceType: '1',
+            color: '#fff',
+            upEndCall: function (type) {
+                appcan.window.publish('Index/news.bounce','');
+            }
+        });
+    });
+
+    angular.module('myApp', [])
+            .service('Data', function () {
+                return {
+                    newsList: [],
+                    actList: [],
+                    currentFrame: '新闻'
+                };
+            })
+            .service('getNewsList', function (Data,$timeout) {
+                return function (pageNumber){
+                    var params = {
+                        "newsType": "新闻",
+                        "pageNumber": pageNumber||1,
+                        "pageSize": 10
+                    };
+
+                    appcan.request.ajax({
+                        type: 'POST',
+                        url: SimcereConfig.server.mas + '/news/getNewsListByType',
+                        data: params,
+                        contentType: 'application/json',
+                        dataType: 'json',
+                        success: function (data, status, xhr) {
+                            //console.log(data);
+                            if(data.status!='0'){
+                                console.error('res error');
+                            }else{
+                                if(params.pageNumber==1){
+                                    Data.newsList.length=0;
+                                    $timeout(function () {
+                                        Data.newsList = Data.newsList.concat(data.data);
+                                    });
+                                }
+                            }
+                        },
+                        error: function (xhr, errorType, error) {
+                            console.error('network error');
+                            //appcan.window.openToast('网络连接不可用', 2000);
+                        }
+                    });
+                };
+            })
+            .service('getActList', function (Data,$timeout) {
+                return function (pageNumber){
+                    var params = {
+                        "newsType": "专题",
+                        "pageNumber": pageNumber||1,
+                        "pageSize": 10
+                    };
+
+                    appcan.request.ajax({
+                        type: 'POST',
+                        url: SimcereConfig.server.mas + '/news/getNewsListByType',
+                        data: params,
+                        contentType: 'application/json',
+                        dataType: 'json',
+                        success: function (data, status, xhr) {
+                            //console.log(data);
+                            if(data.status!='0'){
+                                console.error('res error');
+                            }else{
+                                if(params.pageNumber==1){
+                                    Data.actList.length=0;
+                                    $timeout(function () {
+                                        Data.actList = Data.actList.concat(data.data);
+                                    });
+                                }
+                            }
+                        },
+                        error: function (xhr, errorType, error) {
+                            console.error('network error');
+                            //appcan.window.openToast('网络连接不可用', 2000);
+                        }
+                    });
+                };
+            })
+            .service('openNewsDetail', function () {
+                return function (){
+                    var item = this.item;
+                    //todo:
+                    appcan.window.open('Index_newsDetail', 'newsDetail.html', 10);
+                };
+            })
+            .service('openActDetail', function () {
+                return function (){
+                    var item = this.item;
+                    //todo:
+                    appcan.window.open('Index_actDetail', 'actDetail.html', 10);
+                };
+            })
+            .filter('subTimeStr', function () {
+                return function (a) {
+                    return a.substr(2, 14);
+                };
+            })
+            .controller('NewsListController', function ($scope, getNewsList, openNewsDetail) {
+                getNewsList(1);
+                $scope.openNewsDetail = openNewsDetail;
+
+                appcan.window.subscribe('', function () {
+                    if(Data.currentFrame!='新闻'){
+                        return;
+                    }
+                    var pageNo = Data.newsList.length/10;
+                    pageNo = Math.floor(pageNo);
+                    getNewsList(pageNo);
+                });
+            })
+            .controller('ActListController', function ($scope, getActList, openActDetail) {
+                getActList(1);
+                $scope.getActList = getActList;
+
+                appcan.window.subscribe('', function () {
+                    if(Data.currentFrame!='专题'){
+                        return;
+                    }
+                    var pageNo = Data.actList.length/10;
+                    pageNo = Math.floor(pageNo);
+                    getActList(pageNo);
+                });
+            })
+            .controller('GlbController', function ($scope, Data, $timeout) {
+                $scope.Data = Data;
+
+                appcan.window.subscribe('Index/news.tabChange', function (data) {
+                    $timeout(function () {
+                        if(data=='news'){
+                            Data.currentFrame='新闻';
+                        }else{
+                            Data.currentFrame='专题';
+                        }
+                    });
+                });
+            });
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+.grate-color {
+    color: #FF5C26 !important;
+}
+
+.grate-titleSize {
+    width: 4.4325em;
+    height: 1.8725em;
+}
+
+.u-titleBg {
+    background-color: #FFFFFF;
+}
+.u-header-pos {
+    position: absolute;
+    left: 0;
+    bottom: .325em;
+    width: 100%;
+}
+/*圆角*/
+.u-titleC {
+    margin: auto;
+    width: 8.8650em;
+    height: 1.9125em;
+    border: 1px solid;
+    -webkit-border-radius: .95em;
+    border-radius: .95em
+}
+
+.u-titleCl {
+    -webkit-border-top-left-radius: .805em;
+    border-top-left-radius: .805em;
+    -webkit-border-bottom-left-radius: .805em;
+    border-bottom-left-radius: .805em
+}
+
+.u-titleCr {
+    -webkit-border-top-right-radius: .805em;
+    border-top-right-radius: .805em;
+    -webkit-border-bottom-right-radius: .805em;
+    border-bottom-right-radius: .805em
+}
+
+.titleFontSize {
+    font-size: .875em;
+    font-weight: 700;
+    line-height: 1em;
+}
+
+.fontSize1 {
+    font-size: .875em;
+}
+
+.fontSize2 {
+    font-size: .687rem;
+}
+.fontColor2{
+    color: #333333;
+}
+
+.font-uin {
+    /*padding: 0.4em;*/
+    padding-top: .4em;
+    padding-bottom: .4em;
+    margin: 0;
+}
+
+.icon-grate {
+    background-image: url(../images/more_grate.png);
+}
+
+.g-border {
+    border-color: #f0f0f0;
+}
+
+.openDetail {
+    height: 100%;
+    width: 3.25em;
+}
+
+/*按钮效果*/
+.bBtn {
+    opacity: 0.6
+}
+.aBtn {
+    transform: scale(0.95, 0.97);
+    -webkit-transform: scale(0.95, 0.97);
+    -webkit-transition-duration: 300ms;
+    opacity: .7;
+}
+
+/*感恩消息列表图标大小*/
+.grateIconSize {
+    margin-right: .2em;
+    width: 2.4rem;
+    height: 3.25rem;
+    -webkit-background-size: 1.625rem;
+    background-size: 1.625rem;
+    background-position: center;
+}

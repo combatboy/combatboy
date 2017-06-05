@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uexplugins>
+    
+    
+     <plugin
+        className="org.zywx.wbpalmstar.plugin.uexappmarket.eue.EUExAppMarketEx"
+        uexName="uexAppCenterMgrEx">
+        <method name="open" />
+        <method name="close" />
+        <method name="isAppInstalled"/>
+        <method name="getSoftToken"/>
+        <method name="isAppInstalled"/>
+        <method name="showNewMsg" />
+    </plugin>
+
+     
+</uexplugins>

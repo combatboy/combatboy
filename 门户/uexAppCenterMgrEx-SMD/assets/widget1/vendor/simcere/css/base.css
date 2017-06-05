@@ -1,0 +1,28 @@
+body {
+    font-family: Helvetica, sans-serif;
+}
+/*个人中心仿自带头部宽度大小位置*/
+.zk-title-font {
+    min-height: 3em;
+    display: block;    
+    -webkit-margin-before: 0.1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+/*各个导航的top颜色值*/
+.f-z7 {
+    font-size: 1.0625em;
+}
+/*按钮效果*/
+.btn-iact{
+    background-color: #CCCCCC;
+    opacity: 0.6;
+}
+.circle1 {
+    min-width: 0.7em;
+    min-height:0.7em;
+    background-color:#FF0000;
+    -webkit-border-radius: 0.8em;
+    top: -0.2em;
+}

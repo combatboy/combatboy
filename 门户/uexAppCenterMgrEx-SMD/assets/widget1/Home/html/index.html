@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport"
+        content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+        <link rel="stylesheet" href="../../vendor/ionic/css/ionic.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../../vendor/simcere/css/base.css">
+        <link rel="stylesheet" href="../css/set.css">
+    </head>
+    <style>
+        .switch-btn{
+            top:-0.1em;
+        }
+        .uq{
+            text-align: right;
+        }
+    </style>
+    <body ng-controller="PersonalDetailController" class="um-vp" ontouchstart>
+        <div id="page_0" class="up ub ub-ver bc-bg" tabindex="0">
+            <div id="content" class="ub-f1 tx-l">
+                <ion-content>
+                    <!--头部-->
+                    <div id="header" class="pc-umar-t3">
+                        <div class="ub bc-bg5 u-pad3 pc-bor-lr">
+                            <div class="ub ub-ac ub-f1">
+                            <div class="ub-img1 pc-toux pc-wh2 uc-a5  n_avatar  pc-umar-l" ng-click="showActionSheet()"></div>
+                                <div class="ub ub-f1 ub-ac" id="u_back">
+                                <div class="pc-umar-l3 ub-f1">
+                                <div class="ub ub-ac">
+                                    <div class="u-mw" ng-bind="person.LASTNAME"></div>
+                                    <div class="" ng-bind="person.LOGINID"></div>
+                                </div>
+                                <div class="ub ub-ac pc-umar-t3">
+                                    <div class="u-mw">部门</div>
+                                    <div class=""ng-bind="person.DEPT"></div>
+                                </div>
+                                </div>
+                                <div class="ub-img1 pc-bk u-wh pc-umar-r"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--头部-->
+                    <!-- 中部 -->
+                    <div class="ub pc-bor-lr set-pad-tb2 bc-bg5  ub-ac pc-umar-t3">
+                        <div class="pc-umar-l ub-f1">
+                            手势密码
+                        </div>
+                        <div class="pc-umar-r ub ub-ac">
+                            <div class="switch ub ub-ac kuangsize switch-mini bcborder uba n_switch" data-checked="false">
+                                <div class="switch-btn btnsize sc-bg-active2 "></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ub pc-bor-lr set-pad-tb bc-bg5 pc-umar-t3">
+                        <div class="pc-fz pc-umar-l ub-f1">
+                            当前版本
+                        </div>
+                        <div class="pc-umar-r t-c1 n_version_no"></div>
+                    </div>
+                    <div class="ub pc-bor-lr set-pad-tb bc-bg5 pc-umar-t3 actNew j-feedback" id="feedback">
+                        <div class="ub-f1 pc-umar-l">
+                            意见反馈
+                        </div>
+                        <div class="pc-umar-r t-c1">
+                            <i class="fa fa-angle-right fa-lg"></i>
+                        </div>
+                    </div>
+                    <div class="ub pc-bor-lr set-pad-tb bc-bg5 pc-umar-t3 actNew j-about" id="about">
+                        <div class="ub-f1 pc-umar-l">
+                            关于我们
+                        </div>
+                        <div class="pc-umar-r t-c1">
+                            <i class="fa fa-angle-right fa-lg"></i>
+                        </div>
+                    </div>
+                    <!-- 按钮 -->
+                    <div class="pc-umar-lr pc-umar-t4" ng-click="logout()">
+                        <input type="button" class="pc-input uc-a1" value="安全退出"/>
+                    </div>
+                </ion-content>
+            </div>
+        </div>
+        <script src="../../vendor/appcan/js/appcan.js"></script>
+        <script src="../../vendor/appcan/js/appcan.control.js"></script>
+        <script src="../../vendor/simcere/js/config.js"></script>
+        <script src="../../vendor/simcere/js/base.js"></script>
+        <script src="../../vendor/ionic/js/ionic.bundle.min.js"></script>
+        <script src="../../vendor/ow/qlib.js"></script>
+        <script src="../js/app.index.js"></script>
+        <script>
+            appcan.ready(function() {
+
+                //获取版本信息
+                zkutil.getCurrentWidgetInfo.call(null, function(o) {
+                    $('.n_version_no').text('V' + o.version);
+                });
+                // 监听返回按钮
+                zkutil.setReportKey(0, 1, function(keyCode) {
+                    if (keyCode == 0) {
+                        uexWidgetOne.exit();
+                    }
+                });
+                //
+                angular.bootstrap(document.documentElement, ['zkApp']);
+                appcan.window.publish("simcere.im.unread", "");
+                appcan.window.subscribe("change", function() {
+                    changeCount();
+                });
+            });
+            //显示消息数目
+            function changeCount() {
+                var count = appcan.getLocVal("unreadAll");
+                if (count == null || count == 0) {
+                    $("#read").addClass('uhide');
+                } else {
+                    $("#read").removeClass('uhide');
+                    $("#unread").html(count);
+                }
+            };
+
+            appcan.button(".iact", "btn-iact", function() {
+            });
+            appcan.button("#openSet", "btn-act", function() {
+            });
+
+            //反馈
+            appcan.button(".j-feedback", "btn-act", function() {
+                appcan.window.open("Home_feedback", "feedback.html", 10);
+            });
+            //关于
+            appcan.button(".j-about", "btn-act", function() {
+                appcan.window.open("Home_about", "about.html", 10);
+            });
+              $(function() {
+                //手势开关
+                (function() {
+                    var $el = $('.n_switch');
+                    if (localStorage.getItem('simcere.runtime.hasGesturePassword')) {
+                        $el.addClass('bc-head').data('checked', 'true');
+                    }
+                })();
+            });
+            appcan.switchBtn(".switch", function(obj, value) {
+                var $this = $(obj);
+                if (value) {
+                    //lanse
+                    console.log(obj)
+                    $this.css('border-color','#00A1EA');
+
+                    //开启
+                    bindLockPatternCallback();
+                    /**
+                     * 初始化手势密码
+                     * @param 维度
+                     * @param 重试次数限制
+                     * @param 未知
+                     */
+                    uexLockPattern.init('3', '5', '0');
+                } else {
+                    //huise
+                    $this.css('border-color','#bababa');
+                    localStorage.removeItem('simcere.runtime.hasGesturePassword')
+                    localStorage.removeItem('simcere.runtime.isScreenLocked');
+                    appcan.window.openToast('手势已关闭', 2000);
+                }
+            });
+            function bindLockPatternCallback() {
+                //关闭
+                uexLockPattern.cbLoginSuccess = function(opId, dataType, data) {
+                    if (data == '0') {
+                        // unlock ok
+                        //alert('auth:unlock ok');
+                    } else if (data == '1') {
+                        // modify ok
+                        //alert('auth:modify ok');
+                        // todo: HACK uexLockPattern.init 触发了这里，不知道什么原因
+                        // 需要主动关闭手势界面
+                        localStorage.removeItem('simcere.runtime.isScreenLocked');
+                        uexLockPattern.close();
+                        // 保存手势状态
+                        localStorage.setItem('simcere.runtime.hasGesturePassword', '1');
+                        appcan.window.openToast('设置成功', 2000);
+                    } else if (data == '2') {
+                        //alert('auth:init ok');
+                        // 需要主动关闭手势界面
+                        localStorage.removeItem('simcere.runtime.isScreenLocked');
+                        uexLockPattern.close();
+                        // 保存手势状态
+                        localStorage.setItem('simcere.runtime.hasGesturePassword', '1');
+                        appcan.window.openToast('设置成功', 2000);
+                    }
+                };
+            };
+           $("#u_back").click(function(){
+               appcan.window.open("set", "set.html", 10);
+           })
+        </script>
+    </body>
+</html>

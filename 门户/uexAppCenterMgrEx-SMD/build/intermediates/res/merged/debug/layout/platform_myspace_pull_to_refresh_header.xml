@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/pull_to_refresh_header" android:background="#fff1f5f8" android:layout_width="fill_parent" android:layout_height="60.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:id="@id/pull_to_refresh_progress" android:visibility="gone" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="30.0dip" android:indeterminate="true" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/pull_to_refresh_image" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:src="@drawable/platform_myspace_pulltorefresh_arrow" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="16.0sp" android:textColor="@android:color/black" android:gravity="center" android:id="@id/pull_to_refresh_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/platform_myspace_pull_to_refresh" android:layout_centerInParent="true" />
+    <TextView android:textSize="16.0sp" android:textColor="@android:color/black" android:gravity="center" android:layout_gravity="center" android:id="@id/pull_to_refresh_updated_at" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/pull_to_refresh_text" />
+    <TextView android:background="#ffafb3b9" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+</RelativeLayout>

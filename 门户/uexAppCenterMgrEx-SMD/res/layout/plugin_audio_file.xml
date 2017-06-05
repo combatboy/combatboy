@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/music_file_play_title" android:background="@drawable/plugin_audio_top_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:textColor="@android:color/white" android:gravity="center" android:id="@id/music_file_play_button" android:background="@drawable/plugin_audio_back_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:text="@string/back" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ListView android:id="@id/music_file_play_list" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="#00000000" android:divider="#ffafb3b9" android:dividerHeight="1.0dip" />
+</LinearLayout>

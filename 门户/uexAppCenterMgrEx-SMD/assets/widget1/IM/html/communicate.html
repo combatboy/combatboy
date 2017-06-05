@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport"
+        content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+        <link rel="stylesheet" href="../css/sundries.css">
+        <link rel="stylesheet" href="../css/simcere.css">
+        <style>
+            #content {
+                background-image: -webkit-linear-gradient(top, #eee, #eee 40%, #fff 60%, #fff);
+            }
+        </style>
+    </head>
+    <body class="um-vp" ontouchstart>
+        <div id="page_0" class="up ub ub-ver bc-g" tabindex="0">
+            <!--header开始-->
+            <div id="header" class="uh bc-text-head ub head-col">
+                <div class="nav-btn" id="nav-left">
+                    <div class="fa fa-angle-left fa-2x ub ub-ac"></div>
+                </div>
+                <h1 class="ut ub-f1 f-z7 ut-s tx-c J_reset-scroll" tabindex="0">通讯录</h1>
+
+                <div class="nav-btn" id="nav-right">
+                    <!--按钮开始-->
+                     完成
+                    <!--按钮结束-->
+                </div>
+            </div>
+            <!--head
+            <!--header结束--><!--content开始-->
+            <div id="content" class="ub-f1 tx-l ">
+
+            </div>
+            <!--content结束-->
+
+        </div>
+        <script src="../../vendor/appcan/js/appcan.js"></script>
+        <script src="../../vendor/appcan/js/appcan.control.js"></script>
+        <script src="../../vendor/simcere/js/base.js"></script>
+    </body>
+    <script>
+        var clickFlag=0; //加个点击开关防止多次点击出现数组重复
+        appcan.ready(function() {
+            var titHeight = $('#header').offset().height;
+            appcan.frame.open("content", "communicate_content.html", 0, titHeight);
+            window.onorientationchange = window.onresize = function() {
+                appcan.frame.resize("content", 0, titHeight);
+            };
+            //点击标题滚动到顶部
+            $('.J_reset-scroll').on('tap', function() {
+                appcan.window.publish('contacts/index.resetScroll', '');
+            });
+
+            // 监听返回按钮
+            zkutil.setReportKey(0, 1, _closeWindow);
+        });
+
+        //关闭窗口
+        appcan.button("#nav-left", "btn-act", function(){
+            appcan.window.close(0);
+        });
+        appcan.button("#nav-right", "bc-bg", function(){
+           if(clickFlag==0 || localStorage.getItem("simcere.im.clickFlag")!="1"){
+              clickFlag=1;
+              appcan.window.evaluatePopoverScript('communicate','content','goChat();');
+           }                            
+        })
+
+    </script>
+</html>

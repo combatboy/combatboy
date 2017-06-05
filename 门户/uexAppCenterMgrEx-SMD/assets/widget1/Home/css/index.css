@@ -1,0 +1,186 @@
+.pc-dianh {
+    background-image: url('../images/pc-dianh.png');
+}
+.pc-bk{
+    background-image:url('../images/pc-bk.png');
+}
+.b-txl2 {
+    background-image: url('../images/b-txl2.png');
+    width:1.8em;
+    height:1.8em;
+}
+.u-wh{
+    height:1em;
+    width:1em;
+}
+.u-say {
+    background-image: url('../images/u-say.png');
+    width:1.8em;
+    height:1.8em;
+}
+.u-home {
+    background-image: url('../images/u-home.png');
+    width:1.8em;
+    height:1.8em;
+}
+.u-person02 {
+    background-image: url('../images/u-person02.png');
+    width:1.8em;
+    height:1.8em;
+}
+
+.pc-toux {
+    background-image: url('../images/pc-toux.png');
+}
+
+.pc-shez {
+    background-image: url('../images/pc-shez.png');
+}
+
+.pc-tc {
+    color: #959595;
+}
+
+.f-z2 {
+    font-size: 0.94em;   
+}
+
+.f-z7 {
+    font-size: 1.13em;
+}
+
+.pc-umar-lr {
+    margin-left: 0.63em;
+    margin-right: 0.63em;
+}
+
+.pc-umar-t4 {
+    margin-top: 2.66em;
+    padding-bottom: 1.5em;
+}
+
+.t-c1 {
+    color: #959595;
+}
+
+/*灰色背景*/
+.bc-bg2 {
+    background-color: #f8f8f8;
+}
+
+.bc-bg5 {
+    background-color: #FFFFFF;
+}
+
+.pc-bor-lr {
+    border-bottom: 1px solid #cecedc;
+    border-top: 1px solid #cecedc;
+}
+
+.pc-bor-b {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.pc-pad-tp {
+    padding: 0.78em 0 0.78em 0;
+}
+
+.umar-t2 {
+    margin-top: 0.99em;
+}
+
+.pc-umar-l {
+    margin-left: 1.25em;
+}
+.pc-umar-l2 {
+    margin-left: 1.5em;
+}
+.pc-umar-t3 {
+    margin-top: 0.625em;
+}
+
+.pc-umar-r {
+    margin-right: 1em;
+}
+
+.pc-input {
+    min-height: 2.56em;
+    background-color: #00A1EA;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    border: 0;
+    width: 100%;
+}
+
+.pc-bs {
+    background-size: 1.375em 1.34em;
+}
+
+
+.pc-wh {
+   background-size: 1.31em 1.25em;
+  
+}
+
+.pc-wh2 {
+    width: 4em;
+    height: 4em;
+}
+
+.uc-a5 {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+
+.pc-umar-t2 {
+    padding: 1.2em 0 1em;
+}
+.u-mw{
+    min-width:3.5em;
+}
+.u-pad3{
+    padding: 0.5em 0 0.5em;
+}
+.pc-umar-r1 {
+    
+    min-width:3.555em;
+    min-height:3em;
+}
+
+.pc-umar-l2 {
+    margin-left: 1.13em;
+}
+.pc-umar-l3{
+    margin-left: 2.5em;
+}
+html,body{background-color: #fff}
+       
+.u-pad2{
+     margin-top:-0.3em;}
+
+/**/
+.g-footer {
+    margin-bottom: 0.2em;
+}
+.u-footer {
+    padding: 0.3em 0;
+}
+.u-lineh {
+    line-height: normal;
+}
+.border{
+    border:none;
+}
+.btnsize{
+    width: 1.75rem;
+    height:1.75rem;
+    top:0!important;
+}
+.kuangsize{
+    width:3.1875rem;
+    height:1.94rem;
+}
+.bcborder{
+    border-color: #dbdbdb;
+}

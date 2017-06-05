@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<widget appId="aaaio10008" channelCode="0000" height="480" pid="" sreensize="4.5" version="00.00.0018" viewmode="application" widgetId="" width="320"> 
+  <name>先声药业dev</name>  
+  <description/>  
+  <author email=""/>  
+  <icon src="icon.png"/>  
+  <license href=""/>  
+  <content encoding="utf-8" src="start.html"/>  
+  <updateurl/>  
+  <logserverip>10.40.32.159</logserverip>  
+  <showmyspace>false</showmyspace>  
+  <obfuscation>false</obfuscation>  
+  <bgcolor>#fefefe</bgcolor>  
+  <orientation>1</orientation>  
+  <debug>true</debug>  
+  <widgetonelocation>1</widgetonelocation>
+  <partobfuscation>false</partobfuscation>  
+  <webapp/>  
+  <config desc="uexUmeng" type="KEY"> 
+    <param platform="iOS" name="$uexUmeng_APPKey$" value="56e0feff67e58e83cd000158"/>  
+    <param platform="iOS" name="$uexUmeng_channel$" value=""/> 
+  </config>  
+  <config desc="uexUmeng" type="KEY"> 
+    <param platform="Android" name="$uexUmeng_APPKey$" value="56e0febfe0f55ac9ad000d97"/>  
+    <param platform="Android" name="$uexUmeng_channel$" value=""/> 
+  </config> 
+</widget>

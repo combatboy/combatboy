@@ -1,0 +1,526 @@
+[
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_recorder_stop_disabled.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_recorder_stop_disabled.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_friends_sends_pictures_no.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_friends_sends_pictures_no.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_folder_arrow.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_folder_arrow.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_recorder_stop_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_recorder_stop_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_play_selected.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_play_selected.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_albums_bg.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_albums_bg.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_preview_repick_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_preview_repick_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_recorder_turn_on.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_recorder_turn_on.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_myspace_top_back_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_myspace_top_back_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_back_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_back_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_uexlocalpattern_bg_botton.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_uexlocalpattern_bg_botton.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_back_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_back_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_pause_disabled.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_pause_disabled.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_mam_title_back_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_mam_title_back_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_uexlocalpattern_local_toal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_uexlocalpattern_local_toal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_use_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_use_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_recorder_bg_dot.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_recorder_bg_dot.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_camera_flash_auto_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_camera_flash_auto_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_recorder_record_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_recorder_record_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_image_group_normal.9.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_image_group_normal.9.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_seekbar_thumb_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_seekbar_thumb_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_myspace_hole.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_myspace_hole.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\locus_line.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\locus_line.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_zip.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_zip.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_camera_focus_focusing.9.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_camera_focus_focusing.9.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_recorder_record_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_recorder_record_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_myspace_grid_item_add_bg.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_myspace_grid_item_add_bg.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_pause_selected.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_pause_selected.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_myspace_top_back_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_myspace_top_back_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_use_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_use_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_recorder_use_disabled.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_recorder_use_disabled.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_emptyfolder.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_emptyfolder.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_unknown.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_unknown.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_back_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_back_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_myspace_top_settings_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_myspace_top_settings_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\locus_line_error.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\locus_line_error.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_pause_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_pause_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\locus_arrow.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\locus_arrow.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_myspace_grid_item_default_bg.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_myspace_grid_item_default_bg.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_txt.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_txt.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\icon.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\icon.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_multi_select_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_multi_select_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_camera_flash_close_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_camera_flash_close_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_zoom_in_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_zoom_in_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_photo.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_photo.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_camera_focus_failed.9.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_camera_focus_failed.9.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_local_image1.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_local_image1.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_arrow_right.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_arrow_right.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_zoom_out_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_zoom_out_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_camera_focus_focused.9.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_camera_focus_focused.9.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_myspace_ball.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_myspace_ball.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_myspace_top_settings_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_myspace_top_settings_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_camera_scene_on.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_camera_scene_on.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_recorder_bg.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_recorder_bg.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_seekbar_thumb_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_seekbar_thumb_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_button_disable.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_button_disable.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_arrow_left.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_arrow_left.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_cb_selected.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_cb_selected.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_multi_select_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_multi_select_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_zoom_out_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_zoom_out_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_bottom_bar_bg.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_bottom_bar_bg.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_uexlockpattern_back.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_uexlockpattern_back.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_video.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_video.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_multi_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_multi_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\mark.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\mark.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_camera_flash_open_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_camera_flash_open_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_camera_scene_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_camera_scene_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\locus_round_click.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\locus_round_click.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_window_actionsheet_cancel.9.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_window_actionsheet_cancel.9.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\locus_round_click_error.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\locus_round_click_error.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_btn_cancel_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_btn_cancel_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_use_disabled.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_use_disabled.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_zoom_in_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_zoom_in_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_mam_title_back_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_mam_title_back_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_button_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_button_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_camera_bt_takepic_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_camera_bt_takepic_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_ppt.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_ppt.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_recorder_record_disabled.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_recorder_record_disabled.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_local_image.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_local_image.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_myspace_pulltorefresh_arrow.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_myspace_pulltorefresh_arrow.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_back_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_back_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\aa.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\aa.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_special.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_special.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_multi_selected.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_multi_selected.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_recorder_turn_off.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_recorder_turn_off.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_recorder_use_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_recorder_use_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_camera_flash_close_on.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_camera_flash_close_on.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_doc.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_doc.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_btn_cancel_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_btn_cancel_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\browser_right_hover.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\browser_right_hover.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_camera_bt_takepic_on.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_camera_bt_takepic_on.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_back_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_back_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_pdf.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_pdf.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_button_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_button_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\locus_round_original.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\locus_round_original.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_image_group_pressed.9.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_image_group_pressed.9.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_button_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_button_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_mam_button_normal_bg.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_mam_button_normal_bg.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_uexlocalpattern_tab.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_uexlocalpattern_tab.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_arrow_left.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_arrow_left.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\startup_bg.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\startup_bg.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\locus_line_semicircle_error.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\locus_line_semicircle_error.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_folder.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_folder.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_button_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_button_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_window_actionsheet_normal.9.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_window_actionsheet_normal.9.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_recorder_use_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_recorder_use_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_camera_flash_auto_on.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_camera_flash_auto_on.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_mam_button_pressed_bg.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_mam_button_pressed_bg.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_apk.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_apk.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_preview_repick_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_preview_repick_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_button_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_button_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\locus_line_semicircle.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\locus_line_semicircle.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_mam_textview_normal_bg.9.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_mam_textview_normal_bg.9.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_camera_flash_open_on.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_camera_flash_open_on.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_top_bg.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_top_bg.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_play_disabled.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_play_disabled.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_play_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_play_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_excel.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_excel.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_music.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_music.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_cb_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_cb_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_button_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_button_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_mam_textview_pressed_bg.9.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_mam_textview_pressed_bg.9.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_file_back_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_file_back_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_bottom_bg.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_bottom_bg.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_imagebrowser_top_bg.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_imagebrowser_top_bg.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_myspace_top_bg.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_myspace_top_bg.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_recorder_stop_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_recorder_stop_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_top_bg.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_top_bg.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\platform_window_actionsheet_pressed.9.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\platform_window_actionsheet_pressed.9.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_record_icon.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_record_icon.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\plugin_audio_arrow_right.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable-hdpi-v4\\plugin_audio_arrow_right.png"
+    }
+]

@@ -1,0 +1,48 @@
+/*nav-left*/
+#nav-left{
+    -webkit-box-pack: start;
+    box-pack: start;
+}
+#nav-left>.fa-2x{
+    margin-left: 13px;
+}
+/*nav-font-color*/
+.bc-text-head > .nav-btn,
+.bc-text-head > h1{
+    color: #f9f9f9;
+}
+.bc-text-head-inverse > .nav-btn{
+    color: #148af7
+}
+.bc-text-head-inverse > h1{
+    color: #333;
+}
+
+.z-conn-off{
+    background-image: url("../images/conn_off_26.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10em 6.6em;
+}
+
+input[type="search"]{-webkit-appearance:none;}
+input::-webkit-search-cancel-button {display: none;}
+
+/*spinner*/
+.m-spinner-circle{
+    line-height: 1.5em;
+}
+.fa-spin-fast {
+    -webkit-animation: fa-spin 1s infinite linear;
+    animation: fa-spin 1s infinite linear;
+}
+.fa-spin-tsor{
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    font-size: 1.5em;
+}
+
+/*font color*/
+.fn-fc26 { color: rgba(0, 0, 0, .26)!important; }
+.fn-fc54 { color: rgba(0, 0, 0, .54)!important; }
+.fn-fc87 { color: rgba(0, 0, 0, .87)!important; }

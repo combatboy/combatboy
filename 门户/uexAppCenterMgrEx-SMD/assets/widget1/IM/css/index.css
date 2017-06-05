@@ -1,0 +1,136 @@
+.u-say02 {
+    background-image: url('../images/u-say02.png');
+    width:1.8em;
+    height:1.8em;
+}
+.b-txl2 {
+    background-image: url('../images/b-txl2.png');
+    width:1.8em;
+    height:1.8em;
+}
+.u-home {
+    background-image: url('../images/u-home.png');
+    width:1.8em;
+    height:1.8em;
+}
+.u-person {
+    background-image: url('../images/u-person.png');
+    width:1.8em;
+    height:1.8em;
+}
+
+.bc-bg4 {
+    background-color: #659dcc;
+}
+
+.bc-bg5 {
+    background-color: #FFFFFF;
+}
+
+.umar-l3 {
+    margin-left: 0.84em;
+}
+
+
+.t-c1 {
+    color: #959595;
+}
+
+.mr-remove {
+    background-image: url('../images/mr-remove.png');
+    width: 3.5em;
+    height: 1.6em;
+    margin-right: 0.8em;
+}
+
+
+.f-z {
+    font-size: 0.69em;
+}
+
+.f-z2 {
+    font-size: 0.94em;   
+}
+
+.f-z3 {
+    font-size: 0.875em;    
+}
+/*.f-z2 {
+    font-size: 0.94em;
+}*/
+
+/*.u-fz {
+    font-size: 0.8em;
+}*/
+/*.u-fz2 {
+    font-size: 0.69em;
+}*/
+.bor-a {
+    border: 1px solid #959595;
+}
+
+.pad-lr {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.u-toux {
+    background-image: url('../images/toux.png');
+    width: 2.5em;
+    height: 2.5em;
+}
+.u-qun{
+    background-image: url('../images/u-qun.png');
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.u-add {
+    background-image: url('../images/u-add.png');
+    background-size: 1.25em;
+}
+
+.m-pad-a {
+    padding: 1em .8em;
+}
+
+.u-umar-t {
+    margin-top: 0.8em;
+}
+
+.u-bor-b {
+    border-bottom: 1px solid #c8c7cc;
+}
+
+.m-c{
+    background-color: #f73d04;
+    width:3.5em;
+}
+.u-del{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 3.5em;
+    height: 100%;
+}
+.u-delate{
+    background-image: url('../images/u-delate.png');
+    width:1.25em;
+    height:1.4em;
+}
+.u-ft{
+    color:#FFFFFF;
+    font-size: 1em;
+    margin-top:0.8em;
+}
+.u-sess{
+    position: relative;
+    z-index: 1;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    background-color: #fff;
+}
+.u-sess.z-active{
+    -webkit-transform: translate3D(-3.5em, 0, 0);
+    transform: translate3D(-3.5em, 0, 0);
+}

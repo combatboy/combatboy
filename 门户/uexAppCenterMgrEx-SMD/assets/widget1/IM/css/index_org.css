@@ -1,0 +1,248 @@
+/*organization*/
+.g-org {
+    padding-left: .625em;
+
+}
+.u-org-hd{
+    margin-top: -1px;
+    border-top: 1px solid #d6d5d3;
+    height: 1.40625em;
+    background-color: #f0f0f6;
+    padding-left: .625em;
+}
+.u-org-hd > div{
+    font-size: .71875em;
+    color: #999999;
+}
+
+.u-gbd{display: none;}
+.m-grp.z-open>.u-gbd{display: block;padding-left: 1em;}
+
+/*group head*/
+.u-ghd {
+
+}
+/*group body*/
+.u-gbd {
+    /*transition: padding-left .3s ease;*/
+}
+/*group name*/
+.u-gnm {
+    position: relative;
+    display: block;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 1em 0;
+}
+.u-gnm span{
+    font-size: .9em;
+}
+
+/*group level tag*/
+.u-gnm::before{
+    position: absolute;
+    right: 1em;
+    top: 0;
+    bottom: 0;
+    font-size: .625em;
+    line-height: 1em;
+    width: 2.1em;
+    height: 1em;
+    margin: auto 0;
+    padding: .25em .5em;
+    border-radius: .3em;
+    color: #fff;
+    text-align: center;
+}
+.m-grp .u-gnm::before{
+    content: '一级';
+    background-color: #fec7b2;
+}
+.m-grp .m-grp .u-gnm::before{
+    content: '二级';
+    background-color: #fed87f;
+}
+.m-grp .m-grp .m-grp .u-gnm::before{
+    content: '三级';
+    background-color: #edb2fe;
+}
+.m-grp .m-grp .m-grp .m-grp .u-gnm::before{
+    content: '四级';
+    background-color: #b2daff;
+}
+.m-grp .m-grp .m-grp .m-grp .m-grp .u-gnm::before{
+    content: '五级';
+    background-color: #67B845;
+}
+.m-grp .m-grp .m-grp .m-grp .m-grp .m-grp .u-gnm::before{
+    content: '六级';
+    background-color: #61A8F0;
+}
+.m-grp .m-grp .m-grp .m-grp .m-grp .m-grp .m-grp .u-gnm::before{
+    content: '七级';
+    background-color: #98C888;
+}
+.m-grp .m-grp .m-grp .m-grp .m-grp .m-grp .m-grp .m-grp .m-grp .m-grp .u-gnm::before{
+    display: none;
+    visibility: hidden;
+}
+
+/*person*/
+.m-psn{
+    border-bottom: 1px solid #d6d5d3;
+    padding: .5em 0;
+}
+.m-psn::after{
+    content: '';
+    clear: both;
+    display: table;
+    width: 0;
+    height: 0;
+}
+.m-psn > .u-avt{
+    width: 2.8125em;
+}
+/*由于弹性盒子的缺陷，需要有左右布局修复排版问题*/
+.m-psn{
+    display: block;
+    /*overflow: hidden;*/
+}
+.u-psn-l{
+    position: relative;
+    float: left;
+    width: 2.8125em;
+    margin-right: -2.8125em;
+}
+.u-psn-r{
+    float: right;
+    width: 100%;
+    height: 2.25em;
+}
+.u-psn-ri{
+    /*margin-left: 2.8125em;*/
+}
+/*end*/
+.avt{
+    width: 2.25em;
+    height: 2.25em;
+    border-radius: 50%;
+    overflow: hidden;
+    background: url("../images/avt_null.png") no-repeat center;
+    background-size: cover;
+    border-color: #CCCCCC;
+    -webkit-transform: translate3d(0,.1em,0);
+    transform: translate3d(0,.1em,0);
+}
+.avt > div{
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.m-psn .txtb{
+    font-size: .90625em;
+    font-weight: normal;
+    color: #333;
+    margin-right: .3em;
+    vertical-align: middle;
+}
+.m-psn .txt1{
+    vertical-align: middle;
+    font-size: .75em;
+    color: #999;
+}
+.m-psn .txt2{
+    margin-right: .3em;
+    font-size: .78125em;
+    color: #999;
+}
+
+
+/**/
+a.m-psn{
+    /*transition: all .3s ease;*/
+    position: relative;
+}
+a.m-psn:active,
+a.m-psn.owTouchAct{
+    /*-webkit-transform: scale(.95);
+    transform: scale(.95);*/
+    background-color: #f6f6f6;
+}
+
+
+/**/
+a.u-gnm:active,
+a.u-gnm.owTouchAct{
+    /*-webkit-transform: scale(.95);
+    transform: scale(.95);*/
+    background-color: #f6f6f6;
+}
+a.u-gnm::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: -0.625em;
+    width: 0.625em;
+    top: 0;
+    bottom: 0;
+    visibility: hidden;
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #f6f6f6;
+    margin-bottom: -1px;
+}
+a.u-gnm:active::after,
+a.u-gnm.owTouchAct::after{
+    visibility: visible;
+}
+.m-grp.z-act>.u-gbd>.m-grp>.u-ghd>.u-gnm::after{
+    display: none;
+}
+
+.u-tree-loading{
+    margin-left: -2em;
+}
+
+.p-fc-group{
+    color: #fa9c3a;
+}
+.p-fc-leader{
+    color: #2ba246;
+}
+.p-fc-mate{
+    color: #2882d8
+}
+
+.f-break{
+    word-break: break-all;
+}
+
+/**/
+.u-group,
+.u-leader,
+.u-work{
+    position: relative;
+}
+.u-group.z-act,
+.u-leader.z-act,
+.u-work.z-act{
+    background-color: #f6f6f6;
+}
+.u-group::after,
+.u-leader::after,
+.u-work::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: -0.6em;
+    width: 0.6em;
+    top: 0;
+    bottom: 0;
+    visibility: hidden;
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #f6f6f6;
+    margin-bottom: -1px;
+}
+.u-group.z-act::after,
+.u-leader.z-act::after,
+.u-work.z-act::after{
+    visibility: visible;
+}

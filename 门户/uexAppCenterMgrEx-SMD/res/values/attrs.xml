@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="plugin_uexcalendar_attrs_state_selectable" format="boolean" />
+    <attr name="plugin_uexcalendar_attrs_state_current_month" format="boolean" />
+    <attr name="plugin_uexcalendar_attrs_state_today" format="boolean" />
+    <attr name="plugin_uexcalendar_attrs_state_range_first" format="boolean" />
+    <attr name="plugin_uexcalendar_attrs_state_range_middle" format="boolean" />
+    <attr name="plugin_uexcalendar_attrs_state_range_last" format="boolean" />
+    <attr name="ptrRefreshableViewBackground" format="reference|color" />
+    <attr name="ptrHeaderBackground" format="reference|color" />
+    <attr name="ptrHeaderTextColor" format="reference|color" />
+    <attr name="ptrHeaderSubTextColor" format="reference|color" />
+    <attr name="ptrMode">
+        <flag name="disabled" value="0x00000000" />
+        <flag name="pullFromStart" value="0x00000001" />
+        <flag name="pullFromEnd" value="0x00000002" />
+        <flag name="both" value="0x00000003" />
+        <flag name="manualOnly" value="0x00000004" />
+        <flag name="pullDownFromTop" value="0x00000001" />
+        <flag name="pullUpFromBottom" value="0x00000002" />
+    </attr>
+    <attr name="ptrShowIndicator" format="reference|boolean" />
+    <attr name="ptrDrawable" format="reference" />
+    <attr name="ptrDrawableStart" format="reference" />
+    <attr name="ptrDrawableEnd" format="reference" />
+    <attr name="ptrOverScroll" format="reference|boolean" />
+    <attr name="ptrHeaderTextAppearance" format="reference" />
+    <attr name="ptrSubHeaderTextAppearance" format="reference" />
+    <attr name="ptrAnimationStyle">
+        <flag name="rotate" value="0x00000000" />
+        <flag name="flip" value="0x00000001" />
+    </attr>
+    <attr name="ptrScrollingWhileRefreshingEnabled" format="reference|boolean" />
+    <attr name="ptrListViewExtrasEnabled" format="reference|boolean" />
+    <attr name="ptrRotateDrawableWhilePulling" format="reference|boolean" />
+    <attr name="ptrAdapterViewBackground" format="reference|color" />
+    <attr name="ptrDrawableTop" format="reference" />
+    <attr name="ptrDrawableBottom" format="reference" />
+    <attr name="UseReflection" format="boolean" />
+    <attr name="Items" format="integer" />
+    <attr name="SelectedItem" format="integer" />
+    <attr name="maxTheta" format="float" />
+    <attr name="minQuantity" format="integer" />
+    <attr name="maxQuantity" format="integer" />
+    <attr name="mode">
+        <enum name="left" value="0" />
+        <enum name="right" value="1" />
+    </attr>
+    <attr name="viewAbove" format="reference" />
+    <attr name="viewBehind" format="reference" />
+    <attr name="behindOffset" format="dimension" />
+    <attr name="behindWidth" format="dimension" />
+    <attr name="behindScrollScale" format="float" />
+    <attr name="touchModeAbove">
+        <enum name="margin" value="0" />
+        <enum name="fullscreen" value="1" />
+        <enum name="none" value="2" />
+    </attr>
+    <attr name="touchModeBehind">
+        <enum name="margin" value="0" />
+        <enum name="fullscreen" value="1" />
+        <enum name="none" value="2" />
+    </attr>
+    <attr name="shadowDrawable" format="reference" />
+    <attr name="shadowWidth" format="dimension" />
+    <attr name="fadeEnabled" format="boolean" />
+    <attr name="fadeDegree" format="float" />
+    <attr name="selectorEnabled" format="boolean" />
+    <attr name="selectorDrawable" format="reference" />
+</resources>

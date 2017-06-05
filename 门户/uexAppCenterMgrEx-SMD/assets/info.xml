@@ -1,0 +1,394 @@
+<uexplugins>
+<engine version="3.0.0"></engine>
+    <plugin
+        uexName="uexImage" version="3.0.12" build="12">
+        <info>12:更换图片加载中资源文件</info>
+        <build>11:优化图片剪裁功能，优化图片选择器倒序加载图片</build>
+        <build>10:针对保存图片到相册接口，修复开启增量更新时的res协议路径的bug</build>
+        <build>9:修复开启增量更新时的res协议路径的bug</build>
+        <build>8:修复单张图片在图片浏览器上title不正确的问题，优化裁剪后图片的命名</build>
+        <build>7:修复在华为GEM-730L上裁剪图片时显示为圆形的问题</build>
+        <build>6:优化图片目录加载慢，内存占用高，图片预览时的屏幕适配问题</build>
+        <build>5:更换头部的UI背景</build>
+        <build>4:修复在华为机型的图片裁剪闪退的问题，与iOS同步图片剪裁器</build>
+        <build>3:修复在某些机型上图片裁剪失败的问题</build>
+        <build>2:修复图片压缩质量错误问题</build>
+        <build>1:去掉插件中的ActivityGroup,配合引擎升级</build>
+        <build>0:图片插件</build>
+    </plugin>
+
+    <plugin uexName="uexZip" version="3.0.1" build = "1">
+        <info>1:修复非压缩文件也能解压成功的问题</info>
+		<build>0:zip压缩解压功能插件</build>
+	</plugin>
+
+    <plugin
+        uexName="uexImageBrowser" version="3.0.21" build="21">
+        <info>21:修复多选图片接口在手机上没有图片时崩溃的问题</info>
+        <build>20:选图顺序问题修正</build>
+        <build>19:修复加密情况下，网页读取img标签的src路径图片打不开的问题</build>
+        <build>18:修复三星等机型选择相册竖拍照片变横着的问题</build>
+        <build>17:新增cropImage裁剪图片接口</build>
+        <build>16:修复小米4.4.4系统不能显示图片的问题</build>
+        <build>15:修复打包uexImageBrowser插件后点击输入框键盘无法平移问题</build>
+        <build>14:修复图片浏览器图片显示比较慢的问题</build>
+        <build>13:修复图片浏览器同一url图片只加载一次的问题。</build>
+        <build>12:修复图片浏览器一直加载的问题。</build>
+        <build>11:修改多选图片回调参数。</build>
+        <build>10:修复网络图片默认显示缩略图的问题。</build>
+        <build>9:删除多选图片完成时的Toast提示消息。</build>
+        <build>8:修复单张网络图片浏览大图有时会崩溃的问题。</build>
+        <build>7:修改uexImageBrowser插件，修改多选图片完成时的提示字符串。</build>
+        <build>6:修改uexImageBrowser插件，增加多选图片接口pickMulti。</build>
+        <build>5:修改三星4.1.2系统版本选择图片无法返回路径的问题。</build>
+        <build>4:修改提示图片加载失败的问题。</build>
+        <build>3:添加log用于查错,并修复多图全屏浏览图片时传入url路径处理的崩溃bug</build>
+        <build>2:修改open方法，只处理3个参数，但是超出3个的情况，舍弃掉后面的，而不是不处理。</build>
+        <build>1:适配4.1（之前4.1下无法返回图片 ）</build>
+        <build>0:图片浏览器功能插件</build>
+    </plugin>
+
+    <plugin uexName="uexAppCenterMgrEx" version="3.1.7.3" build="6">
+    	<info>6. 新增子应用的消息数量的显示</info>
+        <build>0. 先声药业门户插件</build>
+		
+
+    </plugin>
+
+    <plugin
+        uexName="uexLockPattern" version="3.0.34.0" build="34">
+		<info>34: 更改“先声药业”北京图片拉伸问题</info>
+        <build>33: 更改背景为“先声药业”</build>
+        <build>32: 去除登录成功提示</build>
+        <build>25: 密码设置界面添加可控的返回按钮</build>
+		<build>24: 将手势易dialog的形式弹出</build>
+		<build>23: 添加setImg接口</build>
+		<build>22: 根据需求，修改UI</build>
+        <build>21: 运用md5加密存在本地的手势密码，并修改UI</build>
+		<build>20: 解决note2大图片内存溢出问题</build>
+		<build>19:对数据加密</build>
+		<build>18:修改显示文字</build>
+		<build>17:链接3g/4g网络崩溃问题</build>
+		<build>16:修改手势位置</build>
+		<build>15:修改界面</build>
+		<build>14:崩溃问题</build>
+		<build>13:解决不消除痕迹问题</build>
+		<build>12:修改界面</build>
+		<build>11:不支持base64形式</build>
+		<build>10:调用其他用户时，无响应</build>
+		<build>9:手势密码，后台将纳入前台崩溃问题</build>
+		<build>8:第二次掉不起问题</build>
+		<build>7:修改初始化崩溃问题</build>
+		<build>6:修改显示文字颜色</build>
+		<build>5:不显示底部按钮问题</build>
+		<build>4:文字效果不显示</build>
+		<build>3:修改文字效果</build>
+		<build>2:修改显示字体</build>
+		<build>1:查找网页端路径问题</build>
+		<build>0:初始插件</build>
+    </plugin>   
+
+    <plugin
+        uexName="uexSMS" version="3.0.3" build="3">
+        <info>3:plugin文件中添加send接口，兼容老版本插件</info>
+        <build>2:兼容老版本插件</build>
+        <build>1:去掉直接发送短信功能</build>
+        <build>0:短信功能插件</build>
+    </plugin>
+
+    <plugin
+        uexName="uexActionSheet" version="3.0.3" build="3">
+        <info>3:去掉插件中的ActivityGroup,配合引擎升级</info>
+		<build>2:修复背景图片太大时，列表太高的问题</build>
+		<build>1:修改设置的字体高亮颜色不生效的问题</build>
+        <build>0:ActionSheet插件</build>
+    </plugin>
+
+    <plugin
+        uexName="uexCalendar" version="3.0.5" build="5">
+		<info>5:修正滑动过程中动态加载导致清除选中日期的问题</info>
+		<build>4:修正设置数据选择时超过1年无法选择的问题</build>
+		<build>3:增加了新的参数,初始化的时候可设置已经选择的日期</build>
+		<build>2:增加了新的参数</build>
+		<build>1:uexCalendar部分bug修复</build>
+		<build>0:uexCalendar日历选择日期插件</build>
+    </plugin>
+
+    <plugin
+        uexName="uexUmeng" version="3.0.0" build="0">
+        <info>0:友盟统计插件</info>
+    </plugin>
+
+    <plugin uexName="uexIM" version="3.0.4.46" build="4">
+        <info>4.46:修正消息查询回调错误的问题</info>
+        <build>4.45:规范部分接口,优化后台判断,TLS暂时关闭</build>
+        <build>4.44:修正位置信息类型显示为图片类型的错误</build>
+        <build>4.43:修正离线消息获取失败的问题</build>
+        <build>4.42:修正不在线人员收到群组邀请,加群后获取不到离线消息的问题</build>
+        <build>4.41:修正发送时间和接收者接到的发送时间不一致的问题</build>
+        <build>4.40:sendFileMsg接口添加新的参数,可以传递额外信息extraInfo;添加无网络时的消息发送失败回调</build>
+        <build>4.39:IM时间记录旧版存储的兼容.解决加群时可能存在的崩溃问题</build>
+        <build>4.38:添加锁屏监听,锁屏后认定为后台状态,退出IM</build>
+        <build>4.37:下载的部分逻辑修正,修正了后台登录的逻辑,防止反复登录</build>
+        <build>4.36:下载的部分逻辑修正</build>
+        <build>4.35:发送图片添加压缩质量比参数,对下载做了优化</build>
+        <build>4.34:修正部分手机程序关闭后,部分手机IM服务重启导致的无法登录的错误</build>
+        <build>4.33:修正删除群聊信息后无法收到离线消息的问题</build>
+        <build>4.32:修正OA环境下载错误的问题</build>
+        <build>4.31:修正群组成员权限获取不到的问题</build>
+        <build>4.30:添加回调强化,目前插件会将所有回调指向调用login接口的root界面</build>
+        <build>4.29:更换新的后台机制,优化.</build>
+        <build>4.28:后台机制优化,取消登录后自动加群的逻辑,改逻辑改由上层做.</build>
+        <build>4.27:修正了后台机制异常拦截了返回键的问题</build>
+        <build>4.26:添加可同时加入多个群组的接口(TLS OPEN)</build>
+        <build>4.25:加设TLS开关(版本内置开关),主动开启TLS交互</build>
+        <build>4.24:优化唤醒机制</build>
+        <build>4.23:修正启动时和引擎机制冲突的问题</build>
+        <build>4.22:添加后台唤醒机制.</build>
+        <build>4.21:修正登录失败的问题.</build>
+        <build>4.20:增加了新的接口,支持非群主人员对于群名称的修改.</build>
+        <build>4.19:优化部分请求,修正单聊回调参数缺少路径的问题.</build>
+        <build>4.18:修正加入房间无法发送消息的bug</build>
+        <build>4.17:修正华为手机上图片发送失败的问题。修正偶尔出现多倍消息回调的问题。修正邀请时偶尔加入失败的问题</build>
+        <build>4.16:修正兼容。</build>
+        <build>4.15:修正部分逻辑,调整了群组部分bug。</build>
+        <build>4.14:修正每次重新加入群组导致的消息回调多倍的问题,修正被踢出群组房间后无法正确加入的问题。</build>
+        <build>4.13:修正群主踢人后仍可从member中获取到该成员的问题;修正成员onDeleteChatGroup回调</build>
+        <build>4.12:解决群主会收到两次群组销毁的回调bug;修正上传下载不兼容的问题;修正群组操作的时候导致每次都会新建房间的bug</build>
+        <build>4.11:解决创建群组的时候无法得到状态回调的问题;对initimParam接口的参数调整以及相关逻辑的变更;添加群组被删除的回调</build>
+        <build>4.10:添加单聊时候的chatName字段,并修正所有相关接口的回调以及参数;支持msgId的前端传入,并修正所有的相关参数;</build>
+        <build>4.9:添加了请求的审核验证,并设置了开关;添加自己被群组剔除之后清空与之相关的群组聊天信息;部分代码的优化;getGroupChatList回调中添加groupid字段,同步iOS;</build>
+        <build>4.8:修正了单聊屏蔽列表获取回调混淆的问题</build>
+        <build>4.7:修正了单聊屏蔽列表屏蔽多个人时失效的问题;解决了强制退出再次登录时没有登录回调的问题;优化了网络请求</build>
+        <build>4.6:修正了一个最近消息的回调字段;修正了加入群组的时候获取不到群成员的问题;添加群组成员收到群组名称变更的回调;修正了屏蔽后发消息自己收到的问题</build>
+        <build>4.5:修正getUserAndGroupAllMsgUnreadCount无回调数据不准确的问题;调整了踢人与被踢的相关回调;修正最后消息字段返回的groupdes字段为空的问题;修正当只有一个屏蔽人的时候屏蔽取消失败的问题</build>
+        <build>4.4:修正离开群组或者被踢出群组后再加入无法收到回调的问题;修正getUserAndGroupAllMsgUnreadCount无回调的问题</build>
+        <build>4.3:修正有时候收到群组消息无回调的问题;修正查询消息部分情况下回调失败的问题;</build>
+        <build>4.2:修正登录失败也会收到在线的回调;修正有时候查询所有未读消息失败的问题;调整getGroupList回调字段</build>
+        <build>4.1:修正与iOS差异的字段;添加查询消息内容接口</build>
+        <build>4:消息发送信息中添加消息id;添加群组离线历史消息的获取;添加了最后一条消息的排序,支持Top显示;添加群组消息发送与接收内容roomName;invite接口调整,会自动修正member权限;添加了新的接口,包括屏蔽和勿扰等功能</build>
+        <build>3:添加文件发送的接口;修正登录时的聊天记录获取逻辑,添加了离线消息的获取;</build>
+        <build>2:添加群组成员状态变化的回调;加入修改群组des的接口以及相关回调;添加了服务器相关的一系列接口;补充了其他接口的回调;部分逻辑的调整</build>
+        <build>1:新加获取未读消息总数的接口(包括用户和群组所有未读),部分bug的修正;增加了发送位置消息的接口,并修正所有相关回调;</build>
+        <build>0:IM实时聊天插件</build>
+    </plugin>
+
+    <plugin
+        uexName="uexClipImage" version="3.0.3.4" build="3">
+		<info>3:大图片的处理,图片初始显示大小的调整,部分bug修正</info>
+		<build>2:新增路径识别，可识别绝对路径的图片</build>
+		<build>1:部分bug的调整</build>
+		<build>0:uexClipImage切图插件</build>
+    </plugin>
+
+	<plugin uexName="uexXmlHttpMgr" version="3.0.20" build = "20">
+		<info>20:增加新的 header以及plugin里面的子应用的appId和appkey都按照主应用为准</info>
+		<build>19:增加clearCookie接口，用于删除cookie信息</build>
+		<build>18:修复Https无证书时OutOfMemoryError问题</build>
+		<build>17:修复子应用默认证书密码解密错误的问题</build>
+		<build>16:修复证书路径解析错误问题</build>
+		<build>15:onData回调函数参数修改</build>
+		<build>14:处理网络超时，并回调给网页端</build>
+		<build>13:添加getCookie接口</build>
+		<build>12:修复网络出错时的Status code</build>
+		<build>11:修复退出应用时ANR问题</build>
+		<build>10:修改onData回调方法中result参数的返回值信息</build>
+		<build>9:修改timeOut为空或者为0的时候的默认请求超时时间为30*1000</build>
+		<build>8:修复请求设置证书不成功的问题</build>
+		<build>7:修改onData回调方法参数requestCode为必选参数</build>
+		<build>6:修复请求不到数据的问题</build>
+		<build>5:新增put请求和delete请求</build>
+		<build>4:修复没有调用setAppVerify方法而导致的空指针问题</build>
+		<build>3:修复变量未定义的问题</build>
+        <build>2:修复不能在请求头中加入appVerify字段的问题</build>
+		<build>1:修复增加了对重定向url的处理</build>
+        <build>0:跨域异步请求功能插件</build>
+	</plugin>
+
+    <plugin
+        uexName="uexDataBaseMgr" version="3.0.0" build="0">
+        <info>0:数据库功能插件</info>
+    </plugin>
+
+    <plugin
+        uexName="uexLog" version="3.0.0" build="0">
+        <info>0:Log功能插件</info>
+    </plugin>
+
+    <plugin
+        uexName="uexFileMgr" version="3.0.11" build="11">
+        <info>11.修改getFileRealPath指定回调名时，只回调一个参数（与ios统一）。</info>
+        <build>10.添加文件搜索接口</build>
+        <build>9.修复闪退的bug</build>
+        <build>8.国际化</build>
+        <build>7.修改接口getFileRealPath,支持回调方法名称的传入</build>
+        <build>6.新增getFileListByPath方法获取指定目录中的文件列表</build>
+        <build>5.新增cbWriteFile回调方法</build>
+        <build>4:添加重命名接口</build>
+        <build>3:修复解析res://路径的getFileRealPath方法返回错误问题</build>
+        <build>2:修复res://协议下获取真实路径不正确的问题</build>
+        <build>1:新增获取文件或文件夹的创建时间</build>
+        <build>0:文件管理功能插件</build>
+    </plugin>
+
+    <plugin
+        uexName="uexDevice" version="3.0.0" build="0">
+        <info>0:设备能力功能插件</info>
+    </plugin>
+
+   <!-- plugin EMM -->
+    <plugin
+        uexName="uexEMM" version="3.1.29.26" build="30">
+        <info>30:22.提示信息，添加英文支持。
+                 23.修改证书认证的相关问题。
+                 24.修改http请求传键值对时编码问题。
+                 25.修改getWidgetInfo返回appkey;修改AutoStartReport控制是否启动上报的问题。
+                 26.修改灰度发布没有strategyId，不请求updateStrategy接口。</info>
+        <build>30:15.修复补丁包升级的问题。
+                  16.修复连接字符串OutOfMemoryError的错误；添加initEMM接口；支持离线登录。
+                  18.修复神华国能主应用升级过程中没有断网提示的问题。
+                  19.主应用config.xml中添加AutoStartReport标签，配置应用启动时，是否自动上报。</build>
+        <build>30:8.启动上报，判断失联开关；断网时，事件上报数据保存到本地。
+                  10.子应用启动时，无appkey不上报。
+                  11.修复灰度发布引起的升级问题（兼容无该接口的服务器）。
+                  12.自改灰度发布updateStrategy流程。
+                  13.修改http请求的方式。
+                  14.增加https证书认证。</build>
+        <build>30:0.子widget启动上报，把是否检测应用开关传给appStoreMgr。
+                  2.修改服务器端证书校验的逻辑。
+                  4.修改https下载全量包的问题。
+                  5.修改用户证书认证流程。
+                  6.增加灰度策略累加接口(updateStrategy)。</build>
+        <build>29:13.修改启动上报数据解析错误的提示语，修复禁用窗口和禁用插件的bug。
+                  14.为配合灰度发布，修改子应用启动上报流程，与uexAppStoreMgr插件3.1.41.8或更新版本配合使用。</build>
+        <build>29:1.修改申请openssl证书的后台接口。
+                  2.修改widgetStartReport的回调接口，并区分自动上报和非自动上报。
+                  3.增加证书签名校验功能（需配合3.2版之后的打包服务器使用）
+                  7.修复签名校验的bug
+                  9.修复启动上报时的一个异常处理
+                  12.修改用户证书认证逻辑</build>
+        <build>28:1.主应用补丁包升级成功后，给前端回调。
+                  2.设置EUExEMM对象前，先判断其是否为空,回调都给root页面。
+                  3.打开子应用时添加是否联网判断。
+                  4.修改endEvent接口，避免对m_eventMap操作时报异常。
+                  5.在EMM构造函数中获取appKey，并解密，设到WWidgetData中,解决softtoken出错的问题。
+                  6.增加请求openssl证书的接口queryUserCertFile。
+                  7.修改login的认证策略。</build>
+        <build>27:1.添加softtoken信息打印；2.修改设备不在白名单时的提示信息。</build>
+        <build>26:新增获取softToken的接口，优化了应用数据擦除的处理，增加主动启动上报接口和回调接口，增加了修改密码的接口和回调接口,上报信息增加了4G网络的判断</build>
+        <build>25:修改应用全量包和补丁包的更新逻辑并统一UI样式(样式采用引擎默认样式，而非与iOS统一)，修复解密接口传入两个路径相同时解密出错的bug，优化数据统计逻辑性能</build>
+        <build>24:增加getWidgetInfo接口用于获取渠道信息和版本号信息，以及上报出口IP的功能，以及区分主应用和子应用的数据统计，并修改一些需求的改动和bug的修复</build>
+        <build>23:兼容了Android引擎sdksuit_3.0_1031以及之后的版本,增加应用数据加解密接口fileEncrypt和fileDecrypt</build>
+        <build>22:修复增量更新地址不支持https的问题</build>
+        <build>21:修复增量更新的问题（补丁包升级），需配合sdksuit_3.0_1010_01版本以上的安卓引擎使用补丁包升级功能</build>
+        <build>20:新增获取验证码图片的接口以及回调</build>
+        <build>19:新增接口removeAccessToken，用于注销成功后删除存储的AccessToken；取消了AccessToken的加密保存</build>
+        <build>18:修复自定义参数和禁用窗口禁用插件等信息的获取为空问题，以及事件上报的遗漏问题</build>
+        <build>17:修复子应用的相关操作和提示语以及优化log的保存，修复注销时无回调问题</build>
+        <build>16:修复服务器配置关闭应用后客户端没有正确处理问题</build>
+        <build>15:修复在线时长统计错误问题，增加失联服务器时是否强制退出的开关可在打包服务器配置</build>
+        <build>14:处理了子应用上报失败的重试，并统一完善了各种提示语</build>
+        <build>13:修复回调数据总是为null的bug</build>
+        <build>12:将启动上报改为后台操作，不显示等待框，并修改一些网络不畅的重试问题</build>
+        <build>11:修改启动上报数据，增加手机厂商字段</build>
+        <build>10:修复网络连接错误时不返回错误</build>
+        <build>9:修复控制子应用开关的bug，修复注销操作无法执行的bug</build>
+        <build>8:修改等待授权的提示进度对话框为可配置</build>
+        <build>7:增加子应用开关的控制功能</build>
+        <build>6:增加子应用权限控制功能</build>
+        <build>5:修复启动上报问题</build>
+        <build>4:修复主动调用接口时机过早会崩溃问题</build>
+        <build>3:修复appkey验证错误</build>
+        <build>0:EMM插件测试</build>
+    </plugin>   
+
+    <plugin
+        uexName="uexEmail" version="3.0.0" build="0">
+        <info>0:邮件功能插件</info>
+    </plugin>
+
+    <plugin
+        uexName="uexCall" version="3.0.1" build="1">
+        <info>1:去掉直接拨打电话的接口</info>
+        <build>0:打电话功能插件</build>
+    </plugin>
+
+    <plugin
+        uexName="uexCamera" version="3.0.12" build="12">
+        <info>12:修改自定义相机crash问题</info>
+        <build>11:修改低分辨率手机自定义相机拍照照片尺寸过小问题</build>
+        <build>10:修改自定义相机横屏拍照显示问题</build>
+        <build>9:修改自定义相机拍完的照片模糊问题</build>
+        <build>8:修改自定义相机拍照时图片模糊以及拍照后崩溃问题</build>
+        <build>7:修改自定义相机空指针异常问题</build>
+        <build>6:修改自定义相机拍照后崩溃问题</build>
+        <build>5:修改调用系统相机大尺寸图片的处理内存溢出问题</build>
+        <build>4:添加自定义相机点击屏幕聚焦的功能</build>
+        <build>3:修改相机参数</build>
+        <build>2:修改相机拍照数量限制</build>
+        <build>1.自定义camera，已解决使用系统camera内存不足应用被杀死的bug</build>
+        <build>0:camera插件基础版</build>
+    </plugin>
+
+    <plugin uexName="uexUploaderMgr" version="3.0.7" build = "7">
+        <info>7：增加新的 header以及plugin里面的子应用的appId和appkey都按照主应用为准</info>
+        <build>6:增加appVerify校验头</build>
+        <build>5:修复个别图片压缩导致的上传失败问题</build>
+        <build>4:修复不支持HTTPS问题</build>
+        <build>3:替换插件中引擎包及新增必要资源文件</build>
+        <build>2:新增setHeaders方法</build>
+        <build>1:修改UPLOAD上传慢问题</build>
+        <build>0:上传功能插件</build>
+    </plugin>
+
+    <plugin
+        uexName="uexDownloaderMgr" version="3.0.11" build="11">
+        <info>11:修复调用cancelDownload之后，即使不清除已下载的临时文件，下次下载时不能断点续传的问题。</info>
+        <build>10:增加新的 header以及plugin里面的子应用的appId和appkey都按照主应用为准</build>
+        <build>9:增加appVerify校验头</build>
+        <build>8:https下载时可以支持预置证书；增大下载缓冲区；支持中文url;增强稳定性</build>
+        <build>7:修复不支持HTTPS问题</build>
+        <build>6:新增setHeaders接口</build>
+        <build>5:引擎更新后，修复取消下载提示不准确的问题</build>
+        <build>4:修复下载速度慢的问题，修复取消下载提示不准确问题</build>
+        <build>3:新增接口cancelDownload</build>
+        <build>2:修复下载速度的问题</build>
+        <build>1:修复下载完成之后，无法打开，文件不存在的问题</build>
+        <build>0:下载管理功能插件</build>
+    </plugin>
+
+    <plugin
+        uexName="uexDocumentReader" version="3.0.2" build="2">
+        <info>2:修改打开不存在的文件时崩溃的问题</info>
+        <build>1:国际化</build>
+        <build>0:阅读器功能插件</build>
+    </plugin>
+
+    <plugin
+        uexName="uexAudio" version="3.0.6" build="6">
+        <info>6:修改play接口逻辑，正在播放时调用，音乐暂停</info>
+        <build>5:修复uexAudio.record方法不支持录音文件存储为.mp3格式的问题</build>
+        <build>4:修复多次点击播放音效不能关闭的问题</build>
+		<build>3:修复录音文件名不正确</build>
+        <build>2:修复录制失败问题</build>
+        <build>1:背景录音添加录音格式MP3</build>
+        <build>0:音乐播放插件</build>
+    </plugin>
+
+    <plugin
+        uexName="uexChatKeyboard" version="3.0.11.4" build="11">
+        <info>11:去掉LocalActivityManager,当弹出键盘的时候自动调整布局,修正声音按钮的回调逻辑</info>
+        <build>10:open接口新增参数inputMode默认输入方式</build>
+        <build>9:修改EditText和webview中的输入框抢焦点问题</build>
+        <build>8:添加收回键盘接口;添加键盘状态的回调接口;部分代码的逻辑优化;添加onCommitJson回调,解决输入特殊字符的问题;</build>
+        <build>7:添加获取输入框高度的接口</build>
+        <build>6:修复点击表情，再点击空白区域，再点击输入框时撑满屏幕的问题</build>
+        <build>5:修复点击输入框再点击物理返回键，直接退出插件问题</build>
+        <build>4:修改open接口</build>
+        <build>3:修复插件关闭时系统键盘还显示问题</build>
+        <build>2:修复第二次打开界面空指针问题</build>
+        <build>1:clean函数中调用close方法</build>
+        <build>0:ChatKeyboard插件基础版</build>
+    </plugin>
+
+</uexplugins>

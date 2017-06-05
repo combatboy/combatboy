@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	
+	<script type="text/javascript">
+
+	function funcD1(data){
+		console.log("1");
+		var strs = new Array();
+		strs = data.split(","); 
+		if(strs[0] == "1"){
+			alert(strs[1]);
+		}
+	}
+
+	window.uexOnload = function(type){
+		if(type == 0){  
+			uexScan.cbReceive = funcD1;
+		}
+	}
+	
+	function a(){
+		var index = "1";
+		alert(index);
+		uexScan.openScan(index);
+	}
+	
+</script>
+</head>
+
+<body>
+	<div class="tit">跳转1</div>
+	<div class="conbor">
+		<div class="consj">
+		
+			<span>1.打开扫描服务接口</span>
+			<a href="appCenter.html"><input class="btn" type="button" value="点击调用接口" onclick=""></a><br><br>
+			
+			<span>2.接口</span>
+			<input class="btn" type="button" value="点击调用接口" onclick="a();"><br><br>
+			
+			<span>2.关闭扫描服务接口</span>
+			<input class="btn" type="button" value="点击调用接口" onclick="uexScan.stopScan();"><br><br>
+			
+		</div>
+	</div>
+</body>
+</html>

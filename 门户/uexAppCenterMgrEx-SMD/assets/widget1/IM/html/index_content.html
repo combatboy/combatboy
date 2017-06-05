@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body class="um-vp bc-bg" ontouchstart>
+<div class="ub ub-ver  ub-fv" id="chatlist">
+<div class="uinn ub ub-f1 tx-c ulev ub-ac ub-pc uhide" id="norecord">
+    <div class=" ub-ver ub-ac ub-pc">                   
+        <div class="Nodatafont zt-color10">
+                                                                      暂无数据
+        </div>
+    </div>
+</div>      
+<div id="listview" style="min-height:4em;"> 
+    <div class="col uhide  bc-border t-wh ub ub-ac ub-pc c-wh1  umh6 abc ub-fh move" style="padding:0em 0 0em 1em;" id="" onclick="">
+                            <div class="round rand-img ub-img mr-r"></div>
+                            <div class="ub-f1">
+                            <div class="ub ">
+                            <div class="hh-font1 jj-padd1 ub-f1 ddd">nickname</div>
+                            <div class="jj-padd1 zt-font8 zt-color2 umar02 ">time</div>
+                            </div>
+                            <div class="ub">
+                           <div class="hh-font11  ub-f1 ub-ver line1 ut-s  ttt" style="margin-right:0.5em;">0</div>
+                            <div class="ulev-2 circle1 umar033 tx-ff ub ub-pc ub-ac" id="count">0</div>
+                            </div>
+                            </div>
+                            </div>             
+</div> 
+</div>
+<script src="../../vendor/appcan/js/appcan.js"></script>
+<script src="../../vendor/appcan/js/appcan.control.js"></script>
+<script src="../../vendor/appcan/js/appcan.optionList.js"></script>
+<script src="../js/common.js"></script>
+<script>
+    var lv1=null; 
+    appcan.ready(function () {
+        checkNet1();
+        appcan.window.subscribe("E_XMPP_NEWMSGCOMING", function(param) {
+            appcan.logs("单聊新消息进来了------");
+            uexIM.getChatListWithLastMsg();
+        })
+        appcan.window.subscribe("E_GROUP_NEWMSGCOMING", function(param) {
+            appcan.logs("群聊新消息进来了------");
+            uexIM.getChatListWithLastMsg();
+        })
+
+        appcan.window.subscribe("E_XMPP_GETCHAT_RES", function(list){
+            logs("获取最近联系人记录-回调-"+list);
+            showMessageList(list);
+        });
+
+    });
+    function checkNet1(){
+        uexDevice.cbGetInfo = function(opCode, dataType, data){
+            appcan.frame.resetBounce(0);
+            var device = eval('(' + data + ')');
+            var connectStatus = device.connectStatus;
+            if (connectStatus != null && connectStatus.length > 0) {
+                //获取离线的时候取的
+                if (connectStatus == -1) {
+                    appcan.window.openToast('网络连接不可用','2000');
+                }else{
+                    //获取最近聊天记录列表
+                    uexIM.getChatListWithLastMsg();
+                }
+            }
+        }
+        uexDevice.getInfo('13');
+    }
+    function showMessageList(list){
+        logs("list-----"+list);
+        var userId_name =JSON.parse(localStorage.getItem("simcere.im.userId_name"));
+        var delStr="<div style=\"width:4em;text-align:center;\">删除</div>";
+        if(!lv1){
+            lv1 = appcan.optionList({
+                selector : "#listview",
+                type : "hiddenLine",
+                id : 1,
+                duration : "500ms",
+                multiShow : false,
+                align : 'left'
+            });
+        }
+
+        var updateData=[];
+        var dataObj={};
+        var arrData = JSON.parse(list);
+        var arr=arrData.dataList;
+        var gList1= JSON.parse(localStorage.getItem("gList1"));
+        var obj ={};
+        $("#listview").empty();
+        if (arr.length == 0) {
+           // appcan.frame.resetBounce(0);
+            $("#norecord").removeClass("uhide");
+        } else {
+            $("#norecord").addClass("uhide");
+            for (var i = 0; i < arr.length; i++) {
+                var imId = arr[i].imId;//获取到好友的ID   群聊名称
+                var chatType = arr[i].chatType;   //1-单人聊天；2-群聊
+                var timestamp= arr[i].timestamp;
+                var unreadCount=arr[i].unreadCount;
+                var content=arr[i].content;
+                var name="";
+              if(chatType=='2'){
+               if((localStorage.getItem("gList1")).indexOf(imId)==-1){
+                   logs("不存在此群"+gList1[imId]);
+                  if(i==arr.length-1){
+                     if(updateData.length==0){
+                        appcan.frame.resetBounce(0); 
+                        $("#norecord").removeClass("uhide"); 
+                        return; 
+                      } 
+                     lv1.set(updateData); 
+                     lv1.on("click",function(e){
+                         clickData(e);             
+                          })   
+                   }else{
+                     continue;  
+                   }
+                 } 
+               name = gList1[imId].groupDes;//针对编辑群聊名称后     
+            }
+                obj[imId] = {
+                    "type" : chatType,
+                    "time" : timestamp,
+                    "msgcount" :unreadCount,
+                    "lastMsg" : content,
+                    "groupname" :name
+                }
+                if(chatType=='1'){
+                    var nickname =  userId_name[imId].userName;//返回好友昵称
+                    var time = parseInt(obj[imId].time);
+                    var currentTime = Date.parse(new Date());
+                    if(NYR(Number(time),1)==NYR(Number(currentTime),1)){
+                        //今天,只获取时分
+                        var time_=HM(Number(time));
+                    }else{
+                        //获取月日
+                        var time0=NYR(Number(time),1);
+                        var time_=time0.substring(5);
+                    }
+                    var lastMsg = obj[imId].lastMsg;//消息内容
+                    var msgcount = obj[imId].msgcount;//未读消息数量
+                    var type=obj[imId].type;
+                    var content="";
+                    var str='<div class="col  bc-border t-wh ub ub-ac  c-wh1  umh6 abc ub-fh  move " style="padding:0em 0 0em 1em;" id="'+imId+'_'+type+'" onclick="clickData(\''+imId+'_'+type+'\')">'+
+                            '<div class="round rand-img ub-img mr-r"></div>'+
+                            '<div class="ub-f1">'+
+                            '<div class="ub">'+
+                            '<div class="hh-font1 jj-padd1 ub-f1 ddd">'+nickname+'</div>'+
+                            '<div class="jj-padd1 zt-font8 zt-color2 umar02">'+time_+'</div></div>'+
+                            '<div class="ub">'+
+                            '<div class="hh-font11  ub-f1 ub-ver line1 ut-s  ttt" style="margin-right:0.5em;">'+lastMsg+'</div>'+
+                            '<div class="ulev-2 uinn1 uc-a2  umar03 tx-ff ub ub-ac ub-pe" ></div>'+
+                            '</div>'+
+                            '</div>'+
+                            '</div>';
+
+                    var str1='<div class="col   bc-border t-wh ub ub-ac ub-pc c-wh1  umh6 abc ub-fh move" style="padding:0em 0 0em 1em;" id="'+imId+'_'+type+'" onclick="clickData(\''+imId+'_'+type+'\')">'+
+                            '<div class="round rand-img ub-img mr-r"></div>'+
+                            '<div class="ub-f1">'+
+                            '<div class="ub ">'+
+                            '<div class="hh-font1 jj-padd1 ub-f1 ddd">'+nickname+'</div>'+
+                            '<div class="jj-padd1 zt-font8 zt-color2 umar02 ">'+time_+'</div>'+
+                            '</div>'+
+                            '<div class="ub">'+
+                            '<div class="hh-font11  ub-f1 ub-ver line1 ut-s  ttt" style="margin-right:0.5em;">'+lastMsg+'</div>'+
+                            '<div class="ulev-2 circle1 umar033 tx-ff ub ub-pc ub-ac" id="count">'+msgcount+'</div>'+
+                            '</div>'+
+                            '</div>'+
+                            '</div>';
+                    if (msgcount == 0) {
+                        content=str;
+                    } else {
+                        content=str1;
+                    }
+
+                    dataObj={
+                        content:content,
+                        height:"",
+                        hideOption : {
+                            content : [delStr],
+                            style :{
+                                fontSize : "1em",
+                                background : "red"
+                            },
+                            onClick:function(e,index,length){
+                                var id=$(e.currentTarget).parent("li")[0].firstChild.childNodes[0].id;
+                                var imId=id.split("_")[0];
+                                var msg={
+                                    imId:imId
+                                }
+                               // appcan.window.publish("E_PERSON_DELRECORD",msg);  //删除个人聊天记录
+                              uexIM.deleteUserChatRecord(JSON.stringify(msg));
+                            }
+                        }
+                    }
+                    updateData.push(dataObj);
+                }else  if(chatType=='2'){//群聊展示
+                     appcan.frame.resetBounce(0);
+                     var time = parseInt(obj[imId].time);
+                      var currentTime = Date.parse(new Date());
+                        if(NYR(Number(time),1)==NYR(Number(currentTime),1)){
+                            var time_=HM(Number(time));//今天,只获取时分
+                        }else{
+                            var time0=NYR(Number(time),1);//获取月日
+                            var time_=time0.substring(5);
+                        }
+                        var lastMsg = obj[imId].lastMsg;//消息内容
+                        var msgcount = obj[imId].msgcount;//未读消息数量
+                        var groupname = obj[imId].groupname;
+                        var   type  = obj[imId].type;
+                        var content="";
+                        var str='<div class="col  bc-border t-wh ub ub-ac ub-pc c-wh1  umh6 abc ub-fh move" style="padding:0em 0 0em 1em;" id="'+imId+'_'+type+'" onclick="clickData(\''+imId+'_'+type+'\')">'+
+                                 '<div class="round rand-img ub-img mr-r"></div>'+
+                                 '<div class="ub-f1">'+
+                                   '<div class="ub ">'+
+                                       '<div class="hh-font1 jj-padd1 ub-f1 ddd ut-s">'+groupname+'</div>'+
+                                       '<div class="jj-padd1 zt-font8 zt-color2 umar02">'+time_+'</div>'+
+                                  '</div>'+
+                                  '<div class="ub">'+
+                                  '<div class="hh-font11  ub-f1 ub-ver line1 ut-s  ttt" style="margin-right:0.7em;">'+lastMsg+'</div>'+
+                                  '<div class="ulev-2 uinn1 uc-a2  umar03 tx-ff ub ub-ac ub-pe" ></div>'+
+                                  '</div>'+
+                              '</div>'+
+                           '</div>';
+                        var str1='<div class="col  bc-border t-wh ub ub-ac ub-pc c-wh1  umh6 abc ub-fh move" style="padding:0em 0 0em 1em;" id="'+imId+'_'+type+'" onclick="clickData(\''+imId+'_'+type+'\')">'+
+                                 '<div class="round rand-img ub-img mr-r"></div>'+
+                                 '<div class="ub-f1">'+
+                                   '<div class="ub ">'+
+                                       '<div class="hh-font1 jj-padd1 ub-f1 ddd ut-s">'+groupname+'</div>'+
+                                       '<div class="jj-padd1 zt-font8 zt-color2 umar02 ">'+time_+'</div>'+
+                                  '</div>'+
+                                  '<div class="ub">'+
+                                  '<div class="hh-font11  ub-f1 ub-ver line1 ut-s  ttt" style="margin-right:0.7em;">'+lastMsg+'</div>'+
+                                  '<div class="ulev-2 circle1 umar033 tx-ff ub ub-pc ub-ac" id="count">'+msgcount+'</div>'+
+                                  '</div>'+
+                              '</div>'+
+                           '</div>';
+                       if (msgcount == 0) {
+                             content=str;
+                            } else {
+                             content=str1;
+                            }
+                      dataObj={
+                         content:content,
+                         height:"",
+                         hideOption : {
+                            content : [delStr],
+                            style :{
+                                fontSize : "1em",
+                                background : "red"
+                            },
+                        onClick:function(e,index,length){
+                            var id=$(e.currentTarget).parent("li")[0].firstChild.childNodes[0].id;
+                            var groupNode=id.split("_")[0];
+                               var msg={
+                                    groupName:groupNode
+                                    }
+                               uexIM.deleteChatGroupRecord(JSON.stringify(msg));
+                              //   appcan.window.publish("E_GROUP_DELRECORD",msg);  //删除群聊天记录
+                           }
+                         }
+                      }
+              updateData.push(dataObj);
+                }
+                if(i==arr.length-1){
+                    lv1.set(updateData);
+                }
+            }
+
+        }
+    }
+
+    function clickData(conId){
+        $("#"+conId).addClass("btn-act");
+        var conName=$("#"+conId).find("div.ddd").html();//群名称
+        var lastMsg=$("#"+conId).find("div.ttt").html();
+        var id=conId.split("_")[0];//群节点
+        var type=conId.split("_")[1];
+        if(type=='1'){
+            var dl=[];
+            var params={
+                imId:id,
+                type:"all"
+            }
+            var dl=[{
+                username:conName,
+                fid:id
+
+            }]
+            appcan.setLocVal("personObj",dl);    //取名称    id-name
+            appcan.window.open("singleChat","singleChat.html",10);
+            var params1=JSON.stringify(params);
+            uexIM.setMarkMsgRead(params1);//将某人的消息全部标为已读
+
+        }else{
+            var params={
+                groupName:id,
+                type:"all"
+            }
+            appcan.setLocVal("groupNode",id);
+            appcan.setLocVal("groupDesc",conName);
+            appcan.window.open("groupChat","groupChat.html",10);
+            var params1=JSON.stringify(params)
+            uexIM.setMarkGroupMsgRead(params1);//将群的消息全部标为已读
+            getGroupId(id);
+        }
+        appcan.window.publish("unread","");
+        uexIM.getChatListWithLastMsg();
+    }
+</script>
+</body>
+</html>

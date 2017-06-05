@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="#ff3b3b3b" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dip" android:src="@drawable/plugin_audio_special" android:layout_centerVertical="true" />
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="32.0dip" android:src="@drawable/plugin_audio_special" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/music_special_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/widget_title" android:background="@drawable/plugin_audio_top_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:textColor="#ffffffff" android:id="@id/plugin_music_button_return" android:background="@drawable/plugin_audio_back_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:text="@string/back" android:layout_centerVertical="true" />
+            <TextView android:ellipsize="end" android:gravity="center" android:id="@id/plugin_music_name" android:layout_width="170.0dip" android:layout_height="wrap_content" android:text="@string/plugin_audio_music_name" android:maxLines="1" android:singleLine="true" android:layout_centerInParent="true" />
+            <Button android:id="@id/plugin_music_button_list" android:background="@android:drawable/ic_menu_add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/widget_top" android:background="#885c5c5c" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/widget_title">
+            <SeekBar android:id="@id/widget_top_progress_seekBar" android:paddingLeft="70.0dip" android:paddingRight="70.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="10.0dip" android:max="100" android:progressDrawable="@drawable/plugin_audio_seekbar_style" android:minHeight="10.0dip" android:thumb="@drawable/plugin_audio_seekbar_thumb_selector" />
+            <TextView android:textColor="#ffffffff" android:gravity="center" android:id="@id/widget_top_play_time" android:layout_width="70.0dip" android:layout_height="wrap_content" android:text="00:00" android:layout_alignLeft="@id/widget_top_progress_seekBar" android:layout_centerVertical="true" />
+            <TextView android:textColor="#ffffffff" android:gravity="center" android:id="@id/widget_top_total_time" android:layout_width="70.0dip" android:layout_height="wrap_content" android:layout_marginRight="0.0dip" android:text="00:00" android:layout_alignRight="@id/widget_top_progress_seekBar" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <TextView android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="1.0dip" android:minHeight="1.0dip" android:layout_below="@id/widget_top" />
+        <RelativeLayout android:id="@id/widget_bottom" android:background="@drawable/plugin_audio_play_bottom_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="50.0dip" android:src="@drawable/plugin_audio_arrow_left" />
+            <ImageButton android:id="@id/widget_bottom_button_play" android:background="#00000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/plugin_audio_pause_selector" android:layout_centerHorizontal="true" />
+            <ImageButton android:id="@id/widget_bottom_button_last" android:background="#00000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:src="@drawable/plugin_audio_button_last_style" android:layout_toLeftOf="@id/widget_bottom_button_play" android:layout_centerVertical="true" />
+            <ImageButton android:id="@id/widget_bottom_button_next" android:background="#00000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:src="@drawable/plugin_audio_button_next_style" android:layout_toRightOf="@id/widget_bottom_button_play" android:layout_centerVertical="true" />
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="50.0dip" android:src="@drawable/plugin_audio_arrow_right" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/plugin_centre_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/widget_bottom">
+            <SeekBar android:id="@id/plugin_centre_bottom_seekBar" android:paddingLeft="72.0dip" android:paddingRight="72.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="10.0dip" android:max="100" android:progressDrawable="@drawable/plugin_audio_seekbar_style" android:minHeight="10.0dip" android:thumb="@drawable/plugin_audio_seekbar_volume_thumb" style="?android:attr/progressBarStyleHorizontal" />
+        </RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>

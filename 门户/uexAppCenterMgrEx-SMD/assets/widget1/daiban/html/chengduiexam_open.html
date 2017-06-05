@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+    <style>
+        .bc-border1 {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            position: relative;
+        }
+
+        .request_advs {
+            width: 15.625rem;
+            height: 9.375rem;
+            z-index: 9998;
+            background: #FFFFFF;
+            border-radius: 10px;
+            position: absolute;
+            /*top: 50%;*/
+            /*left: 50%;*/
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: 6rem auto;
+
+        }
+
+        .request_advs .ipt1 {
+            padding-left: 0.625rem;
+            width: 11.875rem;
+            height: 2.2rem;
+            border: 1px solid #4b4b4d;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            margin-top: 2.1875rem;
+            margin-left: 1.71875rem;
+
+        }
+
+        .request_advs .ipt2 {
+            margin-top: 2rem;
+            width: 100%;
+            border-bottom: 1px solid #a5a6a8;
+        }
+
+        .request_advs .ipt3 {
+            line-height: 2.712rem;
+            width: 100%;
+            color: #00A1EA;
+            font-size: 1.125rem;
+            background: none;
+            border: none;
+            font-family: sans-serif;
+
+        }
+    </style>
+</head>
+<body class="um-vp" ontouchstart>
+<div class="bc-border1" id="bcg">
+    <div class="request_advs">
+        <form>
+            <input type="text" name="" class='ipt1' placeholder='请填写审批意见(可选)'/>
+
+            <p class='ipt2'></p>
+            <input type="submit" name='' class='ipt3' value="提交"/>
+        </form>
+
+    </div>
+</div>
+
+
+<script src="../../vendor/appcan/js/appcan.js"></script>
+<script src="../../vendor/appcan/js/appcan.control.js"></script>
+</body>
+<script>
+
+    appcan.ready(function () {
+
+    });
+
+    $('.ipt3').on('tap', function () {
+        var ovalue = $('.ipt1').val();
+
+        appcan.window.publish('daiban/chengdui.tijiao', ovalue||'');
+
+        setTimeout(function () {
+            appcan.frame.close('demo');
+        }, 100);
+    });
+
+    $('.bc-border1').on('tap', function (e) {
+        if($(e.target).is('#bcg')){
+            appcan.frame.close('demo');
+        }
+    })
+</script>
+</html>

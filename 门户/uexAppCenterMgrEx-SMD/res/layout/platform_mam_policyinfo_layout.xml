@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/platform_mam_bg_shape" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="30.0dip" />
+    <RelativeLayout android:id="@id/title_relativelayout" android:background="@drawable/platform_mam_title_bg" android:layout_width="fill_parent" android:layout_height="60.0dip">
+        <ImageView android:id="@id/title_back_imageview" android:background="@drawable/platform_mam_title_back_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_centerVertical="true" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/title_back_imageview" android:layout_centerVertical="true">
+            <TextView android:textSize="20.0sp" android:textColor="@android:color/white" android:id="@id/title_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <ScrollView android:id="@id/mam_scrollview" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_below="@id/title_relativelayout" android:layout_centerInParent="true">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:id="@id/lvRelativeLayout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+                <TextView android:gravity="center" android:id="@id/lvRelative_textView" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <EditText android:id="@id/lvRelative_edittext" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/lvRelative_textView" />
+                <Button android:textSize="20.0sp" android:textColor="@android:color/white" android:id="@id/lvRelative_Button" android:background="@drawable/platform_mam_button_selector" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_below="@id/lvRelative_edittext" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/formRelativeLayout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/lvRelativeLayout" android:layout_centerHorizontal="true" />
+            <TextView android:textColor="@android:color/black" android:id="@id/sms_textView" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/formRelativeLayout" android:layout_centerHorizontal="true" />
+            <Button android:textSize="20.0sp" android:textColor="@android:color/white" android:id="@id/activeButton" android:background="@drawable/platform_mam_button_selector" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="20.0dip" android:layout_below="@id/sms_textView" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

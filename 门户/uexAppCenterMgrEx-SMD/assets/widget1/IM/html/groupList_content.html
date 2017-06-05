@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/ui-new.css"> 
+    </head>
+        <style>
+        .treeview .listview{margin-left: 0em !important;}
+        .bc{background-color: #cac9cf;}
+        .pd{padding-left: .5em;}
+        .pds padding-left: 1.5em;
+        .bcw{background-color: #FFFFFF;}
+        .m-w{min-width: 1em;}
+        .m-h{min-height: 1em;}
+        .mr-r{margin-right: 1em;}
+        .mr-1{margin-right: 8em;}
+        .bot{font-weight: bold;}
+        .sc-text-active{color: #1c9f4c;!important;}
+        .uinn57{padding:.5em .9em;}
+        .btn-act{opacity: .5;}
+    </style>
+    <body class="um-vp bc-bg" ontouchstart>
+               <div class="ub ub-ver  ub-fv" id="chatlist">
+            <div class="uinn ub ub-f1 tx-c ulev ub-ac ub-pc uhide " id="norecord">
+                <div class="ub ub-ver ub-ac ub-pc">                    
+                    <div class="Nodatafont zt-color10">
+                                                                                 您还没有创建群
+                    </div>
+                </div>
+            </div>
+
+        <div class="col umar-b  bc-border  ub ub-ac ub-pc c-wh1  umh6  abc uhide  " style="padding:0em 0 0em 0.3em;">
+                <div class="round rand-img ub-img mr-r" id="123"></div>
+                <div class="ub-f1">
+                   <div class="ub ">
+                       <div class="hh-font1  ub-f1 ddd">李四</div>                       
+                  </div>                 
+              </div>                       
+           </div>
+        </div>
+        <script src="../../vendor/appcan/js/appcan.js"></script>
+        <script src="../../vendor/appcan/js/appcan.control.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/main.js"></script>
+    </body>
+    <script>
+        var list=""
+        appcan.ready(function() { 
+            appcan.initBounce();
+           appcan.window.openToast("正在加载中...");  
+           if(navigator.onLine){
+             var timeId=setInterval(function(){
+             var f=appcan.getLocVal("enterGL"); 
+             if(f=="finish"){
+               clearTimeout(timeId);  
+               list= appcan.getLocVal("groupList");   
+               doGetGroupList(list); 
+             }                          
+           })   
+         }else{
+          list= appcan.getLocVal("groupList");   
+          doGetGroupList(list);                
+         } 
+        if(!isAndroid){  
+           uexWindow.disturbLongPressGesture(2);
+          }
+        })
+        
+ function  doGetGroupList(grouplist){ 
+     appcan.window.closeToast();
+   var grouplist=(JSON.parse(grouplist)).msg.grouplist;  
+   var str="";
+   if (grouplist.length == 0) {
+       $("#norecord").removeClass("uhide");
+       return;
+    }    
+    for(var i=0;i<grouplist.length;i++){
+        var groupId = grouplist[i].groupid;
+        var groupname = grouplist[i].groupname;
+        var  name= grouplist[i].name;       
+       str='<div class="col umar-b  bc-border  ub ub-ac ub-pc c-wh1  umh6 abc ut-s " style="padding:0em 0 0em 0.3em;" id="'+groupname+'">'+
+            '<div class="round rand-img ub-img mr-r" id="'+groupId+'"></div>'+
+            '<div class="ub-f1"><div class="ub ">'+
+            '<div class="hh-font1  ub-f1 ddd">'+name+'</div></div></div></div>';
+      $("#chatlist").append(str);   
+       appcan.button(".abc","act-bg",function(){
+         var groupnode=this.id;  //节点
+         var groupId =this.childNodes[0].id;
+         var groupDesc=$(this).find("div.ddd").html();
+         appcan.setLocVal("groupNode",groupnode);
+         appcan.setLocVal("groupDesc",groupDesc);
+         appcan.setLocVal("groupId",groupId);  
+         var params={
+             groupName:groupnode,
+             type:"all"
+         }
+        var params1=JSON.stringify(params)
+        uexIM.setMarkGroupMsgRead(params1);//将群的消息全部标为已读  
+        appcan.window.open("groupChat","groupChat.html",10);
+        appcan.window.publish("E_XMPP_GETCHATLISTMSG", ""); 
+        getGroupId(groupnode); 
+        setTimeout(function(){
+           appcan.window.evaluateScript('communicate','appcan.window.close(0);');  
+           appcan.window.evaluateScript('groupList','appcan.window.close(0);'); 
+        },500);  
+              
+     });                                                  
+    }
+  
+ }
+ 
+    </script>
+</html>

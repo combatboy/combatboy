@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/line_black" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_alignParentTop="true" />
+    <TextView android:id="@id/line_white" android:background="#ffdfe0e1" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_below="@id/line_black" />
+    <TextView android:textSize="16.0dip" android:textColor="@android:color/white" android:ellipsize="end" android:gravity="center" android:id="@id/dialog_title" android:background="@drawable/platform_window_actionsheet_title_color_style" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="32.0dip" android:singleLine="true" android:layout_below="@id/line_white" />
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/window_back" android:background="@drawable/platform_window_actionsheet_menu_bg_color_style" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/dialog_title">
+        <ListView android:id="@id/dialog_button_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:divider="@color/transparent" android:dividerHeight="0.0dip" />
+        <Button android:textSize="18.0sp" android:textStyle="bold" android:textColor="@android:color/white" android:id="@id/dialog_cancel_button" android:background="@drawable/platform_window_actionsheet_menu_cancel_button_style" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="16.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="20.0dip" android:text="@string/cancel" />
+    </LinearLayout>
+</RelativeLayout>

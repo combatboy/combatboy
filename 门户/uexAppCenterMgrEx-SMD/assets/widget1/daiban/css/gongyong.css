@@ -1,0 +1,202 @@
+ .m-width {
+                width: 8em;
+            }
+            . {
+                position: absolute;
+                float: right;
+                right: -4%;
+                top: 45%;
+                width: .5em;
+                height: .5em;
+                border-radius: .5em;
+            }
+            . {
+                border-color: #00A1EA;
+            }
+            .2 {
+                position: absolute;
+                background-color: white;
+                height: 1.6em;
+                width: 0.2em;
+            }
+            .3 {
+                position: absolute;
+                background-color:white;
+                height: 1.3em;
+                top:49%;
+                width: 0.2em;
+            }
+            .m-mart {
+                margin-top:0.7em;
+            }
+            .m-marl2 {
+                margin-left: 1em;
+            }
+            .m-marl3{
+                margin-right:0.8em;
+            }
+            .m-text{
+                font-size:0.927em;
+            }
+            .m-text2{
+                font-size:0.8125em;
+            }
+             .m-cardH2 {
+                height: 2.5em;
+            }
+            .fs28{
+    font-size: .875rem;
+}
+.fs36{
+    font-size: 1.125rem;
+}
+.u-gap-b{
+    margin-bottom: .625rem;
+}
+.u-c-bg{
+    background-color: #fff;
+}
+.u-c-bo{
+    border-color: #d7d7db;
+}
+.u-c-bobg{
+    background-color: #fff;
+    border-color: #d7d7db;
+}
+.text-error{
+    color: #d24e29;
+}
+.text-muted{
+    color: #5e6266;
+}
+
+/*客户*/
+.g-customer{
+
+}
+.u-company{
+    padding: .9rem 0 .9rem 3.125rem;
+    background: url("../images/crown_3x.png") no-repeat .9375rem center;
+    -webkit-background-size: 1.125rem auto;
+    background-size: 1.125rem auto;
+}
+
+/*欠款*/
+.g-cust-debt,
+.g-cust-days{
+    background-color: #fff;
+    padding: .875rem 0;
+}
+.u-debt-order{
+    padding-bottom: 1rem;
+}
+.u-debt-order:last-child{
+    padding-bottom: 0;
+}
+.u-debt-order-no{
+    margin-left: .9375rem;
+}
+.u-debt-order-tit{
+    margin: .625rem 0;
+}
+.u-debt-order-item{
+    height: 1.25rem;
+    padding-bottom: .625rem;
+}
+.u-debt-order-item:last-child{
+    padding-bottom: 0;
+}
+.u-debt-order-sp{
+    border-left: 1px solid #d7d7db;
+}
+.u-cust-debt-sum{
+    margin: 0 .9375rem;
+    font-weight: bold;
+}
+
+
+/*三栏目*/
+.g-col{
+    padding: 1.1875rem 0;
+}
+.u-col{
+
+}
+.u-col > b{
+    display: block;
+    font-weight: normal;
+}
+.u-col > span{
+    font-size: .75rem;
+}
+.u-sp-gap::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 1.875rem;
+    border-right: 1px solid #d7d7db;
+}
+
+/*g-sum*/
+.g-sum{
+
+}
+.m-sum{
+    margin: 0 .875rem;
+    padding: .1875rem 0;
+}
+.u-sum{
+    margin: .75rem 0;
+}
+
+/*remark*/
+.g-remark{
+    padding: 1rem 0;
+}
+.m-remark{
+    margin: 0 .875rem;
+}
+.u-remark{
+    margin-left: .5rem;
+}
+.u-remark-area{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0 .4rem .4rem;
+    outline: none;
+    resize: none;
+}
+
+/*switch container*/
+.u-pay-switch{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 1.7rem;
+    margin: auto 0;
+}
+
+/*override switch*/
+.switch-mini{
+    border-color: #d7d7db;
+}
+.switch-mini.bc-head{
+    border-color: #32a1e1;
+}
+.switch-btn.sc-bg-active{
+    background-color: #fff;
+}
+.dingdan{
+    background-color: white;
+}
+.highlen1{
+    padding-top: 0.625rem;
+    
+}
+.highlen2{
+     padding-bottom: 0.625rem;
+}

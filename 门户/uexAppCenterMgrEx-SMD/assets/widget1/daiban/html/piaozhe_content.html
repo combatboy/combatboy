@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+    <link rel="stylesheet" href="../css/chaozi.css">
+    <link rel="stylesheet" href="../css/lib.css"/>
+</head>
+<body class="um-vp c-bg" ontouchstart ng-controller="GlbController">
+<div class="a-bg2">
+
+    <!--spinner-->
+    <div class="g-spinner" ng-hide="Data.itemList.length||Data.itemListEmpty||Data.itemListErr"><i class="fa fa-spinner fa-spin"></i></div>
+    <div class="g-req-empty text-muted ng-hide" ng-show="Data.itemListEmpty">暂无数据</div>
+    <div class="g-req-error text-muted ng-hide" ng-show="Data.itemListErr">查询失败</div>
+
+    <div class="a-mar ng-hide" ng-show="Data.itemList.length" ng-repeat="item in Data.itemList" ng-click="openDetail(item)">
+        <div class="ub ub-ac a-mar3  d-border">
+            <div class="ub-img chaozx"></div>
+            <div class="a-marl ub-f1">
+                <div class="ub">
+                    <p class="ub-f1" ng-bind="item.CUSNAME"><!--江苏汉和制药有限公司--></p>
+                    <p class="ulev-1 a-bg" ng-bind="item.CREATEDATE|substr:0:19|timestamp|date:'MM/dd'"><!--12/24--></p>
+                </div>
+                <div class="ulev-1 a-bg a-mar2" ng-bind="item.CREATER"><!--张三--></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="../../vendor/appcan/js/appcan.js"></script>
+<script src="../../vendor/appcan/js/appcan.control.js"></script>
+<script src="../../vendor/simcere/js/config.js"></script>
+<script src="../../vendor/ionic/js/angular/angular.min.js"></script>
+<script src="../../vendor/ow/ngq.js"></script>
+
+<script>
+    appcan.ready(function () {
+        angular.bootstrap(document.documentElement, ['myApp']);
+
+        appcan.frame.setBounce({
+            bounceType: '1',
+            color: '#fff',
+            upEndCall: function (type) {
+                $(window).trigger('zy-bounce');
+                //appcan.window.publish('module/page.bounce');
+            }
+        });
+    });
+
+    angular.module('myApp', ['ngq'])
+            .service('Data', function () {
+                return {
+                    itemList: [],
+                    itemListEmpty: false,
+                    itemListErr: false
+                };
+            })
+            .filter('toTimestamp', function () {
+                return function (ds){
+                    console.log(ds);
+                    return new Date(ds).getTime();
+                };
+            })
+            .service('getItemList', function ($timeout, Data) {
+                return function (pageNum) {
+                    var params = {
+                        "loginId":localStorage.getItem('simcere.runtime.loginId'),
+                        "pageNumber":pageNum||1,
+                        "pageSize":20
+                    };
+                    console.log(params);
+                    //appcan.window.openToast('请稍候');
+                    appcan.request.ajax({
+                        type: 'POST',
+                        url: SimcereConfig.server.mas + '/ship/ScrQueryDiscountList',
+                        data: params,
+                        contentType: 'application/json',
+                        dataType: 'json',
+                        success: function (data, status, xhr) {
+                            //appcan.window.closeToast();
+                            appcan.frame.resetBounce(1);
+                            //appcan.window.resetBounceView(1);//0:顶端，1:底端
+                            console.log(data);
+
+                            if(data.status!='0'){
+                                //appcan.window.openToast('操作失败',2000);
+                                console.error('res error');
+                                $timeout(function () {
+                                    Data.itemListErr = !Data.itemList.length;
+                                });
+                            }else{
+                                $timeout(function () {
+                                    Data.itemList = Data.itemList.concat(data.data);
+                                    Data.itemListEmpty = !Data.itemList.length;
+                                });
+                            }
+                        },
+                        error: function (xhr, errorType, error) {
+                            //appcan.window.openToast('网络连接不可用',2000);
+                            appcan.frame.resetBounce(1);
+                            //appcan.window.resetBounceView(1);//0:顶端，1:底端
+                            console.error('network error');
+
+                            $timeout(function () {
+                                Data.itemListErr = !Data.itemList.length;
+                            });
+                        }
+                    });
+                };
+            })
+            .service('openDetail', function () {
+                return function (item){
+                    localStorage.setItem('daiban/piaozheDetail.orderId', item.ID);
+                    appcan.window.open('daiban_piaozheDetail','piaozheDetail.html','10');
+                };
+            })
+            .service('resetList', function (Data, getItemList) {
+                return function (){
+                    Data.itemList.length = 0;
+                    getItemList();
+                };
+            })
+            .controller('GlbController', function ($scope, Data, getItemList, openDetail, resetList) {
+                $scope.Data = Data;
+                $scope.openDetail = openDetail;
+
+                getItemList();
+
+                $(window).on('zy-bounce', window.getNextPage = function () {
+                    var pageSize = 20;
+                    var list = Data.itemList;
+                    var pageLoader = getItemList;
+
+                    var len = list.length;
+                    if(len % pageSize){
+                        console.log('content loaded');
+                        appcan.frame.resetBounce(1);
+                        return;
+                    }
+                    var pageNum = Math.floor(len / pageSize) + 1;
+                    if(pageNum==1){
+                        console.warn('pageNum ==> 1');
+                        appcan.frame.resetBounce(1);
+                        return;
+                    }
+                    pageLoader.call(null, pageNum);
+                });
+
+                appcan.window.subscribe('daiban/list2.change',resetList);
+            });
+</script>
+</body>
+</html>

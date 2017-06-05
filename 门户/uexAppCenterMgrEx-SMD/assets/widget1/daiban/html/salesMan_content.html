@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+    <link rel="stylesheet" href="../css/salesMan.css">
+
+    <link rel="stylesheet" href="../css/lib.css"/>
+</head>
+<body class="um-vp bc-bg" ontouchstart ng-controller="GlbController">
+<div class="g-list">
+
+    <!--spinner-->
+    <div class="g-spinner" ng-hide="Data.itemList.length||Data.itemListEmpty||Data.itemListErr"><i class="fa fa-spinner fa-spin"></i></div>
+    <div class="g-req-empty text-muted ng-hide" ng-show="Data.itemListEmpty">暂无数据</div>
+    <div class="g-req-error text-muted ng-hide" ng-show="Data.itemListErr">查询失败</div>
+
+    <div class="s-border bc-bgw uc-a1 s-mar ub ub-ac ng-hide" ng-show="Data.itemList.length" ng-repeat="item in Data.itemList" ng-click="item.checked=!item.checked">
+        <div class="ub-f1">
+            <div class="" ng-bind="item.CUSTOMERNAME"></div>
+            <div class="ub s-mar2 ub-ac">
+                <div class="ub-img s-toux"></div>
+                <div class="s-mar3 ulev-1" ng-bind="item.SALESMANNAME"></div>
+            </div>
+            <div class="f-fs26 text-muted" ng-bind="item.COMNAME"></div>
+        </div>
+        <div class="">
+            <div class="ub-img s-xuanz2 uc-a2" ng-class="{'s-bg':item.checked}">
+                <div class="ub-img s-xuanz uc-a2 s-wh"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../vendor/appcan/js/appcan.js"></script>
+<script src="../../vendor/appcan/js/appcan.control.js"></script>
+<script src="../../vendor/simcere/js/config.js"></script>
+
+<script src="../../vendor/ionic/js/angular/angular.min.js"></script>
+<script src="../../vendor/ow/ngq.js"></script>
+
+<script src="../js/zyModal.js"></script>
+<script>
+    appcan.ready(function () {
+        angular.bootstrap(document.documentElement, ['myApp']);
+    });
+
+    angular.module('myApp', [])
+            .service('Data', function () {
+                return {
+                    itemList: [],
+                    itemListEmpty: false,
+                    itemListErr: false
+                };
+            })
+            .service('getItemList', function ($timeout, Data) {
+                return function (pageNum) {
+                    var params = {
+                        "loginId": localStorage.getItem('simcere.runtime.loginId'),
+                        "pageNumber": pageNum||1,
+                        "pageSize": 20
+                    };
+                    console.log(params);
+                    //appcan.window.openToast('请稍候');
+                    appcan.request.ajax({
+                        type: 'POST',
+                        url: SimcereConfig.server.mas + '/ship/ScrQuerySalesmanReq',
+                        data: params,
+                        contentType: 'application/json',
+                        dataType: 'json',
+                        success: function (data, status, xhr) {
+                            //appcan.window.closeToast();
+                            appcan.frame.resetBounce(1);
+                            //appcan.window.resetBounceView(1);//0:顶端，1:底端
+                            console.log(data);
+
+                            if (data.status != '0') {
+                                //appcan.window.openToast('操作失败',2000);
+                                console.error('res error');
+                                $timeout(function () {
+                                    Data.itemListErr = !Data.itemList.length;
+                                });
+                            } else {
+                                $timeout(function () {
+                                    Data.itemList = Data.itemList.concat(data.data);
+                                    Data.itemListEmpty = !Data.itemList.length;
+
+                                    if(Data.itemList.length){
+                                        var showBottomBtn = '1';
+                                        //列表不为空，需要显示底部按钮
+                                        appcan.window.publish('daiban/salesMan.resize',showBottomBtn);
+                                    }
+                                });
+                            }
+                        },
+                        error: function (xhr, errorType, error) {
+                            //appcan.window.openToast('网络连接不可用',2000);
+                            appcan.frame.resetBounce(1);
+                            //appcan.window.resetBounceView(1);//0:顶端，1:底端
+                            console.error('network error');
+                            $timeout(function () {
+                                Data.itemListErr = !Data.itemList.length;
+                            });
+                        }
+                    });
+                };
+            })
+            .service('auditRequest', function (Data, getItemList) {
+                return function (updateList, passBack, comment){
+                    var params = {
+                        "loginId": localStorage.getItem('simcere.runtime.loginId'),
+                        "value": passBack == 'pass' ? 'ok' : 'return',
+                        "requestions": updateList
+                    };
+                    console.log(params);
+
+                    appcan.window.openToast('请稍候');
+                    appcan.request.ajax({
+                        type: 'POST',
+                        url: SimcereConfig.server.mas + '/ship/ScrUpdateSalesman',
+                        data: params,
+                        contentType: 'application/json',
+                        dataType: 'json',
+                        success: function (data, status, xhr) {
+                            appcan.window.closeToast();
+                            //appcan.frame.resetBounce(1);
+                            //appcan.window.resetBounceView(1);//0:顶端，1:底端
+                            console.log(data);
+
+                            if(data.status!='0'){
+                                appcan.window.openToast('操作失败',2000);
+                                console.error('res error');
+                            }else{
+                                appcan.window.openToast(data.msg, 2000);
+                                Data.itemList.length = 0;
+                                getItemList();
+                            }
+                        },
+                        error: function (xhr, errorType, error) {
+                            appcan.window.openToast('网络连接不可用',2000);
+                            //appcan.frame.resetBounce(1);
+                            //appcan.window.resetBounceView(1);//0:顶端，1:底端
+                            console.error('network error');
+                        }
+                    });
+                };
+            })
+            .service('getUpdateList', function (Data) {
+                return function (){
+                    var checked = _.filter(Data.itemList, function (o) {
+                        return !!o.checked;
+                    });
+                    return _.map(checked, function (o, i, a) {
+                        return {
+                            id: o.ID,
+                            cusCode: o.CUSCODE,
+                            salesmanCode: o.SALESMANCODE
+                        };
+                    })
+                };
+            })
+            .service('initAuditHandler', function (auditRequest, getUpdateList) {
+                return function (){
+                    //审核:
+                    appcan.window.subscribe('daiban/salesMan.passBack', function (passBack) {
+                        console.log('daiban/salesMan.passBack');
+
+                        var updateList = getUpdateList();
+                        console.log(updateList);
+                        if(!updateList.length){
+                            appcan.window.openToast('请选择要审核的项目', 2000);
+                            return;
+                        }
+
+                        /*window.zyModalCallback = function (comment) {
+                            auditRequest(updateList, passBack, comment);
+                        };
+                        openZyModal();*/
+
+                        var comment = '';
+                        auditRequest(updateList, passBack, comment);
+                    });
+                    //模态窗回调
+                    appcan.window.subscribe('zyModal.close', function (comment) {
+                        console.log('zyModal.close');
+                        if(typeof window.zyModalCallback == 'function'){
+                            window.zyModalCallback(comment);
+                        }
+                    });
+                };
+            })
+            .service('initBounceLoader', function (Data, getItemList) {
+                return function (){
+                    appcan.frame.setBounce({
+                        bounceType: '1',
+                        color: '#fff',
+                        upEndCall: function (type) {
+                            $(window).trigger('zy-bounce');
+                            //appcan.window.publish('module/page.bounce');
+                        }
+                    });
+
+                    $(window).on('zy-bounce', window.getNextPage = function () {
+                        var pageSize = 20;
+                        var list = Data.itemList;
+                        var len = list.length;
+                        var pageLoader = getItemList;
+
+                        if(len % pageSize){
+                            console.log('content loaded');
+                            appcan.frame.resetBounce(1);
+                            return;
+                        }
+                        var pageNum = Math.floor(len / pageSize) + 1;
+                        if(pageNum==1){
+                            console.warn('pageNum ==> 1');
+                            appcan.frame.resetBounce(1);
+                            return;
+                        }
+                        pageLoader.call(null, pageNum);
+                    });
+                };
+            })
+            .controller('GlbController', function ($scope, Data, getItemList, initAuditHandler, initBounceLoader) {
+                $scope.Data = Data;
+
+                getItemList();
+                initAuditHandler();
+                initBounceLoader();
+            });
+</script>
+</body>
+</html>

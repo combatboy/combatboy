@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uexplugins>
+    
+    <plugin className="org.zywx.wbpalmstar.plugin.uexappmarket.eue.EUExAppMarketEx" uexName="uexAppCenterMgrEx">
+        <method name="open" />
+        <method name="close" />
+        <method name="isAppInstalled" />
+        <method name="getSoftToken" />
+        <method name="isAppInstalled" />
+        <method name="showNewMsg" />
+    </plugin>
+    
+    <plugin className="org.zywx.wbpalmstar.plugin.ueximage.EUExImage" uexName="uexImage">
+        <method name="openPicker" />
+        <method name="onPickerClosed" />
+        <method name="openBrowser" />
+        <method name="openCropper" />
+        <method name="clearOutputImages" />
+        <method name="saveToPhotoAlbum" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexzip.EUExZip" uexName="uexZip" version="3.0" build="0">
+        <method name="zip" />
+        <method name="unzip" />
+        <method name="zipWithPassword" />
+        <method name="unzipWithPassword" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.ueximagebrowser.EUExImageBrowser" uexName="uexImageBrowser">
+        <method name="pick" />
+        <method name="pickMulti" />
+        <method name="open" />
+        <method name="save" />
+        <method name="cleanCache" />
+        <method name="cropImage" />
+    </plugin>
+    
+    <plugin className="org.zywx.wbpalmstar.plugin.uexlockpattern.EUExLockPattern" uexName="uexLockPattern">
+        <method name="lock" />
+        <method name="set" />
+        <method name="get" />
+        <method name="init" />
+        <method name="close" />
+        <method name="setImg" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexsms.EUExSMS" uexName="uexSMS" version="3.0.1" build="1">
+        <method name="open" />
+        <method name="send" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexActionSheet.EUExActionSheet" uexName="uexActionSheet" version="3.0" build="0">
+        <method name="open" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexCalendar.EUExCalendar" uexName="uexCalendar">
+        <method name="open" />
+        <method name="close" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexumeng.EUExUmeng" uexName="uexUmeng">
+        <method name="onEvent" />
+        <method name="getDeviceInfo" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexim.EUExIM" uexName="uexIM">
+        <method name="login" />
+        <method name="logout" />
+        <method name="setServerConfig" />
+        <method name="setSelfHeadPic" />
+        <method name="notifyCardInfo" />
+        <method name="addToBlackList" />
+        <method name="removeFromBlackList" />
+        <method name="getChatListWithLastMsg" />
+        <method name="createChatGroup" />
+        <method name="deleteChatGroup" />
+        <method name="joinChatGroup" />
+        <method name="leaveChatGroup" />
+        <method name="kickFromChatGroup" />
+        <method name="setChatGroupTitle" />
+        <method name="deleteUserChatRecord" />
+        <method name="deleteChatGroupRecord" />
+        <method name="setMsgNotifyType" />
+        <method name="deleteAllRecord" />
+        <method name="sendMsgText" />
+        <method name="sendMsgImage" />
+        <method name="sendMsgVoice" />
+        <method name="deleteOnlyUserChatRecord" />
+        <method name="getAllGroupMsgUnreadCount" />
+        <method name="setMarkGroupMsgRead" />
+        <method name="setVoiceGroupMsgRead" />
+        <method name="deleteOnlyChatGroupRecord" />
+        <method name="deleteChatGroupRecord" />
+        <method name="sendGroupMsgText" />
+        <method name="sendGroupMsgImage" />
+        <method name="sendGroupMsgVoice" />
+        <method name="getChatList" />
+        <method name="getGroupChatList" />
+        <method name="getBlackList" />
+        <method name="setOffLineMsgCallback" />
+        <method name="setOffLineGroupMsgCallback" />
+        <method name="getAllMsgUnreadCount" />
+        <method name="setMarkMsgRead" />
+        <method name="setVoiceMsgRead" />
+        <method name="inviteToChatGroup" />
+        <method name="refuseInvitation" />
+        <method name="getUserAndGroupAllMsgUnreadCount" />
+        <method name="sendMsgLocation" />
+        <method name="sendGroupMsgLocation" />
+        <method name="changeGroupName" />
+        <method name="creatChatGroupWithReturnID" />
+        <method name="sendMsgFile" />
+        <method name="sendFileMsg" />
+        <method name="sendGroupMsgFile" />
+        <method name="sendGroupFileMsg" />
+        <method name="initimParam" />
+        <method name="getGroupList" />
+        <method name="getGroupMembers" />
+        <method name="addGroupMembers" />
+        <method name="deleteGroupMembers" />
+        <method name="getOnlineStatus" />
+        <method name="downloaderChatMgr" />
+        <method name="downloaderGroupMgr" />
+        <method name="messageTop" />
+        <method name="cannelMessageTop" />
+        <method name="groupMessageTop" />
+        <method name="cannelGroupMessageTop" />
+        <method name="messageMask" />
+        <method name="cannelMessageMask" />
+        <method name="groupMessageMask" />
+        <method name="cannelGroupMessageMask" />
+        <method name="queryMessageMaskList" />
+        <method name="queryGroupMessageMaskList" />
+        <method name="changeGroupSubject" />
+        <method name="queryGroupSubject" />
+        <method name="isGroupTrouble " />
+        <method name="queryGroupTroubleList" />
+        <method name="groupTrouble" />
+        <method name="cannelGroupTrouble" />
+        <method name="getGroupMemberRose" />
+        <method name="isGroupMask" />
+        <method name="getGroupidByName" />
+        <method name="searchMessage" />
+        <method name="searchGroupMessage" />
+        <method name="changeGroupNameByall" />
+        <method name="joinChatGroups" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexClipImage.EUExClipImage" uexName="uexClipImage">
+        <method name="open" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexmultiHttp.EUExXmlHttpMgr" uexName="uexXmlHttpMgr">
+        <method name="open" />
+        <method name="setPostData" />
+        <method name="setPutData" />
+        <method name="setCertificate" />
+        <method name="send" />
+        <method name="setInputStream" />
+        <method name="close" />
+        <method name="setHeaders" />
+        <method name="setBody" />
+        <method name="setAppVerify" />
+        <method name="getCookie" />
+        <method name="clearCookie" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexdatabasemgr.EUExDataBaseMgr" uexName="uexDataBaseMgr" version="3.0" build="0">
+        <method name="openDataBase" />
+        <method name="executeSql" />
+        <method name="selectSql" />
+        <method name="transaction" />
+        <method name="beginTransaction" />
+        <method name="endTransaction" />
+        <method name="closeDataBase" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexlog.EUExLog" uexName="uexLog" version="3.0" build="0">
+        <method name="sendLog" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexfilemgr.EUExFileMgr" uexName="uexFileMgr" version="3.0" build="0">
+        <method name="createFile" />
+        <method name="createDir" />
+        <method name="openFile" />
+        <method name="deleteFileByPath" />
+        <method name="deleteFileByID" />
+        <method name="isFileExistByPath" />
+        <method name="isFileExistByID" />
+        <method name="getFileTypeByPath" />
+        <method name="getFileTypeByID" />
+        <method name="explorer" />
+        <method name="multiExplorer" />
+        <method name="seekFile" />
+        <method name="seekBeginOfFile" />
+        <method name="seekEndOfFile" />
+        <method name="writeFile" />
+        <method name="readFile" />
+        <method name="getFileSize" />
+        <method name="getFilePath" />
+        <method name="getFileRealPath" />
+        <method name="closeFile" />
+        <method name="getReaderOffset" />
+        <method name="readPercent" />
+        <method name="readNext" />
+        <method name="readPre" />
+        <method name="openSecure" />
+        <method name="createSecure" />
+        <method name="getFileCreateTime" />
+        <method name="renameFile" />
+        <method name="getFileListByPath" />
+        <method name="search" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexdevice.EUExDevice" uexName="uexDevice" version="3.0" build="0">
+        <method name="vibrate" />
+        <method name="cancelVibrate" />
+        <method name="getInfo" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexemm.EMMEngineEventListener" startup="true" />
+    <plugin className="org.zywx.wbpalmstar.plugin.uexemm.EUExEMM" uexName="uexEMM">
+        <method name="getLoginProperty" />
+        <method name="regist" />
+        <method name="login" />
+        <method name="changePassword" />
+        <method name="ssoLogin" />
+        <method name="bindUserRelation" />
+        <method name="validateCode" />
+        <method name="validateBindCode" />
+        <method name="getVerificationImage" />
+        <method name="boundOtherInfo" />
+        <method name="logout" />
+        <method name="setEvent" />
+        <method name="beginEvent" />
+        <method name="endEvent" />
+        <method name="getAccessToken" />
+        <method name="removeAccessToken" />
+        <method name="getDisablePlugins" />
+        <method name="getDisableWindows" />
+        <method name="updateParams" />
+        <method name="fileEncrypt" />
+        <method name="fileDecrypt" />
+        <method name="getWidgetInfo" />
+        <method name="getWidgetReportResult" />
+        <method name="getSoftToken" />
+        <method name="widgetStartReport" />
+        <method name="initEMM" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexemail.EUExEmail" uexName="uexEmail" version="3.0" build="0">
+        <method name="open" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexcall.EUExCall" uexName="uexCall" version="3.0。1" build="1">
+        <method name="dial" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexcamera.EUExCamera" uexName="uexCamera">
+        <method name="open" />
+        <method name="openInternal" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexuploadermgr.EUExUploaderMgr" uexName="uexUploaderMgr">
+        <method name="setHeaders" />
+        <method name="createUploader" />
+        <method name="closeUploader" />
+        <method name="uploadFile" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexfilemgr.EUExFileMgr" uexName="uexFileMgr">
+        <method name="createFile" />
+        <method name="createDir" />
+        <method name="openFile" />
+        <method name="deleteFileByPath" />
+        <method name="deleteFileByID" />
+        <method name="isFileExistByPath" />
+        <method name="isFileExistByID" />
+        <method name="getFileTypeByPath" />
+        <method name="getFileTypeByID" />
+        <method name="explorer" />
+        <method name="multiExplorer" />
+        <method name="seekFile" />
+        <method name="seekBeginOfFile" />
+        <method name="seekEndOfFile" />
+        <method name="writeFile" />
+        <method name="readFile" />
+        <method name="getFileSize" />
+        <method name="getFilePath" />
+        <method name="getFileRealPath" />
+        <method name="closeFile" />
+        <method name="getReaderOffset" />
+        <method name="readPercent" />
+        <method name="readNext" />
+        <method name="readPre" />
+        <method name="openSecure" />
+        <method name="createSecure" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexdownloadermgr.EUExDownloaderMgr" uexName="uexDownloaderMgr">
+        <method name="createDownloader" />
+        <method name="download" />
+        <method name="closeDownloader" />
+        <method name="getInfo" />
+        <method name="clearTask" />
+        <method name="cancelDownload" />
+        <method name="setHeaders" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexdocument.EUExDocumentReader" uexName="uexDocumentReader" version="3.0" build="0">
+        <method name="openDocumentReader" />
+        <method name="close" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.uexaudio.EUExAudio" uexName="uexAudio" version="3.0" build="0">
+        <method name="open" />
+        <method name="play" />
+        <method name="pause" />
+        <method name="stop" />
+        <method name="volumeUp" />
+        <method name="volumeDown" />
+        <method name="openPlayer" />
+        <method name="record" />
+        <method name="startBackgroundRecord" />
+        <method name="stopBackgroundRecord" />
+        <method name="openSoundPool" />
+        <method name="addSound" />
+        <method name="playFromSoundPool" />
+        <method name="stopFromSoundPool" />
+        <method name="closeSoundPool" />
+    </plugin>
+    <plugin className="org.zywx.wbpalmstar.plugin.chatkeyboard.EUExChatKeyboard" uexName="uexChatKeyboard">
+        <method name="open" />
+        <method name="close" />
+        <method name="onCommit" />
+        <method name="onShareMenuItem" />
+        <method name="onVoiceAction" />
+        <method name="getInputBarHeight" />
+        <method name="hideKeyboard" />
+    </plugin>
+</uexplugins>

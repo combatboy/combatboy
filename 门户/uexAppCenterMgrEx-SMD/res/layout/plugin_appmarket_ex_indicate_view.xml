@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" android:padding="@dimen/plugin_appmarket_ex_indicate_ball_padding"
+    android:paddingLeft="@dimen/plugin_appmarket_ex_indicate_ball_padding_horizontal"
+    android:paddingRight="@dimen/plugin_appmarket_ex_indicate_ball_padding_horizontal">
+
+    <ImageView
+        android:id="@+id/plugin_appmarket_ex_indicate_imageView"
+        android:layout_width="@dimen/plugin_appmarket_ex_indicate_ball_width"
+        android:layout_height="@dimen/plugin_appmarket_ex_indicate_ball_width"
+       />
+
+</LinearLayout>

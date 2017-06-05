@@ -1,0 +1,321 @@
+/*页面公用样式*/
+.umwh-res11{width:1.8em;height:1.8em;}
+.umwh-res12{ width:1.6em;height:1.6em;}
+.div-hide{ display:none; !important}
+/*portal 页面样式开始*/
+.bg-portal{
+	background-image: url('../images/bg-portal.png');
+}
+.pdr-portal-list{
+	padding-right:2.5em;
+}
+.pdt-portal-copyright{
+	padding-bottom:1em;
+}
+.umwh-portal-logo{
+	width:13.2em;
+	height:2.25em;
+}
+.uinn-portal-logo{
+	padding: 1.9em 0;
+}
+.uinn-checkcode{
+	padding:0.5em 0;
+}
+.c-mgra-portallist
+{
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(224, 227, 234, 1)),to(rgba(255, 255, 255, 1)));
+	background-image: -webkit-linear-gradient(top, rgba(224, 227, 234, 1) 0%,  rgba(255, 255, 255, 1) 100%);
+	background-image: linear-gradient(top, rgba(224, 227, 234, 1) 0%, rgba(255, 255, 255, 1) 100%) ; 	
+}
+/*portal 页面样式结束*/
+
+
+/*index页面开始-header样式*/
+.umh-header{
+	height:2.75em;
+}
+.font-head{
+	font-family:"微软雅黑";
+}
+.c-bluhead{
+	background-color:#003079;
+}
+.fw-head{
+	font-weight:normal;
+}
+.uc-tl-head{
+	-webkit-border-top-right-radius: .2em;
+	border-top-right-radius: .2em;
+}
+.uc-tr-head{
+	-webkit-border-top-left-radius: .2em;
+	border-top-left-radius: .2em;
+}
+
+/*head底部阴影*/
+.uts-head{
+	-webkit-box-shadow: 2px 2px 0px rgba(43, 118, 181, .4);
+	box-shadow: 2px 2px 0px rgba(43, 118, 181, .4);
+}
+.utsi-afterhead{
+	-webkit-box-shadow: inset 0px 1px 5px rgba(0, 0, 0, .75);
+	box-shadow: inset 0px 1px 5px rgba(0, 0, 0, .75);
+}
+.utsi-head{
+	-webkit-box-shadow: inset 1px 2px 0px rgba(43, 118, 181, .4);
+	box-shadow: inset 1px 2px 0px rgba(43, 118, 181, .4);
+}
+.umh-shadow{
+	height: 0.1em;
+}
+
+/*content页面样式*/
+.utsi-laoding-top{
+	-webkit-box-shadow: inset 0px 5px 5px rgba(0, 0, 0, .3);
+	box-shadow: inset 0px 5px 5px rgba(0, 0, 0, .3);
+}
+/*body页面背景图片*/
+.bg-body{
+	background-image: url('../images/bg-body.png');
+}
+.t-login{
+	color:#7e8ea1;
+}
+.bg-user{
+	background-image: url('../images/bg-user.png');
+}
+.bg-pwd{
+	background-image: url('../images/bg-pwd.png');
+}
+.c-mred
+{
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(221, 0, 37, 1)),to(rgba(152, 0, 5, 1)));
+	background-image: -webkit-linear-gradient(top, rgba(221, 0, 37, 1) 0%,  rgba(152, 0, 5, 1) 100%);
+	background-image: linear-gradient(top, rgba(221, 0, 37, 1) 0%, rgba(152, 0, 5, 1) 100%) ; 	
+}
+.b-redbtn{
+	border-color:#aa0008;
+}
+/*index页面结束*/
+
+
+/*loading正在加载中...*/
+.c-mbla-body
+{
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .4)),to(rgba(0, 0, 0, .4)));
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, .4) 0%,  rgba(0, 0, 0, .4) 100%);
+	background-image: linear-gradient(top, rgba(0, 0, 0, .4) 0%, rgba(0, 0, 0, .4) 100%) ; 	
+}
+/*正在加载中...阴影*/
+.uts-loading{
+	-webkit-box-shadow: 6px 6px 16px rgba(0, 0, 0, .38);
+	box-shadow: 6px 6px 16px rgba(0, 0, 0, .38);
+}
+.wmh-loading{
+	height:7.3em;
+}
+.wmh-loading-logo{
+	height:4.8em;
+	width:4.8em;
+}
+.c-gra-loading{
+	background-color:#ebebeb;
+}
+.bg-loading-body{
+	background-image: url('../images/bg-loading-body.png');
+}
+.bg-loading-logo{
+	background-image: url('../images/bg-loading-logo.png');
+}
+.bg-loading-cancel{
+	background-image: url('../images/bg-loading-cancel.png');
+}
+
+/*登录错误页面*/
+.umwh-login-error{
+	height:7.5em;
+	width:12em;
+}
+.umh-login-erroricon{
+	height:3em;
+}
+.umw-login-erroricon{
+	width:3em;
+}
+.c-mlogin-error{
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .7)),to(rgba(0, 0, 0, .7)));
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, .7) 0%,  rgba(0, 0, 0, .7) 100%);
+	background-image: linear-gradient(top, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, .7) 100%) ; 	
+}
+.bg-login-error{
+	background-image: url('../images/bg-login-error.png');
+}
+.uts-login-error{
+	-webkit-box-shadow: 6px 6px 16px rgba(0, 0, 0, .38);
+	box-shadow: 6px 6px 16px rgba(0, 0, 0, .38);
+}
+
+/*联合办公页面-begin*/
+.c-gra-ufbottom{
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(216, 216, 216, 1)),to(rgba(234, 234, 234, 1)));
+	background-image: -webkit-linear-gradient(top, rgba(216, 216, 216, 1) 0%,  rgba(234, 234, 234, 1) 100%);
+	background-image: linear-gradient(top, rgba(216, 216, 216, 1) 0%, rgba(234, 234, 234, 1) 100%) ; 	
+}
+.b-gra-ufbottom{
+	border-color:#afafaf;
+	boder-top:2px solid;	
+}
+.uts-unionoffice-bottom{
+	-webkit-box-shadow: 2px 2px 0px rgba(255, 255, 255, .4);
+	box-shadow: 2px 2px 0px rgba(255, 255, 255, .4);
+}
+/*联合办公页面--end*/
+
+
+/*账户管理页面-begin*/
+.c-mblu-addbtn
+{
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(44, 132, 214, 1)),to(rgba(22, 92, 177, 1)));
+	background-image: -webkit-linear-gradient(top, rgba(44, 132, 214, 1) 0%,  rgba(22, 92, 177, 1) 100%);
+	background-image: linear-gradient(top, rgba(44, 132, 214, 1) 0%, rgba(21, 90, 175, 1) 100%) ; 	
+}
+.b-actmgt-addbtn{	
+	border:1px solid #124d96;
+}
+.utsi-actmgt-addbtn{
+	-webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, .6);
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, .6);
+}
+.umwh-actmgt-confirm{
+	width:1.5em;
+	height:2em;
+}
+input[type="radio"]:checked + div.addtab-act{
+	background-color:rgba(217, 217, 217, 1) !important;	
+}
+input[type="radio"] + div.addtab-act
+{
+	background-color:rgba(255, 255, 255, 1) !important;	
+}
+input[type="radio"] + div>div.res-confirm{
+	background-image: none;
+}
+input[type="radio"]:checked + div>div.res-confirm{
+	background-image: url('../images/bg-actmgt-confirm.png');
+}
+/*账户管理页面-end*/
+
+
+/*账户管理删除页面-begin*/
+input[type="radio"] + div.res-delicon{
+	background-image: url('../images/bg-actdel-delicon.png');
+}
+input[type="radio"]:checked + div.res-delicon{
+	background-image: url('../images/bg-actdel-delicon-act.png');
+}
+input[type="radio"] ~ div>div.btndisplay{
+	display:none;
+}
+input[type="radio"]:checked ~ div>div.btndisplay{
+	display:block;
+}
+.bg-actdel-delbtn{
+	background-image: url('../images/bg-actdel-delbtn.png');
+}
+.utsi-actdel-delbtn{
+	-webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, .3);
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, .3);
+}
+.c-mred-delbtn{
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(178, 1, 13, 1)),to(rgba(166, 2, 13, 1)));
+	background-image: -webkit-linear-gradient(top, rgba(178, 1, 13, 1) 0%,  rgba(166, 2, 13, 1) 100%);
+	background-image: linear-gradient(top, rgba(178, 1, 13, 1) 0%, rgba(166, 2, 13, 1) 100%) ; 	
+}
+.b-actdel-delbtn{	
+	border:1px solid #5a0006;
+}
+/*账户管理删除页面-end*/
+
+/*边框样式*/
+b-login{
+	border-color:#a7b4bb;
+}
+
+/*背景图片*/
+.res-headback{
+	background-image: url('../images/back-head.png');
+}
+.res-menu{
+	background-image: url('../images/bg-unionoffice-menu.png');
+}
+.res-back{
+	background-image: url('../images/bg-unionoffice-back.png');
+}
+.res-goahead{
+	background-image: url('../images/bg-unionoffice-goahead.png');
+}
+.res-portallogo{
+	background-image: url('../images/bg-portal-logo.png');
+}
+.res-unionoffice{
+	background-image: url('../images/bg-portal-unionoffice.png');
+}
+.res-fly{
+	background-image: url('../images/bg-portal-fly.png');
+}
+.res-employ{
+	background-image: url('../images/bg-portal-employ.png');
+}
+.res-airline{
+	background-image: url('../images/bg-portal-airline.png');
+}
+.res-cloud{
+	background-image: url('../images/bg-portal-cloud.png');
+}
+.res-user{
+	background-image: url('../images/bg-unionoffice-user.png');
+}
+.res-add{
+	background-image: url('../images/bg-actmgt-add.png');
+}
+.res-delconfirm{
+	background-image: url('../images/bg-actdel-delconfirm.png');
+}
+.res-delmenu{
+	background-image: url('../images/bg-actmgt-delmenu.png');
+}
+/*按钮按下效果*/
+.loginbtn-act{
+	-webkit-box-shadow:inset 0 1px 4px rgba(153,0,0,6.6);
+	box-shadow:inset 0 1px 4px rgba(153,0,0,6,0.6);
+}
+.addbtn-act{
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(37, 111, 180, 1)),to(rgba(37, 111, 180, 1)));
+	background-image: -webkit-linear-gradient(top, rgba(37, 111, 180, 1) 0%,  rgba(37, 111, 180, 1) 100%);
+	background-image: linear-gradient(top, rgba(37, 111, 180, 1) 0%, rgba(37, 111, 180, 1) 100%) ; 	
+}
+.backbtn-act{
+	background-image: url('../images/bg-unionoffice-back-act.png');
+}
+.goaheadbtn-act{
+	background-image: url('../images/bg-unionoffice-goahead-act.png');
+}
+
+/*-----顶部按钮点击样式------*/
+#menu:active>div>div.res-menu{
+	background-image: url('../images/bg-unionoffice-menu_act.png');
+}
+#user:active>div>div.res-user{
+	background-image: url('../images/bg-unionoffice-user_act.png');
+}
+#back:active>div>div.res-headback{
+	background-image: url('../images/back-head_act.png');
+}
+#delmenu:active>div>div.res-delmenu{
+	background-image: url('../images/bg-actmgt-delmenu_act.png');
+}
+#ahead:active>div>div.res-delconfirm{
+	background-image: url('../images/bg-actdel-delconfirm_act.png');
+}
+

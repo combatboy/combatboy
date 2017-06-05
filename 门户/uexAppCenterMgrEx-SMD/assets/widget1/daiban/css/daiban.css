@@ -1,0 +1,68 @@
+.a-bg{
+     color:#959595;
+}
+.a-min{
+    min-width:35%;  
+}
+.a-bg2{
+    background-color: white;
+}
+.g-footer {
+    margin-bottom: 0.2em;
+}
+.a-mar{
+    margin:0.3em 0.6em 0.4em 0.5em;
+    padding:0.8em 0.7em 0.75em 1em;
+}
+.a-mar2{
+    margin-top:0.2em;
+}
+.a-marl{
+    margin-left:0.8em;
+}
+.huip{
+    background-image:url('../images/huip.png');
+    height:1.7em;
+    width:1.4em;
+}
+.chaozx{
+    background-image:url('../images/chaozx.png');
+    height:1.5em;
+    width:1.6em;
+}
+.piaoz{
+    background-image:url('../images/piaoz.png');
+    height:1.5em;
+    width:1.5em;
+}
+.gengh{
+    background-image:url('../images/gengh.png');
+    height:1.6em;
+    width:1.7em;
+}
+.u-home{
+    background-image: url('../images/u-home.png');
+    width:1.8em;
+    height:1.8em;
+}
+.b-txl{
+    background-image: url('../images/b-txl.png');
+    width:1.8em;
+    height:1.8em;
+}
+.u-person {
+    background-image: url('../images/u-person.png');
+    width:1.8em;
+    height:1.8em;
+}
+.u-say {
+    background-image: url('../images/u-say.png');
+    width:1.8em;
+    height:1.8em;
+}
+
+
+/**/
+.u-card{
+    box-shadow: 1px 1px .3rem rgba(0,0,0,.1);
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <!-- app market ex -->
+    <color name="translucent">#7f000000</color>
+    <color name="light_gray">#A6C2DE</color>
+    <color name="plugin_apppmarket_ex_grid_background">#FFEBEFF8</color>
+    <color name="plugin_apppmarket_ex_grid_stroke">#FFD9DCE5</color>
+    <color name="plugin_smd_add_bg_color">#2ac1b8</color>
+    <color name="plugin_smd_expand_space_color">#f8f8f8</color>
+</resources>

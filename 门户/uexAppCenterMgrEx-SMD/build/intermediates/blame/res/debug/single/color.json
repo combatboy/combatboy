@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\color\\plugin_uexcalendar_color_calendar_text_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\color\\plugin_uexcalendar_color_calendar_text_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\color\\plugin_uexactionsheet_list_item_text_color_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\color\\plugin_uexactionsheet_list_item_text_color_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\color\\platform_window_actionsheet_list_item_text_color_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\color\\platform_window_actionsheet_list_item_text_color_selector.xml"
+    }
+]

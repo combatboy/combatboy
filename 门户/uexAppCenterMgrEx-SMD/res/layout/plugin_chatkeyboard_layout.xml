@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="bottom" android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/plugin_chatkeyboard_parent_layout" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_gravity="center" android:id="@id/plugin_chatkeyboard_voice_record_tips_layout" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageButton android:id="@id/plugin_chatkeyboard_voice_record_tips_image" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/plugin_chatkeyboard_voice_recording" />
+        <TextView android:id="@id/plugin_chatkeyboard_voice_record_times" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </FrameLayout>
+    <View android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/plugin_chatkeyboard_input_layout_height" layout="@layout/plugin_chatkeyboard_input_layout" />
+    <View android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:orientation="vertical" android:id="@id/plugin_chatkeyboard_pager_layout" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/plugin_chatkeyboard_layout_height">
+        <include android:id="@id/plugin_chatkeyboard_emojicons_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/plugin_chatkeyboard_emojicons_layout" />
+        <include android:id="@id/plugin_chatkeyboard_shares_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/plugin_chatkeyboard_shares_layout" />
+    </LinearLayout>
+</LinearLayout>

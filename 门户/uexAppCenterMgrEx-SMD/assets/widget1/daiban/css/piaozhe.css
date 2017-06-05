@@ -1,0 +1,50 @@
+.a-bg{
+     color:#959595;
+}
+.a-bg2{
+    background-color: white;
+}
+.a-mar   { 
+    padding:0.4em 0em 0em 1em; 
+    display: block;  
+}
+.a-mar3{   
+   padding-bottom: 0.5em;
+   padding-right:0.7em;   
+}
+.d-border{
+    border-bottom:1px solid #f0f0f0;
+}
+.a-mar2{
+    margin-top:0.3em;
+}
+.a-marl{
+    margin-left:0.8em;
+}
+
+.piaoz{
+    background-image:url('../images/piaoz.png');
+    height:1.5em;
+    width:1.5em;
+}
+
+.u-home{
+    background-image: url('../images/u-home.png');
+    width:1.8em;
+    height:1.8em;
+}
+.b-txl{
+    background-image: url('../images/b-txl.png');
+    width:1.8em;
+    height:1.8em;
+}
+.u-person {
+    background-image: url('../images/u-person.png');
+    width:1.8em;
+    height:1.8em;
+}
+.u-say {
+    background-image: url('../images/u-say.png');
+    width:1.8em;
+    height:1.8em;
+}

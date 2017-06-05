@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/transparent" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/plugin_appmarket_ex_add_app_title_height"
+        android:background="@drawable/plugin_appmarket_ex_title" >
+
+        <ImageView
+            android:id="@+id/plugin_appmarket_ex_wap_back_imageView1"
+            android:layout_width="@dimen/plugin_appmarket_ex_add_app_title_back_height"
+            android:layout_height="@dimen/plugin_appmarket_ex_add_app_title_back_height"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20.0dip"
+            android:src="@drawable/plugin_appmarket_ex_title_back_selector" />
+
+        <TextView
+            android:id="@+id/title_textview"
+            android:layout_width="200.0dip"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="22.0dip" />
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/relativeLayout1"
+        android:layout_below="@+id/title" />
+
+    <LinearLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/plugin_appmarket_ex_add_app_title_height"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/plugin_appmarket_ex_title"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="4.0" >
+
+        <ImageView
+            android:id="@+id/bottom_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:layout_weight="1.0"
+            android:src="@drawable/plugin_appmarket_station_back_2x" />
+
+        <ImageView
+            android:id="@+id/bottom_forward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:src="@drawable/plugin_appmarket_station_forward_2x" />
+
+        <ImageView
+            android:id="@+id/bottom_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:src="@drawable/plugin_appmarket_station_refresh_2x" />
+
+        <ImageView
+            android:contentDescription="close"
+            android:id="@+id/bottom_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:src="@drawable/plugin_appmarket_station_close_2x" />
+    </LinearLayout>
+
+</RelativeLayout>

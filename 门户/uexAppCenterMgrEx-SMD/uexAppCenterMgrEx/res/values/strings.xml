@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="plugin_app_market_update_file_default_msg">发现新版本，立即升级体验吧！</string>
+    <!-- 补丁包默认提示 -->
+    <string name="plugin_app_market_update_patch_default_msg">  发现新数据包，点击下载后，下次应用启动时启用！</string>
+    <string name="plugin_appmarket_add_app_to_door">添加到首页</string>
+    <string name="plugin_appmarket_del_app_ok">完\t\t成</string>
+    <string name="plugin_appmarket_ex_empty">暂无更多应用！</string>
+    <string name="plugin_appmarket_ex_title">东航动态</string>
+    <string name="plugin_appmarket_ex_no_network">网络不给力</string>
+ 	<string name="plugin_appmarket_ex_add_success">添加成功</string>
+    
+</resources>

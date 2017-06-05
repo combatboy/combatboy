@@ -1,0 +1,236 @@
+/*person*/
+.m-psn{
+    border-bottom: 1px solid #d6d5d3;
+    padding: .7em 0;
+}
+.ruds{
+    border-radius: .4em;
+}
+.m-psn > .u-avt{
+    width: 2.8125em;
+}
+.avt{
+    width: 2.3437em;
+    height: 2.3437em;
+    border-radius: 50%;
+    overflow: hidden;
+    background: url("../images/avt_null.png") no-repeat center;
+    background-size: cover;
+    border-color: #CCCCCC
+}
+.avt > div{
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.m-psn .txtb{
+    font-size: .9325em;
+    font-weight: normal;
+    color: #333;
+    margin-right: .3em;
+}
+.m-psn .txt1{
+    vertical-align: middle;
+    font-size: .8125em;
+    color: #999;
+    word-break:break-all;
+}
+.m-psn .txt2{
+    margin-right: .3em;
+    font-size: .8125em;
+    color: #999;
+}
+
+.head-col{
+ background-color: #00A1EA;
+}
+.pa-right{
+    padding-right: .7em;
+}
+.pa-left{
+    padding-right: .625em;
+}
+.ha {
+    height: 3.11em;
+}
+.pa{
+    padding: .7em 0em;
+}
+.hb {
+    height: 2.8em;
+}
+
+.grup {
+    font-size: 1em;
+
+}
+
+.mato {
+    margin-top: 1.375em;
+}
+
+.mal {
+    margin-left: .6em;
+}
+
+.marr {
+    margin-right: .6em;
+}
+
+.mar {
+    margin-right: 3.2em;
+}
+
+.mat {
+    margin-top: .3em;
+}
+
+.mata {
+    margin-top: .8em;
+}
+
+.all {
+    font-size: 1em;
+    color: #d1d1d1;
+    
+
+}
+
+.fot {
+    font-size: 1em;
+}
+
+
+.fotc {
+    font-size: 1.5em;
+}
+
+.fotd {
+    font-size: .9em;
+}
+
+.right-icon {
+    font-size: 1.5em;
+    color: #999999;
+    margin-right: .8em;
+}
+
+.search {
+    width: 95%;
+    background-color: white;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    height: 1.9125em;
+}
+
+.search-input-text {
+    color: #999999;
+    font-size: 0.8em;
+    margin-left: .5em;
+
+}
+
+.boc {
+    border-color: #d6d5d3;
+}
+
+.search-input-icon {
+    width: .08em;
+    height: .08em;
+    background-image: url('../images/ico_search.png');
+    margin-right: .3em;
+}
+
+.photo1 {
+    width: 2.3437em;
+    height: 2.3437em;
+    border-radius: 50%;
+    background-image: url('../images/thumb_groupChat.png') !important;
+ 
+}
+
+.photo2 {
+    width: 2.3437em;
+    height: 2.3437em;
+    border-radius: 50%;
+    background-image: url('../images/thumb_myLeadership.png') !important;
+  
+}
+
+.photo3 {
+    width: 2.3437em;
+    height: 2.3437em;
+    border-radius: 50%;
+    background-image: url('../images/thumb_departmentColleagues.png') !important;
+    
+}
+
+/*img {
+   width: 3em;
+   height: 3em;
+   border-radius:1.5em;
+    }*/
+.bc-g {
+    background-color: white;
+}
+.bg-c{
+    background-color: #e9e9e9;
+}
+
+.beijing {
+    height: 8em;
+    background-image: url('../images/beijng.png') !important;
+    width: 100%;
+}
+
+.call {
+    height: 1.5em;
+    width: 1.5em;
+    background-image: url('../images/ico_dial.png') !important;
+}
+
+.massage {
+    height: 1.5em;
+    width: 1.5em;
+    background-image: url('../images/ico_mail.png') !important;
+}
+
+.rtx {
+    height: 1.5em;
+    width: 1.5em;
+    background-image: url('../images/ico_rtx.png') !important;
+}
+
+/*.dong {
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+}
+
+.doo {
+    transition: 0.2s ease-out;
+    -webkit-transition: 0.2s ease-out;
+}*/
+
+/*.a-bounce {
+    -webkit-animation: bounceinR 1s ease;
+    animation: bounce 1s ease;
+}
+/* 弹跳 */
+/* 弹入-从右 */
+/*@-webkit-keyframes bounceinR{
+    0%{opacity:0;-webkit-transform:translateX(100px);}
+    60%{opacity:1;-webkit-transform:translateX(-30px);}
+    80%{-webkit-transform:translateX(10px);}
+    100%{-webkit-transform:translateX(0);}
+}
+@keyframes bounceinR{
+    0%{opacity:0;transform:translateX(100px);}
+    60%{opacity:1;transform:translateX(-30px);}
+    80%{transform:translateX(10px);}
+    100%{transform:translateX(0);}
+}*/
+/*移除输入框的边框*/
+textarea{
+    border: 0;
+    outline: none;
+}

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<uexplugins>
+    <plugin uexName="uexAppCenterMgrEx" version="3.1.24.3" build="24">
+        <info>23.修改门户界面</info>
+		<build>22.替换X5引擎</build>
+		<build>19.苏美达3列，改为4列。</build>
+		<bud>18.清空本地数据缓存。</bud>
+		<build>17.将子应用存放在沙箱里面。</build>
+		<build>16:3.根据最新需求修改门户。</build>
+		<build>10:0.修改先声门户插件每行磁铁个数和文字显示。</build>
+        <build>9:1.修改没有升级确认时，子应用不升级的问题。</build>
+        <build>8. 给港中旅修改json参数</build>
+        <build>7. 新增子应用的消息数量的显示</build>
+        <build>0. 先声药业门户插件</build>
+    </plugin>
+</uexplugins> 

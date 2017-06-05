@@ -1,0 +1,211 @@
+/*---------切换---------*/
+.img1{
+    background-image: url('res/one.png');width:1em; height:1em;
+}
+.img2{
+    background-image: url('res/two.png');width:1em; height:1em;
+}
+.img3{
+    background-image: url('res/three.png');width:1em; height:1em;
+}
+.img4{
+    background-image: url('res/four.png');width:1em;height:1em;
+}
+
+
+/*--------“我的”模块-------*/
+.img5{
+    background-image: url('res/me.png');width:1.2em;height:1.2em;
+}
+.img6{
+    background-image: url('res/b-arrow.png.png');width:1em;height:1em;
+}
+.img7{
+    background-image: url('res/background.png');width:100%;height:100%;
+}
+.img8{
+    background-image: url('res/weather.png');width:100%;height:100%;
+}
+.img88{
+    background-image: url('res/weather1.png');width:100%;height:100%;
+}
+.img-mima{
+    background-image: url('res/paasw.png');
+}
+.img-gy{
+    background-image: url('res/guanyu.png');
+}
+
+/*----------------"天气背景图"--------------------*/
+.img-qing{
+    background-image: url('res/sunny.png');width:100%;height:100%;
+}
+.img-ying{
+    background-image: url('res/cloudy.png');width:100%;height:100%;
+}
+.img-yu{
+    background-image: url('res/rain.png');width:100%;height:100%;
+}
+.img-xue{
+    background-image: url('res/Snow.png');width:100%;height:100%;
+}
+
+/*----------logo---------*/
+.img9{
+    background-image: url('res/logo_bi.png');width:100%;height:100%;
+}
+.img10{
+    background-image: url('res/mokuai.png');
+}
+.img11{
+    background-image: url('res/mokuai0.png');
+}
+.img12{
+    background-image: url('res/tubiao2.png');
+}
+.img13{
+    background-image: url('res/LOGO.png');
+}
+.img14{
+    background-image: url('res/logo_bt.png');
+}
+.img15{
+    background-image:url('res/logo2.png');
+}
+/*--------------线条----------*/
+.img16{
+    background-image:url('res/xiantiao.png');
+}
+
+/*------------卡片模块------------*/
+.img17{
+    background-image:url('res/5.png');
+}
+.img18{
+    background-image:url('res/delete.png');
+}
+.img19{
+    background-image:url('res/delete2.png');
+}
+
+/*--------------字号--------------*/
+.img20{
+    background-image:url('res/zihao.png');
+}
+
+/*--------------箭头--------------*/
+.img21{
+    background-image:url('res/back2.png');
+}
+
+.ubimg1{
+       background-image: url('res/mokuai1.png');
+   }    
+.ubimg2{
+       background-image: url('res/mokuai2.png');
+   }
+.ubimg3{
+       background-image: url('res/jk.png');
+   }
+.ubimg4{
+       background-image: url('res/mokuai4.png');
+   }
+.ubimg5{
+       background-image: url('res/mokuai5.png');
+   }
+.ubimg1_act .ubimg1{
+     background-image: url('res/doc2.png');           
+   }  
+.ubimg1_act .ubimg2{
+     background-image: url('res/email2.png');           
+   } 
+.ubimg1_act .ubimg3{
+     background-image: url('res/mokuai3.png');           
+   } 
+.ubimg1_act .ubimg4{
+     background-image: url('res/select2.png');           
+   } 
+.ubimg1_act .ubimg5{
+     background-image: url('res/gl2.png');           
+   } 
+   
+/*------------卡片示例-----*/
+.shili{
+     background-image: url('res/eg.png');width:4em;height:4em;           
+} 
+
+/*------------意见反馈列表图标-----*/
+.help2{
+     background-image: url('res/help2.png');width:2.3em;height:1.3em;           
+} 
+.help3{
+     background-image: url('res/help3.png');width:1em;height:1em;           
+} 
+
+
+
+/*------------意见反馈详情图片-----*/
+.prom1_1{
+     background-image: url('res/prom1.1.png');width:15.46875em;height:11.41875em;        
+} 
+.prom1_2{
+     background-image: url('res/prom1.2.png');width:15.46875em;height:11.41875em;              
+} 
+.prom2_1{
+     background-image: url('res/prom2.1.png');width:15.46875em;height:11.41875em;            
+} 
+.prom2_2{
+     background-image: url('res/prom2.2.png');width:15.46875em;height:11.41875em;            
+}
+.prom3_1{
+     background-image: url('res/prom3.1.png');width:15.46875em;height:4.41875em;      
+} 
+.prom3_2{
+     background-image: url('res/prom3.2.png');width:15.46875em;height:4.41875em;           
+} 
+.prom4_1{
+     background-image: url('res/prom4.1.png');width:13.7em;height:10.15em;            
+} 
+.prom4_2{
+     background-image: url('res/prom4.2.png');width:13.7em;height:10.15em;           
+}  
+.prom5_1{
+     background-image: url('res/prom5.1.png');width:13.7em;height:10.15em;             
+} 
+.prom5_2{
+     background-image: url('res/prom5.2.png');width:13.7em;height:10.15em;           
+} 
+.prom6_1{
+     background-image: url('res/prom6.1.png');width:14.75em;height:9.35em;            
+} 
+
+
+
+
+
+   
+/*------------字体颜色-----*/
+//黑色字体
+.t-b{
+    color:#3e3e3e;
+}
+//白色字体
+.c-wh{
+    color:white;
+}
+//白色背景
+.bcw{
+    background-color: #FFFFFF;
+}
+//灰色字体
+.t-gra{
+    color:#BABABA;
+}
+.indexBg{
+    background-image:url('res/index_bg.png');
+    -webkit-background-size:cover;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    height:80%
+}

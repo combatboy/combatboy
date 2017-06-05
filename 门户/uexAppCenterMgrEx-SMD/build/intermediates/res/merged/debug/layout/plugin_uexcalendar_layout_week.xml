@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.zywx.wbpalmstar.plugin.uexCalendar.calendarview.CalendarRowView android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <org.zywx.wbpalmstar.plugin.uexCalendar.calendarview.CalendarCellView android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/plugin_uexcalendar_style_CalendarCell.CalendarDate" />
+    <org.zywx.wbpalmstar.plugin.uexCalendar.calendarview.CalendarCellView android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/plugin_uexcalendar_style_CalendarCell.CalendarDate" />
+    <org.zywx.wbpalmstar.plugin.uexCalendar.calendarview.CalendarCellView android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/plugin_uexcalendar_style_CalendarCell.CalendarDate" />
+    <org.zywx.wbpalmstar.plugin.uexCalendar.calendarview.CalendarCellView android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/plugin_uexcalendar_style_CalendarCell.CalendarDate" />
+    <org.zywx.wbpalmstar.plugin.uexCalendar.calendarview.CalendarCellView android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/plugin_uexcalendar_style_CalendarCell.CalendarDate" />
+    <org.zywx.wbpalmstar.plugin.uexCalendar.calendarview.CalendarCellView android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/plugin_uexcalendar_style_CalendarCell.CalendarDate" />
+    <org.zywx.wbpalmstar.plugin.uexCalendar.calendarview.CalendarCellView android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/plugin_uexcalendar_style_CalendarCell.CalendarDate" />
+</org.zywx.wbpalmstar.plugin.uexCalendar.calendarview.CalendarRowView>

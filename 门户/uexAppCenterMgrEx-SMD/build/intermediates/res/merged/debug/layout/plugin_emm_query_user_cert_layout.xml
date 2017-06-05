@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="#fff2f2f2" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textColor="#ff000000" android:id="@id/plugin_uexemm_query_ueser_cert_hint_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/plugin_uexemm_query_ueser_cert_hint_str" android:layout_centerHorizontal="true" />
+        <EditText android:id="@id/plugin_uexemm_query_ueser_cert_check_code_et" android:layout_width="250.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:hint="@string/plugin_uexemm_auth_code_et_hint_str" android:singleLine="true" android:layout_below="@id/plugin_uexemm_query_ueser_cert_hint_tv" android:layout_centerHorizontal="true" />
+        <Button android:id="@id/plugin_uexemm_query_ueser_cert_btn" android:background="@drawable/plugin_uexemm_query_ueser_cert_btn_bg" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="@string/plugin_uexemm_query_ueser_cert_str" android:layout_below="@id/plugin_uexemm_query_ueser_cert_check_code_et" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</ScrollView>

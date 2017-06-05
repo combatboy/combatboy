@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport"
+        content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+        <link rel="stylesheet" href="../css/set.css">
+        <link rel="stylesheet" href="../css/index.css">
+        
+    </head>
+    <body class="um-vp bc-bg2" ng-controller="PersonalDetailController" ontouchstart>
+       
+            <!-- <ion-content> -->
+            <div class="ub up ub-ver">
+            <div class="bc-bg5 pc-bor-lr">
+                 <div class="ub pc-pad-tp pc-bor-b pc-umar-l  pc-fz">
+                    <div class="pc-tc">
+                        姓名
+                    </div>
+                     <div class="ub-f1 ub ub-pe pc-umar-r" ng-bind="person.LASTNAME"></div>
+                </div>
+                    <div class="ub pc-pad-tp pc-bor-b pc-umar-l  pc-fz">
+                    <div class="pc-tc">
+                        性别
+                    </div>
+                    <div class="ub-f1 ub ub-pe pc-umar-r" ng-bind="person.SEX"></div>
+                </div>
+                 <div class="ub pc-pad-tp pc-bor-b pc-umar-l  pc-fz">
+                    <div class="pc-tc">
+                        部门
+                    </div>
+                    <div class="ub-f1 ub ub-pe pc-umar-r"ng-bind="person.DEPT"></div>
+                </div>
+                 <div class="ub pc-pad-tp pc-bor-b pc-umar-l  pc-fz">
+                    <div class="pc-tc">
+                        工号
+                    </div>
+                   <div class="ub-f1 ub ub-pe pc-umar-r" ng-bind="person.LOGINID"></div>
+                </div>
+                <div class="ub pc-pad-tp pc-bor-b pc-umar-l pc-fz">
+                    <div class="pc-tc">
+                        岗位
+                    </div>
+                    <div class="ub-f1 ub ub-pe pc-umar-r" ng-bind="person.POSITION"></div>
+                </div>
+                <div class="ub pc-pad-tp pc-bor-b pc-umar-l pc-fz">
+                    <div class="pc-tc">
+                        职务
+                    </div>
+                    <div class="ub-f1 ub ub-pe pc-umar-r" ng-bind="person.JOB"></div>
+                </div>
+                <div class="ub pc-pad-tp pc-umar-l pc-fz">
+                    <div class="pc-tc">
+                        上级
+                    </div>
+                    <div class="ub-f1 ub ub-pe pc-umar-r" ng-bind="person.MANAGER"></div>
+                </div>
+            </div>
+            <div class="bc-bg5 pc-bor-lr pc-umar-t3">
+                <div class="ub pc-pad-tp pc-bor-b pc-umar-l pc-fz">
+                    <div class="pc-tc">
+                        手机
+                    </div>
+                    <div class="ub-f1 ub ub-pe pc-umar-r" ng-bind="person.MOBILE"></div>
+                </div>
+                <div class="ub pc-pad-tp pc-bor-b pc-umar-l pc-fz">
+                    <div class="pc-tc">
+                        电话
+                    </div>
+                    <div class="ub-f1 ub ub-pe pc-umar-r" ng-bind="person.TELEPHONE"></div>
+                </div>
+                <div class="ub pc-pad-tp pc-umar-l pc-fz">
+                    <div class="pc-tc">
+                        邮箱
+                    </div>
+                    <div class="ub-f1 ub ub-pe pc-umar-r" ng-bind="person.EMAIL"></div>
+                </div>
+            </div>
+            <!--<div class="ub pc-bor-lr set-pad-tb bc-bg5 pc-umar-t3">
+            <div class="pc-fz pc-umar-l ub-f1">清除缓存</div>
+            <div class="pc-umar-r t-c1">32M</div>
+            </div>-->
+            </div>
+        <!-- </ion-content> -->
+        
+        <script src="../../vendor/appcan/js/appcan.js"></script>
+        <script src="../../vendor/appcan/js/appcan.control.js"></script>
+        <script src="../../vendor/simcere/js/base.js"></script>
+        <script src="../../vendor/simcere/js/config.js"></script>
+        <script src="../../vendor/ionic/js/ionic.bundle.min.js"></script>
+        <script src="../js/app.index.js"></script>
+        <script>
+            appcan.ready(function() {
+             appcan.initBounce();
+             angular.bootstrap(document.documentElement, ['zkApp']);
+            });
+            //todo: 缓存信息
+        </script>
+    </body>
+</html>

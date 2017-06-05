@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item type="id" name="plugin_appmarket_app_icon">false</item>
+    <item type="id" name="plugin_appmarket_app_download_indicator">false</item>
+    <item type="id" name="plugin_appmarket_app_name">false</item>
+    <item type="id" name="plugin_appmarket_grid">false</item>
+   
+</resources>

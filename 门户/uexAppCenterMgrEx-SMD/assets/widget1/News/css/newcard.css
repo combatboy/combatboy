@@ -1,0 +1,65 @@
+.s-icon-ok {
+    background-image: url('../images/newCard/ok.png');
+}
+.s-icon-add {
+    width: 1.75em;
+    height: 1.75em;
+    background-image: url('../images/add.png');
+}
+.s-icon-file {
+    width: 1.75em;
+    height: 1.75em;
+    background-image: url('../images/newCard/file.png');
+}
+.del-ftc {
+    color: #eb6100;
+}
+.ot-none {
+    outline: none;
+}
+.tianjiaSVG {
+    width: 4.2em;
+    height: 4.2em;
+    border: 1px dashed #ccc;
+    border-radius: 0.3em;
+    margin: 0.3em;
+    float: left;
+    background-color: #f2f2f2;
+}
+.PicSVG {
+    width: 4.2em;
+    height: 4.2em;
+    border: 1px dashed #ccc;
+    border-radius: 0.3em;
+    margin: 0.3em;
+    float: left;
+    background-color: #FFFFFF;
+}
+.selectl {
+    position: absolute;
+    left: 0;
+}
+.selectr {
+    position: absolute;
+    right: 0;
+}
+/*右负浮动*/
+.g-f-right {
+    position:absolute;
+    float: right;
+    right: -0.925em;
+    top:-1em;
+}
+/*placeholder样式*/
+::-webkit-input-placeholder {/* WebKit browsers */
+    color: #848484;
+}
+:-moz-placeholder {/* Mozilla Firefox 4 to 18 */
+    color: #848484;
+}
+::-moz-placeholder {/* Mozilla Firefox 19+ */
+    color: #848484;
+}
+:-ms-input-placeholder {/* Internet Explorer 10+ */
+    color: #848484;
+}

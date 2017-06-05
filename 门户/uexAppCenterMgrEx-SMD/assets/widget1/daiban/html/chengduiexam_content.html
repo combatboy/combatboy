@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+    <style>
+        .bg-white {
+            background-color: #FFFFFF;
+        }
+
+        .m-cardH {
+            height: 3em;
+        }
+
+        .m-cardH2 {
+            height: 2em;
+        }
+
+        .m-border {
+            border-top: 1px solid #BABABA;
+        }
+
+        .m-border2 {
+            border-top: 1px solid #BABABA;
+            border-bottom: 1px solid #BABABA;
+        }
+
+        .m-mart {
+            margin-top: 1em;
+        }
+
+        .m-mart2 {
+            margin-top: 0.8em;
+        }
+
+        .m-marl {
+            margin-left: 1em;
+            margin-right: 0.8em;
+        }
+
+        .m-marl2 {
+            margin-left: 1em;
+        }
+
+        .m-minw {
+            min-width: 30%;
+        }
+
+        .m-text {
+            font-size: 0.927em;
+        }
+
+        .m-text2 {
+            font-size: 0.8125em;
+        }
+    </style>
+</head>
+<body class="um-vp bc-bg" id='contentdetail' ontouchstart>
+<div class="bc-border m-text">
+    <div class="bg-white m-border2  m-mart2">
+        <div class="ub ub-ac m-marl m-cardH uhide">
+            <div class="m-minw sc-text">
+                订单号
+            </div>
+            <div id='num1'>
+
+            </div>
+        </div>
+        <div class="ub ub-ac m-marl2 m-cardH ">
+            <div class="m-minw sc-text">
+                客户
+            </div>
+            <div id='num2'>
+                <!-- 客户名称 -->
+            </div>
+        </div>
+    </div>
+    <div class="ub ub-ver bg-white m-mart m-border2">
+        <div class="m-marl">
+            <div class="ub ub-f1 m-cardH2 ub-ac">
+                <div class="ub-f1">
+                    <p>
+                        承兑汇票
+                    </p>
+                </div>
+            </div>
+            <div class="ub ub-f1 m-cardH2 ub-ac">
+                <div class="ub-f1">
+                    <p class=" sc-text">
+                        票据号：
+                    </p>
+                </div>
+                <div>
+                    <p id='num3'>
+                        <!-- 12343242 -->
+                    </p>
+                </div>
+            </div>
+            <div class="ub ub-f1 m-cardH2 ub-ac">
+                <div class="ub-f1">
+                    <p class="sc-text">
+                        票据金额：
+                    </p>
+                </div>
+                <div>
+                    <p id='num4'>
+                        <!-- 2000000元 -->
+                    </p>
+                </div>
+            </div>
+            <div class="ub ub-f1 m-cardH2 ub-ac">
+                <div class="ub-f1">
+                    <p class="sc-text">
+                        拍照上传
+                    </p>
+                </div>
+            </div>
+            <div class="ub-f1" id="ub-images">
+                <!-- <div class="ufl umar-a uc-a1" style="width: 4em;height: 4em;background-color: #BABABA"></div>
+                <div class="ufl umar-a  uc-a1" style="width: 4em;height: 4em;background-color: #BABABA"></div>
+                <div class="ufl umar-a  uc-a1" style="width: 4em;height: 4em;background-color: #BABABA"></div>
+                <div class="ufl umar-a  uc-a1" style="width: 4em;height: 4em;background-color: #BABABA"></div> -->
+            </div>
+        </div>
+    </div>
+    <div class="bg-white m-border  m-mart">
+        <div class="ub ub-ac m-marl m-cardH">
+            <div class="m-minw sc-text">
+                业务员
+            </div>
+            <div id='num5'>
+                <!-- 张三 -->
+            </div>
+        </div>
+    </div>
+    <div class="bg-white">
+        <div class="ub ub-ac m-cardH m-border m-marl2">
+            <div class="sc-text m-minw">
+                日期
+            </div>
+            <div id='num6'>
+                <!-- 16-01-23 -->
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../vendor/appcan/js/appcan.js"></script>
+<script src="../../vendor/appcan/js/appcan.control.js"></script>
+<script src="../../vendor/simcere/js/config.js"></script>
+<script src="../../vendor/ow/qlib.js"></script>
+
+<script>
+    appcan.ready(function () {
+        ajaxRequest();
+
+
+        appcan.window.subscribe('daiban/chengdui.tijiao', function (data1) {
+            var num = parseInt(appcan.locStorage.getVal('chengduiexamkeybt'));
+            var ovalue = data1;
+
+            function fillZero(n) {
+                return n < 10 ? '0' + n : '' + n;
+            }
+
+            var d = new Date();//整理发布时间
+            var y = d.getFullYear();
+            var m = fillZero(d.getMonth() + 1);
+            var date = d.getDate();
+            var h = fillZero(d.getHours());
+            var mins = fillZero(d.getMinutes());
+            var s = fillZero(d.getSeconds());
+            var t = y + '-' + m + '-' + date + ' ' + h + ':' + mins + ':' + s;
+
+
+            switch (num) {
+                case 1:
+                    requstajax(num, ovalue);
+                    break;
+                case 2:
+                    requstajax(num, ovalue);
+                    break;
+            }
+
+            function requstajax(num, ovalue) {
+                var params = {
+                    "id": localStorage.getItem('daiban/chengduilist.id')*1,
+                    "status": num,
+                    "shr": localStorage.getItem('simcere.runtime.loginId'),
+                    "shrq": t,
+                    "vcomment": ovalue,
+                    "opstatus": 0
+                };
+                console.log(params);
+
+                appcan.window.openToast('请稍候', 2000);
+                appcan.ajax({
+                    url: SimcereConfig.server.mas + '/ship/ScrAprroveSaleOrderBill',
+                    type: 'POST',
+                    data: params,
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    timeout: 5000,
+                    success: function (data1) {
+                        console.log(data1);
+                        console.log(JSON.stringify(data1));
+
+                        if (data1.status != '0') {
+                            appcan.window.openToast('操作失败', 2000);
+                            console.error('res error');
+                        } else if (data1.data.status != '0') {
+                            appcan.window.openToast(data1.data.msg, 2000);
+                        } else {
+                            appcan.window.openToast(data1.data.msg, 2000);
+                            appcan.window.publish('daiban/list2.change', '');
+
+                            //通知刷新、关闭当前窗口
+                            setTimeout(function () {
+                                qlib.closeWindowByName('daiban_chengduiexam');
+                            }, 2000);
+                        }
+
+                    },
+                    error: function () {
+                        appcan.window.openToast('网络连接不可用', 2000);
+                    }
+                })
+            }
+
+        })
+
+    });
+
+
+    function ajaxRequest() {
+        var Ocontentdetail = document.getElementById('contentdetail');
+        var Oimages = document.getElementById('ub-images');
+
+        var id = localStorage.getItem('daiban/chengduilist.id');
+
+        var params = {
+            "id": id,
+            "loginId": localStorage.getItem('simcere.runtime.loginId'),
+            "pageNumber": 1,
+            "pageSize": 20
+        };
+        console.log(params);
+
+        appcan.window.openToast('请稍候');
+        appcan.ajax({
+            url: SimcereConfig.server.mas + '/ship/ScrQueryAcceptDetail',
+            type: 'POST',
+            data: params,
+            contentType: 'application/json',
+            dataType: 'json',
+            timeout: 5000,
+            success: function (data1) {
+                appcan.window.closeToast();
+                console.log(data1);
+
+                if (data1.status == 0) {
+                    render(data1.data[0]);
+                }
+            },
+            error: function () {
+                appcan.window.openToast('网络连接不可用', 2000);
+            }
+        });
+
+
+        /**
+         *
+         * @param detaild
+         */
+        function render(detaild) {
+            //TODO:不适用
+            $('#num1').html('N/A');
+
+            $('#num2').html(detaild.CUSNAME);
+            $('#num3').html(detaild.ORDERNUM);
+            $('#num4').html(detaild.NUM);
+
+            $('#num5').html(detaild.CREATER);
+            $('#num6').html(strtotime(detaild.CREATEDATE));
+
+            imgstr(detaild.URL);
+        }
+
+
+        function strtotime(s) {
+            var str = s.substring(2, 10);
+            var arr = str.split('-');
+            var times = arr[0] + '-' + arr[1] + '-' + arr[2];
+            console.log(times);
+            return times;
+        }
+
+        function imgstr(s) {
+            var arr = s.split(',');
+            var html = '';
+            for (var i = 0; i < arr.length; i++) {
+                html += ''
+                + '<div class="ufl umar-a uc-a1 oimg" style="width: 4em;height: 4em;background-color: #BABABA">'
+                + '<img style="width: 4em;height: 4em" src="' + arr[i] + '"/>'
+                + '</div>';
+            }
+            Oimages.innerHTML = html;
+             $('.oimg').click(function () {                
+                 //uexImageBrowser.open(arr,$(this).index());
+                 qlib.openImageViewer(arr, $(this).index());
+            })
+        }
+
+
+    }
+
+</script>
+</body>
+</html>

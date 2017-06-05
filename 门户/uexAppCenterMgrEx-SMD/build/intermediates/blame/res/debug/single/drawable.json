@@ -1,0 +1,574 @@
+[
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_update_alert_progressbar_style.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_update_alert_progressbar_style.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_mam_title_button_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_mam_title_button_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_add_app_button_no.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_add_app_button_no.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_del_app_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_del_app_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\bbuton_info_rounded.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\bbuton_info_rounded.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_mam_textview_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_mam_textview_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\engine_scroller_thumb_hor.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\engine_scroller_thumb_hor.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_uexcalendar_draw_calendar_bg_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_uexcalendar_draw_calendar_bg_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_window_actionsheet_menu_cancel_button_style.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_window_actionsheet_menu_cancel_button_style.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_del_app_complete_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_del_app_complete_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_imagebrowser_zoom_out_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_imagebrowser_zoom_out_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_app_market_dialog.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_app_market_dialog.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_window_actionsheet_menu_list_button_style.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_window_actionsheet_menu_list_button_style.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_zdtq_progressbar.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_zdtq_progressbar.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_imagebrowser_bottom_bg_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_imagebrowser_bottom_bg_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\progressbar.jpg",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\progressbar.jpg"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_uex_image_border_round_corner.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_uex_image_border_round_corner.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_dot.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_dot.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_recorder_center_bg_layer.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_recorder_center_bg_layer.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_uexactionsheet_menu_bg_color_style.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_uexactionsheet_menu_bg_color_style.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_camera_bt_takepic_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_camera_bt_takepic_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_zdtq_add_app_item_button_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_zdtq_add_app_item_button_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_add_app.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_add_app.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_logo.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_logo.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_uexemm_query_ueser_cert_btn_bg.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_uexemm_query_ueser_cert_btn_bg.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_bottom_bg_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_bottom_bg_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_file_filelist_item_bg_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_file_filelist_item_bg_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_recorder_bg_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_recorder_bg_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_gridview_item_backgroud.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_gridview_item_backgroud.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_imagebrowser_preview_repick_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_imagebrowser_preview_repick_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_mam_button_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_mam_button_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_add_app_list_bg_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_add_app_list_bg_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_button_last_style.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_button_last_style.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_file_btn_cancel_bg_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_file_btn_cancel_bg_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_button_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_button_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_enable.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_enable.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_pause_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_pause_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_camera_flash_close_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_camera_flash_close_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_title_back_pressed.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_title_back_pressed.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_window_actionsheet_menu_bg_color_style.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_window_actionsheet_menu_bg_color_style.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_window_actionsheet_title_color_style.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_window_actionsheet_title_color_style.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_uexactionsheet_menu_cancel_button_style.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_uexactionsheet_menu_cancel_button_style.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_myspace_gsense_bg_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_myspace_gsense_bg_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_add_app_group_down.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_add_app_group_down.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_station_forward.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_station_forward.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_chatkeyboard_send_bg_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_chatkeyboard_send_bg_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_add_app_search.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_add_app_search.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_uexactionsheet_menu_list_button_style.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_uexactionsheet_menu_list_button_style.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_indicate_ball_normal.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_indicate_ball_normal.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_file_back_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_file_back_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_list_select_press.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_list_select_press.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_top_bg_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_top_bg_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_myspace_grid_item_bg_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_myspace_grid_item_bg_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_zdtq_add_app_item_button_disable_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_zdtq_add_app_item_button_disable_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_imagebrowser_grid_item_bg_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_imagebrowser_grid_item_bg_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_title_back_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_title_back_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_play_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_play_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_seekbar_volume_thumb.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_seekbar_volume_thumb.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_recorder_record_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_recorder_record_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_camera_flash_auto_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_camera_flash_auto_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_zdtq_add_app_new.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_zdtq_add_app_new.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_add_app_group_redown.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_add_app_group_redown.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_button_next_style.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_button_next_style.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_file_btn_multiselect_bg_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_file_btn_multiselect_bg_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_file_list_item_back.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_file_list_item_back.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_add_app_list_bg_normal.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_add_app_list_bg_normal.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_top_bg1.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_top_bg1.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_mam_bg_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_mam_bg_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_list_add_app_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_list_add_app_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_indicate_ball_current.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_indicate_ball_current.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_applist_search.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_applist_search.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_imagebrowser_button_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_imagebrowser_button_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_uex_image_picker_checkbox.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_uex_image_picker_checkbox.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_top_bg2.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_top_bg2.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_title_back_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_title_back_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_mam_login_bg_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_mam_login_bg_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_new_app.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_new_app.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_app_grid_new_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_app_grid_new_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_image_group_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_image_group_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_update_alert_progressbar_style.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_update_alert_progressbar_style.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_back_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_back_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_add_app_button.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_add_app_button.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_grid_item_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_grid_item_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_recorder_stop_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_recorder_stop_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_backgroud_grid_item.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_backgroud_grid_item.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\shadowright.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\shadowright.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_recorder_use_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_recorder_use_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_mam_title_bg_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_mam_title_bg_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_recorder_bg_dot_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_recorder_bg_dot_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_grid_item_pressed_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_grid_item_pressed_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_del_app_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_del_app_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_filelist_item_pressed_bg.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_filelist_item_pressed_bg.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_alter_right_down_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_alter_right_down_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_station_close_2x.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_station_close_2x.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_file_top_bg_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_file_top_bg_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_station_back.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_station_back.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_camera_bt_changefacing_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_camera_bt_changefacing_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_chatkeyboard_btn_voice_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_chatkeyboard_btn_voice_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_file_filelist_item_pressed_bg.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_file_filelist_item_pressed_bg.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_imagebrowser_back_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_imagebrowser_back_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_uex_image_white_gray_bg_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_uex_image_white_gray_bg_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_myspace_top_btn_settings_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_myspace_top_btn_settings_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_seekbar_thumb_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_seekbar_thumb_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_add_app_item_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_add_app_item_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_del_app_press.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_del_app_press.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_del_app_complete_press.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_del_app_complete_press.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_file_button_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_file_button_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_alter_left_down_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_alter_left_down_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_del_app_complete_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_del_app_complete_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_station_back_2x.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_station_back_2x.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\imageview_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\imageview_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_imagebrowser_use_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_imagebrowser_use_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_camera_flash_open_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_camera_flash_open_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\shadow.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\shadow.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_account_bottom_bg.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_account_bottom_bg.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_station_close.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_station_close.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_list_select_normal.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_list_select_normal.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_app_icon_default.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_app_icon_default.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_file_bottom_bar_bg_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_file_bottom_bar_bg_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_recorder_bg_layer.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_recorder_bg_layer.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_myspace_top_bg_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_myspace_top_bg_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_zdtq_dialog.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_zdtq_dialog.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_myspace_grid_item_progressbar_style.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_myspace_grid_item_progressbar_style.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_account_button.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_account_button.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_imagebrowser_zoom_in_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_imagebrowser_zoom_in_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_station_refresh.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_station_refresh.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_imagebrowser_top_bg_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_imagebrowser_top_bg_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_file_cb_bg_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_file_cb_bg_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\engine_scroller_thumb_ver.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\engine_scroller_thumb_ver.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_mam_title_back_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_mam_title_back_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_seekbar_style.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_seekbar_style.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_station_refresh_2x.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_station_refresh_2x.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_backgroud_grid_item_press.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_backgroud_grid_item_press.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_blue_block_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_blue_block_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_add_app_list_bg_press.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_add_app_list_bg_press.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_audio_gray_block_shape.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_audio_gray_block_shape.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_app_icon_background.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_app_icon_background.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_station_forward_2x.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_station_forward_2x.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_disable.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_disable.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\platform_myspace_top_btn_back_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\platform_myspace_top_btn_back_selector.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_title.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_title.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_ex_ad_default.png",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_ex_ad_default.png"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\drawable\\plugin_appmarket_grid_item_bg_selector.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\drawable\\plugin_appmarket_grid_item_bg_selector.xml"
+    }
+]

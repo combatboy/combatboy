@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+        <link rel="stylesheet" href="../css/common.css">
+    </head>
+    <style>
+       .res{width:1.5em;height:.8em;background-image: url('css/res/back1.png')}
+       .deleteSyle{
+                background-image:url(../images/delete.png);
+                min-width:1.2em;
+                min-height:1.2em;
+                margin-top: -.3em;
+                margin-right: 2em;
+            }
+    </style>
+    <body class="um-vp bc-bg " ontouchstart>
+        <div class=" ub ub-ver">
+           <div class=" ub-ac bg-wh line ubb" id="show" >
+               <div class=" ub-f1 tx-c uhide" style="padding-top: 2em;min-height: 6em;" id="reload">
+                   <div class=" ulev-1 sc-text-tab">加载失败，请检查网络设置... </div>
+                                                                                        
+               </div>  
+
+              <div class="ub  gpad ub-f1  " id="add" style="float:left;" >
+                  <div class="ub ub-ac ub-pc ub-ver " id="addPeople"  >
+                  <div class="iconwh ub-img " style="background-image:url(' ../images/addPeople.png ') !important">
+                  </div>                  
+                 <div class="tx-c gmar-t ut-s" style="width:3em;">邀请</div>
+               </div>
+              </div>  
+ 
+           </div>
+           <div class="ub ub-ver" style="clear:both;">
+               
+           <div class="ub  ubb ubt ub-ac b-c  bg-wh ulev0   bc-border  umar1 gpad updateName group uhide  " id="names" style="padding-right:0em;">         
+            <div class="  t-ba ub-f1 ">群聊名称</div>
+            <div class=" zt-color10 " id="editName"></div>
+            <div class=" ub-img res" ></div>
+           </div>
+           
+             
+          <div id="btn" class="uinn group uhide" style="margin-top: 4em;">
+            <div class="btn ub ub-ac ub-pc  bc-text-head  bc-head ulev0 uc-a1" >
+                                        退出该群
+            </div>
+          </div>
+        </div>
+        </div>
+        <script src="../../vendor/appcan/js/appcan.js"></script>
+        <script src="../../vendor/appcan/js/appcan.control.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/main.js"></script>
+    </body>
+    <script>
+        var uname = appcan.getLocVal("simcere.runtime.inLoginId");//登陆的用户
+        var mobileId = appcan.getLocVal("simcere.runtime.imUserId");//登陆用户产生id
+        var flag = "";  // single单聊与  group群聊的标志       
+        var roster="";  //登陆用户的角色
+        var timerClick="";
+        appcan.ready(function() {
+           appcan.initBounce();            
+           flag=appcan.getLocVal("flag");
+           roster=localStorage.getItem("roster");
+           if(roster=="owner" && flag !="single" ){
+              $("#names").removeClass("uhide"); 
+           }
+           if(navigator.onLine){
+             getGroupName();                
+           }else{
+             var desc=appcan.getLocVal("groupDesc");
+             $("#editName").html(csubstr(desc,0,30)); 
+             appcan.window.closeToast(); 
+           } 
+           if(flag == "single"){//单聊
+              $("#add").removeClass("uhide");
+              fillContent();
+           }else{//群聊
+              $("#btn").removeClass("uhide");   
+              if(navigator.onLine){
+                getMem();  
+              }else{
+               $("#reload").removeClass("uhide");    
+              } 
+                                                       
+           }
+                       
+        appcan.window.subscribe("E_CB_GROUP_LEAVECHAT",function(msg){
+            logs("成员离开群结果返回的信息----"+msg);
+               if(msg=='0'){
+                 appcan.window.closeToast(); 
+                   appcan.window.evaluateScript('groupChat','appcan.window.close(0);'); 
+                   appcan.window.evaluateScript('createChatGroup','appcan.window.close(0);');     
+                
+               }else{
+                   appcan.window.closeToast(); 
+                   alert("成员离开群聊失败");
+               }
+           });
+        appcan.window.subscribe("E_CB_GROUP_DELETECHAT",function(msg){
+              if(msg=='0'){
+                 appcan.window.closeToast();                 
+                   appcan.window.evaluateScript('createChatGroup','appcan.window.close(0);');  
+                   appcan.window.evaluateScript('groupChat','appcan.window.close(0);');                   
+               }else{
+                   appcan.window.closeToast();
+                   alert("群主解散该群失败");
+               } 
+            
+        });   
+        appcan.window.subscribe("E_CB_GROUP_KICKED",function(){
+            appcan.window.openToast("正在移除参与人");
+            getMem();         
+        }); 
+        if(!isAndroid){
+            uexWindow.disturbLongPressGesture(2);
+           }
+        })
+       
+    function getMem(){
+      appcan.window.openToast("正在加载中.....");  
+      var groupDesc = appcan.getLocVal("groupDesc");             
+      var groupId=appcan.getLocVal("groupId");   
+        logs("groupId---"+groupId); 
+         var msg={
+             groupid:groupId,   //  群ID
+             page:'1',          //  查询索引
+             count:'100',            //  查询每页显示最大数
+             roster:""   
+           } 
+       appcan.window.publish("E_GROUP_GETMEM",msg); //获取群 成员          
+    } 
+    
+    function getMemData(mlist){
+       appcan.window.closeToast();
+       logs("用户id与名称---"+appcan.getLocVal("simcere.im.userId_name"));
+       var userId_name =JSON.parse(appcan.getLocVal("simcere.im.userId_name"));   
+       var json=JSON.parse(mlist);
+       var gData=[];
+       var gObj={}; 
+        if(json.status=="success"){
+             var obj=json.msg.useridlist;
+             logs("群成员长度--"+obj.length);
+           for(var i=0;i<obj.length;i++){
+              var uid=obj[i].userid;
+              var name=decodeURI(userId_name[uid].userName);             
+              gObj={
+                  username:name,
+                  fid:uid                                                   
+              }
+             gData.push(gObj); 
+             logs("-----"+i);
+           }  
+        appcan.setLocVal("personObj",JSON.stringify(gData));   
+        fillContent();  
+        $("#add").removeClass("uhide");     
+      }else{
+        appcan.window.closeToast();  
+        $("#reload").removeClass("uhide");
+      } 
+    }            
+     
+        //打开页面后将用户展示     在id为p后面添加其兄弟节点
+     function fillContent(){ 
+          appcan.window.closeToast();   
+          $(".pp").remove();    
+          var personObj= appcan.getLocVal("personObj"); 
+          logs("personObj----"+personObj);
+          if(appcan.getLocVal("openGroup")=="true"){
+              appcan.setLocVal("openGroup","");
+          }
+          try{
+          var arr=JSON.parse(personObj);
+           for(var i=0;i<arr.length;i++){
+                var str='<div class="ub ub-ac ub-pc  gpad  pp ub-f1 "  style="float:left;">'+
+                       '<div class="ub ub-ac ub-pc ub-ver join" id="'+arr[i].fid+'">'+
+                       '<div class="iconwh ub-img " style="background-image:url(\' ../images/touxiang.png \') !important"> <div class="ub ub-f1 delete uhide">'+
+                       '<div class="ub-f1"></div> <div class="ub ub-img deleteSyle" ></div></div></div>'+              
+                       '<div class="tx-c gmar-t ut-m  " style="width:3em;" class="username" >'+subStr(arr[i].username)+'</div></div></div> ';
+             $(str).insertBefore($("#add"));   //将str对象插入到addPeople对象的前面             
+             appcan.button(".join", "ani-act", function() {//进入个人单聊界面
+                 var ele = $(".delete",$(this));
+                 var id= $(".delete").parent().parent().id; 
+                 if(!ele.hasClass("uhide")){
+                    ele.addClass("uhide"); 
+                    return;
+                 }               
+                 })
+                 
+            $(".join").on("longTap",function(){
+                uexDevice.vibrate(100);
+               var ele = $(".delete");                    
+                if(ele.hasClass("uhide")){
+                   if(appcan.getLocVal("flag")=="single"|| roster!="owner"){
+                               return;
+                           }      
+                 for(var i=0;i<ele.length;i++){
+                   var id= $(".delete")[i].parentNode.parentNode.id;  
+                    if(id==mobileId){
+                      ele[i].className="ub ub-f1 delete uhide";
+                    }else{
+                       ele[i].className="ub ub-f1 delete ";  
+                    }
+                  }        
+                    
+                }else{
+                    return;
+                }                               
+             }) 
+             
+          appcan.button(".delete", "ani-act", function() {//删除群聊的人
+               var id=$(this).parent("div").parent("div")[0].id;
+               var groupDesc = appcan.getLocVal("groupDesc");
+               var groupnode = appcan.getLocVal("groupNode");
+               var param = {
+                 groupName:groupnode,//群聊名称
+                 imId:id,//用户名
+                 reason:"1334"//剔除原因
+               }
+              appcan.window.publish("E_GROUP_KICK",param);//从群聊中剔除某人               
+               })                     
+           } 
+              
+          }catch(e){
+              
+          }
+            
+        }
+
+        appcan.button("#addPeople", "ani-act", function() {  
+           var flag=true; 
+            if(appcan.getLocVal("flag")=="single"){
+                var hasUser={} 
+                var personObj= appcan.getLocVal("personObj");  
+                var arr=JSON.parse(personObj);
+                var name=arr[0].username;
+                 hasUser = {
+                    username : name,
+                    fid : arr[0].fid
+                 }; //针对单聊
+                appcan.setLocVal("hasUser",hasUser);    
+                flag=false;               
+            }
+            logs("已经存在的用户-"+JSON.stringify(hasUser));
+        //    appcan.setLocVal("add","true");  //含有这个标识通讯录中 选择一个群影藏           
+            appcan.setLocVal("ifGroup",flag);            
+            appcan.window.open("communicate","communicate.html","10");
+        })
+        
+        appcan.button("#names", "btn-act", function() { //修改群名称
+           appcan.window.evaluatePopoverScript('groupChat','content','close()');
+          appcan.window.open("editGroupName","editGroupName.html",10);  
+        })
+        
+        
+   appcan.button("#btn", "btn-act", function() { //删除并退出  即销毁群
+         var  titContent = '删除并退出后将不再接收此群聊信息';
+        appcan.window.confirm("",titContent,['取消','确定'],function(err,data,dataType,optId){
+             if(data=='1'){
+                 var param = {
+                      groupName:appcan.getLocVal("groupNode")//群聊名称
+                    }
+               appcan.window.openToast("正在删除中...");     
+              if(roster=="owner"){
+                  logs("群主退群参数---"+JSON.stringify(param));
+                 appcan.window.publish("E_GROUP_DELETECHAT",param);  //若是群主销毁群  
+               }else{
+                  logs("群成员退群参数---"+JSON.stringify(param)); 
+                 appcan.window.publish("E_GROUP_LEAVECHAT",param);  //一般成员退出群
+               }     
+               
+              }
+         })
+        })
+  function updateName(){
+        getGroupName();
+    } 
+  function  getGroupName(){
+    var groupNode = appcan.getLocVal("groupNode");   
+     var param = {
+       groupName:groupNode        //  群节点
+     }
+    uexIM.getGroupidByName(JSON.stringify(param));
+    appcan.window.subscribe("E_CB_Name",function(msg){
+    var obj=appcan.getLocVal("gList");
+        obj=JSON.parse(obj); 
+     appcan.setLocVal("groupDesc",obj[msg].groupDes);   
+    $("#editName").html(csubstr(obj[msg].groupDes,0,30));
+    appcan.window.evaluatePopoverScript("editGroupName","content","closeWindow();");
+    });   
+   }  
+    </script>
+</html>

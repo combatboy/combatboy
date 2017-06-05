@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body class="um-vp bc-bg" ontouchstart>
+<div class="ub ub-ver">
+    <div class="ub ub-ver gzuinn3">
+        <!--此区域用于便于js获取宽度 start-->
+        <!-- 此区域用于便于js获取宽度   end-->
+        <div id="huihuainfolist" class="ub ub-ver">
+            <div class="ub ub-ac ub-pc tx-c uhide">
+                <div class="">你邀请了谁加入了群聊</div>
+            </div>
+            <div class='tx-c zt-color10 uhide' style="margin-top:70%;margin-bottom:90%;" id="noData">暂无聊天记录</div>
+
+        </div>
+    </div>
+    <div class=""></div>
+</div>
+<div class="umh4"></div>
+<script src="../../vendor/appcan/js/appcan.js"></script>
+<script src="../../vendor/appcan/js/appcan.control.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/main.js"></script>
+<script src="../../vendor/ow/qlib.js"></script>
+<script src="../js/biaoqing.js"></script>
+</body>
+<script>
+    var msgArr = [];
+    var pageCount = 20;
+    var chatTime = "";
+    var reg = /\[([^\]]+)\]/g;
+    function change(s) {
+        return '<img style="width:1.5em;height:1.5em;"  src="wgtResemojicons/' + biaoqing[s] + '" border="0" align="center">'
+    }
+    //处理头像  （好友头像和self头像）；
+    var selfImg1 = "../images/touxiang.png";
+    var groupNode = appcan.getLocVal("groupNode");    //群节点
+    var groupName = appcan.getLocVal("groupDesc");    //群名称
+    var userId_name = "";
+    appcan.ready(function () {
+        if (!isAndroid) {
+            uexWindow.disturbLongPressGesture(2);
+        }
+        appcan.window.evaluateScript("communicate", "appcan.window.close(-1)");
+        appcan.window.evaluateScript("createChatGroup", "appcan.window.close(-1)");
+        appcan.window.evaluateScript("singleChat", "appcan.window.close(-1)");
+        getRealPath(function (p) {
+            path = p;
+        });
+        //工作下拉刷新
+        var json = '{"imagePath":"res://jiantou.png","textColor":"#530606","pullToReloadText":"拖动刷新","releaseToReloadText":"释放刷新","loadingText":"加载更多","loadingImagePath":"res://shuaxin.png"}';
+        uexWindow.setBounceParams(0, json);
+        appcan.frame.setBounce([0], null, null, function (type) {
+            getChatList(type);
+        }, '#efefef', json);
+
+        userId_name = JSON.parse(appcan.getLocVal("simcere.im.userId_name"));
+        getChatList(1);
+        //   打开输入框
+        var json = {
+            "emojicons": "res://emojicons/emojicons.xml",
+            "shares": "res://shares/shares.xml",
+            "textColor": "#FFF",
+            "textSize": "15.5"
+        };
+        uexChatKeyboard.open(JSON.stringify(json));
+        uexChatKeyboard.onKeyBoardShow = function (json) {
+            var data = JSON.parse(json);
+            if (data.status == '1') {
+                if (!isAndroid) {
+                    var heightElement = getElementHeight();
+                    uexChatKeyboard.changeWebViewFrame(heightElement);
+                }
+            }
+            toDown();
+
+        };
+        /*********监听新消息来啦*********start************/
+        appcan.window.subscribe("E_GROUP_NEWMSGCOMING", function (param) {
+            logs("群聊监听新消息来了--------" + param);
+            $("#noData").addClass("uhide");
+            receiveNewMsg(param);
+        });
+
+        /*********根据消息发送的状态不同展示在页面上    start***********/
+        appcan.window.subscribe("E_GROUP_GETSENDSTATUS", function (param) {
+            $("#noData").addClass("uhide");
+            onsendStatus(param);
+        });
+        /*********根据消息发送的状态不同展示在页面上    end***********/
+        /***********点击用户进入后获取之前的聊天记录  end************************/
+        appcan.window.subscribe("open", function () {
+            var json = {
+                "emojicons": "res://emojicons/emojicons.xml",
+                "shares": "res://shares/shares.xml",
+                "textColor": "#FFF",
+                "textSize": "15.5"
+            };
+            uexChatKeyboard.open(JSON.stringify(json));
+        });
+
+
+        /*监听发送信息，获取需要发送的信息   onCommit ***********************/
+        uexChatKeyboard.onCommitJson = function (msg) {//发送文本内容时的的监听状态,成功失败
+            var msg1 = "";
+            try {
+                msg1 = msg.emojiconsText;
+            } catch (err) {
+                var end = msg.lastIndexOf('"}');
+                msg1 = msg.substring(18, end);
+            }
+            var con = msg1.replace(/\s+/g, "");
+            con = replaceStr(con);
+            var groupName = appcan.getLocVal("groupDesc");    //群名称
+            var text = {
+                groupName: groupNode,
+                groupDes: groupName,
+                content: con
+            };
+            msgArr.push({
+                content: con,
+                type: "text"
+            });
+            appcan.setLocVal("simcere.im.sendState", "group");
+            uexIM.sendGroupMsgText(JSON.stringify(text));
+            // appcan.window.publish("E_GROUP_SENDMSGTEXT", text);
+        }
+        /*监听发送信息，获取需要发送的信息END  文字发送  onCommit ******/
+
+        /*uexChatKeyboard监听是选择的相册还是拍摄*****录音******/
+        // var time=0;
+        uexAudio.cbBackgroundRecord = function (opCode, dataType, data) {//停止后台录音的回调方法
+            var groupName = appcan.getLocVal("groupDesc");    //群名称
+            var voice = {
+                groupName: groupNode,
+                groupDes: groupName,
+                voiceUrl: data,
+                voiceTime: time
+            };
+            time = Math.floor(time);
+            if (time == 0 || time > 10000 || time < 1) {
+                return;
+            } else {
+                msgArr.push({
+                    voiceTime: time,
+                    voiceUrl: data,
+                    type: "voice"
+                });
+                appcan.logs(JSON.stringify(voice));
+                appcan.setLocVal("simcere.im.sendState", "group");
+                uexIM.sendGroupMsgVoice(JSON.stringify(voice))
+                // appcan.window.publish("E_GROUP_SENDMSGVOICE", voice);
+            }
+        };
+
+        uexChatKeyboard.onVoiceAction = function (data) {//录音监听
+            var data = JSON.parse(data);
+            //0-开始录音，1-录音完成，-1-取消录音
+            if (data.status == 0) {
+                time = getTime();
+                uexAudio.startBackgroundRecord(0, time);
+            } else if (data.status == 1) {
+                //停止后台录音
+                uexAudio.stopBackgroundRecord();
+                time = getTime() - time;
+                if (time < 1600) {
+                    time = 0;
+                }
+                time = time / 1000;
+            } else if (data.status == 2) {
+                //表示录音时间到达60s
+                uexAudio.stopBackgroundRecord();
+                time = (getTime() - time) / 1000;
+            } else if (data.status == -1) {
+                //取消录音--
+                time = 0;
+                uexAudio.stopBackgroundRecord();
+            }
+        };
+
+        function cbPick(opId, dataType, data) {
+            var imgurl = data;
+            var groupName = appcan.getLocVal("groupDesc");    //群名称
+            var picture = {
+                groupName: groupNode,
+                groupDes: groupName,
+                imageUrl: imgurl,
+                compressRatio: 4
+            };
+            msgArr.push({
+                imageUrl: imgurl,
+                type: "picture"
+            });
+            appcan.setLocVal("simcere.im.sendState", "group");
+            uexIM.sendGroupMsgImage(JSON.stringify(picture));
+            //appcan.window.publish("E_GROUP_sendMsgImage", picture);//发送图片
+        }
+
+
+        function cbOpen(opId, dataType, data) {//相机 回调方法
+            var imgurl = data;
+            var picture = {
+                groupName: groupNode,
+                groupDes: groupName,
+                imageUrl: imgurl
+            };
+            msgArr.push({
+                imageUrl: imgurl,
+                groupDes: groupName,
+                type: "picture"
+            });
+            //  appcan.window.publish("E_GROUP_sendMsgImage", picture);
+            uexIM.sendGroupMsgImage(JSON.stringify(picture));
+        }
+
+        uexChatKeyboard.onShareMenuItem = function (index) {
+            if (index == 0) {//拍摄
+                appcan.logs('拍摄');
+                //打开相机
+                uexCamera.cbOpen = cbOpen;
+                uexCamera.open();
+
+            } else if (index == 1) {//照片
+                appcan.logs('照片');
+                //从相册中选择图片
+                //uexImageBrowser.cbPick = cbPick;
+                //uexImageBrowser.pick();
+                qlib.openImagePicker(function (url) {
+                    cbPick(null, null, url);
+                });
+
+            } else if (index == 2) {//位置
+                appcan.logs('位置');
+            }
+        };
+        appcan.window.subscribe("append", function (msg) {
+            logs("添加人提示");
+            appendStr1(msg);
+
+        });
+
+    });
+
+    function receiveNewMsg(param) {
+        logs("接收新信息--" + param);
+        var dataList = JSON.parse(param);
+        var msgId = dataList.msgId;
+        var msgSender = dataList.msgSender;  //发送者ID
+        var msgType = dataList.msgType;   //新消息的类型 1-文本；2-图片；3-语音
+        var gName = dataList.groupName;  //群聊名称
+        var flag = 1;
+        var i = -1;
+        var dlParam = {
+            groupName: gName,    //  群节点
+            msgId: msgId                //  消息ID
+        };
+
+        if (gName != groupNode) {//发送者所在的群是不是正在聊天的群(设不设置提醒)
+            // appcan.window.publish("E_XMPP_NEWMSG", "E_XMPP_NEWMSG");
+            uexIM.getChatListWithLastMsg();
+        } else {//将其消息添加在该页面
+            if (msgType == 1) {//文本
+                var num = parseInt(1000000 * Math.random());
+                var copyId = "copyMessage" + num;
+
+                var str = leftGroupHtml(dataList, selfImg1, i, flag, userId_name, copyId);
+                str = str.replace(reg, change);
+                str = str.replace(/wgtRes/g, path);
+                $("#huihuainfolist").append(str);
+
+                $("#" + copyId).on("longTap", function () {
+                    uexDevice.vibrate(100);
+                    var text = dataList.content;
+                    if (text == "") {
+                        return;
+                    } else {
+                        appcan.window.confirm("提示", text, ['复制', '取消'], function (err, data, dataType, optId) {
+                            setTimeout(function () {
+                                if (parseInt(data) == 0) {
+                                    uexClipboard.copy(text);
+                                }
+                            }, 1000);
+                        });
+                    }
+                });
+                toDown();
+            } else if (msgType == 2) {//图片
+
+                var str = leftGroupHtml(dataList, selfImg1, i, flag, userId_name, '');
+                logs("新消息图片---" + str);
+                uexIM.downloaderGroupMgr(JSON.stringify(dlParam));
+                // appcan.window.publish('E_GROUP_DOWNLOAD',dlParam);
+                $("#huihuainfolist").append(str);
+                toDown();
+
+            } else if (msgType == 3) {//语音
+
+                var str = leftGroupHtml(dataList, selfImg1, i, flag, userId_name, '');
+                uexIM.downloaderGroupMgr(JSON.stringify(dlParam));
+                // appcan.window.publish('E_GROUP_DOWNLOAD',dlParam);
+                $("#huihuainfolist").append(str);
+                toDown();
+
+                appcan.button(".audioPlay", "ani-act", function () {
+                    var path = $(this).find("div.dz").html();
+                    $(this).find("div.yuand").removeClass("yuand");
+                    var msgId1 = $(this).find("div.tian").html();
+                    var params = {
+                        groupName: gName,
+                        msgId: msgId1
+                    };
+                    var params1 = JSON.stringify(params);
+                    uexIM.setVoiceGroupMsgRead(params1);
+                    playBgRecord(path);
+                });
+            }
+            var params = {
+                groupName: gName,
+                type: "all"
+            }
+            var params1 = JSON.stringify(params)
+            uexIM.setMarkGroupMsgRead(params1);
+            uexIM.getChatListWithLastMsg();
+            //  appcan.window.publish("E_XMPP_NEWMSG", "E_XMPP_NEWMSG");
+        }
+        appcan.button(".piclist", "", function (a) {
+            var array = [];
+            array[0] = a.target.parentElement.attributes[2].nodeValue;
+            logs("图片预览地址---" + array[0]);
+            if (array[0] == undefined) {
+            } else {
+                //uexImageBrowser.open(array);
+                qlib.openImageViewer(array);
+            }
+        })
+    }
+
+    function onsendStatus(param) {
+        logs("群聊发送的数据---" + param);
+        var param = JSON.parse(param);
+        var status = param.status;   //监听的状态  1-发送中 2-发送成功，3-发送失败
+        var msgId = param.msgId;   //消息id
+        if (msgArr.length > 0) {
+            var msgType = msgArr[0].type;
+            if (msgType == "text") {//文本处理
+                var str1 = msgArr[0].content.replace(reg, change);
+                str1 = str1.replace(/wgtRes/g, path);
+                var num = parseInt(1000000 * Math.random());
+                var copyId = "copyMessage" + num;
+                var str = '<div class="ub hhuinn-tb">' + '<div class="uhide tm">' + msgId + '</div>' + '<div class="ub-f200"></div>' + '<div class=" iconwh1 huihuaunload1 ub-img"></div> ' + '<div id="' + copyId + '" class="ub-f1 ub hhkuinn-r ub-pe">' + '<div class="ub">' + '<div class="ub-f1 ub hhuinn hhc-green hhuc-a"><div class="gz-ulev hhline-hei bc-text ub ub-ac umw2 hx "><span>' + str1 + '</span></div></div>' + '<div class="hhjiantou huihuajiantour ub-img-l posileft"></div>' + '</div>' + '</div>' + '<div class="iconwh ub-img" style="background-image:url(' + selfImg1 + ') !important"></div>' + '</div>';
+
+                $("#huihuainfolist").append(str);
+                var text = JSON.stringify(msgArr[0].content);
+                $("#" + copyId).on("longTap", function () {
+                    uexDevice.vibrate(100);
+                    text = text.substring(1, text.indexOf('"', 1));
+                    if (text == "") {
+                        return;
+                    } else {
+                        appcan.window.confirm("提示", text, ['复制', '取消'], function (err, data, dataType, optId) {
+                            setTimeout(function () {
+                                if (parseInt(data) == 0) {
+                                    uexClipboard.copy(text);
+                                }
+                            }, 1000);
+                        });
+                    }
+                });
+
+                msgArr.shift();
+                toDown();
+
+            } else if (msgType == "picture") {//图片处理
+                var str = '<div class="ub hhuinn-tb ">' + '<div class="uhide tm">' + msgId + '</div>' + '<div class="ub-f200"></div>' + '<div class=" iconwh1 huihuaunload1 ub-img"></div>' + '<div class="ub-f1 ub hhkuinn-r ub-pe">' + '<div class="ub-f1 ub ub-pe">' + '<div class="ub piclist" id="tp_' + msgId + '"  tpsrc="' + msgArr[0].imageUrl + '">' + '<div class="ub-img1 ub-f1 hhuc-a hhuba hhumaxwh1" style="background-image:url(' + msgArr[0].imageUrl + ') !important" id="img2"></div>' + '</div>' + '</div>' + '<div class="hhjiantou huihuajiantour ub-img-l posileft2"></div>' + '</div>' + '<div class="iconwh ub-img" style="background-image:url(' + selfImg1 + ') !important"></div>' + '</div>';
+                $("#huihuainfolist").append(str);
+                msgArr.shift();
+                toDown();
+            } else if (msgType == "voice") { //录音处理
+                var msgtimess = msgArr[0].voiceTime;
+                var msgtimess = Number(msgtimess);
+                if (msgtimess <= 3) {
+                    var yywidth = 3.5;
+                } else if (3 < msgtimess <= 60) {
+                    var yywidth = 3.5 + (msgtimess - 3) * 0.1;
+                }
+                var str = '<div class="ub hhuinn-tb ">' + '<div class="uhide tm">' + msgId + '</div>' + '<div class="ub-f200"></div>' + '<div class=" iconwh1 huihuaunload1 ub-img"></div>' + '<div class="ub-f1 ub hhkuinn-r ub-pe">' + '<div class="ub-img"></div>' + '<div class=" ub myshengyin audioPlay" id="' + msgId + '">' + '<div class="uhide dz">' + msgArr[0].voiceUrl + '</div>' + '<div class="ub-f1 ub yuyinduihua hhuc-a ub-pe hhc-green hhuinn voice" style="width:' + yywidth + 'em;">' + '<div class="ub ub-ac">' + '<div id="yuyinlen" class="bc-text-head ulev-1 uinn4">' + msgArr[0].voiceTime + '</div>' + '</div> ' + '<div class="yuyin3 ub-img"></div>' + '<div class="ub ub-ac rwagzmbuinn-l1">' + '<div class="yuyin2 ub-img"></div>' + '</div>' + '</div> ' + '<div class="hhjiantou huihuajiantour2 ub-img-l posileft"></div>' + '</div>' + '</div>' + '<div class="iconwh ub-img" style="background-image:url(' + selfImg1 + ') !important"></div>' + '</div>';
+                $("#huihuainfolist").append(str);
+                msgArr.shift();
+                toDown();
+
+                appcan.button(".audioPlay", "ani-act", function () {
+                    var path = $(this).find("div.dz").html();
+                    var flag = $(this).find("div.dz").attr("flag");
+                    playBgRecord(path);
+                });
+            }
+
+        }
+        $(".tm").each(function () {
+            var eachId = $(this).html();
+            if (eachId == msgId) {//找到了同一条数据
+                if (status == 1) {//发送中
+                } else if (status == 2) {//发送成功
+                    $(".tm").each(function () {
+                        var eachId = $(this).html();
+                        if (eachId == msgId) {
+                            $(this).siblings("div.iconwh1").removeClass("huihuaunload1");
+                        }
+                    })
+                } else if (status == 3) {//发送失败
+                    $(".tm").each(function () {
+                        var eachId = $(this).html();
+                        logs("发送失败---" + eachId + "---" + msgId);
+                        if (eachId == msgId) {
+                            $(this).siblings("div.iconwh1").removeClass("huihuaunload1").addClass("huihuaunload");
+                        }
+                    });
+                }
+            }
+        });
+        appcan.button(".piclist", "", function (a) {
+            var array = [];
+            array[0] = a.target.parentElement.attributes[2].nodeValue;
+            if (array[0] == undefined) {
+            } else {
+                //uexImageBrowser.open(array);
+                qlib.openImageViewer(array);
+            }
+        });
+        uexIM.getChatListWithLastMsg();
+        //    appcan.window.publish("E_XMPP_GETCHATLISTMSG", ""); //获取最近聊天记录
+    }
+
+    function getGroupChatList(data) {
+        var t = appcan.getLocVal("upAndDown");
+        appcan.frame.resetBounce(t);
+        if (t == 0) {
+            if (data.dataList.length == 0) {
+                appcan.window.closeToast();
+                appcan.window.openToast("暂无更多的数据", 1500, 5);
+            }
+        } else {
+            if (data.dataList.length == 0) {
+                $("#noData").removeClass("uhide");
+                return;
+            }
+            $("#huihuainfolist").html("");
+        }
+        $("#noData").addClass("uhide");
+        var dataList = data.dataList;   //消息列表
+        chatTime = dataList[0].timestamp;
+        if (t == 0) {
+            dataList = dataList.reverse();
+        }
+        for (var i = 0; i < dataList.length; i++) {
+            var msgId = dataList[i].msgId;  //消息的id
+            var isSend = dataList[i].isSend;//获取是发送者还是接受者;0是接受者 1是发送者
+            var sendState = dataList[i].sendStatus; //1-发送中，2-发送成功，3-发送失败。
+            var datatype = dataList[i].msgType; //消息类型，1-文本；2-图片；3-语音；
+            var msgSender = dataList[i].msgSender; //
+            var id = "copyMessage" + i;
+            if (isSend == 1) {//发送者
+                try {
+                    if (datatype == 1) {//消息类型-文本
+                        var str = rightHtml(dataList, selfImg1, i);
+                        str = str.replace(reg, change);
+                        str = str.replace(/wgtRes/g, path);
+                        appendStr(str, t);
+                        $("#copyMessage" + i).on("longTap", function () {
+                            uexDevice.vibrate(100);
+                            var copyID = this.id;
+                            var id = $("#" + copyID).find(".copyMessage").attr("id");
+                            var text = dataList[id].content;
+                            if (text == "") {
+                                return;
+                            } else {
+                                appcan.window.confirm("提示", text, ['复制', '取消'], function (err, data, dataType, optId) {
+                                    setTimeout(function () {
+                                        if (parseInt(data) == 0) {
+                                            uexClipboard.copy(text);
+                                        }
+                                    }, 1000);
+                                });
+                            }
+                        });
+                    } else if (datatype == 2) {//消息类型-图片
+                        var str = rightHtml(dataList, selfImg1, i);
+                        appendStr(str, t);
+                    } else if (datatype == 3) {//消息类型-语音
+                        var dura = dataList[i].voiceTime;
+                        var now = getTime();
+                        var str = rightHtml(dataList, selfImg1, i);
+                        appendStr(str, t);
+                        var dura = Number(dura);
+                        if (dura <= 3) {
+                            $('#dddd' + i).css('width', '3.5em');
+                        } else if (3 < dura <= 60) {
+                            var dur = 3.5 + (dura - 3) * 0.1;
+                            $('#dddd' + i).css('width', dur + 'em');
+                        }
+                        appcan.button(".audioPlay", "ani-act", function () {
+                            var path = $(this).find("div.dz").html();
+                            playBgRecord(path);
+                        });
+
+                    }
+                } catch (e) {
+                    logs(88888);
+                }
+            } else {//接受者
+                var dlStatus = dataList[i].dlstatus;
+                var flag = 0;
+                var param = {
+                    groupName: dataList[i].groupID,    //  群节点
+                    msgId: msgId                //  消息ID
+                };
+
+                if (datatype == 1) {
+                    //消息类型-文本
+                    var num = parseInt(1000000 * Math.random());
+                    var copyId = "copyMessage" + num;
+                    var str = leftGroupHtml(dataList, selfImg1, i, flag, userId_name, copyId);
+                    str = str.replace(reg, change);
+                    str = str.replace(/wgtRes/g, path);
+                    appendStr(str, t);
+                    $("#" + copyId).on("longTap", function () {
+                        uexDevice.vibrate(100);
+                        var copyID = this.id;
+                        var id = $("#" + copyID).find(".copyMessage").attr("id");
+                        var text = dataList[id].content;
+                        if (text == "") {
+                            return;
+                        } else {
+                            appcan.window.confirm("提示", text, ['复制', '取消'], function (err, data, dataType, optId) {
+                                setTimeout(function () {
+                                    if (parseInt(data) == 0) {
+                                        uexClipboard.copy(text);
+                                    }
+                                }, 1000);
+                            });
+                        }
+                    });
+
+                } else if (datatype == 2) {//消息类型-图片
+
+                    var str = leftGroupHtml(dataList, selfImg1, i, flag, userId_name, '');
+                    logs("str--" + str);
+                    appendStr(str, t);
+                    if (dlStatus != 2) {
+                        uexIM.downloaderGroupMgr(JSON.stringify(param));
+                        // appcan.window.publish("E_GROUP_DOWNLOAD",param)
+                    } else if (dlStatus == 2) {
+                        $("#" + msgId).css("opacity", "1");
+                        $("#" + msgId).children().remove();
+                    }
+                } else if (datatype == 3) {//消息类型-语音
+                    var dura = dataList[i].voiceTime;
+                    var voiceStatus = dataList[i].voiceStatus;
+                    var msgSender = dataList[i].msgSender;
+                    var now = getTime();
+                    var str = leftGroupHtml(dataList, selfImg1, i, flag, userId_name, '');
+                    appendStr(str, t);
+                    if (dlStatus != 2) {
+                        uexIM.downloaderGroupMgr(JSON.stringify(param));
+                    } else if (dlStatus == 2) {
+                        $("#" + msgId).css("opacity", "1");
+                    }
+                    var dura = Number(dura);
+                    if (dura <= 3) {
+                        $('#dddd' + i).css('width', '3.5em');
+                    } else if (3 < dura <= 60) {
+                        var dur = 3.5 + (dura - 3) * 0.1;
+                        $('#dddd' + i).css('width', dur + 'em');
+
+                    }
+                    appcan.button(".audioPlay", "ani-act", function () {
+                        var path = $(this).find("div.dz").html();
+                        $(this).find("div.yuand").removeClass("yuand");
+                        var msgId1 = $(this).find("div.tian").html();
+                        var params = {
+                            groupName: groupNode,
+                            msgId: msgId1
+                        };
+
+                        var params1 = JSON.stringify(params);
+                        uexIM.setVoiceGroupMsgRead(params1);  //标记群聊语音消息已读
+                        playBgRecord(path);
+
+                    });
+                }
+            }
+        }
+        appcan.button(".piclist", "", function (a) {
+            var array = new Array();
+            //array[0] = a.target.parentElement.id;
+            array[0] = a.target.parentElement.attributes[2].nodeValue;
+            logs("群聊消息记录地址--图片--" + array[0]);
+            if (array[0] == undefined) {
+            } else {
+                //uexImageBrowser.open(array);
+                qlib.openImageViewer(array);
+            }
+        })
+    }
+
+    function playBgRecord(recordPath) {
+        logs("播放啦啊啊 " + recordPath);
+        uexAudio.open(recordPath);
+        uexAudio.play('0');
+    }
+
+    function stopRecord() {
+        uexAudio.pause();
+    }
+    function getTime() {//当前时间的时间戳
+        return Date.parse(new Date());
+    }
+
+    function appendStr1(name) {//群聊邀请人时添加的提示
+        var name1 = name.substring(0, name.length - 1);
+        logs("name1---" + name1);
+        $("#noData").addClass("uhide");
+        var str = ' <div class="ub ub-ac ub-pc tx-c gzt-95 ulev-1"><div class="">你邀请了' + name1 + '加入了群聊</div></div>';
+        $("#huihuainfolist").append($(str));
+    }
+
+    function close() {
+        uexChatKeyboard.close();
+    }
+    function getElementHeight() {
+        var retHeight = 0;
+        var eles = document.getElementById("huihuainfolist") && document.getElementById("huihuainfolist").children;
+        if (eles && eles.length) {
+            for (var i = 0; i < eles.length; i++) {
+                retHeight += eles[i].offsetHeight;
+            }
+        } else {
+
+        }
+        return retHeight;
+    }
+    function appendStr(str, t) {
+        if (t == 0) {
+            $("#huihuainfolist").prepend($(str));
+        } else {
+            $("#huihuainfolist").append($(str));
+            toDown();
+        }
+    }
+    function getChatList(t) {
+        appcan.setLocVal("upAndDown", t);
+        if (parseInt(t) == 0 && chatTime != "") {
+            var timeC = chatTime;
+        } else if (parseInt(t) == 0 && chatTime == "") {
+            appcan.frame.resetBounce(0);
+            appcan.window.closeToast();
+            appcan.window.openToast("暂无更多的数据", 1500, 5);
+            return;
+        } else {
+            var timeC = getTime();
+        }
+        var param = {
+            groupName: groupNode,//群聊名称
+            startTime: timeC,//分页获取消息开始时间。距离1970-1-1秒数
+            msgCount: pageCount//分页获取消息的数量。
+        };
+        uexIM.getGroupChatList(JSON.stringify(param));
+        // appcan.window.publish("E_GROUP_getChatList",JSON.stringify(param)); //发送参数获取聊天记录
+    }
+
+    function downloadPic(result) {
+        logs("下载图片结果" + result);
+        var data = JSON.parse(result);
+        var status = data.dlstatus;
+        var msgType = data.msgType;
+        var percent = data.percent;//百分比
+        var msgId = data.msgId;
+        var resPath = data.resPath;
+        switch (parseInt(status)) {
+            case 1:
+                //下载中
+                if (msgType == 3) {
+                    //$("#"+msgId).children().eq(1).html(percent+"%");
+                } else if (msgType == 2) {
+                    $("#" + msgId).children().html(percent + "%");
+                }
+                break;
+            case 2:
+                //下载成功
+                if (msgType == 3) {
+                    // $("#"+msgId).children().eq(1).html("");
+                    $("#" + msgId).find("div.dz").html(resPath);
+                    var ss = $("#" + msgId).find("div.dz").html();
+                    $("#" + msgId).css("opacity", "1");
+                } else if (msgType == 2) {
+                    $("#" + msgId).children().remove();
+                    $("#" + msgId).parent().attr("tpsrc", resPath);
+                    var con = $("#tp_" + msgId).html();
+                    logs("99999---" + resPath + "--" + con);
+                    setTimeout(function () {
+                        $("#" + msgId).css({'background-image': "url('" + resPath + "')!important", 'opacity': '1'});
+                        var ss = $("#" + msgId).css("background-image");
+                        var mm = $("#tp_" + msgId).html();
+                        logs("显示图片地址---" + ss + "--" + mm);
+                    }, 500);
+                }
+
+                break;
+            case 3:
+                //下载失败
+                var msgId = data.msgId;
+                $("#" + msgId).find("div.bai").html("加载失败");
+                break;
+        }
+    }
+</script>
+</html>

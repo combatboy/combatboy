@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	
+	    <body class="um-vp ub-img6 res-bg" ontouchstart>
+	       <input class="btn" type="button" value='设置个数' onclick='showNewMsg()'/>
+	       <input class="btn" type="button" value='关闭' onclick='close1()'/>
+	       <input class="btn" type="button" value='判断11111111111' onclick='isInstalled()'/>
+	       
+	       <a href='http://218.92.66.228:8080/storeIn/store/searchAppList?iswantTiles=t&softToken=7030a33b15bfcc38f20f2a507b37517a'>获取所有的数据</a>
+	    </body>
+	<script>
+	
+	function isInstalled(){
+		uexAppCenterMgrEx.isAppInstalled('aaaah100421');
+	}
+	
+	function close1(){
+	  	alert('关闭');
+		uexAppCenterMgrEx.close();
+	}
+	
+		window.uexOnload = function(type){
+		var app='{"appId":"aaalh10004","key":"a33d9730-eb09-43f5-83f1-eeb447adf9a4"}';
+			uexAppCenterMgrEx.open(0,0,1000,1680, 'https://apptest.sumec.com/storeIn/',app);  //正大天晴
+			uexAppCenterMgrEx.startWidget =startWidget;
+			uexAppCenterMgrEx.cbInstallApp =cbInstallApp;
+			uexAppCenterMgrEx.CbFirstRunEnd = CbFirstRunEnd;
+			uexAppCenterMgrEx.cbAppListClose =cbAppListClose;
+			uexAppCenterMgrEx.cbAppListOpen =cbAppListOpen;
+			uexAppCenterMgrEx.cbClickMore =cbClickMore;  
+			uexAppCenterMgrEx.cbDeleteApp =cbDeleteApp;
+			uexAppCenterMgrEx.cbAppInstalled =cbAppInstalled;
+			uexAppCenterMgrEx.cbSoftToken =cbSoftToken;
+			
+			uexAppCenterMgrEx.cbAppInstalled = function(opCode,dataType,data){
+            	alert("cbAppInstalled==="+data);
+        	}
+		}
+		
+		function cbSoftToken(soft){
+			alert(soft);
+		}
+		
+		function CbFirstRunEnd(){
+			alert('first end');
+			showNewMsg();
+		}
+		
+		
+		//function cbAppInstalled(appId, status){
+			//console.log(appId+"--------"+status);
+			//alert(appId+"--------"+status);
+		//}
+		function cbInstallApp(id, name, ver){
+		 console.log('下载的==========='+id+'----'+name+'---'+ver);
+			showNewMsg();
+		}
+		
+		function cbDeleteApp(id, name, ver){
+			console.log('删除的==========='+id+'----'+name+'---'+ver);
+		}
+		function cbClickMore(){
+			console.log('点击更多===============');
+		}
+	
+		function startWidget(date,widg,widgetKey){
+			alert("点击回调"+date+"==="+widgetKey);
+			uexWidget.startWidget(date, "5", "pluginCallback", "plugin", "200", widgetKey);
+			alert("点击回调");
+		}
+	
+		function showNewMsg(){
+	
+			var m1 =getRandom(100, 200);
+			var m2 =getRandom(10, 99);
+			var m3 =getRandom(0, 9);
+			
+			var json='[{"appId":"aaaah10060","num":"'+m1+'"},{"appId":"aaaah10062","num":"'+m2+'"},{"appId":"aaaah10021","num":"'+m3+'"}]';
+			uexAppCenterMgrEx.showNewMsg(json);
+		}
+		
+		function getRandom(min, max){
+	        var r = Math.random() * (max - min);
+	        var re = Math.round(r + min);
+	        re = Math.max(Math.min(re, max), min)
+	             
+	       return re;
+     	 }
+	
+	</script>
+</html>

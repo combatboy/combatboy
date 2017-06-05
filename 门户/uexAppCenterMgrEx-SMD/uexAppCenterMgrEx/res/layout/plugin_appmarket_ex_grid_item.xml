@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:id="@+id/plugin_margin_layout_out"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/plugin_margin_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/plugin_appmarket_gridview_item_backgroud"
+            android:gravity="center" >
+
+            <RelativeLayout
+                android:id="@+id/plugin_appmarket_ex_app_icon_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                
+                android:layout_marginTop="@dimen/plugin_appmarket_ex_app_icon_margin_top" >
+
+                <ImageView
+                    android:id="@id/plugin_appmarket_app_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/plugin_appmarket_ex_add_app" />
+
+                <org.zywx.wbpalmstar.plugin.uexappmarket.Arcs
+                    android:id="@id/plugin_appmarket_app_download_indicator"
+                    android:layout_width="@dimen/plugin_appmarket_ex_app_download_indicator"
+                    android:layout_height="@dimen/plugin_appmarket_ex_app_download_indicator"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/plugin_appmarket_new_app_icon"
+                    android:layout_width="@dimen/plugin_appmarket_ex_new_app_icon_width"
+                    android:layout_height="@dimen/plugin_appmarket_ex_new_app_icon_width"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="@dimen/plugin_appmarket_ex_new_app_icon_margin_top"
+                    android:layout_marginTop="@dimen/plugin_appmarket_ex_new_app_icon_margin_top"
+                    android:src="@drawable/plugin_appmarket_ex_new_app" />
+            </RelativeLayout>
+
+            <!-- android:layout_marginRight="@dimen/plugin_appmarket_ex_del_app_icon_margin_right" -->
+
+            
+
+            <TextView
+                android:id="@id/plugin_appmarket_app_name"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/plugin_appmarket_ex_app_icon_layout"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:ellipsize="middle"
+                android:gravity="center"
+                android:maxLines="2"
+                android:padding="@dimen/plugin_appmarket_ex_grid_item_text_padding"
+                android:text="密码"
+                android:textColor="#ff141414"
+                android:textSize="15sp" />
+        </RelativeLayout>
+         <ImageView
+                android:id="@+id/plugin_appmarket_ex_del_app_icon"
+                android:layout_width="@dimen/plugin_appmarket_ex_del_app_icon"
+                android:layout_height="@dimen/plugin_appmarket_ex_del_app_icon"
+                android:src="@drawable/plugin_appmarket_ex_del_app_selector"
+                android:layout_alignTop="@+id/plugin_margin_layout"
+                android:layout_alignRight="@+id/plugin_margin_layout"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                android:visibility="invisible" />
+    </RelativeLayout>
+
+</RelativeLayout>

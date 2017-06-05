@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+
+    <link rel="stylesheet" href="../css/news.css"/>
+</head>
+<body class="um-vp" ontouchstart>
+<div id="page_0" class="up ub ub-ver bc-bg" tabindex="0">
+    <!--header-->
+    <div id="header" class="uh bc-text-head ub bc-head">
+        <div class="nav-btn f-z1" id="nav-left">
+            <i class="fa fa-angle-left fa-2x"></i>
+        </div>
+        <h1 class="ut ub-f1 f-z7 ut-s tx-c" tabindex="0">&nbsp;</h1>
+        <div class="g-tab ub ub-ac ub-pc">
+            <div class="m-tab ub">
+                <div class="ub-f1 u-tab ub ub-ac ub-pc z-active" data-type="news">新闻</div>
+                <div class="ub-f1 u-tab ub ub-ac ub-pc" data-type="act">专题</div>
+            </div>
+        </div>
+        <div class="nav-btn" id="nav-right"></div>
+    </div>
+
+
+</div>
+<script src="../../vendor/appcan/js/appcan.js"></script>
+<script src="../../vendor/appcan/js/appcan.control.js"></script>
+<script src="../../vendor/appcan/js/appcan.slider.js"></script>
+<script src="../../vendor/simcere/js/config.js"></script>
+<script src="../../vendor/simcere/js/base.js"></script>
+<script>
+    appcan.ready(function () {
+        var titHeight = $('#header').offset().height;
+
+        appcan.frame.open("content", "news_content.html", 0, titHeight);
+        window.onorientationchange = window.onresize = function () {
+            appcan.frame.resize("content", 0, titHeight);
+        };
+    });
+
+    appcan.button('#nav-left', 'ani-act', function () {
+        console.log('close window');
+        appcan.window.close(-1);
+    });
+
+    $('.u-tab').on('click', function(){
+        var $this = $(this);
+        $this.siblings().removeClass('z-active');
+        $this.addClass('z-active');
+
+        var type = $this.data('type');
+        appcan.window.publish('Index/news.tabChange', type);
+    });
+</script>
+</body>
+</html>

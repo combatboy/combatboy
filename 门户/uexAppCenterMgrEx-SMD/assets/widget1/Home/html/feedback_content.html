@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+        <link rel="stylesheet" href="../css/feedback.css">
+    </head>
+    <body class="um-vp bc-bgFeedback" ontouchstart>
+        <div class="ub ub-ac">
+            <div class="ub ub-f1 ub-ac">
+                <textarea class="ub ub-f1 ulev0 feedbackArea umar-a" placeholder="若您在使用的过程中有问题或者好的建议，请让我们听到您的声音，我们会不断优化。" id="adviceContent"></textarea>
+            </div>
+        </div>
+        <div class="ub ub-ac">
+            <div class="btn ub ub-f1 ub-ac bc-text-head ub-pc ulev-0 bc-head umar-a pc-marT submintBtn" id="doSubmit">
+                提&nbsp;&nbsp;交
+            </div>
+        </div>
+
+    <script src="../../vendor/appcan/js/appcan.js"></script>
+    <script src="../../vendor/appcan/js/appcan.control.js"></script>
+    <script src="../../vendor/simcere/js/config.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+        });
+        appcan.button(".btn", "btn-act", function() {
+            // alert($("#adviceContent").val());
+            if ($("#adviceContent").val()) {
+                doSubmit();
+            } else {
+                appcan.window.openToast("请填写内容！", 1500, 5, 0)
+            }
+        });
+        
+        //提交意见反馈
+        function doSubmit() {
+            var params = {
+                "userId" : localStorage.getItem('simcere.runtime.userId'),
+                "adviceContent" : $("#adviceContent").val()
+            };
+            appcan.window.openToast("正在提交");
+            appcan.request.ajax({
+                type : 'POST',
+                url : SimcereConfig.server.mas + '/message/ScrCreateAdvice',
+                data : params,
+                contentType : 'application/json',
+                dataType : 'json',
+                timeout : 5000,
+                success : function(data) {
+                    appcan.window.closeToast();
+                    appcan.window.openToast(data.msg, 1800, 5, 0);
+                    setTimeout(function () {
+                        if(data.status == 0){
+                            $("#adviceContent").val("");
+                            appcan.window.publish("feedbackClose","");
+                        }
+                    },1800);
+                },
+                error : function() {
+                    //todo:errorHandler
+                    appcan.window.openToast('网络连接不可用', 2000);
+                }
+            });
+        }
+
+    </script>
+</html>

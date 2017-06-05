@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/sundries.css">
+    </head>
+    <body class="bc-bg" ontouchstart>             
+           <div class="uba  line  bg-wh ">
+              <div id="name" contenteditable="true" class="textarea ulev-3"></div>
+             
+           </div>
+          <div id="btn" class="uinn" style="margin-top: 4em;" >
+            <div class="btn ub ub-ac ub-pc  bc-text-head head-col ulev0 uc-a1" >
+                                         确定
+            </div>
+        </div>
+        <script src="../../vendor/appcan/js/appcan.js"></script>
+        <script src="../../vendor/appcan/js/appcan.control.js"></script>
+        <script src="../js/main.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {             
+           if(!isAndroid){
+             uexWindow.disturbLongPressGesture(1);
+             }           
+           var editName = appcan.getLocVal("groupDesc");   
+           $("#name").html(editName);
+           appcan.initBounce();
+           appcan.window.subscribe("E_CB_GROUP_changeName",function(msg){               
+               if(msg!="0"){
+                 appcan.window.closeToast();
+                 alert("修改群名称失败");
+                 return; 
+               }
+               appcan.setLocVal("groupDesc",$("#name").text());
+               appcan.window.publish("open","");
+               appcan.window.evaluatePopoverScript('createChatGroup','content','updateName()'); 
+               uexIM.getChatListWithLastMsg();               
+           });
+        })
+  
+        appcan.button("#btn", "ani-act", function() { //修改群名称            
+             var txt = $("#name").text(); 
+             var con=txt.replace(/\s+/g,"")  
+             if(con==""){
+                 appcan.window.openToast("修改的群名称不能为空","1000","5");
+                 return;
+             } 
+             appcan.window.openToast('正在保存...', '', '5', '1');         
+             var groupNode=appcan.getLocVal("groupNode");    //群节点
+             var param = {
+                    groupName:groupNode,    //  群聊节点
+                    description:txt    //  群名
+            };
+           appcan.window.publish("E_GROUP_changeName",param);
+        })
+        
+      function closeWindow(){
+        appcan.window.closeToast();   
+        appcan.window.evaluateScript('editGroupName','appcan.window.close(0);');           
+      }  
+    </script>
+</html>

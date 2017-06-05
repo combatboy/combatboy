@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="plugin_uex_image_gray_3">#ff333333</color>
+    <color name="plugin_uex_image_gray_4">#ff2e3334</color>
+    <color name="plugin_uex_image_green_common">#ff15c7cb</color>
+    <color name="plugin_uex_image_green_1">#ff45c01a</color>
+    <color name="plugin_uex_image_green_2">#ff86d8ff</color>
+    <color name="plugin_uex_image_gray_9">#ffd9d9d9</color>
+    <color name="plugin_uex_image_black_1">#e0111222</color>
+    <color name="translucent">#7f000000</color>
+    <color name="light_gray">#ffa6c2de</color>
+    <color name="plugin_apppmarket_ex_grid_background">#ffebeff8</color>
+    <color name="plugin_apppmarket_ex_grid_stroke">#ffd9dce5</color>
+    <color name="plugin_uexcalendar_color_calendar_active_month_bg">#fff5f7f9</color>
+    <color name="plugin_uexcalendar_color_calendar_bg">#ffffffff</color>
+    <color name="plugin_uexcalendar_color_calendar_divider">#ffbababa</color>
+    <color name="plugin_uexcalendar_color_calendar_inactive_month_bg">#ffd7d9db</color>
+    <color name="plugin_uexcalendar_color_calendar_selected_day_bg">#ff379bff</color>
+    <color name="plugin_uexcalendar_color_calendar_selected_range_bg">#ff96caff</color>
+    <color name="plugin_uexcalendar_color_calendar_text_inactive">#40778088</color>
+    <color name="plugin_uexcalendar_color_calendar_text_active">#ff778088</color>
+    <color name="plugin_uexcalendar_color_calendar_text_selected">#ffffffff</color>
+    <color name="plugin_uexcalendar_color_calendar_text_unselectable">#7f778088</color>
+    <color name="plugin_audio_half_transparent">#30000000</color>
+    <color name="start_bg_color">#ff000000</color>
+    <color name="red">#ffff0000</color>
+    <color name="orange">#ffff9900</color>
+    <color name="gray">#ff717171</color>
+    <color name="white">#ffffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="half_transparent">#30000000</color>
+    <color name="black">#ff000000</color>
+    <color name="pink">#ffff00ff</color>
+    <color name="browser_title_stroke_color">#ff9a9a9a</color>
+    <color name="blue">#ff2162bd</color>
+    <color name="menu_press">#ff00599f</color>
+    <color name="dialog_bg">#ff1b252f</color>
+    <color name="widget_dialog_title_line_color">#ff666666</color>
+    <color name="widget_bg_color">#ff333333</color>
+    <color name="activity_window_background_color">#60000000</color>
+
+
+    <color name="plugin_smd_add_bg_color">#2ac1b8</color>
+    <color name="plugin_smd_expand_space_color">#f8f8f8</color>
+</resources>

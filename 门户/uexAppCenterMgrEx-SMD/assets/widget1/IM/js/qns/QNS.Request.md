@@ -1,0 +1,2 @@
+1.由于uexXmlHttpMgr是一次性使用的，故当前实现的page功能无法正确运行
+2.多次对onData回调进行赋值，会导致最后一次覆盖之前的handler

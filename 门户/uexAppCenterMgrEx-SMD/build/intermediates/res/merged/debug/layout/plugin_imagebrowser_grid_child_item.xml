@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/framelayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/plugin_imagebrowser_friends_sends_pictures_no"
+    android:descendantFocusability="blocksDescendants"
+    android:gravity="center"
+    android:padding="1.0dip">
+
+    <ImageView
+        android:id="@id/plugin_image_watcher_grid_item_image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:id="@id/plugin_imagebrowser_child_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:scaleType="fitCenter" />
+</FrameLayout>

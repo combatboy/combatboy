@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\anim\\platform_imagebrowser_activity_close.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\anim\\platform_imagebrowser_activity_close.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\anim\\shake.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\anim\\shake.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\anim\\plugin_uex_image_rotate_loading.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\anim\\plugin_uex_image_rotate_loading.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\anim\\platform_window_actionsheet_push_down_anim.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\anim\\platform_window_actionsheet_push_down_anim.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\anim\\cycle_7.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\anim\\cycle_7.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\anim\\platform_window_actionsheet_pull_up_anim.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\anim\\platform_window_actionsheet_pull_up_anim.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\anim\\platform_myspace_fade_in_anim.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\anim\\platform_myspace_fade_in_anim.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\anim\\platform_myspace_fade_out_anim.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\anim\\platform_myspace_fade_out_anim.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\anim\\platform_imagebrowser_activity_open.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\anim\\platform_imagebrowser_activity_open.xml"
+    },
+    {
+        "merged": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\build\\intermediates\\res\\merged\\debug\\anim\\platform_myspace_no_anim.xml",
+        "source": "F:\\developStudio\\TestEclispToStudio\\uexAppCenterMgrEx-SMD\\res\\anim\\platform_myspace_no_anim.xml"
+    }
+]

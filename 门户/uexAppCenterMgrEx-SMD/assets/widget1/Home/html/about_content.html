@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+        <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+        <link rel="stylesheet" href="../css/about.css">
+    </head>
+    <body class="um-vp bc-bgAbout ub ub-ver ub-ac ub-pc" ontouchstart>
+       <div class="ub ub-f1 ub-ver ub-ac ub-pc sc-text">
+        <p class="ub-f1 ulev2 u-mar1">让工作更简单</p>
+        <div class="ub-img logo logoStyle umar-a"></div>
+        <p class="ub-f1 ulev u-marT1">先声药业APP</p>
+        <p class="ub-f1 ulev umar-a">版本号&nbsp;<span id="version_no"></span></p>
+        <p class="ub-f1 ulev u-marT2">先声药业集团信息部</p>
+        <p class="ub-f1 ulev umar-a">倾情奉献</p>
+        <p class="ub-f1 ulev-1 umar-b u-marT3">先声药业版权所有</p>
+       </div>
+       
+    <script src="../../vendor/appcan/js/appcan.js"></script>
+    <script src="../../vendor/appcan/js/appcan.control.js"></script>
+    <script src="../../vendor/simcere/js/base.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            // appcan.initBounce();
+            //获取版本信息
+            zkutil.getCurrentWidgetInfo.call(null, function(o) {
+                $('#version_no').text('V' + o.version);
+            });
+        });
+
+    </script>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+    <style>
+        .bg-white {
+            background-color: #FFFFFF;
+        }
+
+        .m-cardH {
+            height: 3em;
+        }
+
+        .icon-crown {
+            background-image: url("../images/crown.png"
+            );
+            width: 1.35em;
+            height: 1.35em;
+        }
+
+        .m-width {
+            width: 8em;
+        }
+
+        . {
+            position: absolute;
+            float: right;
+            right: -4%;
+            top: 45%;
+            width: .5em;
+            height: .5em;
+            border-radius: .5em;
+        }
+
+        . {
+            border-color: #00A1EA;
+        }
+
+        .2
+        {
+            position: absolute
+        ;
+            background-color: white
+        ;
+            height: 1.6em
+        ;
+            width: 0.2em
+        ;
+        }
+        .3
+        {
+            position: absolute
+        ;
+            background-color: white
+        ;
+            height: 1.3em
+        ;
+            top: 49%
+        ;
+            width: 0.2em
+        ;
+        }
+        .m-mart {
+            margin-top: 0.7em;
+        }
+
+        .m-marl2 {
+            margin-left: 1em;
+        }
+
+        .m-marl3 {
+            margin-right: 0.8em;
+        }
+
+        .m-text {
+            font-size: 0.927em;
+        }
+
+        .m-text2 {
+            font-size: 0.8125em;
+        }
+
+        .m-cardH2 {
+            height: 2.5em;
+        }
+
+        .fs28 {
+            font-size: .875rem;
+        }
+
+        .fs36 {
+            font-size: 1.125rem;
+        }
+
+        .u-gap-b {
+            margin-bottom: .625rem;
+        }
+
+        .u-c-bg {
+            background-color: #fff;
+        }
+
+        .u-c-bo {
+            border-color: #d7d7db;
+        }
+
+        .u-c-bobg {
+            background-color: #fff;
+            border-color: #d7d7db;
+        }
+
+        .text-error {
+            color: #d24e29;
+        }
+
+        .text-muted {
+            color: #5e6266;
+        }
+
+        /*客户*/
+        .g-customer {
+
+        }
+
+        .u-company {
+            padding: .9rem 0 .9rem 3.125rem;
+            background: url("../images/crown_3x.png") no-repeat .9375rem center;
+            -webkit-background-size: 1.125rem auto;
+            background-size: 1.125rem auto;
+        }
+
+        /*欠款*/
+        .g-cust-debt,
+        .g-cust-days {
+            background-color: #fff;
+            padding: .875rem 0;
+        }
+
+        .u-debt-order {
+            padding-bottom: 1rem;
+        }
+
+        .u-debt-order:last-child {
+            padding-bottom: 0;
+        }
+
+        .u-debt-order-no {
+            margin-left: .9375rem;
+        }
+
+        .u-debt-order-tit {
+            margin: .625rem 0;
+        }
+
+        .u-debt-order-item {
+            height: 1.25rem;
+            padding-bottom: .625rem;
+        }
+
+        .u-debt-order-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .u-debt-order-sp {
+            border-left: 1px solid #d7d7db;
+        }
+
+        .u-cust-debt-sum {
+            margin: 0 .9375rem;
+            font-weight: bold;
+        }
+
+        /*三栏目*/
+        .g-col {
+            padding: 1.1875rem 0;
+        }
+
+        .u-col {
+
+        }
+
+        .u-col > b {
+            display: block;
+            font-weight: normal;
+        }
+
+        .u-col > span {
+            font-size: .75rem;
+        }
+
+        .u-sp-gap::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 1.875rem;
+            border-right: 1px solid #d7d7db;
+        }
+
+        /*g-sum*/
+        .g-sum {
+
+        }
+
+        .m-sum {
+            margin: 0 .875rem;
+            padding: .1875rem 0;
+        }
+
+        .u-sum {
+            margin: .75rem 0;
+        }
+
+        /*remark*/
+        .g-remark {
+            padding: 1rem 0;
+        }
+
+        .m-remark {
+            margin: 0 .875rem;
+        }
+
+        .u-remark {
+            margin-left: .5rem;
+        }
+
+        .u-remark-area {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            display: block;
+            width: 100%;
+            border: none;
+            padding: 0 .4rem .4rem;
+            outline: none;
+            resize: none;
+        }
+
+        /*switch container*/
+        .u-pay-switch {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 1.7rem;
+            margin: auto 0;
+        }
+
+        /*override switch*/
+        .switch-mini {
+            border-color: #d7d7db;
+        }
+
+        .switch-mini.bc-head {
+            border-color: #32a1e1;
+        }
+
+        .switch-btn.sc-bg-active {
+            background-color: #fff;
+        }
+
+        .dingdan {
+            background-color: white;
+        }
+
+        .highlen1 {
+            padding-top: 0.625rem;
+
+        }
+
+        .highlen2 {
+            padding-bottom: 0.625rem;
+        }
+    </style>
+</head>
+<body class="um-vp bc-bg" ontouchstart>
+<div class="ub m-cardH bg-white ub-ac">
+    <div class="icon-crown ub-img7 m-marl2 umar-a"></div>
+    <div class="ub-f1 umar-a">
+        <p class="ut-s">
+            江苏汉合制药有限公司
+        </p>
+    </div>
+</div>
+<div class="ub ub-ver bg-white m-mart m-text">
+    <div class="ub ub-f1 ub-ac">
+        <div class="ub-f1 m-cardH2 ub ub-ac">
+            <p class="umar-a ut-s">
+                存货名称存货名称存货名称
+            </p>
+        </div>
+        <div class="m-width   m-cardH2 ub ub-ac m-marl3">
+            <div class="ub-f1 m-marl3">
+                <p class="ufr umar-a sc-text">
+                    280000盒
+                </p>
+            </div>
+            <div class="2"></div>
+
+            <!-- <div class="2"></div> -->
+        </div>
+
+    </div>
+    <div class="ub ub-f1 ub-ac">
+
+        <div class="ub-f1 m-cardH2 ub ub-ac">
+            <p class="umar-a ut-s">
+                存货名称存货名称
+            </p>
+        </div>
+        <div class="m-width   m-cardH2 ub ub-ac m-marl3">
+            <div class="ub-f1 m-marl3">
+                <p class="ufr umar-a sc-text">
+                    1000盒
+                </p>
+            </div>
+            <div class="bc-head "></div>
+        </div>
+    </div>
+
+</div>
+<div class="dingdan m-mart">
+    <div class="u-debt-order ng-hide  highlen" ng-show="Data.DebtMoney.length" ng-repeat="oneDebt in Data.DebtMoney">
+        <div class="u-debt-order-no u-debt f-fs28  u-debt-order-item highlen1">订单号：<span class="text-muted"
+                                                                                         ng-bind="oneDebt[0].VRECEIPTCODE">8892J83F09</span>
+        </div>
+        <div class="u-debt-order-tit ub">
+            <div class="ub-f1 ub-con tx-c f-fs24 text-muted">品种</div>
+            <div class="ub-f1 ub-con tx-c f-fs24 text-muted">欠款金额</div>
+        </div>
+        <div class="u-debt-order-cnt highlen2">
+            <div class="u-debt-order-item ub f-fs28 " ng-repeat="row in oneDebt">
+                <div class="ub-f1 ub-con tx-c" data-invcode="{{row.INVCODE}}" ng-bind="row.INVNAME">SDFSFSDFSF</div>
+                <div class="u-debt-order-sp"></div>
+                <div class="ub-f1 ub-con tx-c text-danger" ng-bind="row.MONEY|currency:'':2">1000.00</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dingdan m-mart">
+    <div class="u-debt-order ng-hide" ng-show="Data.DebtDays.length" ng-repeat="oneDebt in Data.DebtDays">
+        <div class="u-debt-order-no u-debt-order-item highlen1">出库单号：<span class="text-muted"
+                                                                           ng-bind="oneDebt[0].JSFPH">8892J83F09</span>
+        </div>
+        <div class="u-debt-order-tit  highlen2 ub">
+            <div class="ub-f1 ub-con tx-c f-fs24 text-muted">品种</div>
+            <div class="ub-f1 ub-con tx-c f-fs24 text-muted">起效时间</div>
+            <div class="ub-f1 ub-con tx-c f-fs24 text-muted">欠款天数</div>
+            <div class="ub-f1 ub-con tx-c f-fs24 text-muted">欠款金额</div>
+        </div>
+        <div class="u-debt-order-cnt highlen2">
+            <div class="u-debt-order-item ub f-fs28" ng-repeat="row in oneDebt">
+                <div class="ub-f1 ub-con tx-c " ng-bind="row.INVNAME">SDFSDF</div>
+                <div class="u-debt-order-sp"></div>
+                <div class="ub-f1 ub-con tx-c " ng-bind="row.VALDATE|date:'yy-MM-dd'">16-01-23</div>
+                <div class="u-debt-order-sp"></div>
+                <div class="ub-f1 ub-con tx-c " ng-bind="row.DAYS">56</div>
+                <div class="u-debt-order-sp"></div>
+                <div class="ub-f1 ub-con tx-c text-danger " ng-bind="row.MONEY|currency:'':2">1000.00</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ub ub-ac bg-white m-mart" style="height: 5em">
+    <div class="ub-f1 ub-ver ub ub-ac ub-pc m-cardH">
+        <p class="m-text">
+            存名称
+        </p>
+
+        <p class="sc-text m-mart m-text2">
+            品种
+        </p>
+    </div>
+    <div class="ub-f1 ub-ver ub ub-ac ub-pc m-cardH ubl  bc-border">
+        <p class="sc-text-warn m-text">
+            1000.00
+        </p>
+
+        <p class="sc-text m-mart m-text2">
+            欠款金额
+        </p>
+    </div>
+    <div class="ub-f1 ub-ver ub ub-ac ub-pc m-cardH">
+        <p class="m-text">
+            1000.00
+        </p>
+
+        <p class="sc-text m-mart m-text2">
+            欠款天数
+        </p>
+    </div>
+</div>
+<div class="ub ub-ac bg-white m-mart m-text">
+    <div class="ub-f1">
+        <p class="sc-text m-cardH ub ub-ac m-marl2">
+            未下账金额总额：
+        </p>
+    </div>
+    <div class="ub-f1">
+        <p class="m-cardH ub ub-ac m-marl3 ufr">
+            20000000元
+        </p>
+    </div>
+</div>
+<div class="ub ub-ac bg-white m-mart m-text">
+    <div class="ub-f1">
+        <p class="sc-text m-cardH ub ub-ac m-marl2">
+            本单金额：
+        </p>
+    </div>
+    <div class="ub-f1">
+        <p class="m-cardH ub ub-ac m-marl3 ufr">
+            20000000元
+        </p>
+    </div>
+</div>
+<div class="ub ub-ver bg-white m-mart m-text">
+    <div class="ub ub-f1 m-cardH ub-ac">
+        <div class="ub-f1">
+            <p class="m-marl2 sc-text">
+                业务线：
+            </p>
+        </div>
+        <div class="ub-f3">
+            <p class="m-marl3 ufr">
+                OTC
+            </p>
+        </div>
+    </div>
+    <div class="ub ub-f1 m-cardH ub-ac">
+        <div class="ub-f1">
+            <p class="m-marl2 sc-text">
+                价格项：
+            </p>
+        </div>
+        <div class="ub-f3">
+            <p class="m-marl3 ufr">
+                资信价
+            </p>
+        </div>
+    </div>
+    <div class="ub ub-f1 m-cardH ub-ac">
+        <div class="ub-f1">
+            <p class="m-marl2 sc-text">
+                回款方式：
+            </p>
+        </div>
+        <div class="ub-f3">
+            <p class="m-marl3 ufr">
+                铺底货
+            </p>
+        </div>
+    </div>
+    <div class="ub ub-f1 m-cardH ub-ac">
+        <div class="ub-f1">
+            <p class="m-marl2 sc-text">
+                是否有当期票折：
+            </p>
+        </div>
+        <div class="ub-f3">
+            <p class="m-marl3 ufr">
+                是
+            </p>
+        </div>
+    </div>
+</div>
+<div class="ub ub-ver bg-white m-mart m-text">
+    <div class="ub ub-f1 m-cardH ub-ac">
+        <div class="ub-f1">
+            <p class="m-marl2">
+                承兑汇票
+            </p>
+        </div>
+    </div>
+    <div class="ub ub-f1 m-cardH ub-ac">
+        <div class="ub-f1">
+            <p class="m-marl2 sc-text">
+                票据号：
+            </p>
+        </div>
+        <div class="ub-f3">
+            <p class="m-marl3 ufr">
+                12343242
+            </p>
+        </div>
+    </div>
+    <div class="ub ub-f1 m-cardH ub-ac">
+        <div class="ub-f1">
+            <p class="m-marl2 sc-text">
+                票据金额：
+            </p>
+        </div>
+        <div class="ub-f3">
+            <p class="m-marl3 ufr">
+                2000000元
+            </p>
+        </div>
+    </div>
+    <div class="ub ub-f1 m-cardH ub-ac">
+        <div class="ub-f1">
+            <p class="m-marl2 sc-text">
+                拍照上传
+            </p>
+        </div>
+    </div>
+    <div class="ub-f1">
+        <div class="ufl umar-a uc-a1" style="width: 4em;height: 4em;background-color: #BABABA"></div>
+        <div class="ufl umar-a uc-a1" style="width: 4em;height: 4em;background-color: #BABABA"></div>
+        <div class="ufl umar-a uc-a1" style="width: 4em;height: 4em;background-color: #BABABA"></div>
+        <div class="ufl umar-a uc-a1" style="width: 4em;height: 4em;background-color: #BABABA"></div>
+    </div>
+</div>
+<div class="ub ub-ver bg-white m-mart umar-b m-text">
+    <div class="ub ub-f1 m-cardH ub-ac">
+        <div class="ub-f1">
+            <p class="m-marl2">
+                网上付款
+            </p>
+        </div>
+    </div>
+    <div class="ub ub-f1 m-cardH ub-ac">
+        <div class="ub-f1">
+            <p class="m-marl2 sc-text">
+                交易流水号：
+            </p>
+        </div>
+        <div class="ub-f3">
+            <p class="m-marl3 ufr">
+                12343242
+            </p>
+        </div>
+    </div>
+    <div class="ub ub-f1 m-cardH ub-ac">
+        <div class="ub-f1">
+            <p class="m-marl2 sc-text">
+                网上付款金额：
+            </p>
+        </div>
+        <div class="ub-f3">
+            <p class="m-marl3 ufr">
+                2000000元
+            </p>
+        </div>
+    </div>
+</div>
+<script src="../../vendor/appcan/js/appcan.js"></script>
+<script src="../../vendor/appcan/js/appcan.control.js"></script>
+</body>
+</html>
+
+
+

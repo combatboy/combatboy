@@ -1,0 +1,381 @@
+.bg-login1 {
+background-image: url(../images/bg1.png);
+}
+.zhengyi1 {
+background-image: url(../images/zhengyi1.png);
+width: 13.125em;
+height: 4.0625em;
+}
+.user {
+background-image: url(../images/user.png);
+}
+.icon-nav-left {
+background-image: url('../images/icon-nav-left.png') !important;
+}
+.huihua{
+    background-image: url(../images/huihua.png);
+    height: .75em;
+    width: .75em;
+}
+.center{
+    background-image: url(../images/center.png);
+    height: .75em;
+    width: .75em;
+}
+.yuand2 {
+min-width: 0.75em;
+min-height: 0.75em;
+background-image: url(../images/yuand.png);
+top: -0.17em;
+}
+
+.yuand1 {
+min-width: 0.8em;
+min-height: 0.8em;
+background-image: url(../images/yuand.png);
+top: -0.5375em;
+}
+.yuand {
+width: 0.4375em;
+height: 0.4375em;
+background-image: url(../images/yuand.png);
+top: -0.4375em;
+}
+
+.rand-img{ 
+   background-image: url('../images/touxiang.png');
+   width:2.375em;
+   height:2.375em;   
+}
+
+.ulev19{
+     font-size:0.46em;
+}
+.ulev22{
+    font-size:0.7em;
+}
+.ulev23{
+    font-size:0.8em;
+}
+.c-wh1{
+    background-color: white;
+}
+.huihuajiantoul {
+background-image: url(../images/huihuajiantou2.png);
+}
+.hhtouxicon {
+background-image: url(../images/touxiang.png);
+}
+.huihuaunload1 {
+background-image: url(../images/jiazai.gif);
+}
+.huihuajiantour {
+background-image: url(../images/huihuajiantou1.png);
+}
+.huihuajiantour2 {
+background-image: url(../images/huihuajiantou1.png);
+}
+.huihuajiantour3 {
+background-image: url(../images/huihuatupianjiantou.png);
+}
+.huihuaunload{
+    background-image:url(../images/huihuaunload.png);
+}
+.yuyin3 {
+width: 0.4375em;
+height: 0.4375em;
+background-image: url(../images/liangd2.png);
+}
+.yuyin2 {
+width: 1.25em;
+height: 1.25em;
+background-image: url(../images/yuyin2.png);
+}
+.yuyin1 {
+width: 0.4375em;
+height: 0.4375em;
+background-image: url(../images/liangd.png);
+}
+.yuyin{
+    width:1.25em;
+    height:1.25em;
+    background-image:url(../images/yuyin.png);
+}
+.plus {
+background-image: url(../images/puls.png);
+}
+.icon_tx {
+background-image: url(../images/icon_tx.png);
+}
+.textMen1 {
+background-image: url(../images/gPhoto.png);
+}
+.textMen {
+background-image: url(../images/textmen.png);
+}
+.Nodata {
+background-image: url(../images/null.png);
+}
+.Nodatamargin {
+margin: 7.625em 0 2em;
+}
+.Nodatastyle {
+height: 3.4375em;
+width: 5em;
+}
+.Nodatafont {
+font-size: 1.125em;
+}
+.hh-font1 {
+font-size: 0.9375em;
+color: #282828;
+}
+.jj-padd1 {
+padding-bottom: 0.555em;
+}
+.zt-color2 {
+color: #9c9c9c;
+}
+.zt-font8 {
+font-size: 0.8em;
+}
+.zt-color10 {
+color: #bfbfbf;
+}
+.umar01 {
+margin-right: 0.8em;
+}
+.umar02 {
+margin-right: 2em;
+}
+.umar03 {
+margin-right: 2.5em;
+}
+.tx-ff {
+color: #ffffff;
+}
+.bc-head5 {
+background-color: #ff0000;
+}
+.hh-font11 {
+font-size: 0.9em;
+color: #9C9C9C;
+}
+/*会话单聊*/
+.hhuinn-tb {
+padding: 1.25em 0;
+}
+.iconwh1 {
+height: 2.75em;
+width: 1.4375em;
+}
+.iconwh {
+width: 2.75em;
+height: 2.75em;
+}
+.hhkuinn-r {
+padding: 0 0.5em 0 0.9375em;
+}
+.yuyinduihua {
+height: 1.5em;
+}
+.hhuc-a {
+-webkit-border-radius: .75em;
+border-radius: .75em;
+}
+.hhuinn {
+padding: 0.5em 0.75em;
+}
+.hhc-green {
+background-color: #02a7e3;
+z-index:999;
+}
+.rwagzmbuinn-l1 {
+padding-left: 0.5em;
+}
+.posileft {
+left: -0.45em;
+}
+.posiright {
+right: -0.14em;
+}
+.hhjiantou {
+width: 0.8125em;
+height: 0.8125em;
+top: 0.2em;
+}
+.ub-img-l {
+-webkit-background-size: contain;
+background-size: contain;
+background-repeat: no-repeat;
+background-position: left;
+}
+.hhumaxwh1 {
+height: 7.5em;
+width: 5.1875em;
+z-index:999;
+}
+.hhuba {
+border: 0.125em solid #02a7e3;
+}
+.hhuba1{
+ border: 0.125em solid #FFFFFF;   
+}
+.posileft2 {
+left: -0.45em;
+}
+.posileft3 {
+left: -0.45em;
+}
+.lft{
+ left: 0.2em;   
+}
+.engtext {
+word-break: break-all;
+}
+.hhline-hei {
+line-height: 1.77em;
+
+}
+.gz-ulev {
+font-size: 0.875em;
+}
+.hhkuinn-l {
+padding: 0 0.9375em 0 0.5em;
+}
+.ub-img-r {
+-webkit-background-size: contain;
+background-size: contain;
+background-repeat: no-repeat;
+background-position: right;
+}
+
+.uinn-l1 {
+padding-left: 0.9375em;
+}
+.nav-sty {
+min-height: 2.75em;
+/* min-width: 5.34375em; */
+display: -webkit-box !important;
+/* width: 4.6875em; */
+position: relative;
+-webkit-box-align: center;
+}
+
+.umwh-left {
+min-width: 1.28125em;
+min-height: 1.21875em;
+}
+.head-tx-size {
+font-size: 1.125em;
+}
+.ut-s1 {
+text-overflow: ellipsis;
+white-space: nowrap !important;
+outline: 0 !important;
+}
+.uinn-r1 {
+padding-right: 0.9375em;
+}
+.gzuinn3 {
+padding: 0.625em;
+}
+.gzt-green{
+    color:#02a7e3;
+}
+.gzt-95{
+    color:#959595;
+}
+.bg-wh {
+background-color: #FFFFFF;
+}
+
+.gmar-t{
+    margin-top:0.4em !important;
+}
+.gpad{
+    padding:.8em;
+}
+.gpad-b{
+    padding-bottom:0.2em;
+}
+.img{padding:.5em .2em .5em .8em;}
+.umar1{margin-top:1em;}
+ .t-ba{     
+    color:#000000;
+        }
+        
+.textarea{
+    /*width: 96%;*/
+    min-height:5em;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    margin-right: 0.5em;
+    outline: 0;
+    line-height: auto;
+    /*padding: 1em;*/
+    word-wrap: break-word;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size:1em;
+   
+}
+
+.podtion{position: relative;left: 3.8em;top: 0em;}
+ .hx{
+     word-break: break-all;
+ }
+.treeview .listview{margin-left: 0em !important;}
+.bc{background-color: #cac9cf;}
+.pd{padding-left: .5em;}
+.pds padding-left: 1.5em;
+.bcw{background-color: #FFFFFF;}
+.m-w{min-width: 1em;}
+.m-h{min-height: 1em;}
+.mr-r{margin-right: 1em;}
+.mr-1{margin-right: 8em;}
+.bot{font-weight: bold;}
+.sc-text-active{color: #1c9f4c;!important;}
+.uinn57{padding:.5em .9em;}
+.btn-act{opacity: .5;}
+.umar033 {
+       margin-right: 3.4em;}
+ 
+/**
+ * 通讯录样式     
+ */
+.circle2 {
+    min-width:1.4em;
+    min-height:1.4em;
+    border :1px solid #d6d5d3;
+    -webkit-border-radius: 1em;
+    top: 0.2em;
+}
+.ps_bg{
+  background-color:#00A1EA;  
+}
+.w-h1{
+    height: 1em;
+    width: 1em;
+    margin-top:.2em;
+    margin-left:.2em;
+}
+.ml-xuanz{
+   background-image:url('../images/ml-xuanz.png');
+}
+.wid1{width:1.2em;height:2em;}
+.umar-l1{
+    margin-left:0.8em;
+}
+.circle1 {
+    min-width: 1.6em;
+    min-height:1.6em;
+    background-color:#FF0000;
+    -webkit-border-radius: 0.8em;
+    top: -0.2em;
+} 
+.line{
+    border-bottom: 1px solid;
+    border-color:#f0f0f0;
+}
+

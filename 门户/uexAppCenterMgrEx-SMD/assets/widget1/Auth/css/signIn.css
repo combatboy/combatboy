@@ -1,0 +1,162 @@
+.sI-wh {
+    height: 0;
+    padding-top: 45%;
+}
+
+.sI-umar-t {
+    margin-top: 0.5em;
+}
+.u-lo-mh{
+    min-height: 1.5em;
+}
+.u-welcome{
+    color: #659dcc;
+    font-size: 1.0625em;
+}
+.u-welcome .u-line{
+    width: 4.8215em;
+    height: 0;
+    line-height: 0;
+    border-top: 1px solid;
+    margin: 0 .8em;
+}
+
+.s-toub {
+    background-image: url('../images/s-toub.jpg');
+    background-size: cover;
+}
+/*.signin{
+    background-image: url('../images/dengl.png')!important;
+}*/
+.u-btn-smt{
+    margin-bottom: 1em;
+}
+.sign-u{
+    background-image: url('../images/sign-u.png')!important;
+}
+.sign-p{
+    background-image: url('../images/sign-p.png')!important;
+    width:1.03em;
+    height:1.15em;
+}
+.x-jian{
+    background-image: url('../images/x-jian.png')!important;
+}
+
+/**/
+.u-users{
+    position: relative;
+    width: 3em;
+}
+.u-users select{
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: transparent url('../images/x-jian.png') no-repeat center;
+    background-size: 1.1em .65em;
+    color: transparent;
+}
+.u-users option{
+    color: #666;
+}
+
+.ml-xuanz2 {
+    background-image: url('../images/ml-xuanz2.png');
+}
+.bor-a4{
+    border:1px solid #83b7e2;
+    width:1.45em;
+    height:1.45em;
+    
+}
+.bor-a1{
+    border:1px solid #83b7e2;
+    width:1.2em;
+    height:1.2em;
+    
+}
+
+.f-z6{
+    font-size: 1.05em;
+}
+.sign-bc{
+    background-color: #e5e5e5;
+}
+.sign-uwh{
+    width: 1em;
+    height:1.18em;
+}
+.sign-xjt{
+    width: 1.1em;
+    height:0.65em;
+}
+.umar-r2{
+    margin-right:1.48em;
+}
+.sign-h{
+   height:2.5em;
+}
+
+/*首页margin-top*/
+.umar-lr3{
+    margin-left: 1.93em;
+    margin-right:1.93em;
+}
+.umar-ul1{
+    margin-left:0.88em;
+}
+.umar-ul2{
+    margin-left:1.13em;
+}
+.umar-ul5{
+    margin:0em 1.13em;
+}
+.umar-ut1{
+    margin-top:1em;
+}
+.umar-ut2{
+    margin-top:1.7em;
+}
+.umar-ut3{
+    margin-top:3.4375em;
+}
+.umar-ul3 {
+    margin-left: 0.53em;
+}
+.input3{
+     height:2.56em;
+     background-color: #00A1EA;
+     color:#FFFFFF;
+     font-size: 1.1em;
+     border: 0;
+     width:100%;
+}
+.input2{
+   height:1.9em;
+   font-size: 1.1em;
+   border:0;
+   background-color:#e5e5e5; 
+   width:100%;
+}
+/*蓝色字体*/
+.t-c2 {
+    color: #83b7e2;
+}
+
+/*灰色背景*/
+.bc-bg2 {
+    background-color: #f8f8f8;
+}
+.w-h {
+    height: 1em;
+    width: 1em;
+}
+/*去掉输入框的边框*/
+.de-border{
+    outline: none;
+}

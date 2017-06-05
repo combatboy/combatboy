@@ -1,0 +1,41 @@
+.enter-btn, .skip-btn {
+    z-index: 100;
+    position: absolute;
+    top: 97%;
+    width: 100%;
+    height: 2.9em;
+}
+
+.enter-btn:active, .skip-btn:active {
+    -webkit-transform: scale(0.95, 1);
+    transform: scale(0.95, 1);
+}
+
+#enterBtn {
+    height: 3em;
+    width: 40%;
+    background-image: url("../img/btn1.png");
+    top: -4em;
+}
+
+#skipBtn {
+    height: 3em;
+    width: 40%;
+    background-image: url("../img/tiaoguo.png");
+    top: -4em;
+}
+
+.c-wh {
+    background-color: #FFFFFF;
+}
+
+#yinSlide {
+    /*position: absolute;*/
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+}
+
+.f-ps{
+    position: static;
+}

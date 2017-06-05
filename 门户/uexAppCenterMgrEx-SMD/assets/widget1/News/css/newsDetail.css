@@ -1,0 +1,56 @@
+/*common*/
+body{
+    background-color: #fff;
+}
+
+/*footer*/
+.g-footer{
+
+}
+.m-footer{
+    height: 2.8125rem;
+    background-color: #fff;
+    border-top: 1px solid #d7d5d5;
+    font-size: .875rem;
+    color: #32a1e1;
+}
+.u-footer-icon{
+    background: url(../images/icon_wechat.png) no-repeat ;
+    width: 1.5rem;
+    height: 1.0625rem;
+    -webkit-background-size: contain;
+    background-size: contain;
+    margin-right: .625rem;
+}
+
+/*frame - content*/
+.g-layout{
+    padding: .625rem;
+}
+.g-title{
+    padding: 0 .3125rem;
+}
+.u-title{
+    font-size: 1.125rem;
+    line-height: 1.5625rem;
+    color: #1f1f1f;
+}
+.g-info{
+    font-size: .625rem;
+    color: #666;
+    padding: .4375rem 0 .6875rem;
+}
+.u-info-time{margin-left: .3125rem;}
+.u-info-user{margin-left: 1.25rem;}
+.g-content{}
+.m-content{
+    font-size: .875rem;
+}
+.m-content img{
+    display: block!important;
+    width: 100%!important;
+    margin-bottom: .75rem;
+}
+.m-content p{
+    padding-bottom: 1.375rem;
+}

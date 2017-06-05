@@ -1,0 +1,157 @@
+.hae {
+    height: 3.11em;
+}
+
+.hag {
+    height: 2em;
+}
+
+.mae {
+    margin-left: .5em
+}
+
+.d2 {
+    background-image: url('../images/ico_search.png');
+    width: .08em;
+    height: .08em;
+}
+
+.borde {
+    border-color: #00A1EA;
+}
+
+.dy {
+    display: none;
+}
+
+.maf {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.hag {
+    height: 2em;
+}
+
+.borc {
+    border-bottom-color: #d6d5d3;
+}
+
+.fotb {
+    font-size: .8em;
+}
+
+.hai {
+    height: 2.5em;
+}
+
+.ma {
+    margin-right: 1em;
+}
+.m-r{
+    margin-right: .8em;
+}
+.m-l{
+    margin-left: .8em;
+}
+
+.delete {
+    background-image: url('../images/ico_delete.png');
+    width: 1em;
+    height: 1em;
+}
+
+.corf {
+    color: #00A1EA;
+}
+
+.bcc {
+    background-color: white;
+}
+
+.cor {
+    color: #999999;
+}
+
+.m-kwd {
+    background-color: white;
+    margin: 0 2.5%
+}
+
+.u-kwd {
+    ime-mode: disabled;
+    outline: none;
+    font-size: .9em;
+}
+
+.u-kwd-btn {
+    margin-right: 0.3em;
+}
+
+.u-history-clear {
+    margin: 4em;
+}
+
+/*tinter*/
+.m-tinter{
+    padding-left: .625em;
+}
+.m-tinter em{
+    font-style: normal;
+    font-weight: normal;
+    color: #148af7;
+}
+.uinput input, .uinput textarea {
+    margin: 0px;
+    border: 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    padding: .4em 0;
+    line-height: 1.2em;
+    background: none;
+    text-decoration: none;
+    font-size: .8em;
+    display: block;
+}
+.f-break{
+    word-break: break-all;
+
+}
+.clear-bor {
+    -webkit-border-radius: .3em;
+    border-radius: .3em
+
+}
+
+.n-search-form{
+    display: block;
+    width: 100%;
+
+}
+
+/*点击效果*/
+.m-psn::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: -0.6em;
+    width: 0.6em;
+    top: 0;
+    bottom: 0;
+    visibility: hidden;
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #f6f6f6;
+    margin-bottom: -1px;
+}
+.m-psn.ng-click-active::before{
+    visibility: visible;
+}
+.m-psn.ng-click-active{
+    background-color: #f6f6f6;
+}
+
+.u-loading-c{
+    width: 8em;
+    height: auto;
+}

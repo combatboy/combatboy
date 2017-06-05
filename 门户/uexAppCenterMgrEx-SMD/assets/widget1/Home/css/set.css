@@ -1,0 +1,63 @@
+.bc-bg2 {
+    background-color: #f8f8f8;
+}
+
+.bc-bg4 {
+    background-color: #659dcc;
+}
+
+.pc-bs {
+    background-size: 1.375em 1.34em;
+}
+
+.pc-bk {
+    background-image: url('../images/pc-bk.png');
+}
+
+.t-c1 {
+    color: #959595;
+}
+
+.f-z7 {
+    font-size: 1.13em;
+}
+
+.pc-umar-l {
+    margin-left: 1.25em;
+}
+
+.pc-umar-r {
+    margin-right: 1em;
+}
+
+.pc-umar-t3 {
+    margin-top: 0.625em;
+}
+
+.pc-bor-lr {
+    border-bottom: 0.03125em solid #cecedc;
+    border-top: 0.03125em solid #cecedc;
+}
+.f-z2 {
+    font-size: 0.94em;   
+}
+
+.bc-bg5 {
+    background-color: #FFFFFF;
+}
+
+.bor-a5 {
+    border: 0 solid;
+}
+
+.sc-bg-active2 {
+    background-color: #FFFFFF;
+}
+
+.set-pad-tb {
+    padding: 0.96em 0;
+}
+
+.set-pad-tb2 {
+    padding: 0.58em 0;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/relativeId" android:background="@drawable/plugin_uexlocalpattern_bg_botton" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="5.8">
+        <RelativeLayout android:id="@id/line1Id" android:background="@drawable/plugin_uexlocalpattern_local_toal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/backIcon" android:background="@drawable/imageview_selector" android:visibility="invisible" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/plugin_uexlockpattern_back" android:scaleType="centerInside" />
+            <LinearLayout android:orientation="vertical" android:id="@id/imageId" android:layout_width="80.0dip" android:layout_height="80.0dip" android:layout_marginTop="35.0dip" android:layout_centerInParent="true">
+                <TextView android:layout_gravity="center" android:id="@id/imageViewId" android:layout_width="70.0dip" android:layout_height="70.0dip" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <TextView android:textSize="11.0sp" android:textColor="@android:color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/login_errorId" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.5" />
+    <com.way.locus.LocusPassWordView android:id="@id/mLocusPassWordView" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="12.0" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/layoutId" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="2.0" />
+</LinearLayout>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+    <!--<link rel="stylesheet" href="../vendor/appcan/css/appcan.control.css">-->
+    <link rel="stylesheet" href="../../vendor/ionic/css/ionic.min.css">
+    <link rel="stylesheet" href="../../vendor/simcere/css/base.css">
+    <link rel="stylesheet" href="../css/nerve.css">
+    <link rel="stylesheet" href="../css/newcard.css">
+    <link rel="stylesheet" href="../css/create.css">
+
+    <link rel="stylesheet" href="../css/u-fix.css">
+</head>
+<body class="um-vp " ontouchstart>
+<div id="page_0" class="up ub ub-ver n_DetailController" tabindex="0" ng-controller="DetailController" ng-click="disableAttachMode();">
+    <!--header开始-->
+    <div id="header" class="uh bc-text-head ub bc-head">
+        <div class="nav-btn ub ub-ac ub-pc" id="nav-left" ng-click="owuCloseWin();">
+            <div class="fa  fa-angle-left fa-2x"></div>
+        </div>
+        <h1 class="ut ub-f1 ulev-3 ut-s tx-c bc-text-head" tabindex="0"><b>专题讨论</b></h1>
+
+        <div class="nav-btn nav-bt ub ub-ac ub-pc" id="nav-right" ng-click="submit();">
+            <div>提交</div>
+        </div>
+    </div>
+    <!--header结束-->
+    <!--content开始-->
+    <div id="content" class="ub-f1 tx-l " style="overflow: hidden;position: relative;">
+        <ion-content>
+            <!---->
+            <div class="g-ref" ng-show="filterData.type==4">
+                <div class="m-ref">
+                    <div class="u-ref-tit">专题：<span class="u-ref-tit-f"></span></div>
+                    <div class="u-ref-info ub ub-pe">
+                        <div class="u-ref-info-time"></div>
+                        <div class="u-ref-info-user"></div>
+                    </div>
+                </div>
+            </div>
+            <!---->
+            <div class="ub-ver ubb line mart right">
+                
+                 <div class="ub u-frm-row mart">
+                    <div class="u-frm-l sc-text-active biaoti ub ub-ac">标题</div>
+                    <div class="u-frm-r ub ub-f1 ub-ac uinput u-fix-ipt-wrap-1">
+                        <input type="text" maxlength="50" class="ot-none u-fix-ipt-1" placeholder="请简要描述你的想法，不超过20个字" ng-model="Data.MsgTitle">
+                    </div>
+                </div>
+
+                <div class="ub u-frm-row mart">
+                    <div class="u-frm-l sc-text-active biaoti ub  ub-ac">分类</div>
+                    <div class="ub ub-ac u-frm-r uba bc-border sc-text ub-f1 u-select-wrap">
+                        <select class="u-select" ng-options="item.ID as item.TYPENAME for item in filterData.typeList" ng-model="filterData.type">
+                            <option value="" disabled>分类</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="ub u-frm-row ">
+                    <div class="u-frm-l biaoti p-pt">内容</div>
+                    <div class="u-frm-r uba bc-border ub ub-f1">
+                        <div class="uinput umar-a ub-f1">
+                            <div class="u-place-help ng-hide" ng-show="Data.MsgText==''">请输入想法／建议详情，上传［图片］可辅助您来表述。</div>
+                            <textarea class="ub-f1 ot-none m-textareaH" ng-model="Data.MsgText"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ub u-frm-row mart">
+                    <div class="u-frm-l biaoti sc-text-active u-fix-padt">图片</div>
+                    <div class="u-frm-r ub-f1">
+                        <div class="piclist">
+                            <div class="ub ub-ac ub-pc ub-img7 PicSVG" on-hold="activeImgEditMode()"
+                                 style="background-image: url({{file.MsgText}})" ng-repeat="file in Data.attaments|filter:imageFilter">
+                                <div class="deletepic fa fa-minus-circle g-f-right del-ftc uinn" ng-show="isImgEditMode" ng-click="removeAttach($event);"></div>
+                            </div>
+                        </div>
+                        <div class="ub ub-ac ub-pc tianjiaSVG" ng-click="showActionSheet();">
+                            <div class="s-icon-add ub-img "></div>
+                        </div>
+                    </div>
+                </div>
+                <!--屏蔽附件上传功能-->
+                <!-- <div class="ub u-frm-row">
+                    <div class="u-frm-l sc-text-active p-pt">附件</div>
+                    <div class="u-frm-r ub ub-ver ub-f1 umar-l">
+                        <div class="filelist ub ub-ver">
+                            <div class="ub g-f-left" on-hold="activeFileEditMode()" ng-repeat="file in Data.attaments|filter:fileFilter">
+                                <div class="ub-f1 text-overflow" ng-bind="file.FileName"></div>
+                                <div class="deletefile fa fa-times-circle g-f-right sc-text uinn" ng-show="isFileEditMode" ng-click="removeAttach($event);"></div>
+                            </div>
+                        </div>
+                        <div class="g-f-left umar-b" ng-click="fsBrowser();">
+                            <div class="s-icon-file ub-img"></div>
+                        </div>
+                    </div> 
+                 </div> -->
+            </div>
+            <div class="ub-ver ">
+                <div class="ub ub-ac">
+                    <div class="ub umar-a ub-ac ub-f1">
+                        <div class="checkbox umar-l">
+                            <input type="checkbox" class="umar-a uabs" ng-model="Data.MsgEmflag">
+                        </div>
+                        <p class="ub ub-ac ub-f1 p-km">紧急</p>
+                    </div>
+                    <div class="ub umar-a ub-ac ub-f1 uhide">
+                        <div class="checkbox umar-l">
+                            <input type="checkbox" class="umar-a uabs" ng-model="Data.MsgAsflag">
+                        </div>
+                        <p class="ub ub-ac ub-f1 p-km">重复提交</p>
+                    </div>
+                </div>
+                <div class="ub umar-l ub-ac">
+                    <div class="checkbox umar-l">
+                        <input ng-disabled="managerData.hasManager==0" type="checkbox" class="umar-a uabs" ng-model="Data.MsgFiflag">
+                    </div>
+                    <p class="ub ub-ac p-km">直达总部</p>
+                    <p class="ub ub-ac ub-f1 p-km umar-l u-hide" ng-show="managerData.hasManager==1">(<span ng-bind="managerData.managerName"></span>)</p>
+                    <p class="ub ub-ac ub-f1 p-km umar-l u-hide" ng-show="managerData.hasManager==0">(未配置)</p>
+                </div>
+                <div class="ub ub-ac umar-l u-frm-row uhide">
+                    <div class="ub ub-ac sc-text-active u-frm-l">预约时间:</div>
+                    <div class="ub-f1 uinput u-frm-r">
+                        <div class="bg-white uinput">
+                            <input placeholder="" type="text" maxlength="50" class="ub-f1" ng-model="Data.MsgCnText">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ion-content>
+    </div>
+    <!--content结束-->
+</div>
+<script src="../../vendor/appcan/js/appcan.js"></script>
+<script src="../../vendor/appcan/js/appcan.control.js"></script>
+<script src="../../vendor/simcere/js/base.js"></script>
+<script src="../../vendor/simcere/js/config.js"></script>
+<script src="../../vendor/ionic/js/ionic.bundle.min.js"></script>
+<script src="../../vendor/ow/qlib.js"></script>
+<script src="../../vendor/simcere/js/ng.util.js"></script>
+<script src="../js/app.createMsg.js"></script>
+<script>
+    appcan.ready(function () {
+        angular.bootstrap(document.documentElement, ['zkApp']);
+    });
+</script>
+</body>
+</html>

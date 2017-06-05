@@ -1,0 +1,142 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fafafa"
+    >
+
+    <ImageView
+        android:id="@+id/plugin_appmarket_ex_logo_image"
+        android:layout_width="@dimen/plugin_appmarket_ex_logo_width"
+        android:layout_height="@dimen/plugin_appmarket_ex_logo_height"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/plugin_appmarket_ex_logo"
+        android:visibility="invisible" />
+
+    <!-- android:layout_height="@dimen/plugin_appmarket_ex_ad_height" -->
+
+    <RelativeLayout
+        android:id="@+id/plugin_appmarket_ex_main_ad_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+         >
+
+        <org.zywx.wbpalmstar.plugin.uexappmarket.MyViewPager
+            android:id="@+id/plugin_appmarket_ex_main_ad_viewPager"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/plugin_appmarket_ex_ad_height"
+            android:layout_alignParentTop="true"
+            android:minHeight="@dimen/plugin_appmarket_ex_ad_height"
+            android:visibility="gone"
+             />
+
+        <!--
+            <android.support.v4.view.ViewPager
+            android:id="@+id/plugin_appmarket_ex_main_ad_viewPager"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/plugin_appmarket_ex_ad_height"
+            android:layout_alignParentTop="true"
+            android:minHeight="@dimen/plugin_appmarket_ex_ad_height" />
+        -->
+
+
+        <!-- 广告View -->
+
+        <LinearLayout
+            android:id="@+id/plugin_appmarket_ex_ad_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/plugin_appmarket_ex_ad_title_content_height"
+            android:layout_alignBottom="@+id/plugin_appmarket_ex_main_ad_viewPager"
+            android:background="#BFD2E2F5"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:visibility="gone"
+             >
+
+            <TextView
+                android:id="@+id/plugin_appmarket_ex_ad_title"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="广告标题内容"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/plugin_appmarket_ex_ad_textsize" />
+
+            <LinearLayout
+                android:id="@+id/plugin_appmarket_ex_ad_indicate_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/plugin_appmarket_ex_main_ad_progressBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/plugin_appmarket_ex_main_app_viewPager"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/plugin_appmarket_ex_main_ad_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="#fafafa"
+         />
+
+    
+    <LinearLayout
+        android:id="@+id/plugin_appmarket_ex_app_add_view"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/plugin_appmarket_ex_main_app_viewPager"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"
+         >
+    </LinearLayout>
+    
+    <!-- 应用列表显示页数的指示 -->
+
+    <LinearLayout
+        android:id="@+id/plugin_appmarket_ex_app_indicate_view"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+    </LinearLayout>
+    
+
+    <Button
+        android:id="@+id/plugin_appmarket_del_app_ok_button"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/plugin_appmarket_ex_del_app_ok_button_height"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/plugin_appmarket_ex_del_app_complete_selector"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,25 @@
+.bc-bgAbout {
+    background-color: #f8f8f8;
+}
+.logo {
+    background-image: url('../images/simcereLogo.png')
+}
+.logoStyle {
+    height: 7.58em;
+    width: 7.58em;   
+    /*-webkit-border-radius: 50%;
+    border-radius: 50%;*/
+}
+.u-mar1{
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+.u-marT1{
+    margin-top: 1.5em;
+}
+.u-marT2{
+    margin-top: 6em;
+}
+.u-marT3{
+    margin-top: 1em;
+}

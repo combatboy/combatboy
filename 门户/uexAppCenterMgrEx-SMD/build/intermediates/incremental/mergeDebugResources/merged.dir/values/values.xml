@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr format="integer" name="Items"/>
+    <attr format="integer" name="SelectedItem"/>
+    <attr format="boolean" name="UseReflection"/>
+    <attr format="dimension" name="behindOffset"/>
+    <attr format="float" name="behindScrollScale"/>
+    <attr format="dimension" name="behindWidth"/>
+    <attr format="float" name="fadeDegree"/>
+    <attr format="boolean" name="fadeEnabled"/>
+    <attr format="integer" name="maxQuantity"/>
+    <attr format="float" name="maxTheta"/>
+    <attr format="integer" name="minQuantity"/>
+    <attr name="mode">
+        <enum name="left" value="0"/>
+        <enum name="right" value="1"/>
+    </attr>
+    <attr format="boolean" name="plugin_uexcalendar_attrs_state_current_month"/>
+    <attr format="boolean" name="plugin_uexcalendar_attrs_state_range_first"/>
+    <attr format="boolean" name="plugin_uexcalendar_attrs_state_range_last"/>
+    <attr format="boolean" name="plugin_uexcalendar_attrs_state_range_middle"/>
+    <attr format="boolean" name="plugin_uexcalendar_attrs_state_selectable"/>
+    <attr format="boolean" name="plugin_uexcalendar_attrs_state_today"/>
+    <attr format="reference|color" name="ptrAdapterViewBackground"/>
+    <attr name="ptrAnimationStyle">
+        <flag name="rotate" value="0x00000000"/>
+        <flag name="flip" value="0x00000001"/>
+    </attr>
+    <attr format="reference" name="ptrDrawable"/>
+    <attr format="reference" name="ptrDrawableBottom"/>
+    <attr format="reference" name="ptrDrawableEnd"/>
+    <attr format="reference" name="ptrDrawableStart"/>
+    <attr format="reference" name="ptrDrawableTop"/>
+    <attr format="reference|color" name="ptrHeaderBackground"/>
+    <attr format="reference|color" name="ptrHeaderSubTextColor"/>
+    <attr format="reference" name="ptrHeaderTextAppearance"/>
+    <attr format="reference|color" name="ptrHeaderTextColor"/>
+    <attr format="reference|boolean" name="ptrListViewExtrasEnabled"/>
+    <attr name="ptrMode">
+        <flag name="disabled" value="0x00000000"/>
+        <flag name="pullFromStart" value="0x00000001"/>
+        <flag name="pullFromEnd" value="0x00000002"/>
+        <flag name="both" value="0x00000003"/>
+        <flag name="manualOnly" value="0x00000004"/>
+        <flag name="pullDownFromTop" value="0x00000001"/>
+        <flag name="pullUpFromBottom" value="0x00000002"/>
+    </attr>
+    <attr format="reference|boolean" name="ptrOverScroll"/>
+    <attr format="reference|color" name="ptrRefreshableViewBackground"/>
+    <attr format="reference|boolean" name="ptrRotateDrawableWhilePulling"/>
+    <attr format="reference|boolean" name="ptrScrollingWhileRefreshingEnabled"/>
+    <attr format="reference|boolean" name="ptrShowIndicator"/>
+    <attr format="reference" name="ptrSubHeaderTextAppearance"/>
+    <attr format="reference" name="selectorDrawable"/>
+    <attr format="boolean" name="selectorEnabled"/>
+    <attr format="reference" name="shadowDrawable"/>
+    <attr format="dimension" name="shadowWidth"/>
+    <attr name="touchModeAbove">
+        <enum name="margin" value="0"/>
+        <enum name="fullscreen" value="1"/>
+        <enum name="none" value="2"/>
+    </attr>
+    <attr name="touchModeBehind">
+        <enum name="margin" value="0"/>
+        <enum name="fullscreen" value="1"/>
+        <enum name="none" value="2"/>
+    </attr>
+    <attr format="reference" name="viewAbove"/>
+    <attr format="reference" name="viewBehind"/>
+    <color name="activity_window_background_color">#60000000</color>
+    <color name="black">#ff000000</color>
+    <color name="blue">#ff2162bd</color>
+    <color name="browser_title_stroke_color">#ff9a9a9a</color>
+    <color name="dialog_bg">#ff1b252f</color>
+    <color name="gray">#ff717171</color>
+    <color name="half_transparent">#30000000</color>
+    <color name="light_gray">#ffa6c2de</color>
+    <color name="menu_press">#ff00599f</color>
+    <color name="orange">#ffff9900</color>
+    <color name="pink">#ffff00ff</color>
+    <color name="plugin_apppmarket_ex_grid_background">#ffebeff8</color>
+    <color name="plugin_apppmarket_ex_grid_stroke">#ffd9dce5</color>
+    <color name="plugin_audio_half_transparent">#30000000</color>
+    <color name="plugin_smd_add_bg_color">#2ac1b8</color>
+    <color name="plugin_smd_expand_space_color">#f8f8f8</color>
+    <color name="plugin_uex_image_black_1">#e0111222</color>
+    <color name="plugin_uex_image_gray_3">#ff333333</color>
+    <color name="plugin_uex_image_gray_4">#ff2e3334</color>
+    <color name="plugin_uex_image_gray_9">#ffd9d9d9</color>
+    <color name="plugin_uex_image_green_1">#ff45c01a</color>
+    <color name="plugin_uex_image_green_2">#ff86d8ff</color>
+    <color name="plugin_uex_image_green_common">#ff15c7cb</color>
+    <color name="plugin_uexcalendar_color_calendar_active_month_bg">#fff5f7f9</color>
+    <color name="plugin_uexcalendar_color_calendar_bg">#ffffffff</color>
+    <color name="plugin_uexcalendar_color_calendar_divider">#ffbababa</color>
+    <color name="plugin_uexcalendar_color_calendar_inactive_month_bg">#ffd7d9db</color>
+    <color name="plugin_uexcalendar_color_calendar_selected_day_bg">#ff379bff</color>
+    <color name="plugin_uexcalendar_color_calendar_selected_range_bg">#ff96caff</color>
+    <color name="plugin_uexcalendar_color_calendar_text_active">#ff778088</color>
+    <color name="plugin_uexcalendar_color_calendar_text_inactive">#40778088</color>
+    <color name="plugin_uexcalendar_color_calendar_text_selected">#ffffffff</color>
+    <color name="plugin_uexcalendar_color_calendar_text_unselectable">#7f778088</color>
+    <color name="red">#ffff0000</color>
+    <color name="start_bg_color">#ff000000</color>
+    <color name="translucent">#7f000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="widget_bg_color">#ff333333</color>
+    <color name="widget_dialog_title_line_color">#ff666666</color>
+    <dimen name="indicator_corner_radius">12.0dip</dimen>
+    <dimen name="indicator_internal_padding">4.0dip</dimen>
+    <dimen name="indicator_right_padding">10.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_ad_height">180.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_ad_indicate_margin_bottom">8.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_ad_indicate_margin_right">10.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_ad_textsize">14.0sp</dimen>
+    <dimen name="plugin_appmarket_ex_ad_title_content_height">30.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_add_app_list_item_text_drawable_marge">10.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_add_app_list_item_text_size">13.0sp</dimen>
+    <dimen name="plugin_appmarket_ex_add_app_search_height">40.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_add_app_title_back_height">26.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_add_app_title_height">50.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_add_app_title_text_size">18.0sp</dimen>
+    <dimen name="plugin_appmarket_ex_app_download_indicator">24.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_app_download_indicator_margin">9.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_app_icon_margin_top">10.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_app_icon_paddings">1.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_app_icon_radius">10.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_app_icon_stroke_width">1.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_del_app_icon">20.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_del_app_icon_margin_left">47.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_del_app_icon_margin_right">2.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_del_app_ok_button_height">50.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_del_app_ok_button_text_size">17.0sp</dimen>
+    <dimen name="plugin_appmarket_ex_grid_background_storke_width">1.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_grid_item_app_icon_margin">2.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_grid_item_app_icon_width">55.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_grid_item_default_height">100.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_grid_item_height">70.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_grid_item_text_height">35.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_grid_item_text_margin">4.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_grid_item_text_padding">2.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_grid_item_text_size">13.0sp</dimen>
+    <dimen name="plugin_appmarket_ex_grid_item_width">70.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_indicate_ball_padding">1.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_indicate_ball_padding_horizontal">1.5dip</dimen>
+    <dimen name="plugin_appmarket_ex_indicate_ball_width">6.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_list_item_add_icon">20.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_logo_height">34.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_logo_width">130.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_new_app_icon_margin_top">5.0dip</dimen>
+    <dimen name="plugin_appmarket_ex_new_app_icon_width">8.0dip</dimen>
+    <dimen name="plugin_chatkeyboard_emojicons_column_width">50.0dip</dimen>
+    <dimen name="plugin_chatkeyboard_input_layout_height">50.0dip</dimen>
+    <dimen name="plugin_chatkeyboard_layout_height">250.0dip</dimen>
+    <dimen name="plugin_chatkeyboard_pager_indicator_left">3.0dip</dimen>
+    <dimen name="plugin_chatkeyboard_pager_indicator_top">12.0dip</dimen>
+    <dimen name="plugin_chatkeyboard_pager_indicator_width">6.0dip</dimen>
+    <dimen name="plugin_chatkeyboard_shares_column_width">72.0dip</dimen>
+    <dimen name="plugin_uex_image_activity_horizontal_margin">16.0dip</dimen>
+    <dimen name="plugin_uexcalendar_dimen_calendar_day_headers_paddingbottom">4.0dip</dimen>
+    <dimen name="plugin_uexcalendar_dimen_calendar_month_title_bottommargin">4.0dip</dimen>
+    <dimen name="plugin_uexcalendar_dimen_calendar_month_topmargin">16.0dip</dimen>
+    <dimen name="plugin_uexcalendar_dimen_calendar_text_medium">18.0sp</dimen>
+    <dimen name="plugin_uexcalendar_dimen_calendar_text_small">16.0sp</dimen>
+    <dimen name="shadow_width">15.0dip</dimen>
+    <dimen name="slidingmenu_offset">60.0dip</dimen>
+    <dimen name="slidingmenu_width">240.0dip</dimen>
+    <item name="actionsheet_list_menu_item_btn" type="id">false</item>
+    <item name="activeButton" type="id">false</item>
+    <item name="backIcon" type="id">false</item>
+    <item name="bottom_back" type="id">false</item>
+    <item name="bottom_close" type="id">false</item>
+    <item name="bottom_forward" type="id">false</item>
+    <item name="bottom_refresh" type="id">false</item>
+    <item name="bottombar" type="id">false</item>
+    <item name="btn_finish_title" type="id">false</item>
+    <item name="button1" type="id">false</item>
+    <item name="checkbox" type="id">false</item>
+    <item name="dialog_button_list" type="id">false</item>
+    <item name="dialog_cancelBtn_parent" type="id">false</item>
+    <item name="dialog_cancel_button" type="id">false</item>
+    <item name="dialog_title" type="id">false</item>
+    <item name="et_dialog_input_text" type="id">false</item>
+    <item name="formRelativeLayout" type="id">false</item>
+    <item name="frameLayout" type="id">false</item>
+    <item name="framelayout" type="id">false</item>
+    <item name="grag_grid_item_view" type="id">false</item>
+    <item name="grid" type="id">false</item>
+    <item name="gv_pictures" type="id">false</item>
+    <item name="image" type="id">false</item>
+    <item name="imageId" type="id">false</item>
+    <item name="imageView" type="id">false</item>
+    <item name="imageViewId" type="id">false</item>
+    <item name="iv_item" type="id">false</item>
+    <item name="iv_left_on_title" type="id">false</item>
+    <item name="iv_progress_bar" type="id">false</item>
+    <item name="layoutId" type="id">false</item>
+    <item name="layout_dialog" type="id">false</item>
+    <item name="layout_title" type="id">false</item>
+    <item name="line1Id" type="id">false</item>
+    <item name="line_black" type="id">false</item>
+    <item name="line_white" type="id">false</item>
+    <item name="local_album_list" type="id">false</item>
+    <item name="login_errorId" type="id">false</item>
+    <item name="lvRelativeLayout" type="id">false</item>
+    <item name="lvRelative_Button" type="id">false</item>
+    <item name="lvRelative_edittext" type="id">false</item>
+    <item name="lvRelative_textView" type="id">false</item>
+    <item name="mLocusPassWordView" type="id">false</item>
+    <item name="mam_progress_dialog_text" type="id">false</item>
+    <item name="mam_progressbar" type="id">false</item>
+    <item name="mam_scrollview" type="id">false</item>
+    <item name="menu_frame" type="id">false</item>
+    <item name="menu_frame_two" type="id">false</item>
+    <item name="message" type="id">false</item>
+    <item name="music_file_play_button" type="id">false</item>
+    <item name="music_file_play_list" type="id">false</item>
+    <item name="music_file_play_title" type="id">false</item>
+    <item name="music_special_image" type="id">false</item>
+    <item name="my_icon" type="id">false</item>
+    <item name="negativeButton" type="id">false</item>
+    <item name="passiveButton" type="id">false</item>
+    <item name="passiveEditText" type="id">false</item>
+    <item name="passiveRelativeLayout" type="id">false</item>
+    <item name="passiveTextView" type="id">false</item>
+    <item name="passiveTextViewLabel" type="id">false</item>
+    <item name="passiveTextView_relativelayout" type="id">false</item>
+    <item name="platform_myspace_app_download_indicator" type="id">false</item>
+    <item name="platform_myspace_app_icon" type="id">false</item>
+    <item name="platform_myspace_app_name" type="id">false</item>
+    <item name="platform_myspace_gv_my_apps" type="id">false</item>
+    <item name="platform_myspace_gv_recommend_apps" type="id">false</item>
+    <item name="platform_myspace_main_content" type="id">false</item>
+    <item name="platform_myspace_refreshable_view" type="id">false</item>
+    <item name="platform_myspace_scroll_view" type="id">false</item>
+    <item name="platform_myspace_top_btn_back" type="id">false</item>
+    <item name="platform_myspace_top_btn_settings" type="id">false</item>
+    <item name="platform_myspace_top_layout" type="id">false</item>
+    <item name="platform_myspace_tv_my_apps" type="id">false</item>
+    <item name="platform_myspace_tv_recommend_apps" type="id">false</item>
+    <item name="platform_update_alert_button_relativelayout" type="id">false</item>
+    <item name="platform_update_alert_content_textview" type="id">false</item>
+    <item name="platform_update_alert_left_button" type="id">false</item>
+    <item name="platform_update_alert_progressbar" type="id">false</item>
+    <item name="platform_update_alert_right_button" type="id">false</item>
+    <item name="platform_update_alert_title_textview" type="id">false</item>
+    <item name="plugin_add_app_item_del" type="id">false</item>
+    <item name="plugin_add_app_item_description" type="id">false</item>
+    <item name="plugin_add_app_item_download" type="id">false</item>
+    <item name="plugin_add_app_item_download_layout" type="id">false</item>
+    <item name="plugin_add_app_item_group_view_down" type="id">false</item>
+    <item name="plugin_add_app_item_group_view_top" type="id">false</item>
+    <item name="plugin_add_app_item_image" type="id">false</item>
+    <item name="plugin_add_app_item_name" type="id">false</item>
+    <item name="plugin_add_app_item_new" type="id">false</item>
+    <item name="plugin_add_app_item_progress" type="id">false</item>
+    <item name="plugin_add_app_item_progressbar" type="id">false</item>
+    <item name="plugin_add_app_item_size" type="id">false</item>
+    <item name="plugin_add_app_item_state" type="id">false</item>
+    <item name="plugin_add_app_item_title" type="id">false</item>
+    <item name="plugin_add_app_item_version" type="id">false</item>
+    <item name="plugin_app_grid_main" type="id">false</item>
+    <item name="plugin_appmarket_app_download_indicator" type="id">false</item>
+    <item name="plugin_appmarket_app_icon" type="id">false</item>
+    <item name="plugin_appmarket_app_name" type="id">false</item>
+    <item name="plugin_appmarket_del_app_ok_button" type="id">false</item>
+    <item name="plugin_appmarket_ex_ad_indicate_view" type="id">false</item>
+    <item name="plugin_appmarket_ex_ad_layout" type="id">false</item>
+    <item name="plugin_appmarket_ex_ad_title" type="id">false</item>
+    <item name="plugin_appmarket_ex_ad_viewpager_item_imageview" type="id">false</item>
+    <item name="plugin_appmarket_ex_add_app_back_imageView1" type="id">false</item>
+    <item name="plugin_appmarket_ex_add_app_back_layout" type="id">false</item>
+    <item name="plugin_appmarket_ex_add_app_listView1" type="id">false</item>
+    <item name="plugin_appmarket_ex_add_app_list_left_layout" type="id">false</item>
+    <item name="plugin_appmarket_ex_app_add_view" type="id">false</item>
+    <item name="plugin_appmarket_ex_app_icon_layout" type="id">false</item>
+    <item name="plugin_appmarket_ex_app_indicate_view" type="id">false</item>
+    <item name="plugin_appmarket_ex_del_app_icon" type="id">false</item>
+    <item name="plugin_appmarket_ex_indicate_imageView" type="id">false</item>
+    <item name="plugin_appmarket_ex_logo_image" type="id">false</item>
+    <item name="plugin_appmarket_ex_main_ad_layout" type="id">false</item>
+    <item name="plugin_appmarket_ex_main_ad_progressBar1" type="id">false</item>
+    <item name="plugin_appmarket_ex_main_ad_viewPager" type="id">false</item>
+    <item name="plugin_appmarket_ex_main_app_viewPager" type="id">false</item>
+    <item name="plugin_appmarket_ex_show_ad_back_layout" type="id">false</item>
+    <item name="plugin_appmarket_ex_show_ad_pager_item_progressBar1" type="id">false</item>
+    <item name="plugin_appmarket_ex_show_ad_pager_item_webView1" type="id">false</item>
+    <item name="plugin_appmarket_ex_show_ad_progressBar1" type="id">false</item>
+    <item name="plugin_appmarket_ex_show_ad_title_layout" type="id">false</item>
+    <item name="plugin_appmarket_ex_show_ad_title_textView1" type="id">false</item>
+    <item name="plugin_appmarket_ex_show_ad_webView1" type="id">false</item>
+    <item name="plugin_appmarket_ex_title_textView1" type="id">false</item>
+    <item name="plugin_appmarket_ex_wap_back_imageView1" type="id">false</item>
+    <item name="plugin_appmarket_grid" type="id">false</item>
+    <item name="plugin_appmarket_new_app_icon" type="id">false</item>
+    <item name="plugin_appstore_grid_new_layout" type="id">false</item>
+    <item name="plugin_appstore_grid_new_text" type="id">false</item>
+    <item name="plugin_audio_recorder_back" type="id">false</item>
+    <item name="plugin_audio_recorder_btn_record" type="id">false</item>
+    <item name="plugin_audio_recorder_center_layout" type="id">false</item>
+    <item name="plugin_audio_recorder_iv_state_indicator" type="id">false</item>
+    <item name="plugin_audio_recorder_layout_timeline" type="id">false</item>
+    <item name="plugin_audio_recorder_play" type="id">false</item>
+    <item name="plugin_audio_recorder_player_layout" type="id">false</item>
+    <item name="plugin_audio_recorder_player_pass_time" type="id">false</item>
+    <item name="plugin_audio_recorder_player_sb_progress" type="id">false</item>
+    <item name="plugin_audio_recorder_player_total_time" type="id">false</item>
+    <item name="plugin_audio_recorder_record_layout" type="id">false</item>
+    <item name="plugin_audio_recorder_top_layout" type="id">false</item>
+    <item name="plugin_audio_recorder_tv_time_passed" type="id">false</item>
+    <item name="plugin_audio_recorder_use" type="id">false</item>
+    <item name="plugin_audio_recorder_visual_freqency" type="id">false</item>
+    <item name="plugin_camera_bt_cancel" type="id">false</item>
+    <item name="plugin_camera_bt_changefacing" type="id">false</item>
+    <item name="plugin_camera_bt_complete" type="id">false</item>
+    <item name="plugin_camera_bt_flash1" type="id">false</item>
+    <item name="plugin_camera_bt_flash2" type="id">false</item>
+    <item name="plugin_camera_bt_flash3" type="id">false</item>
+    <item name="plugin_camera_bt_takepic" type="id">false</item>
+    <item name="plugin_camera_iv_preshow" type="id">false</item>
+    <item name="plugin_camera_surfaceview" type="id">false</item>
+    <item name="plugin_camera_view_focus" type="id">false</item>
+    <item name="plugin_centre_bottom" type="id">false</item>
+    <item name="plugin_centre_bottom_seekBar" type="id">false</item>
+    <item name="plugin_chatkeyboard_btn_add" type="id">false</item>
+    <item name="plugin_chatkeyboard_btn_emojicon" type="id">false</item>
+    <item name="plugin_chatkeyboard_btn_send" type="id">false</item>
+    <item name="plugin_chatkeyboard_btn_voice" type="id">false</item>
+    <item name="plugin_chatkeyboard_btn_voice_input" type="id">false</item>
+    <item name="plugin_chatkeyboard_edit_input" type="id">false</item>
+    <item name="plugin_chatkeyboard_edit_input_layout" type="id">false</item>
+    <item name="plugin_chatkeyboard_emojicon_item" type="id">false</item>
+    <item name="plugin_chatkeyboard_emojicons_grid_view" type="id">false</item>
+    <item name="plugin_chatkeyboard_emojicons_layout" type="id">false</item>
+    <item name="plugin_chatkeyboard_emojicons_pager" type="id">false</item>
+    <item name="plugin_chatkeyboard_emojicons_pager_indicator" type="id">false</item>
+    <item name="plugin_chatkeyboard_pager_layout" type="id">false</item>
+    <item name="plugin_chatkeyboard_parent_layout" type="id">false</item>
+    <item name="plugin_chatkeyboard_share_image" type="id">false</item>
+    <item name="plugin_chatkeyboard_share_name" type="id">false</item>
+    <item name="plugin_chatkeyboard_shares_grid_view" type="id">false</item>
+    <item name="plugin_chatkeyboard_shares_layout" type="id">false</item>
+    <item name="plugin_chatkeyboard_shares_pager" type="id">false</item>
+    <item name="plugin_chatkeyboard_shares_pager_indicator" type="id">false</item>
+    <item name="plugin_chatkeyboard_voice_record_times" type="id">false</item>
+    <item name="plugin_chatkeyboard_voice_record_tips_image" type="id">false</item>
+    <item name="plugin_chatkeyboard_voice_record_tips_layout" type="id">false</item>
+    <item name="plugin_file_bottom_btn_cancel_all" type="id">false</item>
+    <item name="plugin_file_bottom_btn_select_all" type="id">false</item>
+    <item name="plugin_file_bottom_btn_select_confirm" type="id">false</item>
+    <item name="plugin_file_bottom_layout" type="id">false</item>
+    <item name="plugin_file_cb_select_state" type="id">false</item>
+    <item name="plugin_file_iv_arrow" type="id">false</item>
+    <item name="plugin_file_iv_file_icon" type="id">false</item>
+    <item name="plugin_file_lv_file_list" type="id">false</item>
+    <item name="plugin_file_top_back" type="id">false</item>
+    <item name="plugin_file_top_cancel" type="id">false</item>
+    <item name="plugin_file_top_layout" type="id">false</item>
+    <item name="plugin_file_top_title" type="id">false</item>
+    <item name="plugin_file_tv_file_name" type="id">false</item>
+    <item name="plugin_file_tv_file_path" type="id">false</item>
+    <item name="plugin_file_tv_file_size" type="id">false</item>
+    <item name="plugin_iamge_app" type="id">false</item>
+    <item name="plugin_image_app_name" type="id">false</item>
+    <item name="plugin_image_pickmulti_btn_back" type="id">false</item>
+    <item name="plugin_image_pickmulti_btn_save" type="id">false</item>
+    <item name="plugin_image_pickmulti_group_lst" type="id">false</item>
+    <item name="plugin_image_pickmulti_image_grid" type="id">false</item>
+    <item name="plugin_image_pickmulti_select_group_btn" type="id">false</item>
+    <item name="plugin_image_pickmulti_txt_number" type="id">false</item>
+    <item name="plugin_image_preview_btn_back" type="id">false</item>
+    <item name="plugin_image_preview_btn_save" type="id">false</item>
+    <item name="plugin_image_preview_photo" type="id">false</item>
+    <item name="plugin_image_preview_top" type="id">false</item>
+    <item name="plugin_image_review_bottom" type="id">false</item>
+    <item name="plugin_image_review_btn_confirm" type="id">false</item>
+    <item name="plugin_image_review_btn_repick" type="id">false</item>
+    <item name="plugin_image_review_photo" type="id">false</item>
+    <item name="plugin_image_watcher_btn_zoom_in" type="id">false</item>
+    <item name="plugin_image_watcher_btn_zoom_out" type="id">false</item>
+    <item name="plugin_image_watcher_controller_bottom" type="id">false</item>
+    <item name="plugin_image_watcher_controller_layer" type="id">false</item>
+    <item name="plugin_image_watcher_controller_top" type="id">false</item>
+    <item name="plugin_image_watcher_controller_top_back" type="id">false</item>
+    <item name="plugin_image_watcher_controller_top_save" type="id">false</item>
+    <item name="plugin_image_watcher_controller_top_title" type="id">false</item>
+    <item name="plugin_image_watcher_grid_item_image" type="id">false</item>
+    <item name="plugin_image_watcher_grid_list" type="id">false</item>
+    <item name="plugin_image_watcher_grid_top_back" type="id">false</item>
+    <item name="plugin_image_watcher_grid_top_title" type="id">false</item>
+    <item name="plugin_image_watcher_main_top" type="id">false</item>
+    <item name="plugin_image_watcher_main_top_loading" type="id">false</item>
+    <item name="plugin_image_watcher_pager" type="id">false</item>
+    <item name="plugin_image_watcher_progressbar" type="id">false</item>
+    <item name="plugin_image_watcher_view_photo" type="id">false</item>
+    <item name="plugin_imagebrowser_child_checkbox" type="id">false</item>
+    <item name="plugin_imagebrowser_group_count" type="id">false</item>
+    <item name="plugin_imagebrowser_group_image" type="id">false</item>
+    <item name="plugin_imagebrowser_group_title" type="id">false</item>
+    <item name="plugin_imagebrowser_ll" type="id">false</item>
+    <item name="plugin_margin_layout" type="id">false</item>
+    <item name="plugin_margin_layout_out" type="id">false</item>
+    <item name="plugin_music_button_list" type="id">false</item>
+    <item name="plugin_music_button_return" type="id">false</item>
+    <item name="plugin_music_file_list_item_text" type="id">false</item>
+    <item name="plugin_music_name" type="id">false</item>
+    <item name="plugin_new_app" type="id">false</item>
+    <item name="plugin_progress_dialog_text" type="id">false</item>
+    <item name="plugin_uexCalendar_calendar_view" type="id">false</item>
+    <item name="plugin_uexCalendar_cancel" type="id">false</item>
+    <item name="plugin_uexClipImage_cancel" type="id">false</item>
+    <item name="plugin_uexClipImage_clipImageLayout" type="id">false</item>
+    <item name="plugin_uexClipImage_finish" type="id">false</item>
+    <item name="plugin_uexcalendar_month_calendar_grid" type="id">false</item>
+    <item name="plugin_uexcalendar_month_title" type="id">false</item>
+    <item name="plugin_uexemm_query_ueser_cert_btn" type="id">false</item>
+    <item name="plugin_uexemm_query_ueser_cert_check_code_et" type="id">false</item>
+    <item name="plugin_uexemm_query_ueser_cert_hint_tv" type="id">false</item>
+    <item name="plugin_update_alert_button_relativelayout" type="id">false</item>
+    <item name="plugin_update_alert_content_textview" type="id">false</item>
+    <item name="plugin_update_alert_left_button" type="id">false</item>
+    <item name="plugin_update_alert_progressbar" type="id">false</item>
+    <item name="plugin_update_alert_right_button" type="id">false</item>
+    <item name="plugin_update_alert_title_textview" type="id">false</item>
+    <item name="plugin_view_down" type="id">false</item>
+    <item name="plugin_view_horizontal_spacing" type="id">false</item>
+    <item name="plugin_view_update_Progress" type="id">false</item>
+    <item name="plugin_view_vertical_spacing_left" type="id">false</item>
+    <item name="plugin_view_vertical_spacing_right" type="id">false</item>
+    <item name="plugin_view_vertical_spacing_top" type="id">false</item>
+    <item name="policyRelativeLayout" type="id">false</item>
+    <item name="positiveButton" type="id">false</item>
+    <item name="progressBar1" type="id">false</item>
+    <item name="pull_to_refresh_header" type="id">false</item>
+    <item name="pull_to_refresh_image" type="id">false</item>
+    <item name="pull_to_refresh_progress" type="id">false</item>
+    <item name="pull_to_refresh_text" type="id">false</item>
+    <item name="pull_to_refresh_updated_at" type="id">false</item>
+    <item name="relativeId" type="id">false</item>
+    <item name="relativeLayout1" type="id">false</item>
+    <item name="resetPassword" type="id">false</item>
+    <item name="selected_view" type="id"/>
+    <item name="shelter" type="id">false</item>
+    <item name="shoushiId" type="id">false</item>
+    <item name="slidingmenumain" type="id">false</item>
+    <item name="sms_textView" type="id">false</item>
+    <item name="textView1" type="id">false</item>
+    <item name="textview" type="id">false</item>
+    <item name="title" type="id">false</item>
+    <item name="title_back_imageview" type="id">false</item>
+    <item name="title_layout" type="id">false</item>
+    <item name="title_relativelayout" type="id">false</item>
+    <item name="title_textview" type="id">false</item>
+    <item name="tv_checkbox" type="id">false</item>
+    <item name="tv_dialog_input_desc" type="id">false</item>
+    <item name="tv_share" type="id">false</item>
+    <item name="tv_title" type="id">false</item>
+    <item name="tv_to_grid" type="id">false</item>
+    <item name="vp_picture" type="id">false</item>
+    <item name="webview" type="id">false</item>
+    <item name="widget_bottom" type="id">false</item>
+    <item name="widget_bottom_button_last" type="id">false</item>
+    <item name="widget_bottom_button_next" type="id">false</item>
+    <item name="widget_bottom_button_play" type="id">false</item>
+    <item name="widget_title" type="id">false</item>
+    <item name="widget_top" type="id">false</item>
+    <item name="widget_top_play_time" type="id">false</item>
+    <item name="widget_top_progress_seekBar" type="id">false</item>
+    <item name="widget_top_total_time" type="id">false</item>
+    <item name="window_back" type="id">false</item>
+    <string name="analytics_host">https://modev.isimcere.com:18443/appIn/</string>
+    <string name="app_downloading">应用正在下载请稍候…</string>
+    <string name="app_has_download_please_run">应用已下载，请直接运行</string>
+    <string name="app_is_download_please_wait">应用正在下载请稍候…</string>
+    <string name="app_name">先声药业dev</string>
+    <string name="app_sign">appsigncontent</string>
+    <string name="appkey">a33d9730-eb09-43f5-83f1-eeb447adf9a4</string>
+    <string name="appstatus">682C79692D6987569B3509E28B0D20682F3A6BBC711DE457E45AD5</string>
+    <string name="back">返回</string>
+    <string name="bindUser_host">https://modev.isimcere.com:18443/push/</string>
+    <string name="browser_dialog_error">错误提示</string>
+    <string name="browser_exitdialog_app_text">确定要退出程序吗？</string>
+    <string name="browser_exitdialog_msg">退出提示</string>
+    <string name="browser_init_error">程序不完整</string>
+    <string name="can_not_find_suitable_app_perform_this_operation">找不到适合的程序执行此操作!</string>
+    <string name="cancel">取消</string>
+    <string name="cancel_select_all">取消选定</string>
+    <string name="cannot_find_this_widget">未找到此widget，无法启动!</string>
+    <string name="certificate_psw"/>
+    <string name="complete">完成</string>
+    <string name="confirm">确定</string>
+    <string name="confirm_delete">确定删除</string>
+    <string name="delete">删除</string>
+    <string name="download_info_error">下载信息错误!</string>
+    <string name="error_file_does_not_exist">文件不存在</string>
+    <string name="error_no_permisson_INTERNET">没有网络访问权限</string>
+    <string name="error_no_permisson_RW">没有读写权限</string>
+    <string name="error_parameter">参数错误</string>
+    <string name="error_sdcard_is_not_available">SD卡不可用</string>
+    <string name="exit">退出</string>
+    <string name="exit_message_appid">当前应用ID非法</string>
+    <string name="exit_message_server">该应用暂停服务</string>
+    <string name="get_info_failed">获取信息失败!</string>
+    <string name="get_login_list">尚未登录,获取登录列表…</string>
+    <string name="get_open_login_list">尚未登录,正在获取开放平台登录列表</string>
+    <string name="get_user_info">正在获取用户登录信息…</string>
+    <string name="get_user_info_failed">获取登录信息失败!</string>
+    <string name="info_update">发现新版本,是否升级?</string>
+    <string name="install">安装…</string>
+    <string name="install_failed">安装失败</string>
+    <string name="is_uninstalling">正在卸载…</string>
+    <string name="load_uex_object_error">uex对象加载发生异常,请检查XML文件!</string>
+    <string name="login_failed">登录失败…</string>
+    <string name="ma">吗?</string>
+    <string name="mam_host">https://modev.isimcere.com:18443/emm/</string>
+    <string name="mam_push_host_and_port"/>
+    <string name="more">更多</string>
+    <string name="no_have_read_limits_power">没有读取权限</string>
+    <string name="no_have_write_limits_power">没有写入权限</string>
+    <string name="no_permission_to_open_window">没有打开%1$s窗口的权限</string>
+    <string name="no_permisson_declare">没有申明相关权限</string>
+    <string name="not_any_widget">该应用下没有任何widget</string>
+    <string name="operation_cancel">操作已取消!</string>
+    <string name="path_error">路径错误!</string>
+    <string name="platform_choose_app">请选择:</string>
+    <string name="platform_connect_failed">连接失败,请重试!</string>
+    <string name="platform_download_failed">下载出错,请重试!</string>
+    <string name="platform_downloading_file">正在下载文件</string>
+    <string name="platform_myspace_app_center">应用中心</string>
+    <string name="platform_myspace_loading">加载中…</string>
+    <string name="platform_myspace_my_apps">我的应用</string>
+    <string name="platform_myspace_pull_to_refresh">下拉刷新推荐列表</string>
+    <string name="platform_myspace_recommend_apps">推荐应用</string>
+    <string name="platform_myspace_release_to_refresh">释放刷新推荐列表</string>
+    <string name="platform_myspace_tap_to_refresh">点击刷新推荐列表</string>
+    <string name="platform_no_configuration_decryption_permissions">没有配置解密权限！</string>
+    <string name="platform_only_test">测试版本仅用于开发测试</string>
+    <string name="platform_widget_id_not_exist">AppId为 %1$s 的Widget不存在</string>
+    <string name="platform_widget_path_not_exist">路径为 %1$s 的Widget不存在</string>
+    <string name="platform_widget_search_failed">搜索Widget发生异常!请确认Widget是否损坏!</string>
+    <string name="plugin_app_market_update_file_default_msg">发现新版本，立即升级体验吧！</string>
+    <string name="plugin_app_market_update_patch_default_msg">发现新数据包，点击下载后，下次应用启动时启用！</string>
+    <string name="plugin_appmarket_add_app_to_door">添加到首页</string>
+    <string name="plugin_appmarket_del_app_ok">完\u0009\u0009成</string>
+    <string name="plugin_appmarket_ex_add_success">添加成功</string>
+    <string name="plugin_appmarket_ex_empty">暂无更多应用！</string>
+    <string name="plugin_appmarket_ex_no_network">网络不给力</string>
+    <string name="plugin_appmarket_ex_title">东航动态</string>
+    <string name="plugin_audio_can_not_mount_sdcard">无法加载存储卡</string>
+    <string name="plugin_audio_info_nofile">文件不支持</string>
+    <string name="plugin_audio_music_name">无法加载存储卡</string>
+    <string name="plugin_audio_no_open_error">文件未打开错误</string>
+    <string name="plugin_audio_parameter_error">参数错误</string>
+    <string name="plugin_audio_play_pause">暂停</string>
+    <string name="plugin_audio_recorder_can_not_play_this_audio_file">无法播放此音频文件!</string>
+    <string name="plugin_audio_recorder_init_audio_player_fail">初始化播放器失败!</string>
+    <string name="plugin_audio_recorder_now_recording">正在录音...</string>
+    <string name="plugin_audio_recorder_now_saving_record">正在保存录音...</string>
+    <string name="plugin_audio_recorder_please_stop_record_before_select_clip">请先停止录音再选择!</string>
+    <string name="plugin_audio_recorder_prepare_record">准备录音</string>
+    <string name="plugin_audio_recorder_record_audio">录音</string>
+    <string name="plugin_audio_recorder_sdcard_free_space_not_enough">内存卡剩余空间不足!</string>
+    <string name="plugin_audio_recorder_start_record_fail">启动录音失败!</string>
+    <string name="plugin_audio_recoreder_recorder">录音机</string>
+    <string name="plugin_camera_cancel">取消</string>
+    <string name="plugin_camera_complete">完成</string>
+    <string name="plugin_config_no_exist">插件配置文件不存在!</string>
+    <string name="plugin_downloadermgr_error_parameter">参数错误</string>
+    <string name="plugin_email_attchment_path_params_error">附件路径参数错误！</string>
+    <string name="plugin_fileMgr_folder">文件夹</string>
+    <string name="plugin_fileMgr_invalid_params">Invalid Params!</string>
+    <string name="plugin_fileMgr_json_format_error">JSON Format Error!</string>
+    <string name="plugin_fileMgr_need_keywords">Need Keywords</string>
+    <string name="plugin_file_are_you_sure_to_exit_file_explorer">确定退出文件管理器吗</string>
+    <string name="plugin_file_can_not_mount_sdcard">无法加载存储卡</string>
+    <string name="plugin_file_can_not_open_this_folder">无法打开此目录!</string>
+    <string name="plugin_file_file_path_error">文件路径错误!</string>
+    <string name="plugin_file_input_path_is_not_valid_path_redirect_to_sdcard">传入路径不是一个有效的目录,自动定位到SD卡目录!</string>
+    <string name="plugin_file_not_exist">文件不存在!</string>
+    <string name="plugin_file_now_loading_folder">正在读取文件夹</string>
+    <string name="plugin_file_target_directory_is_not_exist_auto_redirect_to_sdcard">目前文件夹不存在,自动定位到SD卡目录!</string>
+    <string name="plugin_image_borwser_now_saving_image_please_wait">正在保存图片，请稍候</string>
+    <string name="plugin_image_browser_are_you_sure_to_exit_image_broswer">确定退出图片浏览器吗？</string>
+    <string name="plugin_image_browser_download_is_canceled">图片下载已取消</string>
+    <string name="plugin_image_browser_image_have_not_load_can_not_save">图片尚未加载，无法保存！</string>
+    <string name="plugin_image_browser_load_image_fail">加载图片失败！</string>
+    <string name="plugin_image_browser_now_loading_image">正在加载图片</string>
+    <string name="plugin_image_browser_photo">图片</string>
+    <string name="plugin_image_browser_save_fail">保存失败！</string>
+    <string name="plugin_image_browser_save_folder">保存目录</string>
+    <string name="plugin_image_browser_sd_have_not_mount_so_can_not_save">SD卡未加载，无法保存</string>
+    <string name="plugin_image_browser_system_have_not_return_image_path">系统未返回图片路径！</string>
+    <string name="plugin_image_browser_undefine_image_url">未指定图片链接！</string>
+    <string name="plugin_image_browser_url_arguments_error">链接参数错误！</string>
+    <string name="plugin_log_error_no_permisson_INTERNET">没有网络访问权限</string>
+    <string name="plugin_sms_are_you_sure_to_send_sms">确定发送短信吗?</string>
+    <string name="plugin_uexDocumentReader_file_not_exist">文件不存在</string>
+    <string name="plugin_uexDocumentReader_file_not_exist_or_path_error">文件不存在或文件路径错误</string>
+    <string name="plugin_uex_image_at_least_choose">请至少选择%s张图片</string>
+    <string name="plugin_uex_image_choose">选择</string>
+    <string name="plugin_uex_image_list">列表</string>
+    <string name="plugin_uex_image_share">分享</string>
+    <string name="plugin_uexcalendar_string_day_name_format">EEE</string>
+    <string name="plugin_uexcalendar_string_invalid_date">请在 %1$s 和 %2$s 之间选择.</string>
+    <string name="plugin_uexcalendar_string_month_name_format">yyyy年MM月</string>
+    <string name="plugin_uexemm_app_sign_error_msg">应用签名非法</string>
+    <string name="plugin_uexemm_app_upgrade">更新</string>
+    <string name="plugin_uexemm_auth_code_et_hint_str">证书授权码</string>
+    <string name="plugin_uexemm_beyond_update_count">超过版本升级的数量限制！</string>
+    <string name="plugin_uexemm_button_cancel">取消</string>
+    <string name="plugin_uexemm_confirm">确定</string>
+    <string name="plugin_uexemm_connect_error">连接失败,请重试!</string>
+    <string name="plugin_uexemm_continue">进入应用</string>
+    <string name="plugin_uexemm_continue_upgrade_msg">上次更新未完成，请继续更新</string>
+    <string name="plugin_uexemm_continue_upgrade_prompt">继续更新</string>
+    <string name="plugin_uexemm_dialog_button_exit">退出</string>
+    <string name="plugin_uexemm_download_again">重新下载</string>
+    <string name="plugin_uexemm_download_completed">更新包下载完成</string>
+    <string name="plugin_uexemm_download_error">下载出错,请重试!</string>
+    <string name="plugin_uexemm_download_fail">下载失败</string>
+    <string name="plugin_uexemm_downloading_file">正在下载文件</string>
+    <string name="plugin_uexemm_exit_app">退出应用</string>
+    <string name="plugin_uexemm_exit_sub_app">退出子应用</string>
+    <string name="plugin_uexemm_get_cert_file">获取证书失败！</string>
+    <string name="plugin_uexemm_install_upgrade">安装更新</string>
+    <string name="plugin_uexemm_mamfail_msg">网络异常或服务器异常，请检查网络或服务器！</string>
+    <string name="plugin_uexemm_mamforbidden_msg">您的应用功能将会受到限制</string>
+    <string name="plugin_uexemm_msg_network_error">无法连接至服务器，请检查网络</string>
+    <string name="plugin_uexemm_network_error">请检查您的网络状态</string>
+    <string name="plugin_uexemm_network_error_msg">您的应用只能访问离线资源</string>
+    <string name="plugin_uexemm_network_error_title">无可用网络</string>
+    <string name="plugin_uexemm_new_app_default_prompt">发现新版本,是否升级?</string>
+    <string name="plugin_uexemm_no_sd_card">您的手机未安装SD卡!</string>
+    <string name="plugin_uexemm_not_found_app">未找到可执行的应用</string>
+    <string name="plugin_uexemm_not_root_prompt">本应用仅适用于未Root机，即将关闭。</string>
+    <string name="plugin_uexemm_offline_login_error">离线登录失败</string>
+    <string name="plugin_uexemm_parm_error">参数错误</string>
+    <string name="plugin_uexemm_problems_msg">可能网络传输或其他问题造成，请点击重试</string>
+    <string name="plugin_uexemm_prompt_title">提示</string>
+    <string name="plugin_uexemm_query_ueser_cert_hint_str">本次登录需要验证用户证书，请输入证书授权码，申请证书。</string>
+    <string name="plugin_uexemm_query_ueser_cert_str">申请证书</string>
+    <string name="plugin_uexemm_restart_prompt">更新完成，请重新启动！</string>
+    <string name="plugin_uexemm_retry">重试</string>
+    <string name="plugin_uexemm_sub_app_suspend_service">该子应用暂停服务</string>
+    <string name="plugin_uexemm_suspend_server">该应用暂停服务</string>
+    <string name="plugin_uexemm_upgrade_fail">更新失败</string>
+    <string name="plugin_uexemm_upgrade_later">暂不更新</string>
+    <string name="plugin_uexemm_upgrade_msg">部分内容更新优化，请更新后使用</string>
+    <string name="plugin_uexemm_upgrade_prompt">更新提示</string>
+    <string name="plugin_uexemm_warning_title">警告</string>
+    <string name="prompt">提示</string>
+    <string name="push">true</string>
+    <string name="push_host">modev.isimcere.com:1883</string>
+    <string name="refresh_failed">刷新失败</string>
+    <string name="refresh_success">更新成功!</string>
+    <string name="save">保存</string>
+    <string name="select">选择</string>
+    <string name="select_all">全选</string>
+    <string name="select_operation">请选择操作</string>
+    <string name="settings">设置</string>
+    <string name="warning">警告</string>
+    <string name="widget_not_exist_id_path">在%1$s目录下的 appId 是%2$s的widget不存在</string>
+    <string name="widget_startup_report_host">https://modev.isimcere.com:18443/appIn/</string>
+    <string name="widgetone_version">4030.1.02.001.00.00.9999.000</string>
+    <style name="Anim_platform_myspace_fade" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/platform_myspace_fade_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/platform_myspace_fade_out_anim</item>
+    </style>
+    <style name="Anim_platform_window_actionsheet_dialog" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/platform_window_actionsheet_pull_up_anim</item>
+        <item name="android:windowExitAnimation">@anim/platform_window_actionsheet_push_down_anim</item>
+    </style>
+    <style name="Dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="Style.plugin_file_item_checkbox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/plugin_file_cb_bg_selector</item>
+    </style>
+    <style name="Style_platform_activity_transparent">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <style name="Style_platform_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="Style_platform_full_screen_no_title_background" parent="@android:style/Theme">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="Style_platform_myspace_title_text">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:shadowColor">#ffffffff</item>
+        <item name="android:shadowDx">2.0</item>
+        <item name="android:shadowDy">2.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="Style_platform_no_title_and_background" parent="@android:style/Theme">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="Style_platform_window_button_text">
+        <item name="android:textStyle">normal</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowDx">2.0</item>
+        <item name="android:shadowDy">2.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="Style_plugin_uexActionSheet_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="browser_loading_theme" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:scrollbarThumbHorizontal">@drawable/engine_scroller_thumb_hor</item>
+        <item name="android:scrollbarThumbVertical">@drawable/engine_scroller_thumb_ver</item>
+        <item name="android:windowShowWallpaper">false</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+    <style name="browser_main_theme" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:scrollbarThumbHorizontal">@drawable/engine_scroller_thumb_hor</item>
+        <item name="android:scrollbarThumbVertical">@drawable/engine_scroller_thumb_ver</item>
+        <item name="android:windowShowWallpaper">false</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+    <style name="plugin_appmarket_loading_dialog_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="plugin_emm_query_user_cert_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="plugin_uex_image_appTheme" parent="@android:style/Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="plugin_uexcalendar_style_CalendarCell">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="plugin_uexcalendar_style_CalendarCell.CalendarDate" parent="@style/plugin_uexcalendar_style_CalendarCell">
+        <item name="android:textSize">@dimen/plugin_uexcalendar_dimen_calendar_text_medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/plugin_uexcalendar_color_calendar_text_selector</item>
+        <item name="android:background">@drawable/plugin_uexcalendar_draw_calendar_bg_selector</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="plugin_uexcalendar_style_CalendarCell.DayHeader" parent="@style/plugin_uexcalendar_style_CalendarCell">
+        <item name="android:textSize">@dimen/plugin_uexcalendar_dimen_calendar_text_small</item>
+        <item name="android:textColor">@color/plugin_uexcalendar_color_calendar_text_active</item>
+    </style>
+    <style name="plugin_uexcalendar_style_CalendarTitle">
+        <item name="android:textSize">@dimen/plugin_uexcalendar_dimen_calendar_text_medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/plugin_uexcalendar_color_calendar_text_active</item>
+    </style>
+    <style name="plugin_uexlockpattern_loading_dialog_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>

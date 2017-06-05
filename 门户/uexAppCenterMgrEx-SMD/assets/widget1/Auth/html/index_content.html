@@ -1,0 +1,191 @@
+﻿﻿<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../../vendor/appcan/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-box.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-base.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/ui-color.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.icon.css">
+    <link rel="stylesheet" href="../../vendor/appcan/css/appcan.control.css">
+    <link rel="stylesheet" href="../css/signIn.css">
+</head>
+<body class="um-vp bc-bg2" ontouchstart>
+<div class="ub up ub-ver">
+    <!-- TOP -->
+    <div class="ub-img-1 sI-wh s-toub"></div>
+
+    <div class="ub-f1 u-lo-mh"></div>
+
+    <div class="ub ub-ac ub-pc u-welcome">
+        <div class="u-line"></div>
+        <div>欢迎登录</div>
+        <div class="u-line"></div>
+    </div>
+
+    <div class="ub-f1 u-lo-mh"></div>
+
+    <!-- 用户输入框 -->
+    <div class="umar-lr3">
+        <div class="sign-bc uinput sign-h ub ub-f1 uc-a1">
+            <div class="ub ub-ac  ub-f1">
+                <div class="ub-img sign-u sign-uwh umar-ul1"></div>
+                <div class="umar-ul5 ub ub-f1">
+                    <input class="ub-f1 de-border n_username" type="text" placeholder="请输入OA账号"
+                    value = "JS15390">
+                </div>
+            </div>
+            <div class="ub ub-ac ub-pc u-users j_users">
+                <select class="n_users"></select>
+            </div>
+        </div>
+        <!-- 用户密码 -->
+        <div class="sign-bc ub-ac ub-pc uinput sign-h ub ub-f1 uc-a1 umar-ut1">
+            <div class="ub ub-ac  ub-f1">
+                <div class="ub-img sign-p umar-ul1"></div>
+                <div class="umar-ul5 ub ub-f1">
+                    <input class="ub-f1 de-border n_password" type="password" placeholder="请输入OA密码"
+                            value = "7452wy2010">
+                </div>
+            </div>
+        </div>
+        <!-- 手势密码 默认开启 -->
+        <div class="ub umar-ut2">
+            <div class="ub ub-ac j_toggle_gesture_switch">
+                <div class="bor-a4 uc-a1 ub ub-ac ub-pc checkbox">
+                    <div class="ub-img w-h ml-xuanz2 n_LockPatternCheckBox"></div>
+                </div>
+                <div class="f-z6 t-c2 umar-ul3">
+                    启用手势密码
+                </div>
+            </div>
+            <div class="ub-f1 ub ub-pe ub-ac t-c2 j-help">需要帮助？</div>
+        </div>
+
+    </div>
+
+    <div class="ub-f1 u-lo-mh"></div>
+
+    <!-- 登陆按钮 -->
+    <div class="u-btn-smt umar-lr3 denglu">
+        <input type="button" value="登 录" class="input3 uc-a1 j_login"/>
+    </div>
+</div>
+<script src="../../vendor/appcan/js/appcan.js"></script>
+<script src="../../vendor/appcan/js/appcan.control.js"></script>
+<script src="../../vendor/simcere/js/config.js"></script>
+<script src="../../vendor/simcere/js/base.js"></script>
+<script src="../js/app.index.js"></script>
+<script>
+    appcan.ready(function () {
+        bindLockPatternLoginSuccessHandler.call();
+    });
+    //faq
+    appcan.button('.j-help','ani-act', function () {
+        appcan.window.open({
+            name: 'Auth_help',
+            data: 'help.html',
+            aniId: 10
+        });
+    });
+    $(function () {
+        // 登录流程
+        $('body').on('tap', '.j_login', function () {
+            //关闭相关窗口，防止数据不刷新问题
+            setTimeout(function () {
+                zkutil.closeWindowByName('Home_index');
+            }, 100);
+
+            var $username = $('.n_username'),
+                    $password = $('.n_password'),
+                    loginId = ($username.val()||'').toUpperCase(),
+                    password = $password.val(),
+                    isLockPatternChecked = !($('.n_LockPatternCheckBox').is('.uhide'));
+            $password.val('');
+            loginId = $.trim(loginId);
+            password = $.trim(password);
+
+            if(loginId==''){
+                appcan.window.openToast('用户名不可为空', 2000);
+                return;
+            }
+
+            //保存
+            loginUsersNameMgr.add(loginId);
+            emmLoginHandler.call(null, loginId, password, isLockPatternChecked);
+        });
+
+        //是否启用手势
+        $('.j_toggle_gesture_switch').on('tap', function () {
+            $(this).find('.n_LockPatternCheckBox').toggleClass('uhide');
+        });
+
+        loginUsersNameMgr();
+    });
+
+    //记住登录的用户名列表
+    function loginUsersNameMgr(){
+        //仅检索一个用户
+        $('.n_users').remove();
+        var oneUser = localStorage.getItem('Auth/index.user');
+        if(oneUser){
+            $('.n_username').val(oneUser);
+        }
+        return;
+
+        var $select = $('.n_users'),
+                s = localStorage.getItem('Auth/index.users')||'',
+                sa = s==''?[]:s.split(','),
+                html;
+
+        $select.on('tap', function (e) {
+            if(this.childElementCount==0){
+                console.log('当前客户端没有用户记录');
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                return false;
+            }
+        });
+
+        if(!sa.length){
+            $select.remove();
+        }else{
+            $('.n_username').val(sa[0]);
+            //
+            html = sa.map(function (o) {
+                return '<option>'+o+'</option>';
+            }).join(',');
+
+            //插入
+            $select.html(html);
+            $select.on('change', function () {
+                $('.n_username').val($select.val());
+            });
+
+            if(sa.length==1){
+                $select.remove();
+            }
+        }
+    }
+    loginUsersNameMgr.add = function (username) {
+        //变更：仅记住一个用户名
+        localStorage.setItem('Auth/index.user', username);
+        return;
+
+        var s = localStorage.getItem('Auth/index.users')||'',
+                sa = s==''?[]:s.split(',');
+        if(sa.indexOf(username)==-1){
+            sa.unshift(username);
+            localStorage.setItem('Auth/index.users', sa.join(','));
+        }
+        if(username.length>5){
+            username.length = 5;
+        }
+    };
+
+</script>
+</body>
+</html>
