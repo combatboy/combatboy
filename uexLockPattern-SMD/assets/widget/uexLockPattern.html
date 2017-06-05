@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	
+	<script type="text/javascript">
+
+
+	window.uexOnload = function(type){
+	      console.log("uexOnload");
+		uexLockPattern.cbLoginSuccess = function(opCode,dataType,data)
+         {
+            document.getElementById("show").innerHTML = data;
+            
+            if(data==0){
+            	alert(""+data);
+            	uexLockPattern.close();
+            }else if(data==1){
+            	alert(""+data);
+            	uexLockPattern.close();
+            } else if(data==2){
+            	alert(""+data);
+            	uexLockPattern.close();
+            }else if(data==3){
+            	alert(""+data);
+            	uexLockPattern.close();
+            }
+         }
+		uexLockPattern.cbLoginFail = function(opCode,dataType,data)
+        {
+        	if(data==5){
+        		uexLockPattern.close();
+        	}
+        }
+        
+        uexLockPattern.cbGet = function(opCode,dataType,data){
+        	 document.getElementById("show").innerHTML = data;
+        	 alert(data);
+        }
+        
+         uexLockPattern.cbForgetPassword = function(opCode,dataType,data){
+        	 document.getElementById("show").innerHTML = data;
+        	 alert("cbForgetPassword=="+data);
+        }
+        
+        uexLockPattern.cbUseOther = function(opCode,dataType,data){
+        	 document.getElementById("show").innerHTML = data;
+        	 alert("cbUseOther=="+data);
+        }
+        
+        uexWidget.onResume = function(){
+           console.log("onResume");
+           alert("onResume");
+          // var title='{"title":"天信","context":"TIAN XIN","fontColor":"#000000"}'
+           //uexLockPattern.lock("http://www.baidu.com/img/bd_logo1.png");
+           uexLockPattern.lock();
+        }
+	}
+	//打开手势密码界面
+	function lock(){
+		//var title='{"title":"天信","context":"TIAN XIN","fontColor":"#000000"}'
+		//uexLockPattern.lock("http://www.baidu.com/img/bd_logo1.png");
+		uexLockPattern.lock();
+		
+		//uexLockPattern.setImg('http://192.168.1.38:8080/bug/TestImageWatcher/1.jpg')
+		
+	}
+	function lock2(){
+		uexLockPattern.lock();
+	}
+	//Get获取手势键盘内部保存的字符串数据
+	function get(){
+		uexLockPattern.get();
+	}
+	
+	//Set存取手势键盘内部保存的字符串数据
+	function set(){
+		var set="手势密码";
+		uexLockPattern.set(set);
+	}
+	
+	
+	//初始化
+	function init(){
+		uexLockPattern.init('3','5','0');
+	}
+	
+	//初始化
+	function init1(){
+		uexLockPattern.init('3','5','1');
+	}
+	//3、表示为3*3的九宫格；
+	//5、表示的登陆错误最大次数。
+	
+	function close(){
+		uexLockPattern.close();
+	}
+	
+	
+</script>
+</head>
+
+<body>
+	<div class="tit">uexHistogram对象</div>
+	<div class="conbor">
+		<div class="consj">
+		<span>1.打开手势密码</span>
+			<input class="btn" type="button" value="lock" onclick="lock();"><br><br>
+		</div>
+		
+		<span>1.1打开手势密码</span>
+			<input class="btn" type="button" value="lock2" onclick="lock2();"><br><br>
+		</div>
+		
+		<div class="consj">
+		<span>2.Set存取手势键盘内部保存的字符串数据。</span>
+			<input class="btn" type="button" value="set" onclick="set();"><br><br>
+		</div>
+		
+		<div class="consj">
+		<span>3.Get获取手势键盘内部保存的字符串数据。</span>
+			<input class="btn" type="button" value="get" onclick="get();"><br><br>
+		</div>
+		<button onclick="openwin("aaa", "aaa.html")">fsefsfsefsef</button>
+		
+		
+		<!-- <div class="consj">
+		<span>4.重置手势密码</span>
+		<input class="btn" type="button" value="local" onclick="lock();"><br><br>
+		</div> -->
+		
+		<div class="consj">
+		<span>5.1.初始化手势密码</span>
+		<input class="btn" type="button" value="init" onclick="init();"><br><br>
+		</div>
+		
+		<div class="consj">
+		<span>5.2.初始化手势密码,有返回按钮</span>
+		<input class="btn" type="button" value="init" onclick="init1();"><br><br>
+		</div>
+		
+		<div class="consj">
+		<span>6.初始化手势密码</span>
+		<input class="btn" type="button" value="close" onclick="close();"><br><br>
+		</div>
+		
+		
+		<div class="consj">
+		<span>7.设置头像</span>
+		<input class="btn" type="button" value="setImg" onclick="uexLockPattern.setImg('http://192.168.1.38:8080/bug/TestImageWatcher/1.jpg');"><br><br>
+		</div>
+		
+		<div class="tcxx" id="show"></div><br>
+	</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uexplugins>
+
+    <plugin
+        className="org.zywx.wbpalmstar.plugin.uexlockpattern.EUExLockPattern"
+        uexName="uexLockPattern" >
+        <method name="lock" />
+        <method name="set" />
+        <method name="get" />
+        <method name="init" />
+        <method name="close" />
+        <method name="setImg" />
+    </plugin>
+
+</uexplugins>

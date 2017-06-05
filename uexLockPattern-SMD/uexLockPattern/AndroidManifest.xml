@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest> 
+	
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	
+	<activity
+            android:name="com.way.locus.LoginActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.Translucent" 
+             >
+        </activity>
+        <activity
+            android:name="com.way.locus.SetPasswordActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" 
+             android:theme="@android:style/Theme.Translucent" 
+            >
+        </activity>
+     
+</manifest>

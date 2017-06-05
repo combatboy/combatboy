@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<uexplugins>
+    <plugin
+        uexName="uexLockPattern" version="3.0.7" build="7">
+		<info>4:修改UI</info>
+		<build>1:适配最新引擎</build>
+		<build>0:苏美达项目"初始插件</build>
+    </plugin>   
+</uexplugins>
